@@ -15,7 +15,7 @@
 
     ./kitty.nix
 
-    ./git.nix
+    # ./git.nix
     ./bat.nix
     ./lazygit.nix
     ./neovim.nix
