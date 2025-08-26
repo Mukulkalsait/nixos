@@ -5,24 +5,8 @@
     enable = true;
     settings = {
       default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --asterisks --remember --greeting ' Welcome to PredatorNix 🚀 ' --theme prompt=green text=white time=yellow input=bright-blue error=red selected=magenta --cmd Hyprland";
         user = "greeter";
-        command = ''
-          ${pkgs.tuigreet}/bin/tuigreet \
-            --time \
-            --remember \
-            --remember-user-session \
-            --asterisks \
-            --user-menu \
-            --greeting "Welcome to PredatorNix 🚀" \
-            --theme border=cyan \
-            --theme prompt=green \
-            --theme text=white \
-            --theme time=yellow \
-            --theme input=bright-blue \
-            --theme error=red \
-            --theme selected=magenta \
-            --cmd Hyprland
-        '';
       };
     };
   };
