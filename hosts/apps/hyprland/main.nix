@@ -61,7 +61,7 @@
 
       input = {
         kb_layout = "us,in";
-        kb_variant = "devanagari,marathi";
+        # kb_variant = "marathi";
         repeat_delay = 280;   # like above
         repeat_rate = 50;     # repeats per second
       };

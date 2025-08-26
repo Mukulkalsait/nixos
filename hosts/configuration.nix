@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
 	./hardware-configuration.nix
- 	# 	./system_apps/git.nix
+ 	./system_apps/git.nix
 
 	inputs.home-manager.nixosModules.default
     ];
@@ -78,16 +78,6 @@
      ];
    };
 
-  programs.git.enable = true;
-  environment.etc."gitconfig".text = ''
-    [user]
-      name = Mukulkalsait
-      email = mdk.121.72633.sg@gmail.com
-    [core]
-      editor = nvim
-    [color]
-      ui = auto
-  '';
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
