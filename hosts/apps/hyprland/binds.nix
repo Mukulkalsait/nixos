@@ -31,9 +31,9 @@
       "$mainMod, T, exec, $terminal"
       "$mainMod Alt, T,  exec, [float; move 20% 5%; size 60% 60%] $terminal"
       "$mainMod, B,  exec, $browser" 
-      "CTRL SHIFT, Escape,  exec, btop" #ut
-      "$mainMod, C,  exec, $editor" #ut
-      # "CTRL SHIFT, Escape,  exec, kitty -e btop" #ut
+      "$mainMod, N,  exec,kitty -e $editor" 
+      "CTRL SHIFT, Escape,  exec, kitty -e btop" 
+      # "CTRL SHIFT, Escape,  exec, btop" # FAIL
 
       # Y: EXIT
       "$mainMod, Q, killactive,"

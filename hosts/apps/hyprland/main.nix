@@ -18,7 +18,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "$terminal -e sh -c 'yazi'";
       "$menu" = "wofi";
-      "$editor" = "neovim";
+      "$editor" = "nvim";
       "$browser" = "zen";
 
       exec-once = [
