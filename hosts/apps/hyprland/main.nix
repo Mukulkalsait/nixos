@@ -60,8 +60,10 @@
       };
 
       input = {
-        kb_layout = "us,ru,il";
-        kb_options = "grp:caps_toggle";
+        kb_layout = "us,in";
+        kb_variant = "devanagari,marathi";
+        repeat_delay = 280;   # like above
+        repeat_rate = 50;     # repeats per second
       };
 
       gestures = {
