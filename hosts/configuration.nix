@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
 	./hardware-configuration.nix
  	# 	./system_apps/git.nix
+
 	inputs.home-manager.nixosModules.default
     ];
 
