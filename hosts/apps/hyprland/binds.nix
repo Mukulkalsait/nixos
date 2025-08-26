@@ -38,6 +38,7 @@
       "$mainMod, Q, killactive,"
       "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
       "$mainMod SHIFT, Q, exit,"
+      "$mainMod, F,  fullscreen"
 
       # B: ready to replace
       # "$mainMod,       F, togglefloating," # TAG: flooting window vc connect window
