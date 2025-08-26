@@ -19,65 +19,81 @@
   # Y: Script Import.
   # home.packages = [ booksScript ];
 
-  imports = [ 
-    ./scripts/moveactivewindow_shellCreation.nix # Y: Active Window Movements
-  ];
+  # imports = [ 
+  #   # ./scripts/moveactivewindow_shellCreation.nix # Y: Active Window Movements
+  # ];
 
   wayland.windowManager.hyprland.settings = {
     bind = [
 
       # Y: Application:
-      "$mainMod, E, exec, $fileManager"
+      "$mainMod, E, exec, $fileManager" 
       "$mainMod, T, exec, $terminal"
       "$mainMod Alt, T,  exec, [float; move 20% 5%; size 60% 60%] $terminal"
-      "$mainMod, C,  exec, $EDITOR"
-      "$mainMod, B,  exec, zen"
-      "CTRL Shift, Escape,  exec, btop"
+      "$mainMod, C,  exec, $editor" #ut
+      "$mainMod, B,  exec, $browser" #ut
+      "CTRL Shift, Escape,  exec, btop" # fail
 
       # Y: EXIT
       "$mainMod, Q, killactive,"
       "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
       "$mainMod SHIFT, Q, exit,"
       "$mainMod, F,  fullscreen"
+      "$mainMod SHIFT, F, togglefloating," # TAG: flooting window vc connect window
+      # Y: ScratchPad
+      "$mainMod,       S, togglespecialworkspace,  magic"
+      "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
       # B: ready to replace
-      # "$mainMod,       F, togglefloating," # TAG: flooting window vc connect window
       # "$mainMod,       P, pin," # TAG: no idea
-      # "$mainMod,       J, togglesplit,"  # Y:  toggle between screen
+      # "$mainMod,       J, togglesplit,"  #TAG:  toggle between screen
       # "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
+      # "$mainMod,       ., exec, bemoji -cn" #not working
+      #"$mainMod,       W, exec, ${booksScript}/bin/open_books" Y: script exicution example
 
       # DX: DELETE IN FUTURE: 
+      "$mainMod,       N, exec, swaync-client -t" # Y:NOTIFICATIONS:
       "$mainMod,       D, exec, $menu --show drun"
 
       # G: Test or NEW to me: 
-      "$mainMod,       ., exec, bemoji -cn" # Y: emoji? 
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
       "$mainMod Shift, P, exec, hyprpicker -an" # Pick color (Hex) >> clipboard#
 
-
-      "$mainMod,       N, exec, swaync-client -t"
-
-      # Y: SCRIPT EXICUTION.
-      #"$mainMod,       W, exec, ${booksScript}/bin/open_books"
-
       # Y: Movements
-      # IMP: FOCUS
+      # IMP: FOCUS ✅
       "$mainMod, L, movefocus, l" 
       "$mainMod, H, movefocus, r"
       "$mainMod, K, movefocus, u"
       "$mainMod, J, movefocus, d"
-      # IMP: WINDOWS
+      # IMP: WINDOWS ✅ 
       "$mainMod SHIFT, H,  swapwindow, l" 
       "$mainMod SHIFT, L, swapwindow, r"
       "$mainMod SHIFT, K,    swapwindow, u"
       "$mainMod SHIFT, J,  swapwindow, d"
       "ALT, Tab, cyclenext"
-      # IMP: Workspace Move
+      # IMP: Workspace Move ✅ 
+      "$mainMod CTRL, 0, workspace, empty" # Y: navigate to the nearest empty workspace
       "$mainMod CTRL, L, workspace, r+1"  
       "$mainMod CTRL, H, workspace, r-1"
       "$mainMod, mouse_up,  workspace, e-1"
       "$mainMod, mouse_down, workspace, e+1"
-      "$mainMod CTRL, 0, workspace, empty" # Y: navigate to the nearest empty workspace
+      # IMP: Move Window in Workspace #UT 
+      "$mainMod CTRL SHIFT, H, movetoworkspacesilent, r+1"
+      "$mainMod CTRL SHIFT, L, movetoworkspacesilent, r-1"
+      # IMP: MOVE Group  #UT
+      "$mainMod CTRL SHIFT, bracketright,  changegroupactive, b" #ut
+      "$mainMod CTRL SHIFT, bracketleft,  changegroupactive, f" #ut
+      # IMP: Moving windows to workspaces ✅
+      "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
+      "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
+      "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
+      "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
+      "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
+      "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
+      "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
+      "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
+      "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
+      "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
       # DX: Some window Movements are in ./scripts/moveactivewindow_shellCreation.nix
       # Switching workspaces -----------Y: turned off
       # "$mainMod, 1, workspace, 1"
@@ -90,31 +106,15 @@
       # "$mainMod, 8, workspace, 8"
       # "$mainMod, 9, workspace, 9"
       # "$mainMod, 0, workspace, 10"
-      # IMP: MOVE Group
-      "$mainMod CTRL, H,  changegroupactive, b"  
-      "$mainMod CTRL, L,  changegroupactive, f"
-      # IMP: Moving windows to workspaces
-      "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-      "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-      "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-      "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-      "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-      "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-      "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-      "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-      "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
-      "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
 
-      # Resizeing windows                     X  Y
-      "$mainMod CTRL, L,  resizeactive, -30 0"
-      "$mainMod CTRL, H, resizeactive,  30 0"
-      "$mainMod CTRL, K,    resizeactive,  0 -30"
-      "$mainMod CTRL, J,  resizeactive,  0  30"
+      # IMP: Resizeing windows         X  Y   #UT
+      "$mainMod ALT, L, resizeactive, -30 0"
+      "$mainMod ALT, H, resizeactive,  30 0"
+      "$mainMod ALT, K, resizeactive,  0 -30"
+      "$mainMod ALT, J, resizeactive,  0  30"
 
-      # Scratchpad
-      # "$mainMod,       S, togglespecialworkspace,  magic"
-      # "$mainMod SHIFT, S, movetoworkspace, special:magic"
-      # DX: 
+
+      # DX: IMPORTED BUT NOT ACTIVATED AS WE DONT HAHVE THE SCRIPTS
       #  $mainMod Alt, k,  exec, $scrPath/wbarconfgen.sh n # next waybar mode
       #  $mainMod Alt, j,  exec, $scrPath/wbarconfgen.sh p # previous waybar mode
       # ------------------
@@ -125,19 +125,17 @@
       #  $mainMod+Shift, U,  exec, pkill -x rofi || $scrPath/hyprlock.sh --select # launch hyprlock layout select menu
     ];
 
-
-
     # Move/resize windows with mainMod + LMB/RMB and dragging
     bindm = [
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
+      #B: awesomes
       "$mainMod, Z,  movewindow"
       "$mainMod, X,  resizewindow"
     ];
 
     # Laptop multimedia keys for volume and LCD brightness
     bindel = [
-
       ",XF86AudioRaiseVolume,  exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
       ",XF86AudioLowerVolume,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioMute,         exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -161,8 +159,9 @@
       # ", F10, exec, $scrPath/volumecontrol.sh -o m " # toggle audio mute
       # ", XF86AudioMute, exec, $scrPath/volumecontrol.sh -o m " # toggle audio mute
       # ", XF86AudioMicMute, exec, $scrPath/volumecontrol.sh -i m " # toggle microphone mute
-# binddl = $mainMod Alt, P, $d print monitor , exec, $scrPath/screenshot.sh m # monitor screenshot capture
-# binddl = , Print, $d print all monitors , exec, $scrPath/screenshot.sh p # all monitors screenshot capture
+      # binddl = $mainMod Alt, P, $d print monitor , exec, $scrPath/screenshot.sh m # monitor screenshot capture
+      # binddl = , Print, $d print all monitors , exec, $scrPath/screenshot.sh p # all monitors screenshot capture
     ];
   };
 }
+

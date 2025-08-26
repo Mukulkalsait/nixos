@@ -38,7 +38,7 @@
   phpPackages.php-codesniffer # php
 
   # Desktop apps:
-  mpv obs-studio
+  mpv obs-studio spotify spicetify-cli
 
   # GITHUB APPS:
   # inputs.zen-browser.packages."${system}".specific
