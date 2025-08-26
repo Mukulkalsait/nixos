@@ -30,9 +30,10 @@
       "$mainMod, E, exec, $fileManager" 
       "$mainMod, T, exec, $terminal"
       "$mainMod Alt, T,  exec, [float; move 20% 5%; size 60% 60%] $terminal"
+      "$mainMod, B,  exec, $browser" 
+      "CTRL SHIFT, Escape,  exec, btop" #ut
       "$mainMod, C,  exec, $editor" #ut
-      "$mainMod, B,  exec, $browser" #ut
-      "CTRL Shift, Escape,  exec, btop" # fail
+      # "CTRL SHIFT, Escape,  exec, kitty -e btop" #ut
 
       # Y: EXIT
       "$mainMod, Q, killactive,"
@@ -78,11 +79,11 @@
       "$mainMod, mouse_up,  workspace, e-1"
       "$mainMod, mouse_down, workspace, e+1"
       # IMP: Move Window in Workspace #UT 
-      "$mainMod CTRL SHIFT, H, movetoworkspacesilent, r+1"
-      "$mainMod CTRL SHIFT, L, movetoworkspacesilent, r-1"
+      "$mainMod CTRL SHIFT, L, movetoworkspace, r+1"
+      "$mainMod CTRL SHIFT, H, movetoworkspace, r-1"
       # IMP: MOVE Group  #UT
-      "$mainMod CTRL SHIFT, bracketright,  changegroupactive, b" #ut
-      "$mainMod CTRL SHIFT, bracketleft,  changegroupactive, f" #ut
+      "$mainMod CTRL SHIFT, bracketright,  changegroupactive, b" 
+      "$mainMod CTRL SHIFT, bracketleft,  changegroupactive, f" 
       # IMP: Moving windows to workspaces ✅
       "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
       "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
@@ -107,9 +108,9 @@
       # "$mainMod, 9, workspace, 9"
       # "$mainMod, 0, workspace, 10"
 
-      # IMP: Resizeing windows         X  Y   #UT
-      "$mainMod ALT, L, resizeactive, -30 0"
-      "$mainMod ALT, H, resizeactive,  30 0"
+      # IMP: Resizeing windows         X  Y   ✅ 
+      "$mainMod ALT, H, resizeactive, -30 0"
+      "$mainMod ALT, L, resizeactive,  30 0"
       "$mainMod ALT, K, resizeactive,  0 -30"
       "$mainMod ALT, J, resizeactive,  0  30"
 
@@ -123,6 +124,11 @@
       #  $mainMod Shift, R,  exec, pkill -x rofi || $scrPath/wallbashtoggle.sh -m # launch wallbash mode select menu
       #  $mainMod+Shift, Y,  exec, pkill -x rofi || $scrPath/animations.sh --select # launch animations select menu
       #  $mainMod+Shift, U,  exec, pkill -x rofi || $scrPath/hyprlock.sh --select # launch hyprlock layout select menu
+      # "$mainMod CTRL SHIFT, H, exec, hyprctl dispatch movetoworkspacesilent r-1; hyprctl dispatch workspace r-1"
+
+      # HEAD: if we want 2 actions in 1 key
+      # "$mainMod CTRL SHIFT, L, exec, hyprctl dispatch movetoworkspacesilent r+1; hyprctl dispatch workspace r+1"
+
     ];
 
     # Move/resize windows with mainMod + LMB/RMB and dragging
@@ -143,10 +149,12 @@
 
       "$mainMod, bracketright, exec, brightnessctl s 10%+"
       "$mainMod, bracketleft,  exec, brightnessctl s 10%-"
-    # ", F11,  exec, $scrPath/volumecontrol.sh -o d # decrease volume"
-    # ", F12,  exec, $scrPath/volumecontrol.sh -o i # increase volume"
-    # ", XF86AudioLowerVolume,  exec, $scrPath/volumecontrol.sh -o d # decrease volume"
-    # ", XF86AudioRaiseVolume,  exec, $scrPath/volumecontrol.sh -o i # increase volume"
+      
+      # just for examples
+      # ", F11,  exec, $scrPath/volumecontrol.sh -o d # decrease volume"
+      # ", F12,  exec, $scrPath/volumecontrol.sh -o i # increase volume"
+      # ", XF86AudioLowerVolume,  exec, $scrPath/volumecontrol.sh -o d # decrease volume"
+      # ", XF86AudioRaiseVolume,  exec, $scrPath/volumecontrol.sh -o i # increase volume"
     ];
 
     # Audio playback

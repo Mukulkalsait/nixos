@@ -15,6 +15,7 @@
   xdg-desktop-portal-hyprland
   hyprpicker 
   w3m wtype hyprpaper wl-clipboard 
+  wev
 
   # Terminal:
   kitty 
