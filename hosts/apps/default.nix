@@ -4,7 +4,7 @@
     ./apps.nix
     # ./sessionVariables.nix
     ./zsh.nix
-    ./starship.nix
+    ./starship
     ./eza.nix
     ./stylix.nix
 
