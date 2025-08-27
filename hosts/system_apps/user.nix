@@ -44,5 +44,18 @@
 	# package = inputs.hyprland.packages."$(pkgs.system)".hyprland; # hyprland-packages enabling?
   };
 
+  fonts.packages = with pkgs; [
+    dejavu_fonts
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.hack
+  ];
+  console = {
+    font = "Lat2-Terminus16"; # good default
+    packages = with pkgs; [ terminus_font ];
+  };
 }
 
