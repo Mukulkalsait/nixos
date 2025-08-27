@@ -41,7 +41,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ...}@inputs :
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser,yazi, ...}@inputs :
   let 
   	# Y: VARIALBES =>
 	system = "x86_64-linux";
