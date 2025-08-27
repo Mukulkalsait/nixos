@@ -36,6 +36,9 @@
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
 
+    # YAZI:
+    yazi.url = "github:sxyazi/yazi";
+
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ...}@inputs :

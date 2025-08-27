@@ -1,6 +1,11 @@
 
 { config, pkgs, ... }:
 {
+
+  imports = [ 
+    ./apps/yazi.nix
+  ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.mukuldk = {
      isNormalUser = true;
@@ -27,7 +32,7 @@
     p7zip 
 
     # Daily Drivers :
-    neovim starship yazi
+    neovim starship 
 
     # TUI Utils : 
     btop 
@@ -44,15 +49,16 @@
 	# package = inputs.hyprland.packages."$(pkgs.system)".hyprland; # hyprland-packages enabling?
   };
 
-  fonts.packages = with pkgs; [
-    dejavu_fonts
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.hack
-  ];
+  # fonts.packages = with pkgs; [
+  #   dejavu_fonts
+  #   noto-fonts
+  #   noto-fonts-cjk-sans
+  #   noto-fonts-emoji
+  #   nerd-fonts.fira-code
+  #   nerd-fonts.jetbrains-mono
+  #   nerd-fonts.hack
+  # ];
+  
   console = {
     font = "Lat2-Terminus16"; # good default
     packages = with pkgs; [ terminus_font ];

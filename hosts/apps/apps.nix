@@ -1,7 +1,7 @@
 
 # Packages
 
-{ lib, config, pkgs, ...}:
+{ lib, config, pkgs, yazi, ...}:
 {
 
  # Minimal user packages (keep it simple for now)
@@ -18,7 +18,7 @@
   wev
 
   # Terminal:
-  kitty 
+  kitty zellij 
 
   # Hardware Control:
   brightnessctl playerctl pavucontrol
