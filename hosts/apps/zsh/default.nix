@@ -15,7 +15,8 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     # Y: Commands to run as soon as zsh loaded 🔻 
-    initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: we are sourcing file we defined at the top of this config.
+    # initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: does same but we slightly extra works. so we dont need it..
+    initContent = '' source ~/.config/zsh/scripts/y.sh '';# B: we are sourcing file we defined at the top of this config.
 
     shellAliases = 
     let 
