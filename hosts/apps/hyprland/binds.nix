@@ -137,8 +137,8 @@
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
       #B: awesomes
-      "$mainMod, CTRL,  movewindow"
-      "$mainMod, ALT,  resizewindow"
+      "$mainMod, Z,  movewindow"
+      "$mainMod, X,  resizewindow"
     ];
 
     # Laptop multimedia keys for volume and LCD brightness
