@@ -3,7 +3,9 @@
 { lib, config, pkgs, ...}:
 {
 
- # Zsh with **working** completion, no weird aliases
+  # Y: 👇 in .comfig/zsh/scripts/y.sh put this file 👇
+  home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -12,10 +14,8 @@
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 
-    # Y: 👇 in .comfig/zsh/scripts/y.sh put this file 👇
-    home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh;
     # Y: Commands to run as soon as zsh loaded 🔻 
-    initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: we are sourcing above fiel
+    initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: we are sourcing file we defined at the top of this config.
 
     shellAliases = 
     let 
