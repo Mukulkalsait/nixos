@@ -36,7 +36,7 @@
     btop 
 
     # GPU: 
-    nvtopPackages.full nvidia-smi
+    nvtopPackages.full 
 
 
   ];
