@@ -15,12 +15,12 @@
 
       monitor = ",1920x1200@165,auto,1";
       "$mainMod" = "SUPER";
-      "$terminal" = "kitty";
-      "$fileManager" = "$terminal -e sh -c 'yazi'";
       "$menu" = "wofi";
-      "$editor" = "nvim";
-      "$browser" = "zen";
-      "$taskManager" = "missioncenter";
+      "$TERMINAL" = "kitty";
+      "$FILEMANAGER" = "$terminal -e sh -c 'yazi'";
+      "$EDITOR" = "nvim";
+      "$BROWSER" = "zen";
+      "$TASKMANAGER" = "missioncenter";
 
 
       exec-once = [
