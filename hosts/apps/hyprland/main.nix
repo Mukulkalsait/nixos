@@ -20,6 +20,8 @@
       "$menu" = "wofi";
       "$editor" = "nvim";
       "$browser" = "zen";
+      "$taskManager" = "missioncenter";
+
 
       exec-once = [
         "waybar"

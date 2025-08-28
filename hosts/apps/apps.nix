@@ -18,7 +18,7 @@
   wev
 
   # Terminal:
-  kitty zellij 
+  kitty zellij   
 
   # Hardware Control:
   brightnessctl playerctl pavucontrol
@@ -39,7 +39,7 @@
   phpPackages.php-codesniffer # php
 
   # Desktop apps:
-  mpv obs-studio spotify spicetify-cli
+  mpv obs-studio spotify spicetify-cli mission-center
 
   # GITHUB APPS:
   # inputs.zen-browser.packages."${system}".specific
