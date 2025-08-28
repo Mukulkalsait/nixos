@@ -38,7 +38,6 @@
     # GPU: 
     nvtopPackages.full 
 
-
   ];
 
   programs.zsh.enable = true;

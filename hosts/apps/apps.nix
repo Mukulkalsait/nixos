@@ -3,6 +3,9 @@
 
 { lib, config, pkgs, yazi, ...}:
 {
+  # Y: this will put the .config_local/zellij into ~/.config/zellij
+  home.file.".config/zellij".source = ./.config_local/zellij;
+
 
  # Minimal user packages (keep it simple for now)
  home.packages = with pkgs; [
@@ -18,7 +21,7 @@
   wev
 
   # Terminal:
-  kitty zellij   
+  kitty zellij
 
   # Hardware Control:
   brightnessctl playerctl pavucontrol

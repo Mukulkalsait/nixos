@@ -35,26 +35,44 @@
         tth="zellij -l welcome";
         tta="zellij a";
 
+        # Y:  NIX os 
         snrsf="sudo nixos-rebuild switch --flake /etc/nixos#PredatorNix";
+        deadNix="nix-store --ge --print-dead";
+        nixSize="du -sh /nix/store/";
+        nixVer="sudo nix-env -p /nix/var/nix/profiles/system"; # Y: Use => {--list-generatoins, --delete-generatinos }
+        nixOptimise="sudo nix store optimise";
+        # Y: Easy to learn but kept in case I forgot. 
+        # nixGarbage="nix-collect-garbage";
+        # nixGarbageD="nix-collect-garbage -d";
+        
+        
         sw = "nh os switch";
         upd = "nh os switch --update";
         hms = "nh home switch";
         pkgs = "nvim ${flakeDir}/nixos/packages.nix";
 
+        # DX: CONFIGS
+        # IMP: config in nix.
         nixConfig="sudo nvim /etc/nixos";
-        nvimConfig="nvim /home/mukuldk/1_file/2_git_repos/nvim/";
         zshConfig="sudo nvim /etc/nixos/hosts/apps/zsh.nix";
         hyprConfig="sudo nvim /etc/nixos/hosts/apps/hyprland/main.nix";
         kittyConfig="sudo nvim /etc/nixos/hosts/apps/kitty.nix";
+        # IMP: config inside nix repo and imported but non nix.
+        ttConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/zellij/";
+        # IMP: config in local but imported in nix.
+        nvimConfig="nvim /home/mukuldk/1_file/2_git_repos/nvim/";
+        # IMP: config non NIX nor imported because they download there own files.
+        yaziConfig="nvim /home/mukuldk/.config/yazi/";
 
-        # ttConfig="nvim ~/.config/zellij/config.kdl";
-        # yaziConfig="sudo nvim /etc/nixos/hosts/apps/";
+        # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
         
+        # Y: Movements
         cdN="cd /etc/nixos/";
         cdF="cd /home/mukuldk/1_file/";
         cdG="cd /home/mukuldk/1_file/2_git_repos/";
         cdD="cd /home/mukuldk/1_file/5_ZenDownloads/";
 
+        # Y: costome
         sysnmpp="sudo systemctl start nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
         systnmpp="sudo systemctl stop nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
         # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
