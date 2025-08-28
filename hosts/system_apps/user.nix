@@ -2,9 +2,7 @@
 { config, pkgs, ... }:
 {
 
-  imports = [ 
-    ./apps/yazi.nix
-  ];
+  # imports = [ ./apps/yazi.nix  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.mukuldk = {
@@ -26,14 +24,13 @@
     cargo gcc cmake python3 lua luarocks (python3.withPackages (ps: with ps; [ pynvim ])) 
     
     # CLI Essentilas:
-    git gh wget curl jq fd ripgrep
+    git gh wget curl jq fd ripgrep glib
 
     # CLI Utils : 
     p7zip 
 
     # Daily Drivers :
-    neovim starship 
-    (yazi.packages.${pkgs.system}.default.override { _7zz = pkgs._7zz-rar; }) # Support for RAR extraction
+    neovim starship yazi 
 
     # TUI Utils : 
     btop 

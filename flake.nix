@@ -37,11 +37,11 @@
     # };
 
     # YAZI:
-    yazi.url = "github:sxyazi/yazi";
+    # yazi.url = "github:sxyazi/yazi";
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser,yazi, ...}@inputs :
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ...}@inputs :
   let 
   	# Y: VARIALBES =>
 	system = "x86_64-linux";
