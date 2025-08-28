@@ -24,17 +24,15 @@
   nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "PredatorNix"; # Define your hostname.
-  networking.networkmanager.enable =
-    true; # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true; # Enable Bluetooth
+  services.blueman.enable = true; # optional: nice GTK tray app
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound.
   services.pipewire = {
@@ -44,6 +42,18 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  services.printing.enable = false; # Enable CUPS to print documents.
+  # services.modemmanager.enable = false; Y: variable not avialable error.
+
+  virtualisation.docker.enable = true; # service enabled.
+  virtualisation.docker.enableOnBoot = false; # DX: Systemctl
+  users.users.mukuldk.extraGroups = [ "docker" ]; # group add to user.
+
+  # Y: (Optional) Podman alongside Docker.
+  # virtualisation.podman.enable = true;
+  # virtualisation.podman.enableOnBoot = false;
+  # virtualisation.podman.dockerCompat = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true; 

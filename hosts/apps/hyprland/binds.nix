@@ -54,7 +54,7 @@
       #"$mainMod,       W, exec, ${booksScript}/bin/open_books" Y: script exicution example
 
       # DX: DELETE IN FUTURE: 
-      "$mainMod,       N, exec, swaync-client -t" # Y:NOTIFICATIONS:
+      "$mainMod,       9, exec, swaync-client -t" # Y:NOTIFICATIONS:
       "$mainMod,       D, exec, $menu --show drun"
 
       # G: Test or NEW to me: 

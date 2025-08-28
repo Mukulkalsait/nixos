@@ -49,11 +49,12 @@
       upd = "nh os switch --update";
       hms = "nh home switch";
       pkgs = "nvim ${flakeDir}/nixos/packages.nix";
+      lad = "lazydocker";
 
       # DX: CONFIGS
       # IMP: config in nix.
       nixConfig = "sudo nvim /etc/nixos";
-      zshConfig = "sudo nvim /etc/nixos/hosts/apps/zsh.nix";
+      zshConfig = "sudo nvim /etc/nixos/hosts/apps/zsh/default.nix";
       hyprConfig = "sudo nvim /etc/nixos/hosts/apps/hyprland/main.nix";
       kittyConfig = "sudo nvim /etc/nixos/hosts/apps/kitty.nix";
       # IMP: config inside nix repo and imported but non nix.
@@ -75,10 +76,10 @@
       resource = "source /home/mukuldk/.zshrc";
 
       # Y: costome
-      sysnmpp =
-        "sudo systemctl start nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
-      systnmpp =
-        "sudo systemctl stop nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
+      # sysnmpp = "sudo systemctl start nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
+      # systnmpp = "sudo systemctl stop nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
+      sysd = "sudo systemctl start docker && sudo systemctl status docker";
+      systd = "sudo systemctl stop docker && sudo systemctl status docker";
       # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
       # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
 

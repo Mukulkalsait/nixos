@@ -23,6 +23,9 @@
     kitty
     zellij
 
+    # DevOps:
+    lazydocker
+
     # Hardware Control:
     brightnessctl
     playerctl
