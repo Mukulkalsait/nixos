@@ -43,6 +43,8 @@
       # nixGarbage="nix-collect-garbage";
       # nixGarbageD="nix-collect-garbage -d";
 
+      unFree = "NIXPKGS_ALLOW_UNFREE=1";
+
       sw = "nh os switch";
       upd = "nh os switch --update";
       hms = "nh home switch";
@@ -68,6 +70,9 @@
       cdF = "cd /home/mukuldk/1_file/";
       cdG = "cd /home/mukuldk/1_file/2_git_repos/";
       cdD = "cd /home/mukuldk/1_file/5_ZenDownloads/";
+
+      # Y: resource:
+      resource = "source /home/mukuldk/.zshrc";
 
       # Y: costome
       sysnmpp =
