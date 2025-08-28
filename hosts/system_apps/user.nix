@@ -1,42 +1,62 @@
-
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
 
   # imports = [ ./apps/yazi.nix  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.mukuldk = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" "audio" "video" ]; # Enable ‘sudo’ for the user.
-     shell= pkgs.zsh;
-     packages = with pkgs; [
-    	zsh
-     ];
-   };
+  users.users.mukuldk = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "video"
+    ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
+    packages = with pkgs; [ zsh ];
+  };
 
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
 
     # System Imp :
-    greetd.tuigreet hyprland zsh wl-clipboard wlr-randr
+    greetd.tuigreet
+    hyprland
+    zsh
+    wl-clipboard
+    wlr-randr
 
     # Lang : 
-    cargo gcc cmake python3 lua luarocks (python3.withPackages (ps: with ps; [ pynvim ])) 
-    
+    cargo
+    gcc
+    cmake
+    python3
+    lua
+    luarocks
+    (python3.withPackages (ps: with ps; [ pynvim ]))
+
     # CLI Essentilas:
-    git gh wget curl jq fd ripgrep glib
+    git
+    gh
+    wget
+    curl
+    jq
+    fd
+    ripgrep
+    glib
 
     # CLI Utils : 
-    p7zip 
+    p7zip
 
     # Daily Drivers :
-    neovim starship yazi 
+    neovim
+    starship
+    yazi
 
     # TUI Utils : 
-    btop 
+    btop
 
     # GPU: 
-    nvtopPackages.full 
+    nvtopPackages.full
 
   ];
 
@@ -44,10 +64,10 @@
 
   # HYPRLAND:
   programs.hyprland = {
-  	enable = true;
+    enable = true;
     xwayland.enable = true;
 
-	# package = inputs.hyprland.packages."$(pkgs.system)".hyprland; # hyprland-packages enabling?
+    # package = inputs.hyprland.packages."$(pkgs.system)".hyprland; # hyprland-packages enabling?
   };
 
   # fonts.packages = with pkgs; [
@@ -59,7 +79,7 @@
   #   nerd-fonts.jetbrains-mono
   #   nerd-fonts.hack
   # ];
-  
+
   console = {
     font = "Lat2-Terminus16"; # good default
     packages = with pkgs; [ terminus_font ];

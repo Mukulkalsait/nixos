@@ -1,21 +1,21 @@
 { pkgs, ... }:
 # let
-  # Y: EXAPMPE OF WRITING SCRIPTS.
-  #-----------------------------------
-  # booksDir = "$HOME/Downloads/books";
-  # booksScript = pkgs.writeScriptBin "open_books" ''
-  #   #!/bin/sh
-  #   BOOKS_DIR="${booksDir}"
-  #   BOOK=$(find "$BOOKS_DIR" -type f \( -iname "*.pdf" -o -iname "*.epub" -o -iname "*.djvu" \) | wofi --dmenu --prompt "Select a book" --width 1200 --height 400)
-  #   if [[ -n "$BOOK" ]]; then
-  #       zathura "$BOOK" &
-  #   else
-  #       echo "No book selected."
-  #   fi
-  # '';
+# Y: EXAPMPE OF WRITING SCRIPTS.
+#-----------------------------------
+# booksDir = "$HOME/Downloads/books";
+# booksScript = pkgs.writeScriptBin "open_books" ''
+#   #!/bin/sh
+#   BOOKS_DIR="${booksDir}"
+#   BOOK=$(find "$BOOKS_DIR" -type f \( -iname "*.pdf" -o -iname "*.epub" -o -iname "*.djvu" \) | wofi --dmenu --prompt "Select a book" --width 1200 --height 400)
+#   if [[ -n "$BOOK" ]]; then
+#       zathura "$BOOK" &
+#   else
+#       echo "No book selected."
+#   fi
+# '';
 #in
 {
-  
+
   # Y: Script Import.
   # home.packages = [ booksScript ];
 
@@ -27,12 +27,12 @@
     bind = [
 
       # Y: Application:
-      "$mainMod, E, exec, $FILEMANAGER" 
+      "$mainMod, E, exec, $FILEMANAGER"
       "$mainMod, T, exec, $TERMINAL"
       "$mainMod Alt, T,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
-      "$mainMod, B,  exec, $BROWSER" 
-      "$mainMod, N,  exec,$TERMINAL -e $EDITOR" 
-      "CTRL SHIFT, Escape,  exec, $TASKMANAGER" 
+      "$mainMod, B,  exec, $BROWSER"
+      "$mainMod, N,  exec,$TERMINAL -e $EDITOR"
+      "CTRL SHIFT, Escape,  exec, $TASKMANAGER"
       # "CTRL SHIFT, Escape,  exec, kitty -e btop" # Y: btop
       # "CTRL SHIFT, Escape,  exec, btop" # FAIL
 
@@ -63,19 +63,19 @@
 
       # Y: Movements
       # IMP: FOCUS ✅
-      "$mainMod, L, movefocus, l" 
+      "$mainMod, L, movefocus, l"
       "$mainMod, H, movefocus, r"
       "$mainMod, K, movefocus, u"
       "$mainMod, J, movefocus, d"
       # IMP: WINDOWS ✅ 
-      "$mainMod SHIFT, H,  swapwindow, l" 
+      "$mainMod SHIFT, H,  swapwindow, l"
       "$mainMod SHIFT, L, swapwindow, r"
       "$mainMod SHIFT, K,    swapwindow, u"
       "$mainMod SHIFT, J,  swapwindow, d"
       "ALT, Tab, cyclenext"
       # IMP: Workspace Move ✅ 
       "$mainMod CTRL, 0, workspace, empty" # Y: navigate to the nearest empty workspace
-      "$mainMod CTRL, L, workspace, r+1"  
+      "$mainMod CTRL, L, workspace, r+1"
       "$mainMod CTRL, H, workspace, r-1"
       "$mainMod, mouse_up,  workspace, e-1"
       "$mainMod, mouse_down, workspace, e+1"
@@ -83,8 +83,8 @@
       "$mainMod CTRL SHIFT, L, movetoworkspace, r+1"
       "$mainMod CTRL SHIFT, H, movetoworkspace, r-1"
       # IMP: MOVE Group  #UT
-      "$mainMod CTRL SHIFT, bracketright,  changegroupactive, b" 
-      "$mainMod CTRL SHIFT, bracketleft,  changegroupactive, f" 
+      "$mainMod CTRL SHIFT, bracketright,  changegroupactive, b"
+      "$mainMod CTRL SHIFT, bracketleft,  changegroupactive, f"
       # IMP: Moving windows to workspaces ✅
       "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
       "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
@@ -114,7 +114,6 @@
       "$mainMod ALT, L, resizeactive,  30 0"
       "$mainMod ALT, K, resizeactive,  0 -30"
       "$mainMod ALT, J, resizeactive,  0  30"
-
 
       # DX: IMPORTED BUT NOT ACTIVATED AS WE DONT HAHVE THE SCRIPTS
       #  $mainMod Alt, k,  exec, $scrPath/wbarconfgen.sh n # next waybar mode
@@ -150,7 +149,7 @@
 
       "$mainMod, bracketright, exec, brightnessctl s 10%+"
       "$mainMod, bracketleft,  exec, brightnessctl s 10%-"
-      
+
       # just for examples
       # ", F11,  exec, $scrPath/volumecontrol.sh -o d # decrease volume"
       # ", F12,  exec, $scrPath/volumecontrol.sh -o i # increase volume"

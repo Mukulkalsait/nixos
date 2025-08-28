@@ -17,21 +17,14 @@
       timeout-low = 5;
       timeout-critical = 0;
 
-      widgets = [
-        "inhibitors"
-        "dnd"
-        "mpris"
-        "notifications"
-      ];
+      widgets = [ "inhibitors" "dnd" "mpris" "notifications" ];
       widget-config = {
         title = {
           text = "Notifications";
           clear-all-button = true;
           button-text = "Clear All";
         };
-        dnd = {
-          text = "Do Not Disturb";
-        };
+        dnd = { text = "Do Not Disturb"; };
         mpris = {
           image-size = 96;
           blur = true;

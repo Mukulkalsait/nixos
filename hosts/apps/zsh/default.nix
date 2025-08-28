@@ -1,7 +1,6 @@
 # zsh.nix
 
-{ lib, config, pkgs, ...}:
-{
+{ lib, config, pkgs, ... }: {
 
   # Y: 👇 in .comfig/zsh/scripts/y.sh put this file 👇
   home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh;
@@ -16,86 +15,86 @@
 
     # Y: Commands to run as soon as zsh loaded 🔻 
     # initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: does same but we slightly extra works. so we dont need it..
-    initContent = '' source ~/.config/zsh/scripts/y.sh '';# B: we are sourcing file we defined at the top of this config.
+    initContent =
+      "source ~/.config/zsh/scripts/y.sh "; # B: we are sourcing file we defined at the top of this config.
 
-    shellAliases = 
-    let 
-    flakeDir = "~/flake"; 
-    in 
-    {
-        # G: Aliases 
-        rm="rm -i";
-        gpu = "git push";
-        cat = "bat";
+    shellAliases = let flakeDir = "~/flake";
+    in {
+      # G: Aliases 
+      rm = "rm -i";
+      gpu = "git push";
+      cat = "bat";
 
-        lsl="eza -lagh --icons --group-directories-first --git --sort name";
-        lsli="eza -laihgH --icons --group-directories-first --git --sort name";
+      lsl = "eza -lagh --icons --group-directories-first --git --sort name";
+      lsli = "eza -laihgH --icons --group-directories-first --git --sort name";
 
-        tt="zellij";
-        tth="zellij -l welcome";
-        tta="zellij a";
+      tt = "zellij";
+      tth = "zellij -l welcome";
+      tta = "zellij a";
 
-        # Y:  NIX os 
-        snrsf="sudo nixos-rebuild switch --flake /etc/nixos#PredatorNix";
-        deadNix="nix-store --ge --print-dead";
-        nixSize="du -sh /nix/store/";
-        nixVer="sudo nix-env -p /nix/var/nix/profiles/system"; # Y: Use => {--list-generatoins, --delete-generatinos }
-        nixOptimise="sudo nix store optimise";
-        # Y: Easy to learn but kept in case I forgot. 
-        # nixGarbage="nix-collect-garbage";
-        # nixGarbageD="nix-collect-garbage -d";
-        
-        
-        sw = "nh os switch";
-        upd = "nh os switch --update";
-        hms = "nh home switch";
-        pkgs = "nvim ${flakeDir}/nixos/packages.nix";
+      # Y:  NIX os 
+      snrsf = "sudo nixos-rebuild switch --flake /etc/nixos#PredatorNix";
+      deadNix = "nix-store --ge --print-dead";
+      nixSize = "du -sh /nix/store/";
+      nixVer =
+        "sudo nix-env -p /nix/var/nix/profiles/system"; # Y: Use => {--list-generatoins, --delete-generatinos }
+      nixOptimise = "sudo nix store optimise";
+      # Y: Easy to learn but kept in case I forgot. 
+      # nixGarbage="nix-collect-garbage";
+      # nixGarbageD="nix-collect-garbage -d";
 
-        # DX: CONFIGS
-        # IMP: config in nix.
-        nixConfig="sudo nvim /etc/nixos";
-        zshConfig="sudo nvim /etc/nixos/hosts/apps/zsh.nix";
-        hyprConfig="sudo nvim /etc/nixos/hosts/apps/hyprland/main.nix";
-        kittyConfig="sudo nvim /etc/nixos/hosts/apps/kitty.nix";
-        # IMP: config inside nix repo and imported but non nix.
-        ttConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/zellij/";
-        # IMP: config in local but imported in nix.
-        nvimConfig="nvim /home/mukuldk/1_file/2_git_repos/nvim/";
-        # IMP: config non NIX nor imported because they download there own files.
-        yaziConfig="nvim /home/mukuldk/.config/yazi/";
+      sw = "nh os switch";
+      upd = "nh os switch --update";
+      hms = "nh home switch";
+      pkgs = "nvim ${flakeDir}/nixos/packages.nix";
 
-        # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
-        
-        # Y: Movements
-        cdN="cd /etc/nixos/";
-        cdF="cd /home/mukuldk/1_file/";
-        cdG="cd /home/mukuldk/1_file/2_git_repos/";
-        cdD="cd /home/mukuldk/1_file/5_ZenDownloads/";
+      # DX: CONFIGS
+      # IMP: config in nix.
+      nixConfig = "sudo nvim /etc/nixos";
+      zshConfig = "sudo nvim /etc/nixos/hosts/apps/zsh.nix";
+      hyprConfig = "sudo nvim /etc/nixos/hosts/apps/hyprland/main.nix";
+      kittyConfig = "sudo nvim /etc/nixos/hosts/apps/kitty.nix";
+      # IMP: config inside nix repo and imported but non nix.
+      ttConfig = "sudo nvim /etc/nixos/hosts/apps/.config_local/zellij/";
+      # IMP: config in local but imported in nix.
+      nvimConfig = "nvim /home/mukuldk/1_file/2_git_repos/nvim/";
+      # IMP: config non NIX nor imported because they download there own files.
+      yaziConfig = "nvim /home/mukuldk/.config/yazi/";
 
-        # Y: costome
-        sysnmpp="sudo systemctl start nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
-        systnmpp="sudo systemctl stop nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
-        # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
-        # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
+      # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
 
-        suM="sudo su mukuldk";
-        findJava="readlink -f $(which java)";
+      # Y: Movements
+      cdN = "cd /etc/nixos/";
+      cdF = "cd /home/mukuldk/1_file/";
+      cdG = "cd /home/mukuldk/1_file/2_git_repos/";
+      cdD = "cd /home/mukuldk/1_file/5_ZenDownloads/";
 
-        # bashConfig="nvim ~/.bashrc";
-        # spfConfig="nvim ~/.config/superfile/config.toml";
-        # chownAll="sudo chown -R {user}:{group} ./*"
-        # chownAllM="sudo chown -R {user}:{group} ./*"
-        # dumpNvimConfig="cp -rv /home/mukuldk/.config/nvim /mnt/i/5.WSL/mukuldk"
-        # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
-        # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
+      # Y: costome
+      sysnmpp =
+        "sudo systemctl start nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
+      systnmpp =
+        "sudo systemctl stop nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
+      # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
+      # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
 
-      };
+      suM = "sudo su mukuldk";
+      findJava = "readlink -f $(which java)";
 
-   # oh-my-zsh = {
-   #  enable = true;
-   #  plugins = [ "git" "sudo" ];
-   #  theme = "robbyrussell";
-   # };
+      # bashConfig="nvim ~/.bashrc";
+      # spfConfig="nvim ~/.config/superfile/config.toml";
+      # chownAll="sudo chown -R {user}:{group} ./*"
+      # chownAllM="sudo chown -R {user}:{group} ./*"
+      # dumpNvimConfig="cp -rv /home/mukuldk/.config/nvim /mnt/i/5.WSL/mukuldk"
+      # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
+      # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
+
+    };
+
+    # oh-my-zsh = {
+    #  enable = true;
+    #  plugins = [ "git" "sudo" ];
+    #  theme = "robbyrussell";
+    # };
 
   };
 }

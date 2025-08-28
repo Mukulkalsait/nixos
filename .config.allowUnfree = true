@@ -1,0 +1,221 @@
+[33mcommit 7673087165c37fd906e0cd2438a670e5bc84f148[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 13:56:18 2025 +0530
+
+    update
+
+[33mcommit 0e5cc428328fad61286f8f1713599045b5846035[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 13:52:51 2025 +0530
+
+    update
+
+[33mcommit 1eeeead38c3abfadcb7622ea59a6e023090b8604[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 13:52:02 2025 +0530
+
+    update
+
+[33mcommit 454d060fae544b2c913bca678d81c42aac526fa2[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 13:18:40 2025 +0530
+
+    hyprland window + x and z are now alt and ctrl
+
+[33mcommit faa554f1c1a29c4f9cb65bfa0629691801f8b028[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 13:16:50 2025 +0530
+
+    hyprland window + x and z are now alt and ctrl
+
+[33mcommit caf5431f96f11248ca1a4c650326d529d5b171b4[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 12:49:54 2025 +0530
+
+    gen46 zellij config added in nix. + zsh aliass fixed|organised
+
+[33mcommit 6bd78acd4b6402d6caa5d8e48785cea384c3f1ff[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 12:43:17 2025 +0530
+
+    gen46 zellij config added in nix. + zsh aliass fixed|organised
+
+[33mcommit 82101de7fb271cdc806083a0ab35f63f080ce092[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 12:40:51 2025 +0530
+
+    gen46 zellij config added in nix. + zsh aliass fixed|organised
+
+[33mcommit d6d8105a360cde55bf36f52aa2cd06c638dffcf9[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 12:39:20 2025 +0530
+
+    gen46 zellij config added in nix. + zsh aliass fixed|organised
+
+[33mcommit a0bae2652616ef903dfa8b94824bf723432fc478[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 11:59:54 2025 +0530
+
+    gen46 updates
+
+[33mcommit 98f118c647658288f150e244bf469b0209ab96ec[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 11:56:11 2025 +0530
+
+    gen46_B y.sh added
+
+[33mcommit 29e5ec1c2a83b00a080edc805ffe4ebc83b73a53[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 11:53:00 2025 +0530
+
+    gen-46 y.sh is added in zsh with different aproch
+
+[33mcommit 2bdaecc04140a64e0aaa0929f9b35f180a8c4384[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 11:10:17 2025 +0530
+
+    gen-45_B nvidia-tools added
+
+[33mcommit 60f98382eb727ad6a8f28d16a11bf757a18f9455[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 11:01:20 2025 +0530
+
+    nvidia tools added gen 46may be
+
+[33mcommit d842b9eeb60c4e532b07aaee83892fc0da61e6cf[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 10:42:33 2025 +0530
+
+    mission-center added gen-45
+
+[33mcommit 198bde8a9060a2612b142f682f7deda5e8bcd2d0[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Thu Aug 28 08:44:22 2025 +0530
+
+    unkonwn
+
+[33mcommit f7c5a999629b39eaf28412add0ea6df4fd08fcc0[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Wed Aug 27 18:16:55 2025 +0530
+
+    yazi config
+
+[33mcommit bab121f013781b4340d5c263e745d15a17fa4320[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Wed Aug 27 18:10:13 2025 +0530
+
+    test
+
+[33mcommit aaa6a186e539ef070519e0d78476c8099fa6a4ca[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Wed Aug 27 18:08:33 2025 +0530
+
+    yazi cnfig added official yazi
+
+[33mcommit a8870090245ca9259b761568196b0d638eb73bed[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Wed Aug 27 17:55:21 2025 +0530
+
+    console font added
+
+[33mcommit 5ca64f183f1f763334e69ff705cc813153bcbb2e[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 23:39:06 2025 +0530
+
+    working may be
+
+[33mcommit 99df38f6ef9b5fc23ccdb2996f2a18488509d763[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 22:15:57 2025 +0530
+
+    greetd
+
+[33mcommit 0d5e03915e0b4edfbb95a7a2a3f6ef39f797453f[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 22:10:39 2025 +0530
+
+    tui greet
+
+[33mcommit 765660f115c0373269d81b4cbdf0edf3c8aa39e4[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 22:08:19 2025 +0530
+
+    greetd
+
+[33mcommit d5fbd7dbc506ac77ccb119b49f1f4a1cfad0f135[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 22:01:23 2025 +0530
+
+    configuration.nix splited into parts in sistem_apps/
+
+[33mcommit d8abc95646c2060bf15bce9847e9a31d4da2f025[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 21:34:32 2025 +0530
+
+    bindings = 85%+
+
+[33mcommit 176e70c6077da15c7e5c2b1ed7137f4f184a83f3[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 21:31:49 2025 +0530
+
+    keybinding = 80% +
+
+[33mcommit 9fbf33dda95edfa1786f35ae3ee81fe9cf2797d3[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 20:45:38 2025 +0530
+
+    full config for bindings
+
+[33mcommit 15d4b4299cbac983065cf7df4419f460026b1181[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 16:57:52 2025 +0530
+
+    super + f = fullscreen
+
+[33mcommit c66bb63cd9fa7ec2c0a2ae2e8f63ed059f0fdaf7[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 16:54:56 2025 +0530
+
+    👇❌ config change
+
+[33mcommit da1236fc279f51b9dd1a1676c38eb4f51379c200[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 16:48:51 2025 +0530
+
+    👇✅ this one is for Starship with toml
+
+[33mcommit 61eb40bf42c57445cffb12257a78937634e0de45[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 16:35:24 2025 +0530
+
+    config test
+
+[33mcommit cdb21db076a5de4c59ca37e39a93438cc4f58c45[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 16:31:02 2025 +0530
+
+    bindings + cursor speed
+
+[33mcommit 7630deff97db8784eb3bc9406349a5a9060751c2[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Tue Aug 26 16:09:46 2025 +0530
+
+    Binding Testings
+
+[33mcommit d7c69585047a1eb62a96a2547c0f8d707d9acf53[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Mon Aug 25 23:10:56 2025 +0530
+
+    FULLY WORKING VERSION WITHOUT MUCH CNOFIG BUT EVERYTING WORKS
+
+[33mcommit 6620910d8798e91ba6bbcc32c073e3386d6325a4[m
+Author: Mukulkalsait <mdk.121.72633.sg@gmail.com>
+Date:   Mon Aug 25 23:10:32 2025 +0530
+
+    FULLY WORKING VERSION WITHOUT MUCH CNOFIG BUT EVERYTING WORKS
+
+[33mcommit 6a2debbb5ac9e0ca78d660fce98fa088347d2b5f[m
+Author: Mukul_DK <126465196+Mukulkalsait@users.noreply.github.com>
+Date:   Tue Aug 26 00:09:57 2025 +0530
+
+    Initial commit

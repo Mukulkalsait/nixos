@@ -1,9 +1,7 @@
-
-{ config, pkgs, ...}:
-{
-   home.sessionVariables = {
-      TERMINAL = "kitty";
-      FILEMANAGER = "yazi";
-      EDITOR = "nvim";
-   };
+{ config, pkgs, ... }: {
+  home.sessionVariables = {
+    TERMINAL = "kitty";
+    FILEMANAGER = "yazi";
+    EDITOR = "nvim";
+  };
 }

@@ -22,7 +22,6 @@
       "$BROWSER" = "zen";
       "$TASKMANAGER" = "missioncenter";
 
-
       exec-once = [
         "waybar"
         "wl-paste --type text --watch cliphist store"
@@ -49,30 +48,24 @@
         active_opacity = 1.0;
         inactive_opacity = 0.8;
 
-        shadow = {
-          enabled = false;
-        };
+        shadow = { enabled = false; };
 
-        blur = {
-          enabled = false;
-        };
+        blur = { enabled = false; };
       };
 
-      animations = {
-        enabled = false;
-      };
+      animations = { enabled = false; };
 
       input = {
         kb_layout = "us,in";
         # kb_variant = "marathi";
-        repeat_delay = 280;   # like above
-        repeat_rate = 50;     # repeats per second
+        repeat_delay = 280; # like above
+        repeat_rate = 50; # repeats per second
       };
 
       gestures = {
         workspace_swipe = false;
         workspace_swipe_invert = false;
-        workspace_swipe_forever	= true;
+        workspace_swipe_forever = true;
       };
 
       dwindle = {
@@ -116,10 +109,7 @@
         "nofocus, class:^(xwaylandvideobridge)$"
       ];
 
-      workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
+      workspace = [ "w[tv1], gapsout:0, gapsin:0" "f[1], gapsout:0, gapsin:0" ];
     };
   };
 }

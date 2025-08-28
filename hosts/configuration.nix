@@ -1,21 +1,19 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix # Y: Hardware Config.
-      ./system_apps/user.nix
-      ./system_apps/git.nix
-      ./system_apps/greetd.nix
-      ./system_apps/nvidia.nix
+  imports = [
+    ./hardware-configuration.nix # Y: Hardware Config.
+    ./system_apps/user.nix
+    ./system_apps/git.nix
+    ./system_apps/greetd.nix
+    ./system_apps/nvidia.nix
 
-      inputs.home-manager.nixosModules.default
-      # ./system_apps/disabled.nix # Y: Unused lines moved here
-    ];
-
+    inputs.home-manager.nixosModules.default
+    # ./system_apps/disabled.nix # Y: Unused lines moved here
+  ];
 
   # Flake: 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -26,25 +24,26 @@
   nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "PredatorNix"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-   time.timeZone = "Asia/Kolkata";
+  time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
-   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable CUPS to print documents.
-   services.printing.enable = true;
+  services.printing.enable = true;
 
   # Enable sound.
-   services.pipewire = {
-     enable = true;
-     alsa.enable = true;
-     # alsa.support32bit = true; # does not exisists;
-     pulse.enable = true;
-     jack.enable = true;
-   };
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    # alsa.support32bit = true; # does not exisists;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true; 

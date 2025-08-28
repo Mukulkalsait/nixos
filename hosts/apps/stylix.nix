@@ -1,10 +1,7 @@
-{ pkgs, inputs, ... }: 
-{
-  imports = [
-  inputs.stylix.homeModules.stylix 
-  ];
+{ pkgs, inputs, ... }: {
+  imports = [ inputs.stylix.homeModules.stylix ];
   stylix.targets.kitty.enable = false;
-  stylix.targets.zen-browser.profileNames = ["mukul"];
+  stylix.targets.zen-browser.profileNames = [ "mukul" ];
 
   home.packages = with pkgs; [
     dejavu_fonts
@@ -23,7 +20,8 @@
   stylix = {
     enable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    base16Scheme =
+      "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
     targets = {
       neovim.enable = false;
@@ -71,7 +69,8 @@
     };
 
     image = pkgs.fetchurl {
-      url = "https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/raw/branch/master/png/gruvbox-dark-rainbow.png";
+      url =
+        "https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/raw/branch/master/png/gruvbox-dark-rainbow.png";
       sha256 = "036gqhbf6s5ddgvfbgn6iqbzgizssyf7820m5815b2gd748jw8zc";
     };
   };

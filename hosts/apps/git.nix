@@ -1,16 +1,14 @@
-
 # git.nix
 
-{ lib, config, pkgs, ...}:
-{
+{ lib, config, pkgs, ... }: {
 
- # Git
+  # Git
 
- # programs.git = {
- #  enable = true;
- #  userName = "Mukulkalsait";
- #  userEmail = "mdk.121.72633.sg@gmail.com";
- # };
+  # programs.git = {
+  #  enable = true;
+  #  userName = "Mukulkalsait";
+  #  userEmail = "mdk.121.72633.sg@gmail.com";
+  # };
 
   programs.git = {
     enable = true;

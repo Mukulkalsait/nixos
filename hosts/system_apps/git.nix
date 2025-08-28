@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   programs.git.enable = true;
   environment.etc."gitconfig".text = ''
     [user]
