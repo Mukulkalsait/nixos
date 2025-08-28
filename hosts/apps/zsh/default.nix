@@ -9,7 +9,13 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    history.size = 10000;
+    history.path = "${config.xdg.dataHome}/zsh/history";
 
+    # Y: 👇 in .comfig/zsh/scripts/y.sh put this file 👇
+    home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh;
+    # Y: Commands to run as soon as zsh loaded 🔻 
+    initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: we are sourcing above fiel
 
     shellAliases = 
     let 
@@ -64,9 +70,6 @@
         # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
         # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
 
-
-
-
       };
 
    # oh-my-zsh = {
@@ -75,34 +78,5 @@
    #  theme = "robbyrussell";
    # };
 
-    history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
-
-    # initExtra = ''
-    #   # Start Tmux automatically if not already running. No Tmux in TTY
-    #   if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
-    #     tmux attach-session -t default || tmux new-session -s default
-    #   fi
-    #
-    #   # Start UWSM
-    #   if uwsm check may-start > /dev/null && uwsm select; then
-    #     exec systemd-cat -t uwsm_start uwsm start default
-    #   fi
-    # '';
   };
-
-
-# ===========================================================
-
-
-  # programs.fzf = {
-  # enable = true;
-  # enableZshIntegration = true;
-  # };
-  
-  
-  # programs.zoxide = {
-  # enable = true;
-  # enableZshIntegration = true; # provides `z` command without touching `cd`
-  # };
 }
