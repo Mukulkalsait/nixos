@@ -7,6 +7,7 @@
     ./swaync
     ./waybar
     ./wofi
+    # ./hyperpaper
 
     # Y: Files
     ./apps.nix

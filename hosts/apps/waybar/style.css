@@ -1,72 +1,120 @@
 * {
   border: none;
-  border-radius: 0px;
   font-family: "JetBrains Mono";
-  font-weight: bold;
-  font-size: 16px;
+  font-size: 12px;
   min-height: 0;
   color: #ebdbb2;
 }
 
 window#waybar {
-  background: #1d2021;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* Workspace Buttons */
-#workspaces button label{
+#workspaces button label {
+  font-size: 16px;
   color: #ebdbb2;
-  padding: 0 10px;
+  padding: 0 8px;
+  border-radius: 0 0 0 0;
 }
 #workspaces button.active label {
+  min-width: 30px;
+  font-size: 18px;
   color: #1d2021;
+  border-radius: 0 0 0 0;
 }
 #workspaces button.active {
+  min-width: 30px;
+  font-size: 18px;
   background: #d65d0e;
+  border-radius: 0 0 0 0;
 }
 
-#clock, #battery, #pulseaudio, #tray, #language, #weather {
+#clock,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#pulseaudio,
+#network,
+#backlight,
+#tray,
+#weather {
   padding: 0 10px;
   margin: 0 10px;
 }
 
-#language {
+#clock {
   margin: 0;
-  color: #d79921;
-  border-bottom: 5px solid #d79921;
+  color: #458588;
+  border-bottom: 5px solid #458588;
+  border-radius: 0pt 0 10pt 0;
 }
 
-#custom-weather {
+#cpu {
   margin: 0;
-  color: #98971a;
-  border-bottom: 5px solid #98971a
+  color: #b16286;
+  border-bottom: 5px solid #b16286;
+  border-radius: 0pt 0 10pt 0;
+}
+
+#memory {
+  margin: 0;
+  color: #d65d0e;
+  border-bottom: 5px solid #d65d0e;
+  border-radius: 0pt 0 10pt 0;
+}
+
+#temperature {
+  margin: 0;
+  color: #689d6a;
+  border-bottom: 5px solid #689d6a;
+  border-radius: 0pt 0 10pt 0;
+}
+/* ------------------------------- */
+
+#tray {
+  margin: 0;
+  color: #d65d0e;
+  border-bottom: 5px solid #d65d0e;
+  border-radius: 0pt 0 0pt 10;
 }
 
 #pulseaudio {
   margin: 0;
   color: #689d6a;
   border-bottom: 5px solid #689d6a;
+  border-radius: 0pt 0 0pt 10;
 }
 
 #pulseaudio.muted {
   padding: 0 20px;
   color: #cc241d;
+  border-radius: 0pt 0 0pt 10;
   border-bottom: 5px solid #cc241d;
+}
+
+#network {
+  margin: 0;
+  color: #d65d0e;
+  border-radius: 0pt 0 0pt 10;
+  border-bottom: 5px solid #d65d0e;
+}
+
+#backlight {
+  margin: 0;
+  color: #b16286;
+  border-bottom: 5px solid #b16286;
+  border-radius: 0pt 0 0pt 10;
 }
 
 #battery {
   margin: 0;
   color: #458588;
   border-bottom: 5px solid #458588;
+  border-radius: 0pt 0 0pt 10;
 }
 
-#clock {
-  margin: 0;
-  color: #b16286;
-  border-bottom: 5px solid #b16286;
-}
-
-#tray {
-  margin: 0;
-  color: #d65d0e;
-  border-bottom: 5px solid #d65d0e;
-}
+/* modules-left = [ "clock" "cpu" "mem" "temp" ]; */
+/* modules-center = [ "hyprland/workspaces" ]; */
+/* modules-right = [ "tray" "pulseaudio" "network" "backlight" "battery" ]; */

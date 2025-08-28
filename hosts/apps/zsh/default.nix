@@ -55,6 +55,7 @@
       # IMP: config in nix.
       nixConfig = "sudo nvim /etc/nixos";
       zshConfig = "sudo nvim /etc/nixos/hosts/apps/zsh/default.nix";
+      wbrConfig = "sudo nvim /etc/nixos/hosts/apps/waybar/default.nix";
       hyprConfig = "sudo nvim /etc/nixos/hosts/apps/hyprland/main.nix";
       kittyConfig = "sudo nvim /etc/nixos/hosts/apps/kitty.nix";
       # IMP: config inside nix repo and imported but non nix.
