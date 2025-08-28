@@ -1,0 +1,14 @@
+{ config, pkgs, ... }: {
+  programs.waybar = {
+    enable = true;
+    # package = pkgs.neovim; # orignal
+    # package = pkgs.neovim-nightly; # we have to pass it from flakes. 
+    # Do not use extraConfig here, instead point to your repo
+  };
+
+  # home.file.".config/nvim".source = /home/mukuldk/1_file/2_git_repos/waybar; 
+  home.file.".config/waybar".source = config.lib.file.mkOutOfStoreSymlink
+    "/home/mukuldk/1_file/2_git_repos/waybar";
+
+}
+
