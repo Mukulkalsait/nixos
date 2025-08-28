@@ -35,6 +35,9 @@
     # TUI Utils : 
     btop 
 
+    # GPU: 
+    nvtopPackages.full nvidia-smi
+
 
   ];
 
