@@ -40,14 +40,11 @@
     # CLI Utils:
     bat
     eza
-    fzf
-    fastfetch
-    ripgrep
+    diskonaut
 
     # Programing Languages:
     nodejs
     bun
-    cargo
 
     # LSPs: 
     python312Packages.rstcheck # RUST
@@ -72,5 +69,7 @@
 
     # Other: bemoji nix-prefetch-scripts
   ];
+
+  home.sessionPath = [ "$HOME/.cargo/bin" ];
 }
 

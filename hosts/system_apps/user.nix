@@ -43,6 +43,9 @@
     fd
     ripgrep
     glib
+    fzf
+    fastfetch
+    ripgrep
 
     # CLI Utils : 
     p7zip
@@ -59,8 +62,6 @@
     nvtopPackages.full
 
   ];
-
-  home.sessionPath = [ "$HOME/.cargo/bin" ];
 
   programs.zsh.enable = true;
 
