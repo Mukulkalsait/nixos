@@ -29,8 +29,8 @@
       ];
 
       general = {
-        gaps_in = 0;
-        gaps_out = 0;
+        gaps_in = 1;
+        gaps_out = 3;
         border_size = 1;
 
         "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 45deg";
@@ -39,21 +39,30 @@
         resize_on_border = true;
 
         allow_tearing = false;
-        layout = "master";
+        layout = "split";
       };
 
       decoration = {
-        rounding = 0;
-
+        rounding = 3;
         active_opacity = 1.0;
         inactive_opacity = 0.8;
-
         shadow = { enabled = false; };
-
         blur = { enabled = false; };
       };
 
-      animations = { enabled = false; };
+      animations = {
+        enabled = true;
+        # Smooth, fast animations
+        bezier = [ "myBezier, 0.05, 0.9, 0.1, 1.0" ];
+
+        animation = [
+          "windows, 1, 4, myBezier"
+          "windowsOut, 1, 3, default"
+          "border, 1, 6, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 4, default"
+        ];
+      };
 
       input = {
         kb_layout = "us,in";
@@ -75,7 +84,7 @@
 
       master = {
         new_status = "slave";
-        new_on_top = true;
+        new_on_top = false;
         mfact = 0.5;
       };
 

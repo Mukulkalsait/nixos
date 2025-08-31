@@ -35,5 +35,6 @@
     TERMINAL = "kitty";
     FILEMANAGER = "yazi";
     EDITOR = "nvim";
+    CARGO_TARGET_DIR = "${config.home.homeDirectory}/.cargo/target";
   };
 }
