@@ -40,7 +40,9 @@
     # CLI Utils:
     bat
     eza
-    diskonaut
+    rustscan
+    dua
+    dust
 
     # Programing Languages:
     nodejs

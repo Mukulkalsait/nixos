@@ -28,11 +28,18 @@
     # Lang : 
     cargo
     gcc
+    gnumake
     cmake
     python3
     lua
     luarocks
     (python3.withPackages (ps: with ps; [ pynvim ]))
+
+    # Kernal Related
+    linuxPackages.kernel.dev
+    pkg-config
+    bc
+    elfutils
 
     # CLI Essentilas:
     git

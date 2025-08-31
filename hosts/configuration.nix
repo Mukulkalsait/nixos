@@ -46,8 +46,11 @@
   services.printing.enable = false; # Enable CUPS to print documents.
   # services.modemmanager.enable = false; Y: variable not avialable error.
 
-  virtualisation.docker.enable = true; # service enabled.
-  virtualisation.docker.enableOnBoot = false; # DX: Systemctl
+  virtualisation.docker = {
+    enable = true; # service enabled
+    enableOnBoot = false; # systemctl service stoped
+  };
+
   users.users.mukuldk.extraGroups = [ "docker" ]; # group add to user.
 
   # Y: (Optional) Podman alongside Docker.
