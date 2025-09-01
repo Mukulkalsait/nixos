@@ -15,7 +15,7 @@
     hyprpicker
     w3m
     wtype
-    hyprpaper
+    swww
     wl-clipboard
     wev
 
