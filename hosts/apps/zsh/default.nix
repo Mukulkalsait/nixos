@@ -27,6 +27,7 @@
 
       lsl = "eza -lagh --icons --group-directories-first --git --sort name";
       lsli = "eza -laihgH --icons --group-directories-first --git --sort name";
+      lsd = "lazydocker";
 
       tt = "zellij";
       tth = "zellij -l welcome";
@@ -49,7 +50,6 @@
       upd = "nh os switch --update";
       hms = "nh home switch";
       pkgs = "nvim ${flakeDir}/nixos/packages.nix";
-      lad = "lazydocker";
 
       # DX: CONFIGS
       # IMP: config in nix.
@@ -108,4 +108,8 @@
     # };
 
   };
+  # initExtra = ''
+  #   export EDITOR="nvim"
+  #   export VISUAL="nvim"
+  # '';
 }

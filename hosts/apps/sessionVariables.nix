@@ -3,5 +3,6 @@
     TERMINAL = "kitty";
     FILEMANAGER = "yazi";
     EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 }
