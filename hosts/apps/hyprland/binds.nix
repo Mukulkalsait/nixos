@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 # let
 # Y: EXAPMPE OF WRITING SCRIPTS.
 #-----------------------------------
@@ -114,6 +114,9 @@
       "$mainMod ALT, L, resizeactive,  30 0"
       "$mainMod ALT, K, resizeactive,  0 -30"
       "$mainMod ALT, J, resizeactive,  0  30"
+
+      # FUN_1: costume script:
+      "$mainMod ALT, W, exec, ${config.home.homeDirectory}/.config/swww/change.sh"
 
       # DX: IMPORTED BUT NOT ACTIVATED AS WE DONT HAHVE THE SCRIPTS
       #  $mainMod Alt, k,  exec, $scrPath/wbarconfgen.sh n # next waybar mode

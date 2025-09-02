@@ -25,6 +25,8 @@
 
       exec-once = [
         "waybar"
+        "swww-daemon &"
+
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
       ];
@@ -121,6 +123,9 @@
 
       workspace = [ "w[tv1], gapsout:0, gapsin:0" "f[1], gapsout:0, gapsin:0" ];
     };
+    # extraConfig = ''
+    #   source = ~/.config/hypr/swww.conf
+    # '';
   };
   imports = [ ./swww.nix ];
 }
