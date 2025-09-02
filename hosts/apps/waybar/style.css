@@ -113,5 +113,5 @@ window#waybar {
 #workspaces button.active {
   padding: 3px 10px;
   border-radius: 5pt 5pt 5pt 5pt;
-  border-bottom: 2px solid #d65d0e;
+  border-bottom: 3px solid #d65d0e;
 }
