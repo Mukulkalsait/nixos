@@ -93,23 +93,25 @@ window#waybar {
   color: #458588;
   border-color: #458588;
 }
+#workspaces {
+  padding: 3px 8px;
+  margin: 2px 4px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 10pt 10pt 10pt 10pt;
+}
 
 /* Workspace Buttons */
 #workspaces button label {
-  font-size: 16px;
-  color: #000000;
-  padding: 2px 2px;
-  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 18px;
 }
 #workspaces button.active label {
   padding: 0 0;
-  min-width: 30px;
-  font-size: 18px;
-  background: rgba(0, 0, 0, 0);
+  border-radius: 50%;
 }
 #workspaces button.active {
-  min-width: 30px;
-  font-size: 22px;
-  background: #d65d0e;
-  border-radius: 0 0 0 0;
+  padding: 3px 10px;
+  border-radius: 5pt 5pt 5pt 5pt;
+  border-bottom: 2px solid #d65d0e;
 }

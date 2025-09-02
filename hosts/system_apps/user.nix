@@ -24,6 +24,8 @@
     zsh
     wl-clipboard
     wlr-randr
+    dive
+    kdash
 
     # Lang : 
     cargo
@@ -34,6 +36,7 @@
     lua
     luarocks
     (python3.withPackages (ps: with ps; [ pynvim ]))
+    uv
 
     # Kernal Related
     linuxPackages.kernel.dev
@@ -61,6 +64,7 @@
     neovim
     starship
     yazi
+    pinta
 
     # TUI Utils : 
     btop

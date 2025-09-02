@@ -25,9 +25,9 @@ in {
       --transition-step 90 \
       --transition-fps 60 \
       --transition-type any \
-      --transition-duration 2 \
+      --transition-duration 1 \
       --resize crop \
-      --transition-bezier 0.55,0.055,0.675,0.19
+      --transition-bezier 0.55,0.055,0.675,0.09
   '';
   xdg.configFile."swww/change.sh".executable = true;
 
