@@ -14,6 +14,7 @@ in {
       --transition-step 90 \
       --transition-fps 60 \
       --transition-type any \
+      --transition-duration 4 \
       --resize crop
   '';
   xdg.configFile."swww/start.sh".executable = true;
@@ -25,7 +26,7 @@ in {
       --transition-step 90 \
       --transition-fps 60 \
       --transition-type any \
-      --transition-duration 1 \
+      --transition-duration 2 \
       --resize crop \
       --transition-bezier 0.55,0.055,0.675,0.09
   '';
