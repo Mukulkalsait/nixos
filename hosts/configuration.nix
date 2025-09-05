@@ -28,6 +28,12 @@
   hardware.bluetooth.enable = true; # Enable Bluetooth
   services.blueman.enable = true; # optional: nice GTK tray app
 
+  # Thunderbolt / USB4 support
+  services.bolt.enable = true;
+
+  # Optional but useful for hotplugging
+  services.udev.packages = [ pkgs.bolt ];
+
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
