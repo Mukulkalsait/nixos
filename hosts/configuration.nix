@@ -28,13 +28,6 @@
   hardware.bluetooth.enable = true; # Enable Bluetooth
   services.blueman.enable = true; # optional: nice GTK tray app
 
-  # Thunderbolt / USB4 support
-  programs.bolt.enable = true; # Y: formaly => services.bolt.enable = true;
-  # IMP: formaly services.<name> is changed to programs.<name>
-
-  # Optional but useful for hotplugging
-  services.udev.packages = [ pkgs.bolt ];
-
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
@@ -52,6 +45,16 @@
 
   services.printing.enable = false; # Enable CUPS to print documents.
   # services.modemmanager.enable = false; Y: variable not avialable error.
+
+  # Y: THUNDERBOLT
+  services.hardware.bolt.enable = true;
+  # Enable Bolt daemon for Thunderbolt device management
+  boot.kernelModules = [ "thunderbolt" "usb_storage" "uas" ];
+  # Enable Thunderbolt support in the kernel Optional: Enable USB support (usually already enabled)
+  services.udev.packages = [ pkgs.bolt ];
+  # Optional: Add udev rules for better device handling
+  services.power-profiles-daemon.enable = true; # or use tlp
+  # For better power management of Thunderbolt devices
 
   virtualisation.docker = {
     enable = true; # service enabled

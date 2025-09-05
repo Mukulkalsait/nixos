@@ -43,6 +43,8 @@
     pkg-config
     bc
     elfutils
+    usbutils # for usb
+    bolt # CLI =>Thunderbolt devices
 
     # CLI Essentilas:
     git
