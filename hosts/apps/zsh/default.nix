@@ -86,6 +86,8 @@
 
       chownMK =
         "sudo chown -R mukuldk:users ./* && sudo chown -R mukuldk:users ./.*";
+      mChose =
+        "nix run nixpkgs#chromium -- --enable-experimental-web-platform-features";
 
       # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
       # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
