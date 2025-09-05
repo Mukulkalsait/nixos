@@ -12,6 +12,7 @@
     # Y: Files
     ./apps.nix
     # ./sessionVariables.nix
+    ./mchose_ace_68.nix
     ./starship
     ./eza.nix
     ./stylix.nix

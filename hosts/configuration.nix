@@ -71,6 +71,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true; 
 
+  # Y : Mchose extras
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="41e4", ATTRS{idProduct}=="2116", MODE="0666"
+  '';
+
   # DX: don not change after this --------------------------------------------------------------------------------------------------------------------------------|
   #
   # This option defines the first version of NixOS you have installed on this particular machine,
