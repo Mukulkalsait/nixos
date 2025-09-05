@@ -29,7 +29,8 @@
   services.blueman.enable = true; # optional: nice GTK tray app
 
   # Thunderbolt / USB4 support
-  services.bolt.enable = true;
+  programs.bolt.enable = true; # Y: formaly => services.bolt.enable = true;
+  # IMP: formaly services.<name> is changed to programs.<name>
 
   # Optional but useful for hotplugging
   services.udev.packages = [ pkgs.bolt ];
