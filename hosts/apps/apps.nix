@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
 
     # Window Mmanager: 
-    libsForQt5.xwaylandvideobridge
     libnotify
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland

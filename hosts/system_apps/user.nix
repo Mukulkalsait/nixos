@@ -45,7 +45,6 @@
     elfutils
     usbutils # for usb
     bolt # CLI =>Thunderbolt devices
-    nbfc-linux # FAN Controller for linux.
 
     # CLI Essentilas:
     git

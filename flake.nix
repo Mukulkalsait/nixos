@@ -31,6 +31,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nbfc-linux = {
+      url = "github:nbfc-linux/nbfc-linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #  Neovim NIGHTLY OVERLAY
     # neovim-nightly-overlay = { url = "github:nix-community/neovim-nightly-overlay"; };
 
@@ -39,7 +44,8 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, nbfc-linux
+    , ... }@inputs:
     let
       # Y: VARIALBES =>
       system = "x86_64-linux";
