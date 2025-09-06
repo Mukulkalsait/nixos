@@ -33,22 +33,36 @@
 
       general = {
         gaps_in = 1;
-        gaps_out = 3;
-        border_size = 1;
+        gaps_out = 1;
+        border_size = 2;
 
-        "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 45deg";
-        "col.inactive_border" = "rgba(3c3836ff)";
+        "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 90deg";
+        "col.inactive_border" = "rgba(3c3836aa)";
+
+        # "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 45deg";
+        # "col.inactive_border" = "rgba(3c3836ff)";
 
         resize_on_border = true;
 
         allow_tearing = false;
-        layout = "split";
+        layout = "dwindle"; # master, dwindle
+      };
+
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
+
+      master = {
+        new_status = "slave";
+        new_on_top = false;
+        mfact = 0.5;
       };
 
       decoration = {
         rounding = 3;
         active_opacity = 1.0;
-        inactive_opacity = 0.8;
+        inactive_opacity = 1.0;
         shadow = { enabled = false; };
         blur = { enabled = false; };
       };
@@ -80,20 +94,9 @@
         workspace_swipe_forever = true;
       };
 
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
-
-      master = {
-        new_status = "slave";
-        new_on_top = false;
-        mfact = 0.5;
-      };
-
       misc = {
         force_default_wallpaper = 0;
-        disable_hyprland_logo = true;
+        disable_hyprland_logo = false;
       };
 
       windowrulev2 = [

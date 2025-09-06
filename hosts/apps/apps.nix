@@ -10,7 +10,9 @@
     # DX:TEMPERORY
     stress-ng # stress test cpu
     mesa-demos # stress test gpu
-    unigine-heaven # stress test gpu HEAVY
+    blender # stress test gpu Heavy
+    glmark2 # stress test gpu
+    mangohud # stress test gpu
 
     # Window Mmanager: 
     libnotify

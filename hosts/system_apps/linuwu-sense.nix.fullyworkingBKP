@@ -16,7 +16,9 @@ let
     nativeBuildInputs = with pkgs; [ pkg-config kmod gcc gnumake ];
     buildInputs = [ kernel.dev ]; # Kernel development files
 
-    makeFlags = [ "hardware.i2c.enable = true" ];
+    makeFlags =
+      [ "KERNELDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build" ];
+
     preBuild = ''
       echo "Kernel directory: ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
       ls -ld ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build || echo "Kernel build directory not found"
@@ -32,12 +34,11 @@ let
     installPhase = ''
       mkdir -p $out/lib/modules/${kernel.modDirVersion}/extra
       cp src/linuwu_sense.ko $out/lib/modules/${kernel.modDirVersion}/extra/
-      echo "Installed module to: $out/lib/modules/${kernel.modDirVersion}/extra/linuwu_sense.ko"
     '';
 
     postInstall = ''
+      # Ensure module dependencies are updated
       ${pkgs.kmod}/bin/depmod -a -b $out ${kernel.modDirVersion}
-      echo "Ran depmod for kernel ${kernel.modDirVersion}"
     '';
 
     meta = with lib; {
@@ -50,10 +51,6 @@ let
 in {
   boot.extraModulePackages = [ linuwu-sense ];
   boot.kernelModules = [ "linuwu_sense" ];
-  boot.blacklistedKernelModules = [ "acer_wmi" ]; # Prevents conflicts
-  # Set sysfs permissions at boot
-  boot.postBootCommands = ''
-    ${pkgs.kmod}/bin/depmod -a ${kernel.modDirVersion}
-    chmod 666 /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/* 2>/dev/null || true
-  '';
+  boot.blacklistedKernelModules =
+    [ "acer_wmi" ]; # Prevents conflicts with stock module
 }

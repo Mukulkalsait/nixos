@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 let
-  kernel = pkgs.linuxPackages_latest.kernel; # Reference the running kernel
+  kernel = pkgs.linuxPackages_latest.kernel;
   linuwu-sense = pkgs.stdenv.mkDerivation rec {
     pname = "linuwu-sense";
     version = "unstable-2025-09-06";
@@ -9,12 +9,12 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "0x7375646F";
       repo = "Linuwu-Sense";
-      rev = "main"; # Or a specific commit hash for reproducibility
+      rev = "main";
       sha256 = "sha256-qznkPBxPFyjJBcMF0EyIWiU8x0ZMKSDJDMzJMFGmg/0=";
     };
 
     nativeBuildInputs = with pkgs; [ pkg-config kmod gcc gnumake ];
-    buildInputs = [ kernel.dev ]; # Kernel development files
+    buildInputs = [ kernel.dev ];
 
     makeFlags =
       [ "KERNELDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build" ];
@@ -34,11 +34,12 @@ let
     installPhase = ''
       mkdir -p $out/lib/modules/${kernel.modDirVersion}/extra
       cp src/linuwu_sense.ko $out/lib/modules/${kernel.modDirVersion}/extra/
+      echo "Installed module to: $out/lib/modules/${kernel.modDirVersion}/extra/linuwu_sense.ko"
     '';
 
     postInstall = ''
-      # Ensure module dependencies are updated
       ${pkgs.kmod}/bin/depmod -a -b $out ${kernel.modDirVersion}
+      echo "Ran depmod for kernel ${kernel.modDirVersion}"
     '';
 
     meta = with lib; {
@@ -51,6 +52,11 @@ let
 in {
   boot.extraModulePackages = [ linuwu-sense ];
   boot.kernelModules = [ "linuwu_sense" ];
-  boot.blacklistedKernelModules =
-    [ "acer_wmi" ]; # Prevents conflicts with stock module
+  boot.blacklistedKernelModules = [ "acer_wmi" ];
+  boot.postBootCommands = ''
+    ${pkgs.kmod}/bin/depmod -a ${kernel.modDirVersion}
+    find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 666 {} \; 2>/dev/null || true
+    echo 1 | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter 2>/dev/null || true
+    echo "Set permissions and battery limit for linuwu_sense"
+  '';
 }

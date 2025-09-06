@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   # NVIDIA: 
   services.xserver.videoDrivers = [ "nvidia" ];
 
@@ -14,6 +14,11 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     forceFullCompositionPipeline = false;
+    prime = {
+      offload.enable = true;
+      intelBusId = "PCI:0:2:0"; # Matches 00:02.0
+      nvidiaBusId = "PCI:1:0:0"; # Matches 01:00.0
+    };
   };
 }
 
