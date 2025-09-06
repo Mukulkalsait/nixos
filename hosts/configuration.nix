@@ -7,6 +7,7 @@
     ./system_apps/git.nix
     ./system_apps/greetd.nix
     ./system_apps/nvidia.nix
+    ./system_apps/nbfc.nix
     ./system_apps/mchose_ace_68.nix
 
     inputs.home-manager.nixosModules.default
@@ -23,8 +24,12 @@
   # boot.loader.systemd-boot.editor = false; # optional: hide editor
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   nixpkgs.config.allowUnfree = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Enable Kernal MODULES Thunderbolt USB ec_sys<for fan contorl>
+  boot.kernelModules = [ "thunderbolt" "usb_storage" "uas" "ec_sys" ];
+  # Enable Kernal parameters 
+  boot.kernelParams = [ "acpi_ec.gpe_debug=1" ];
 
   networking.hostName = "PredatorNix"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -52,8 +57,6 @@
   # Y: THUNDERBOLT
   services.hardware.bolt.enable = true;
   # Enable Bolt daemon for Thunderbolt device management
-  boot.kernelModules = [ "thunderbolt" "usb_storage" "uas" ];
-  # Enable Thunderbolt support in the kernel Optional: Enable USB support (usually already enabled)
   services.udev.packages = [ pkgs.bolt ];
   # Optional: Add udev rules for better device handling
   services.power-profiles-daemon.enable = true; # or use tlp
@@ -75,30 +78,9 @@
   # services.libinput.enable = true; 
 
   # Y:  FAN CONTROLL SERVICES
-  environment.etc."nbfc/configs/predator_neo16_phn16-71.json" = {
-    source = ./source_files/predator_neo16_phn16-71.json;
-    # ./predator_neo16_phn16-71.json; # Adjust path as needed
-  };
-  environment.etc."nbfc/nbfc.json".text = ''
-    {
-      "SelectedConfigId": "predator_neo16_phn16-71",
-      "EmbeddedControllerType": "ec_sys",
-      "TargetFanSpeeds": []
-    }
-  '';
-
-  systemd.services.nbfc = {
-    description = "NoteBook FanControl service";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart =
-        "${pkgs.nbfc-linux}/bin/nbfc_service --config-file /etc/nbfc/nbfc.json";
-      ExecStop = "${pkgs.nbfc-linux}/bin/nbfc stop";
-      Restart = "on-failure";
-      User = "root";
-    };
-  };
+  # environment.etc."nbfc/configs/predator_neo16_phn16-71.json" = {
+  #   source = ./source_files/predator_neo16_phn16-71.json;
+  # };
 
   # Y : Mchose extras
   services.udev.extraRules = ''
