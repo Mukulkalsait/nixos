@@ -27,8 +27,8 @@
     bind = [
 
       # Y: Application:
-      "$mainMod, K, exec, $TERMINAL"
-      "$mainMod Alt, T,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
+      "$mainMod, I, exec, $TERMINAL"
+      "$mainMod Alt, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
       "$mainMod, B,  exec, $BROWSER"
       "$mainMod, N,  exec,$TERMINAL -e $EDITOR"
       "CTRL SHIFT, Escape,  exec, $TASKMANAGER"

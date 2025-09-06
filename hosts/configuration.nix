@@ -18,7 +18,9 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 8; # keep only last 8 entries
   boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.editor = false; # optional: hide editor
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -71,6 +73,32 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true; 
+
+  # Y:  FAN CONTROLL SERVICES
+  environment.etc."nbfc/configs/predator_neo16_phn16-71.json" = {
+    source = ./source_files/predator_neo16_phn16-71.json
+    # ./predator_neo16_phn16-71.json; # Adjust path as needed
+  };
+  environment.etc."nbfc/nbfc.json".text = ''
+    {
+      "SelectedConfigId": "predator_neo16_phn16-71",
+      "EmbeddedControllerType": "ec_sys",
+      "TargetFanSpeeds": []
+    }
+  '';
+
+  systemd.services.nbfc = {
+    description = "NoteBook FanControl service";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart =
+        "${pkgs.nbfc-linux}/bin/nbfc_service --config-file /etc/nbfc/nbfc.json";
+      ExecStop = "${pkgs.nbfc-linux}/bin/nbfc stop";
+      Restart = "on-failure";
+      User = "root";
+    };
+  };
 
   # Y : Mchose extras
   services.udev.extraRules = ''
