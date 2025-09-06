@@ -28,6 +28,6 @@ in {
   };
 
   environment.etc."nbfc/configs/predator_neo16_phn16-71.json" = {
-    source = ./source_files/predator_neo16_phn16-71.json;
+    source = /etc/nixos/hosts/source_files/predator_neo16_phn16-71.json;
   };
 }
