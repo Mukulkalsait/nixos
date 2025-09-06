@@ -7,6 +7,10 @@
   # Minimal user packages (keep it simple for now)
   home.packages = with pkgs; [
 
+    # DX:TEMPERORY
+    stress-ng # stress test cpu
+    mesa-demos # stress test gpu
+
     # Window Mmanager: 
     libnotify
     xdg-desktop-portal-gtk

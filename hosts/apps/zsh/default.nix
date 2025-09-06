@@ -86,8 +86,20 @@
 
       chownMK =
         "sudo chown -R mukuldk:users ./* && sudo chown -R mukuldk:users ./.*";
+
+      # Y: MCHOSE ace 68 FE
       mChose =
         "nix run nixpkgs#chromium -- --enable-experimental-web-platform-features";
+
+      # Y: fan speeds
+      fan-max =
+        "echo '100,100' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
+      fan-auto =
+        "echo '0,0' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
+      fan-medium =
+        "echo '50,50' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
+      rgb-blue =
+        "echo '0,100,0,0,0,255,0,0,255,0,0,255,0,0,255' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/four_zone_mode";
 
       # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
       # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
