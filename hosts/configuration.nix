@@ -7,6 +7,7 @@
     ./system_apps/git.nix
     ./system_apps/greetd.nix
     ./system_apps/nvidia.nix
+    ./system_apps/linuwu-sense.nix
     ./system_apps/mchose_ace_68.nix
 
     inputs.home-manager.nixosModules.default
