@@ -100,6 +100,7 @@
         "echo '50,50' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
       rgb-blue =
         "echo '0,100,0,0,0,255,0,0,255,0,0,255,0,0,255' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/four_zone_mode";
+      DispleySensors = "watch -n 1 sensors";
 
       # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
       # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
