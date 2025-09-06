@@ -26,6 +26,7 @@
     wlr-randr
     dive
     kdash
+    lm_sensors # for senseor of laptop
 
     # Lang : 
     cargo

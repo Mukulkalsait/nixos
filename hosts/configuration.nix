@@ -34,6 +34,7 @@
   networking.hostName = "PredatorNix"; # Define your hostname.
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true; # Enable Bluetooth
+  hardware.i2c.enable = true; # Enable sensors.
   services.blueman.enable = true; # optional: nice GTK tray app
 
   # Set your time zone.
