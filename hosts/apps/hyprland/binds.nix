@@ -39,7 +39,7 @@
       # Y: EXIT
       "$mainMod, Q, killactive,"
       "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
-      "$mainMod SHIFT, Q, exit,"
+      "$mainMod SHIFT, 0, exit,"
       "$mainMod, F,  fullscreen"
       "$mainMod SHIFT, F, togglefloating," # TAG: flooting window vc connect window
       # Y: ScratchPad

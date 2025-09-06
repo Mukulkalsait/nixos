@@ -1,33 +1,33 @@
 # nbfc.nix
-# Y:  FAN CONTROLL SERVICES
 { config, inputs, pkgs, ... }:
-let
-  myUser = "mukuldk"; # adjust this to your username
-  command =
-    "bin/nbfc_service --config-file '/home/${myUser}/.config/nbfc.json'";
+let myUser = "mukuldk";
 in {
-  environment.systemPackages = with pkgs;
-    [
-      # if you are on stable uncomment the next line
-      # inputs.nbfc-linux.packages.x86_64-linux.default
-      # if you are on unstable uncomment the next line
-      nbfc-linux
-    ];
+  environment.systemPackages = with pkgs; [ nbfc-linux ];
+
+  # Create the config file in /etc
+  environment.etc."nbfc/configs/predator_neo16_phn16-71.json" = {
+    source = ./source_files/predator_neo16_phn16-71.json;
+  };
+
+  # Create symlink from nix store location to /etc location
+  systemd.tmpfiles.rules = [
+    "d ${pkgs.nbfc-linux}/share/nbfc 0755 root root -"
+    "d ${pkgs.nbfc-linux}/share/nbfc/configs 0755 root root -"
+    "L+ ${pkgs.nbfc-linux}/share/nbfc/configs/predator_neo16_phn16-71.json - - - - /etc/nbfc/configs/predator_neo16_phn16-71.json"
+  ];
+
   systemd.services.nbfc_service = {
     enable = true;
     description = "NoteBook FanControl service";
-    serviceConfig.Type = "simple";
+    serviceConfig = {
+      Type = "simple";
+      ExecStart =
+        "${pkgs.nbfc-linux}/bin/nbfc_service --config-file '/home/${myUser}/.config/nbfc.json'";
+    };
     path = [ pkgs.kmod ];
-
-    # if you are on stable uncomment the next line
-    #  script = "${inputs.nbfc-linux.packages.x86_64-linux.default}/${command}";
-    # if you are on unstable uncomment the next line
-    script = "${pkgs.nbfc-linux}/${command}";
-
     wantedBy = [ "multi-user.target" ];
-  };
-
-  environment.etc."nbfc/configs/predator_neo16_phn16-71.json" = {
-    source = /etc/nixos/hosts/source_files/predator_neo16_phn16-71.json;
+    # Make sure tmpfiles service runs first
+    after = [ "systemd-tmpfiles-setup.service" ];
+    requires = [ "systemd-tmpfiles-setup.service" ];
   };
 }
