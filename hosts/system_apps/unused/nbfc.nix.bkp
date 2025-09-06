@@ -5,9 +5,6 @@ in {
   environment.systemPackages = with pkgs; [ nbfc-linux ];
 
   # Create the config file in /etc
-  environment.etc."nbfc/configs/predator_neo16_phn16-71.json" = {
-    source = ./source_files/predator_neo16_phn16-71.json;
-  };
 
   # Create symlink from nix store location to /etc location
   systemd.tmpfiles.rules = [
@@ -31,3 +28,4 @@ in {
     requires = [ "systemd-tmpfiles-setup.service" ];
   };
 }
+
