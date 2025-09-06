@@ -6,13 +6,10 @@
 
   # Minimal user packages (keep it simple for now)
   home.packages = with pkgs; [
+    # IMP: OTHER app installation LOCATIONS.
+    # /etc/nixos/hosts/system_apps/nvidia.nix
 
     # DX:TEMPERORY
-    stress-ng # stress test cpu
-    mesa-demos # stress test gpu
-    blender # stress test gpu Heavy
-    glmark2 # stress test gpu
-    mangohud # stress test gpu
 
     # Window Mmanager: 
     libnotify
