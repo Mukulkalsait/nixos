@@ -76,7 +76,7 @@
 
   # Y:  FAN CONTROLL SERVICES
   environment.etc."nbfc/configs/predator_neo16_phn16-71.json" = {
-    source = ./source_files/predator_neo16_phn16-71.json
+    source = ./source_files/predator_neo16_phn16-71.json;
     # ./predator_neo16_phn16-71.json; # Adjust path as needed
   };
   environment.etc."nbfc/nbfc.json".text = ''
