@@ -3,7 +3,13 @@
 { lib, config, pkgs, ... }: {
 
   # Y: 👇 in .comfig/zsh/scripts/y.sh put this file 👇
+  #
   home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh;
+
+  home.sessionVariables = {
+    CARGO_TARGET_DIR =
+      "${config.home.homeDirectory}/.cargo/target"; # Y: rust will save its code here.
+  };
 
   programs.zsh = {
     enable = true;
@@ -120,9 +126,9 @@
         "echo 1 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/backlight_timeout";
       rgbTimeoutOff =
         "echo 0 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/backlight_timeout";
-
-      whichProfile = "cat /sys/firmware/acpi/platform_profile_choices";
-      setProfile = "| sudo tee /sys/firmware/acpi/platform_profile";
+      whichProfiles = "cat /sys/firmware/acpi/platform_profile";
+      allProfiles = "cat /sys/firmware/acpi/platform_profile_choices";
+      setProfile = "sudo tee /sys/firmware/acpi/platform_profile";
 
       suM = "sudo su mukuldk";
       findJava = "readlink -f $(which java)";
