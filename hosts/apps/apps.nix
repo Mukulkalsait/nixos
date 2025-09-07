@@ -53,8 +53,7 @@
     nodejs # node js
     bun # bun replacement for npm.
     uv # PIP replacement. python package /dependency manager.
-    python3 # Python
-    (python3.withPackages (ps: with ps; [ pynvim ]))
+    (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
 
     # ---- LSPs via Nix (stable + fragile ones) ----
     lua-language-server
