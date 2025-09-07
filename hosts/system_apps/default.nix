@@ -18,7 +18,6 @@
     # Y: After booting.
     ./apps_sys.nix
     ./git.nix
-    ./fzf.nix
     ./lazygit.nix
 
     # Y:  Dependencys
