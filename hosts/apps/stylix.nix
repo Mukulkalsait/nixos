@@ -1,8 +1,10 @@
+# Y:  general styling.
 { pkgs, inputs, ... }: {
   imports = [ inputs.stylix.homeModules.stylix ];
   stylix.targets.kitty.enable = false;
   stylix.targets.zen-browser.profileNames = [ "mukul" ];
 
+  # IMP:  HOME Packages extras.
   home.packages = with pkgs; [
     dejavu_fonts
     jetbrains-mono
@@ -68,10 +70,10 @@
       light = "Papirus-Light";
     };
 
-    image = pkgs.fetchurl {
-      url =
-        "https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/raw/branch/master/png/gruvbox-dark-rainbow.png";
-      sha256 = "036gqhbf6s5ddgvfbgn6iqbzgizssyf7820m5815b2gd748jw8zc";
-    };
+    # image = pkgs.fetchurl {
+    #   url =
+    #     "https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/raw/branch/master/png/gruvbox-dark-rainbow.png";
+    #   sha256 = "036gqhbf6s5ddgvfbgn6iqbzgizssyf7820m5815b2gd748jw8zc";
+    # };
   };
 }

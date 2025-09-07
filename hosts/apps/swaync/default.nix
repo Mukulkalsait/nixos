@@ -1,3 +1,4 @@
+# Y:  Notifications Center Customisation.
 {
   services.swaync = {
     enable = true;

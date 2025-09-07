@@ -1,29 +1,25 @@
+# Y: entry poing for this folder.
 {
   imports = [
 
     # Y: Folders
     ./zsh
+    ./starship
     ./hyprland
     ./swaync
     ./waybar
     ./wofi
-    # ./hyperpaper
 
     # Y: Files
     ./apps.nix
-    # ./sessionVariables.nix
-    ./starship
+    ./sessionVariables.nix
     ./eza.nix
     ./stylix.nix
 
     ./kitty.nix
 
-    # ./git.nix
     ./bat.nix
-    ./fzf.nix
-    ./lazygit.nix
     ./neovim.nix
-    ./qt.nix
     # ./others.nix
 
   ];

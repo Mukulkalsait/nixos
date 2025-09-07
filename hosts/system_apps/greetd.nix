@@ -1,3 +1,4 @@
+# Y: TUI Login manager.
 { config, pkgs, ... }: {
   services.greetd = {
     enable = true;

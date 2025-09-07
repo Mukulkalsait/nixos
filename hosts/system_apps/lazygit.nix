@@ -1,3 +1,4 @@
+# Y:  Lazygit systemwide
 {
   programs.lazygit = {
     enable = true;

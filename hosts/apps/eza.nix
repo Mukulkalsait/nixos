@@ -1,3 +1,4 @@
+# Y: ls replacement.
 {
   programs.eza = {
     enable = true;

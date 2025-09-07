@@ -1,3 +1,4 @@
+# Y: Wayland app launcher.
 {
   programs.wofi = {
     enable = true;

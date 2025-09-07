@@ -1,3 +1,4 @@
+# Y: Waybar = Notification Bar.
 {
   programs.waybar = {
     enable = true;

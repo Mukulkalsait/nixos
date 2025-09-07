@@ -1,3 +1,4 @@
+# Y : systemwide git config
 { config, pkgs, ... }: {
   programs.git.enable = true;
   environment.etc."gitconfig".text = ''

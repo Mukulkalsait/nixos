@@ -1,15 +1,10 @@
-# zsh.nix
+# Y:  zsh.nix
 
 { lib, config, pkgs, ... }: {
 
   # Y: 👇 in .comfig/zsh/scripts/y.sh put this file 👇
   #
   home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh;
-
-  home.sessionVariables = {
-    CARGO_TARGET_DIR =
-      "${config.home.homeDirectory}/.cargo/target"; # Y: rust will save its code here.
-  };
 
   programs.zsh = {
     enable = true;

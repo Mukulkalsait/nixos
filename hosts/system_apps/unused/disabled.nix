@@ -1,3 +1,4 @@
+# Y:  all disabeled entries from main configuration here.
 { config, pkgs, ... }:
 {
 

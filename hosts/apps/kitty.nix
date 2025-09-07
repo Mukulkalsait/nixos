@@ -1,4 +1,4 @@
-# kitty.nix
+# Y: kitty.nix
 
 { lib, config, pkgs, ... }: {
 

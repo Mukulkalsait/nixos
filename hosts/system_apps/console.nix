@@ -1,7 +1,7 @@
+# Y:  TTY colors Config.
 { lib, config, pkgs, ... }: {
 
   console = {
-    # For smaller fonts, try these options:
     font = "${pkgs.terminus_font}/share/consolefonts/ter-112n.psf.gz"; # Small
     # font = "${pkgs.terminus_font}/share/consolefonts/ter-116n.psf.gz";  # Medium-small
     # font = "${pkgs.terminus_font}/share/consolefonts/ter-120n.psf.gz";  # Medium
