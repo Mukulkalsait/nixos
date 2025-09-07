@@ -45,6 +45,7 @@
       # Y: ScratchPad
       "$mainMod,       S, togglespecialworkspace,  magic"
       "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      "$mainMod,       P, exec,hyrpshot -m region -0 ~/1_file/9_Walpapers/Screenshots" # TAG:  toggle between screen
 
       # B: ready to replace
       # "$mainMod,       P, pin," # TAG: no idea
