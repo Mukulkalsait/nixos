@@ -21,6 +21,10 @@
       };
       intelBusId = "PCI:0:2:0"; # Matches 00:02.0
       nvidiaBusId = "PCI:1:0:0"; # Matches 01:00.0
+      # Y: bash
+      # lspci | grep -i vga
+      # 0000:00:02.0 VGA compatible controller: Intel Corporation Alder Lake-S [UHD Graphics] (rev 0c)
+      # 0000:01:00.0 VGA compatible controller: NVIDIA Corporation AD107M [GeForce RTX 4050 Max-Q / Mobile] (rev a1)
     };
     # package = pkgs.linuxPackages.nvidia_x11; # Ensure latest NVIDIA driver
   };

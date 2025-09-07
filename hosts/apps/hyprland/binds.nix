@@ -28,7 +28,7 @@
 
       # Y: Application:
       "$mainMod, I, exec, $TERMINAL"
-      "$mainMod Alt, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
+      "$mainMod SHIFT, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
       "$mainMod, B,  exec, $BROWSER"
       "$mainMod, N,  exec,$TERMINAL -e $EDITOR"
       "CTRL SHIFT, Escape,  exec, $TASKMANAGER"
