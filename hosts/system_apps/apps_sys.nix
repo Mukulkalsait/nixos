@@ -9,6 +9,7 @@
     hyprland # wayland compositer.
     zsh # shell.
     wl-clipboard # clipboard.
+    cliphist # clipboard history manager
     wlr-randr # wayland display manager tool.
     lm_sensors # for senseor of laptop.
 
