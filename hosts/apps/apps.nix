@@ -17,6 +17,7 @@
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
     hyprpicker # color picker tool
+    hyprshot # Screenshot
     w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
     wtype # wayland keyboard input
     swww # Walpaper
@@ -37,7 +38,6 @@
     pavucontrol # All audio IO gui tool very usefull.⭐
 
     # Media & essentials:
-    cliphist # clipboard history manager
     ffmpeg # ffmpeg
     ffmpegthumbnailer # tuhmbnel creater
     mediainfo # media info tool.
