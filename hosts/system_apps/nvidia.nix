@@ -3,7 +3,7 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics = {
     enable = true;
-    # enable32bit = true; # does not exisist.
+    enable32Bit = true;
   };
 
   hardware.nvidia = {
@@ -28,25 +28,38 @@
     };
     # package = pkgs.linuxPackages.nvidia_x11; # Ensure latest NVIDIA driver
   };
-  hardware.opengl = {
-    enable = true;
-    driSupport32Bit = true;
-  };
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
   };
 
+  programs.gamemode.enable = true;
+
   environment.systemPackages = with pkgs; [
-    stress-ng
-    blender
+    stress-ng # cpu stress tests
+    blender # blender tests
     mangohud # fps overlay
     steam
+    protonup
     (pkgs.writeShellScriptBin "prime-run" ''
       #!/bin/sh
       __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
     '')
   ];
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "/home/mukuldk/.steam/root/compatibilitytools.d";
+  };
 }
+
+/* G: command avialable
+   ------------------------
+       nvidia-offload <game>
+       nvidia-offload <cmd>
+       gamemodrun  <cmd>
+       mangohud <cmd>
+       gamescope <cmd>
+*/
 

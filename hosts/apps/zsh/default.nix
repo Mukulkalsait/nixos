@@ -65,8 +65,6 @@
       # IMP: config non NIX nor imported because they download there own files.
       yaziConfig = "nvim /home/mukuldk/.config/yazi/";
 
-      # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
-
       # Y: Movements
       cdN = "cd /etc/nixos/";
       cdF = "cd /home/mukuldk/1_file/";
@@ -91,24 +89,40 @@
       mChose =
         "nix run nixpkgs#chromium -- --enable-experimental-web-platform-features";
 
+      #======================================== DX: Linuwu-Sense |> 
       sensorsD = "watch -n 1 sensors";
-      # Y: fan speeds
-      fan-max =
+      # Y: fan speeds numbers can be different in multyple of 5.
+      fanFull =
         "echo '100,100' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
-      fan-auto =
+      fanAuto =
         "echo '0,0' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
-      fan-medium =
+      fanMid =
         "echo '50,50' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
-      rgb-blue =
-        "echo '0,100,0,0,0,255,0,0,255,0,0,255,0,0,255' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/four_zone_mode";
-      # Y: Battery limit
+      # Y: Battery 
       bat80 =
         "echo '1' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter";
       batFull =
         "echo '0' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter";
+      batCalOn =
+        "echo 1 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_calibration";
+      batCalOff =
+        "echo 0 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_calibration";
+      usbCharge0 =
+        "echo 0 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/usb_charging"; # Y:  other values are 10 | 20 | 30. on respective %.
+      # Y: Screen
+      lcdOverDriveOn =
+        "echo 1 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/lcd_override";
 
-      # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
-      # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
+      # Y: Keyboard
+      rgbset =
+        "echo '0,100,0,0,0,255,0,0,255,0,0,255,0,0,255' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/four_zone_mode";
+      rgbTimeoutOn =
+        "echo 1 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/backlight_timeout";
+      rgbTimeoutOff =
+        "echo 0 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/backlight_timeout";
+
+      whichProfile = "cat /sys/firmware/acpi/platform_profile_choices";
+      setProfile = "| sudo tee /sys/firmware/acpi/platform_profile";
 
       suM = "sudo su mukuldk";
       findJava = "readlink -f $(which java)";
@@ -118,14 +132,11 @@
       # dumpNvimConfig="cp -rv /home/mukuldk/.config/nvim /mnt/i/5.WSL/mukuldk"
       # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
       # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
+      # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
+      # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
+      # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
 
     };
-
-    # oh-my-zsh = {
-    #  enable = true;
-    #  plugins = [ "git" "sudo" ];
-    #  theme = "robbyrussell";
-    # };
 
   };
   # initExtra = ''
