@@ -119,7 +119,7 @@
 
       # Y: Keyboard
       rgbset =
-        "echo '0,100,0,0,0,255,0,0,255,0,0,255,0,0,255' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/four_zone_mode";
+        "echo 3,1,100,2,0,0,0 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode";
       rgbTimeoutOn =
         "echo 1 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/backlight_timeout";
       rgbTimeoutOff =
