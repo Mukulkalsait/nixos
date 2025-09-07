@@ -3,85 +3,18 @@
 {
   imports = [
     ./hardware-configuration.nix # Y: Hardware Config.
-    ./system_apps/user.nix
-    ./system_apps/git.nix
-    ./system_apps/greetd.nix
-    ./system_apps/nvidia.nix
-    ./system_apps/linuwu-sense.nix
-    ./system_apps/mchose_ace_68.nix
+    ./system_apps # Y: ROOT FILES |>
 
     inputs.home-manager.nixosModules.default
-    # ./system_apps/disabled.nix # Y: Unused lines moved here
   ];
 
-  # Flake: 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # IMP: Flakes + Kernal
+  nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Flake:
+  nixpkgs.config.allowUnfree = true; # Use latest kernel.
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 8; # keep only last 8 entries
-  boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.systemd-boot.editor = false; # optional: hide editor
-
-  # Use latest kernel.
-  nixpkgs.config.allowUnfree = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  # Enable Kernal MODULES Thunderbolt USB ec_sys<for fan contorl>
-  boot.kernelModules = [ "thunderbolt" "usb_storage" "uas" "ec_sys" ];
-  # Enable Kernal parameters 
-  boot.kernelParams = [ "acpi_ec.gpe_debug=1" ];
-
-  networking.hostName = "PredatorNix"; # Define your hostname.
-  networking.networkmanager.enable = true;
-  hardware.bluetooth.enable = true; # Enable Bluetooth
-  hardware.i2c.enable = true; # Enable sensors.
-  services.blueman.enable = true; # optional: nice GTK tray app
-
-  # Set your time zone.
-  time.timeZone = "Asia/Kolkata";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  # Enable sound.
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    # alsa.support32bit = true; # does not exisists;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  services.printing.enable = false; # Enable CUPS to print documents.
-  # services.modemmanager.enable = false; Y: variable not avialable error.
-
-  # Y: THUNDERBOLT
-  services.hardware.bolt.enable = true;
-  # Enable Bolt daemon for Thunderbolt device management
-  services.udev.packages = [ pkgs.bolt ];
-  # Optional: Add udev rules for better device handling
-  services.power-profiles-daemon.enable = true; # or use tlp
-  # For better power management of Thunderbolt devices
-
-  virtualisation.docker = {
-    enable = true; # service enabled
-    enableOnBoot = false; # systemctl service stoped
-  };
-
-  users.users.mukuldk.extraGroups = [ "docker" ]; # group add to user.
-
-  # Y: (Optional) Podman alongside Docker.
-  # virtualisation.podman.enable = true;
-  # virtualisation.podman.enableOnBoot = false;
-  # virtualisation.podman.dockerCompat = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true; 
-
-  # Y : Mchose extras
-  services.udev.extraRules = ''
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="41e4", ATTRS{idProduct}=="2116", MODE="0666"
-  '';
+  # IMP: TimeZone.
+  time.timeZone = "Asia/Kolkata"; # TimeZone.
+  i18n.defaultLocale = "en_US.UTF-8"; # Input Method.
 
   # DX: don not change after this --------------------------------------------------------------------------------------------------------------------------------|
   #
