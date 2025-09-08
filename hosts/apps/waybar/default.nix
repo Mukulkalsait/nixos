@@ -67,7 +67,9 @@
           separate-outputs = true;
 
           rewrite = {
-            "(.*)nvim" = " nvim"; # Neovim
+            "(.*)nvim" = " Nvim"; # Neovim
+            "(.*)Kitty" = " Kitty"; # Neovim
+            "(.*)Zellij" = " Zellij"; # Neovim
             "(.*)Zen Browser" = " Zen"; # Zen Browser (Firefox-based)
             "(.*)Yazi" = " Yazi"; # Yazi file manager
             "(.*)OBS Studio" = "󰻑 OBS"; # OBS
