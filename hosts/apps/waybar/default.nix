@@ -8,9 +8,12 @@
         layer = "top";
         margin-top = 0;
         position = "top";
-        height = 30;
+        height = 10;
+        exclusive = true;
+        passthrough = false;
+        reload_style_on_change = true;
         modules-left = [ "clock" "cpu" "memory" "temperature" ];
-        modules-center = [ "hyprland/workspaces" ];
+        modules-center = [ "hyprland/workspaces" "hyprland/window" ];
         modules-right = [ "tray" "pulseaudio" "network" "backlight" "battery" ];
 
         "clock" = {
@@ -56,6 +59,22 @@
           format = "{temperatureC}°C {icon}";
           format-icons = [ "" "" "" "" "" ];
           tooltip = false;
+        };
+
+        "hyprland/window" = {
+          format = " {0}";
+          max-length = 50;
+          separate-outputs = true;
+
+          rewrite = {
+            "(.*)nvim" = " nvim"; # Neovim
+            "(.*)Zen Browser" = " Zen"; # Zen Browser (Firefox-based)
+            "(.*)Yazi" = " Yazi"; # Yazi file manager
+            "(.*)OBS Studio" = "󰻑 OBS"; # OBS
+            "(.*)Mission Center" = "󰨇 SysMon";
+            "(.*)Discord" = " Discord"; # Optional: Discord
+            "(.*)Spotify" = " Spotify"; # Optional: Spotify
+          };
         };
 
         "hyprland/workspaces" = {
