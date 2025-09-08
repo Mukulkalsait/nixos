@@ -57,7 +57,6 @@
 
     # ---- LSPs via Nix (stable + fragile ones) ----
     lua-language-server
-    rust-analyzer
     pyright
     clang-tools
 
