@@ -26,6 +26,7 @@
     # Terminal:
     kitty
     zellij
+    openssh
 
     # DevOps
     kdash # TUI kuberneties dashboard.
@@ -94,6 +95,11 @@
     #   package = pkgs.adwaita-qt;
     #   name = "adwaita-dark";
     # };
+  };
+
+  programs.ssh = {
+    enable = true;
+    # forwardAgent = true; # optional
   };
 
   home.sessionPath = [ "$HOME/.cargo/bin" ];
