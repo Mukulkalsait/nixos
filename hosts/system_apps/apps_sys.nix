@@ -33,6 +33,7 @@
     bolt # Thunderbolt devices manager
 
     # CLI Essentilas:
+    openssh
     git
     gh # Git hub
     wget # HTTP FTP file downloader.
@@ -76,6 +77,14 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  programs.ssh = {
+    startAgent = true;
+    # settings does not exisists:
+    # settings = {     #   PasswordAuthentication = false; # use keys only
+    #   PermitRootLogin = "no";
+    # };
   };
 
 }
