@@ -20,6 +20,8 @@
     # Lang:
     gcc # GUN C compailer.
     cargo # rust package manager.
+    rustup # latet rust {nightly}
+    rust-analyzer # analyzer user latest nightly version
     lua # lua lang.
     luarocks # Lua package manager.
 
