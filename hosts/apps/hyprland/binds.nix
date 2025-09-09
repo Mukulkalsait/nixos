@@ -64,8 +64,8 @@
 
       # Y: Movements
       # IMP: FOCUS ✅
-      "$mainMod, L, movefocus, l"
-      "$mainMod, H, movefocus, r"
+      "$mainMod, H, movefocus, l"
+      "$mainMod, L, movefocus, r"
       "$mainMod, K, movefocus, u"
       "$mainMod, J, movefocus, d"
       # IMP: WINDOWS ✅ 
