@@ -15,7 +15,7 @@
 
       monitor = ",1920x1200@165,auto,1";
       "$mainMod" = "SUPER";
-      "$menu" = "wofi";
+      "$menu" = "rofi";
       "$TERMINAL" = "kitty";
       "$FILEMANAGER" = "$terminal -e sh -c 'yazi'";
       "$EDITOR" = "nvim";
