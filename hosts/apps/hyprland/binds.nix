@@ -44,7 +44,7 @@
       # B: Menu: 
       "$mainMod, SPACE, exec, $menu -show drun" # Menu
       "$mainMod ALT, SPACE, exec, $menu -show run" # All Cmds
-      "$mainMod SHIFT, /, exec, $menu -show keys" # Keybings
+      "$mainMod , slash, exec, $menu -show keys" # Keybings
       # "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy" # R: unused but working
 
       # DX: LOCKING + EXIT
