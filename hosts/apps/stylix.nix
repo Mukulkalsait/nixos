@@ -17,6 +17,7 @@
     powerline-symbols
     # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     pkgs.nerd-fonts.symbols-only
+    corefonts # Y:  Times New Roman, Arial (Microsoft Fonts)
   ];
 
   stylix = {
