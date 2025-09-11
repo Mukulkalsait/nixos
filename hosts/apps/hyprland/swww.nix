@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let wallpaperDir = "${config.home.homeDirectory}/1_file/9_Walpapers";
+let wallpaperDir = "${config.home.homeDirectory}/1_file/9_Pictures/Walpapers";
 in {
   # Script 1: Startup
   xdg.configFile."swww/start.sh".text = ''
