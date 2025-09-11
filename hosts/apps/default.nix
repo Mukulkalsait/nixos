@@ -8,7 +8,7 @@
     ./hyprland
     ./swaync
     ./waybar
-    ./wofi
+    ./rofi
 
     # Y: Files
     ./apps.nix
