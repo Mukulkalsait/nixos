@@ -56,7 +56,8 @@
 
       # DX: DELETE IN FUTURE: 
       "$mainMod,       9, exec, swaync-client -t" # Y:NOTIFICATIONS:
-      "$mainMod,       D, exec, $menu --show drun"
+      "$mainMod, SPACE, exec, $menu -show drun"
+      "$mainMod ALT, SPACE, exec, $menu -show run"
 
       # G: Test or NEW to me: 
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
