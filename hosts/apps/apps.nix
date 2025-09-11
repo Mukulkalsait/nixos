@@ -18,6 +18,7 @@
     xdg-desktop-portal-hyprland # same as above + hyprland
     hyprpicker # color picker tool
     hyprshot # Screenshot
+    rofi # MenuBar For Hyprland
     w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
     wtype # wayland keyboard input
     swww # Walpaper

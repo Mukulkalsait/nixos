@@ -26,27 +26,6 @@
   wayland.windowManager.hyprland.settings = {
     bind = [
 
-      # Y: Application:
-      "$mainMod, I, exec, $TERMINAL"
-      "$mainMod SHIFT, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
-      "$mainMod, B,  exec, $BROWSER"
-      "$mainMod, N,  exec,$TERMINAL -e $EDITOR"
-      "CTRL SHIFT, Escape,  exec, $TASKMANAGER"
-      "$mainMod, E, exec,$TERMINAL -e $FILEMANAGER"
-      # "CTRL SHIFT, Escape,  exec, kitty -e btop" # Y: btop
-      # "CTRL SHIFT, Escape,  exec, btop" # FAIL
-
-      # Y: EXIT
-      "$mainMod, Q, killactive,"
-      "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
-      "$mainMod SHIFT, 0, exit,"
-      "$mainMod, F,  fullscreen"
-      "$mainMod SHIFT, F, togglefloating," # TAG: flooting window vc connect window
-      # Y: ScratchPad
-      "$mainMod,       S, togglespecialworkspace,  magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
-      "$mainMod,       P, exec,hyrpshot -m region -0 ~/1_file/9_Walpapers/Screenshots" # TAG:  toggle between screen
-
       # B: ready to replace
       # "$mainMod,       P, pin," # TAG: no idea
       # "$mainMod,       J, togglesplit,"  #TAG:  toggle between screen
@@ -54,10 +33,37 @@
       # "$mainMod,       ., exec, bemoji -cn" #not working
       #"$mainMod,       W, exec, ${booksScript}/bin/open_books" Y: script exicution example
 
-      # DX: DELETE IN FUTURE: 
+      # Y: Application:
+      "$mainMod, Q, killactive," # Y: Exit
+
+      "$mainMod, I, exec, $TERMINAL"
+      "$mainMod SHIFT, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
+      "$mainMod, B,  exec, $BROWSER" # Zen
+      "$mainMod, N,  exec,$TERMINAL -e $EDITOR" # Nvim
+      "$mainMod, E, exec,$TERMINAL -e $FILEMANAGER" # yazi
+      "CTRL SHIFT, Escape,  exec, $TASKMANAGER" # Mission Center.
+      # "CTRL SHIFT, Escape,  exec, kitty -e btop" # Y: btop
+      # "CTRL SHIFT, Escape,  exec, btop" # FAIL
+
+      # Y: EXIT
+
+      "$mainMod, F,  fullscreen"
+      "$mainMod SHIFT, F, togglefloating," # TAG: flooting window vc connect window
       "$mainMod,       9, exec, swaync-client -t" # Y:NOTIFICATIONS:
-      "$mainMod, SPACE, exec, $menu -show drun"
-      "$mainMod ALT, SPACE, exec, $menu -show run"
+
+      # B: Menu: 
+      "$mainMod, SPACE, exec, $menu -show drun" # Menu
+      "$mainMod ALT, SPACE, exec, $menu -show run" # All Cmds
+      "$mainMod SHIFT, /, exec, $menu -show keys" # Keybings
+
+      # DX: LOCKING + EXIT
+      "$mainMod SHIFT, 0, exit,"
+      "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
+
+      # Y: Special Space
+      "$mainMod,       S, togglespecialworkspace,  magic"
+      "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      "$mainMod,       P, exec,hyprshot -m region -0 ~/1_file/9_Walpapers/Screenshots" # TAG:  toggle between screen
 
       # G: Test or NEW to me: 
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"

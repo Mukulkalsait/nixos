@@ -4,7 +4,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,window";
+	modi:                       "drun,run,window,";
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
@@ -55,7 +55,7 @@ inputbar {
     spacing:                     10px;
     margin:                      0px;
     padding:                     10px;
-    border:			 0px 2px 2px 0px;
+    // border:			 0px 2px 2px 0px;
     border-radius:               10px;
     border-color:		 var(selected);
     background-color:            @background-alt;
