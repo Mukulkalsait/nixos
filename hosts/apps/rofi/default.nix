@@ -2,7 +2,9 @@
 {
   programs.rofi = {
     enable = true;
-    theme = ./config.rasi;
+    # theme = ./config.rasi; # this field shoule have theme name
+    themeFile = ./config.rasi;
+
   };
 
   # home.file.".config/rofi/config.rasi".source = ./config.rasi; # Y: the above programs.rofi.theme dose the same thing.
