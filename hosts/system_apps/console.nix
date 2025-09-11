@@ -2,6 +2,9 @@
 { lib, config, pkgs, ... }: {
 
   console = {
+    #   font = "Lat2-Terminus16";
+    #   keyMap = "us";
+    #   useXkbConfig = true; # use xkb.options in tty.
     font = "${pkgs.terminus_font}/share/consolefonts/ter-112n.psf.gz"; # Small
     # font = "${pkgs.terminus_font}/share/consolefonts/ter-116n.psf.gz";  # Medium-small
     # font = "${pkgs.terminus_font}/share/consolefonts/ter-120n.psf.gz";  # Medium
