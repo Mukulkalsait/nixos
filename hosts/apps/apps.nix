@@ -57,14 +57,14 @@
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
 
     # ---- LSPs via Nix (stable + fragile ones) ----
-    lua-language-server
-    pyright
-    clang-tools
-
-    nodePackages.typescript-language-server # TypeScript / JavaScript
-    nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
-    nodePackages."@tailwindcss/language-server" # Tailwind
-    phpPackages.php-codesniffer # PHP
+    # lua-language-server
+    # pyright
+    # clang-tools
+    #
+    # nodePackages.typescript-language-server # TypeScript / JavaScript
+    # nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
+    # nodePackages."@tailwindcss/language-server" # Tailwind
+    # phpPackages.php-codesniffer # PHP
 
     # Desktop apps:
     mpv
