@@ -26,15 +26,8 @@
   wayland.windowManager.hyprland.settings = {
     bind = [
 
-      # B: ready to replace
-      # "$mainMod,       P, pin," # TAG: no idea
-      # "$mainMod,       J, togglesplit,"  #TAG:  toggle between screen
-      # "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
-      # "$mainMod,       ., exec, bemoji -cn" #not working
-      #"$mainMod,       W, exec, ${booksScript}/bin/open_books" Y: script exicution example
-
-      # Y: Application:
-      "$mainMod, Q, killactive," # Y: Exit
+      # IMP: Application:
+      "$mainMod, Q, killactive," # Y: Exit Window
 
       "$mainMod, I, exec, $TERMINAL"
       "$mainMod SHIFT, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
@@ -43,18 +36,16 @@
       "$mainMod, E, exec,$TERMINAL -e $FILEMANAGER" # yazi
       "CTRL SHIFT, Escape,  exec, $TASKMANAGER" # Mission Center.
       # "CTRL SHIFT, Escape,  exec, kitty -e btop" # Y: btop
-      # "CTRL SHIFT, Escape,  exec, btop" # FAIL
 
-      # Y: EXIT
-
+      # DIV: Screen
       "$mainMod, F,  fullscreen"
-      "$mainMod SHIFT, F, togglefloating," # TAG: flooting window vc connect window
-      "$mainMod,       9, exec, swaync-client -t" # Y:NOTIFICATIONS:
+      "$mainMod SHIFT, F, togglefloating," # TAG: Borderles Window
 
       # B: Menu: 
       "$mainMod, SPACE, exec, $menu -show drun" # Menu
       "$mainMod ALT, SPACE, exec, $menu -show run" # All Cmds
       "$mainMod SHIFT, /, exec, $menu -show keys" # Keybings
+      # "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy" # R: unused but working
 
       # DX: LOCKING + EXIT
       "$mainMod SHIFT, 0, exit,"
@@ -63,11 +54,10 @@
       # Y: Special Space
       "$mainMod,       S, togglespecialworkspace,  magic"
       "$mainMod SHIFT, S, movetoworkspace, special:magic"
-      "$mainMod,       P, exec,hyprshot -m region -0 ~/1_file/9_Walpapers/Screenshots" # TAG:  toggle between screen
 
-      # G: Test or NEW to me: 
-      "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
-      "$mainMod Shift, P, exec, hyprpicker -an" # Pick color (Hex) >> clipboard#
+      # G: Mislenious: 
+      "$mainMod,       9, exec, swaync-client -t" # TAG: NOTIFICATIONS:
+      "$mainMod Shift, P, exec, hyprpicker -an" # TAG: Pick color (Hex) >> clipboard#
 
       # Y: Movements
       # IMP: FOCUS ✅
@@ -104,6 +94,23 @@
       "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
       "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
       "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
+
+      # IMP: Resizeing windows         X  Y   ✅ 
+      "$mainMod ALT, H, resizeactive, -30 0"
+      "$mainMod ALT, L, resizeactive,  30 0"
+      "$mainMod ALT, K, resizeactive,  0 -30"
+      "$mainMod ALT, J, resizeactive,  0  30"
+
+      # FUN_1: costume script:
+      "$mainMod SHIFT, W, exec, ${config.home.homeDirectory}/.config/swww/change.sh"
+
+      # B: ready to replace
+      # "$mainMod,       P, pin," # TAG: no idea
+      # "$mainMod,       J, togglesplit,"  #TAG:  toggle between screen
+      # "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
+      # "$mainMod,       ., exec, bemoji -cn" #not working
+      #"$mainMod,       W, exec, ${booksScript}/bin/open_books" Y: script exicution example
+
       # DX: Some window Movements are in ./scripts/moveactivewindow_shellCreation.nix
       # Switching workspaces -----------Y: turned off
       # "$mainMod, 1, workspace, 1"
@@ -116,15 +123,6 @@
       # "$mainMod, 8, workspace, 8"
       # "$mainMod, 9, workspace, 9"
       # "$mainMod, 0, workspace, 10"
-
-      # IMP: Resizeing windows         X  Y   ✅ 
-      "$mainMod ALT, H, resizeactive, -30 0"
-      "$mainMod ALT, L, resizeactive,  30 0"
-      "$mainMod ALT, K, resizeactive,  0 -30"
-      "$mainMod ALT, J, resizeactive,  0  30"
-
-      # FUN_1: costume script:
-      "$mainMod SHIFT, W, exec, ${config.home.homeDirectory}/.config/swww/change.sh"
 
       # DX: IMPORTED BUT NOT ACTIVATED AS WE DONT HAHVE THE SCRIPTS
       #  $mainMod Alt, k,  exec, $scrPath/wbarconfgen.sh n # next waybar mode
@@ -174,7 +172,7 @@
       ", XF86AudioPause, exec, playerctl play-pause"
       ", XF86AudioPlay,  exec, playerctl play-pause"
       ", XF86AudioPrev,  exec, playerctl previous"
-      # ", Print, exec, grimblast --notify --freeze copysave area"     # Y:grimblast
+      ", Print, exec,hyprshot -m region -o ~/1_file/9_Walpapers/Screenshots " # Y: Screen shot.
       # ", F10, exec, $scrPath/volumecontrol.sh -o m " # toggle audio mute
       # ", XF86AudioMute, exec, $scrPath/volumecontrol.sh -o m " # toggle audio mute
       # ", XF86AudioMicMute, exec, $scrPath/volumecontrol.sh -i m " # toggle microphone mute
