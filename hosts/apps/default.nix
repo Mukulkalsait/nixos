@@ -9,7 +9,7 @@
     ./swaync
     ./waybar
     ./rofi
-    ./ghostty
+    # ./ghostty
 
     # Y: Files
     ./apps.nix
