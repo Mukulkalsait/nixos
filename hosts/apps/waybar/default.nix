@@ -28,7 +28,7 @@
             on-click-right = "mode";
             format = {
               months = "<span color='#ffead3'><b>{}</b></span>";
-              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+              weekdays = "<span color='#ffbc77'><b>{}</b></span>";
               today = "<span color='#ff6699'><b>{}</b></span>";
             };
           };
