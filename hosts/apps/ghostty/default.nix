@@ -2,23 +2,19 @@
   # Ghostty
   programs.ghostty = {
     enable = true;
-    package = pkgs.ghostty; # Ensure Ghostty is available in nixpkgs
+    package = pkgs.ghostty; # Ensure latest from nixpkgs
     settings = {
-      theme = "catppuccin-mocha"; # Matches Kitty's Catppuccin-Mocha
+      theme = "catppuccin-mocha";
       font-family = "JetBrainsMono Nerd Font";
       font-size = 9;
       background = "#000000";
       background-opacity = 0.95;
-      confirm-os-window-close = 0;
-      # Cursor trail animation via shader
-      custom-shader = "~/.config/ghostty/shaders/cursor_smear.glsl";
-      custom-shader-animate = true;
-      # Shader uniforms to mimic Kitty's cursor_trail_decay and thickness
-      shader-uniform-cursor-trail-decay-x = 0.25;
-      shader-uniform-cursor-trail-decay-y = 0.5;
-      shader-uniform-cursor-trail-thickness-x = 1.0;
-      shader-uniform-cursor-trail-thickness-y = 1.0;
-      # Keybindings matching Kitty
+      confirm-close-surface = false; # No close confirmation
+      # Cursor trail via GLSL shader
+      glsl-shader = "~/.config/ghostty/shaders/cursor_smear.glsl";
+      # TERM for Kitty protocol compatibility
+      term = "xterm-kitty";
+      # Keybindings (uncommented, using correct syntax)
       keybind = [
         "ctrl+shift+c=copy_to_clipboard"
         "ctrl+shift+v=paste_from_clipboard"
@@ -26,8 +22,7 @@
     };
   };
 
-  # Ensure shader directory exists and fetch a cursor trail shader
+  # Local shader file
   home.file.".config/ghostty/shaders/cursor_smear.glsl".source =
-    ./sharers/cursor_smear.glsl;
-
+    ./shaders/cursor_smear.glsl;
 }
