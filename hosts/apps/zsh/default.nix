@@ -126,6 +126,8 @@
       usbCharge0 =
         "echo 0 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/usb_charging"; # Y:  other values are 10 | 20 | 30. on respective %.
       # Y: Screen
+      lcdCheck =
+        "cat /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/lcd_override";
       lcdOverDriveOn =
         "echo 1 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/lcd_override";
 
