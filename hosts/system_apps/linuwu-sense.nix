@@ -55,9 +55,10 @@ in {
   boot.kernelModules = [ "linuwu_sense" ];
   boot.blacklistedKernelModules = [ "acer_wmi" ];
   boot.postBootCommands = ''
-    ${pkgs.kmod}/bin/depmod -a ${kernel.modDirVersion}
-    find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 666 {} \; 2>/dev/null || true
-    echo 1 | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter 2>/dev/null || true
-    echo "Set permissions and battery limit for linuwu_sense"
+    ${pkgs.kmod}/bin/depmod -a ${kernel.modDirVersion} # Y: Update module deps
+    find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 666 {} \; 2>/dev/null || true # Y: Fix sysfs permissions
+    echo '3,1,100,2,0,0,0' | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode #Y: RGB Set
+    echo '1' | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter # Y: Battery Limiter
+    echo "Applied Linuwu-Sense tweaks ( Bat80 & RGB )"
   '';
 }
