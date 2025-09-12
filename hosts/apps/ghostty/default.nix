@@ -24,5 +24,5 @@
 
   # Local shader file
   home.file.".config/ghostty/shaders/cursor_smear.glsl".source =
-    ./shaders/cursor_smear.glsl;
+    ./sharers/cursor_smear_custom.glsl;
 }
