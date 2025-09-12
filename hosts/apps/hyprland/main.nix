@@ -28,8 +28,6 @@
         "swww-daemon &"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "bat80"
-        "rgbset"
       ];
 
       general = {
