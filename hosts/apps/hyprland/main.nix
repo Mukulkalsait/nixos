@@ -26,9 +26,10 @@
       exec-once = [
         "waybar"
         "swww-daemon &"
-
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "bat80"
+        "rgbset"
       ];
 
       general = {
@@ -105,6 +106,11 @@
         "float,class:(mpv)|(imv)|(showmethekey-gtk)"
         "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
         "noborder,nofocus,class:(showmethekey-gtk)"
+
+        # Nmtui popup
+        "float,title:^(nmtui-term)$"
+        "size 22% 60%,title:^(nmtui-term)$"
+        "move 75% 5%,title:^(nmtui-term)$"
 
         # "workspace 3,class:(obsidian)"
         # "workspace 3,class:(zathura)"
