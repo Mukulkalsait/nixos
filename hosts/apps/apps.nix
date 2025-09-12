@@ -69,10 +69,11 @@
     # Desktop apps:
     mpv
     obs-studio
-    spotify
-    spicetify-cli
+    # spotify
+    # spicetify-cli
     mission-center
     blender # blender tests
+    wpsoffice
 
     papirus-icon-theme
     pcmanfm-qt
