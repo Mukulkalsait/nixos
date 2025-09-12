@@ -88,7 +88,7 @@
 
       # Y: MCHOSE ace 68 FE
       mChose =
-        "nix run nixpkgs#chromium -- --enable-experimental-web-platform-features";
+        "nix run nixpkgs#ungoogled-chromium -- --enable-experimental-web-platform-features";
 
       #======================================== DX: Linuwu-Sense |> 
       sensorsD = "watch -n 1 sensors";
