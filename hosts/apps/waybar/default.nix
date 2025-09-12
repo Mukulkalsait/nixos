@@ -29,7 +29,8 @@
             format = {
               months = "<span color='#ffead3'><b>{}</b></span>";
               weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-              today = "<span color='#ff6699'><b>{}</b></span>";
+              today =
+                "<span color='#ff6699' style='border=1pt solid #ff6699'><b>{}</b></span>";
             };
           };
           "actions" = {
@@ -135,6 +136,8 @@
           format-linked = "󰩠 {ifname} (No IP)";
           format-disconnected = "  Disconnected ";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
+          on-click =
+            "kitty -T nmtui-term -e nmtui"; # -> check hyprland/main.nix for windowrulev2
         };
 
         "backlight" = {
