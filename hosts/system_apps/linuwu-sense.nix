@@ -54,11 +54,28 @@ in {
   boot.extraModulePackages = [ linuwu-sense ];
   boot.kernelModules = [ "linuwu_sense" ];
   boot.blacklistedKernelModules = [ "acer_wmi" ];
-  boot.postBootCommands = ''
-    ${pkgs.kmod}/bin/depmod -a ${kernel.modDirVersion} # Y: Update module deps
-    find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 666 {} \; 2>/dev/null || true # Y: Fix sysfs permissions
-    echo '3,1,100,2,0,0,0' | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode #Y: RGB Set
-    echo '1' | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter # Y: Battery Limiter
-    echo "Applied Linuwu-Sense tweaks ( Bat80 & RGB )"
-  '';
+
+  systemd.services.linuwu-sense-setup = {
+    description = "Apply Linuwu-Sense tweaks (RGB + Battery limiter)";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = [
+        "${pkgs.findutils}/bin/find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 666 {} +" # Fix sysfs permissions
+        ''
+          ${pkgs.bash}/bin/sh -c "echo '3,1,100,2,0,0,0' | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode"'' # RGB setting
+        ''
+          ${pkgs.bash}/bin/sh -c "echo '1' | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter"'' # Battery limiter
+      ];
+    };
+  };
+
 }
+
+# boot.postBootCommands = ''
+#   ${pkgs.kmod}/bin/depmod -a ${kernel.modDirVersion} # Y: Update module deps
+#   find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 666 {} \; 2>/dev/null || true # Y: Fix sysfs permissions
+#   echo '3,1,100,2,0,0,0' | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode #Y: RGB Set
+#   echo '1' | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter # Y: Battery Limiter
+#   echo "Applied Linuwu-Sense tweaks ( Bat80 & RGB )"
+# '';
