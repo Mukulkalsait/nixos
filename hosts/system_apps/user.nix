@@ -20,23 +20,14 @@
     fsType = "exfat";
     options = [ "uid=1000" "gid=100" "umask=0022" ];
   };
-  programs.fontconfig.enable = true; # Enables font discovery for user fonts
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5Addons = with pkgs;
-      [
-        fcitx5-m17n # For Hindi via m17n library (supports phonetic input like ITRANS)
-        # Alternative: fcitx5-googlepinyin  # If you prefer Google-style transliteration (works for Hindi too)
-      ];
+    fcitx5.addons = with pkgs; [
+      fcitx5-m17n # transliteration (Hindi/Marathi)
+      fcitx5-gtk # GTK apps (WPS, Firefox, etc.)
+    ];
   };
-  # i18n.inputMethod = {
-  #   enabled = "fcitx5";
-  #   fcitx5.addons = with pkgs; [
-  #     fcitx5-m17n # transliteration (Hindi/Marathi)
-  #     fcitx5-gtk # GTK apps (WPS, Firefox, etc.)
-  #   ];
-  # };
 
   # R: this above service is very important for marathi/hindi typing with EHGLIS keyboard.
   # its called as phonetic Typing.

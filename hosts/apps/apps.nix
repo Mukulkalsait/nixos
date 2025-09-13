@@ -77,7 +77,7 @@
     # spicetify-cli
     mission-center
     blender # blender tests
-    wpsoffice
+    libreoffice
 
     papirus-icon-theme
     pcmanfm-qt

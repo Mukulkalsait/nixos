@@ -12,7 +12,7 @@
     # texlivePackages.hebrew-fonts
 
     noto-fonts
-    lohit-fonts
+    # lohit-fonts
     # noto-fonts-lgc-plus
     noto-fonts-emoji
     noto-fonts-extra # Marathi fonts
