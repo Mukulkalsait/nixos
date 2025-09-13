@@ -6,6 +6,8 @@
 
     # System Imp :
     greetd.tuigreet # TUI login manager.
+
+    # nvidia-settings # imoprtant
     hyprland # wayland compositer.
     zsh # shell.
     wl-clipboard # clipboard.
