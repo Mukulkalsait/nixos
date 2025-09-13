@@ -4,18 +4,28 @@
   stylix.targets.kitty.enable = false;
   stylix.targets.zen-browser.profileNames = [ "mukul" ];
 
-  # IMP:  HOME Packages extras.
+  # IMP:  All fonts moved to system apps.
+
   home.packages = with pkgs; [
     dejavu_fonts
     jetbrains-mono
+    # texlivePackages.hebrew-fonts
+
     noto-fonts
-    noto-fonts-lgc-plus
-    texlivePackages.hebrew-fonts
+    lohit-fonts
+    # noto-fonts-lgc-plus
     noto-fonts-emoji
+    noto-fonts-extra # Marathi fonts
+    # lohit-fonts.devnagari # Marathi fonts
+    # ttf-indic-fonts # Marathi fonts
+
     font-awesome
+
     powerline-fonts
     powerline-symbols
+
     # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+
     pkgs.nerd-fonts.symbols-only
     corefonts # Y:  Times New Roman, Arial (Microsoft Fonts)
   ];
