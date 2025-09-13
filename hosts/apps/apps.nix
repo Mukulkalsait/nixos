@@ -23,6 +23,10 @@
     wtype # wayland keyboard input
     swww # Walpaper
     wev # input event check + debug, <keyboard, mouse>
+    # Y: dispaly tv and other things.
+    # nvidia-settings # settings for nvidia app
+    # xorg.xrandr # xrandr= list display ops
+    # xorg.setxkbmap # another display management
 
     # Terminal:
     kitty
