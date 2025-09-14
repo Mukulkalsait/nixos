@@ -9,6 +9,7 @@
     ./swaync
     ./waybar
     ./rofi
+    ./tmux
     # ./ghostty
 
     # Y: Files
