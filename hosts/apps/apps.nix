@@ -30,7 +30,7 @@
 
     # Terminal:
     kitty
-    zellij
+    # zellij
 
     # DevOps
     kdash # TUI kuberneties dashboard.
@@ -77,7 +77,7 @@
     # spicetify-cli
     mission-center
     blender # blender tests
-    libreoffice
+    libreoffice-fresh
 
     papirus-icon-theme
     pcmanfm-qt
