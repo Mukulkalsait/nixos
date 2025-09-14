@@ -30,6 +30,7 @@
 
     # Terminal:
     kitty
+    tmux
     # zellij
 
     # DevOps
