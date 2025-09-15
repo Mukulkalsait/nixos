@@ -33,8 +33,17 @@
   stylix = {
     enable = true;
     polarity = "dark";
-    base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+    # Y: OPTOINS
+    # ls /nix/store/*base16-schemes*/share/themes <- run
+    #gruvbox-dark-medium.yaml DEFAULT
+    # tokyo-night-night.yaml
+    # tokyo-night-night.yaml
+    # tokyo-night-storm.yaml
+    # tokyo-night-day.yaml
+    # catppuccin-mocha.yaml
+    # dracula.yaml
+    # nord.yaml
 
     targets = {
       neovim.enable = false;
