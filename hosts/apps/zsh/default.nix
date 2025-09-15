@@ -141,6 +141,9 @@
       allProfiles = "cat /sys/firmware/acpi/platform_profile_choices";
       setProfile = "sudo tee /sys/firmware/acpi/platform_profile";
 
+      inputMulty = "fcitx5 &";
+      input0 = "pkill fcitx5";
+
       suM = "sudo su mukuldk";
       findJava = "readlink -f $(which java)";
 
