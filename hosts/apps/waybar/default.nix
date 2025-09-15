@@ -61,6 +61,14 @@
           tooltip = false;
         };
 
+        "hyprland/language" = {
+          format-en = "🇺🇸";
+          format-hi = "Hi";
+          format-mr = "Mr";
+          min-length = 5;
+          tooltip = false;
+        };
+
         "hyprland/window" = {
           format = " {0}";
           max-length = 50;
