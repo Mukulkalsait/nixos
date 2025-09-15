@@ -12,9 +12,9 @@
         exclusive = true;
         passthrough = false;
         reload_style_on_change = true;
-        modules-left = [ "clock" "cpu" "memory" "temperature" ];
+        modules-left = [ "tray" "clock" "cpu" "memory" "temperature" ];
         modules-center = [ "hyprland/workspaces" "hyprland/window" ];
-        modules-right = [ "tray" "pulseaudio" "network" "backlight" "battery" ];
+        modules-right = [ "pulseaudio" "network" "backlight" "battery" ];
 
         "clock" = {
           format = "{:%I:%M %p}";
