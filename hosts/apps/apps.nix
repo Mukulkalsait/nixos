@@ -30,8 +30,8 @@
 
     # Terminal:
     kitty
-    tmux
-    # zellij
+    # tmux
+    zellij
 
     # DevOps
     kdash # TUI kuberneties dashboard.
