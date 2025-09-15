@@ -8,12 +8,11 @@
     CARGO_TARGET_DIR = "${config.home.homeDirectory}/.cargo/target";
 
     # # Wayland-specific Y: IMPUT METHODS 
-    # GTK_IM_MODULE = "fcitx";
-    # QT_IM_MODULE = "fcitx";
-    # XMODIFIERS = "@im=fcitx";
-    # SDL_IM_MODULE = "fcitx";
-    # # Ensure Wayland compatibility
-    # GLFW_IM_MODULE = "ibus";
+    INPUT_METHOD = "fcitx";
+    GTK_IM_MODULE = ""; # unset, let Wayland IM handle
+    QT_IM_MODULE = ""; # unset, let Wayland IM handle
+    XMODIFIERS = "@im=fcitx";
+    GLFW_IM_MODULE = "ibus"; # optional, some games/toolkits expect this
   };
 
 }
