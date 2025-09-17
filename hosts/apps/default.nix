@@ -15,6 +15,7 @@
     # Y: Files
     ./apps.nix
     ./sessionVariables.nix
+    ./git.nix
     ./fzf.nix
     ./eza.nix
     ./stylix.nix
