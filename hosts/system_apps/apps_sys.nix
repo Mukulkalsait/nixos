@@ -14,6 +14,7 @@
     cliphist # clipboard history manager
     wlr-randr # wayland display manager tool.
     lm_sensors # for senseor of laptop.
+    android-tools # ADB. android debuging.
 
     # Lang-supporter : 
     gnumake # Build automation tool (MakeFiles).

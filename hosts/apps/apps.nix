@@ -54,6 +54,7 @@
     rustscan # rust port scanner
     dua # rust disk utility use " dua i " intereative.
     dust # Disk space shower.
+    pv # pipe viwer = shows prograssbar when used with pype.
 
     # Programing Languages:
     nodejs # node js
@@ -78,7 +79,8 @@
     # spicetify-cli
     mission-center
     blender # blender tests
-    libreoffice-fresh
+    libreoffice-fresh # community driven latest version fo libreoffice.
+    testdisk # Data recovery tool.
 
     papirus-icon-theme
     pcmanfm-qt
