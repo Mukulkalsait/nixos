@@ -90,7 +90,7 @@
       };
 
       gestures = {
-        workspace_swipe = false;
+        # workspace_swipe = false;
         workspace_swipe_invert = false;
         workspace_swipe_forever = true;
       };
