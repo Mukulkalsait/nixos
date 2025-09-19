@@ -65,7 +65,7 @@
     # GPU: 
     nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs
 
-    stress-ng # cpu stress tests
+    # stress-ng # cpu stress tests
     mangohud # fps overlay
     steam
     protonup
