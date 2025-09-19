@@ -30,8 +30,8 @@
 
     # Terminal:
     kitty
-    # tmux
     zellij
+    # tmux
 
     # DevOps
     kdash # TUI kuberneties dashboard.
@@ -75,10 +75,11 @@
     # Desktop apps:
     mpv
     obs-studio
+    vlc
     # spotify
     # spicetify-cli
     mission-center
-    blender # blender tests
+    # blender # B: blender tests 
     libreoffice-fresh # community driven latest version fo libreoffice.
     testdisk # Data recovery tool.
 
