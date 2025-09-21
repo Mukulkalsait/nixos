@@ -47,6 +47,7 @@
     ffmpeg # ffmpeg
     ffmpegthumbnailer # tuhmbnel creater
     mediainfo # media info tool.
+    easyeffects # Poweramp EQ enspired Equaliser.
 
     # CLI Utils:
     bat
@@ -55,6 +56,7 @@
     dua # rust disk utility use " dua i " intereative.
     dust # Disk space shower.
     pv # pipe viwer = shows prograssbar when used with pype.
+    # adbfs-rootless # adm-mount
 
     # Programing Languages:
     nodejs # node js
