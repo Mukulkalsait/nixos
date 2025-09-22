@@ -19,6 +19,7 @@
     ./fzf.nix
     ./eza.nix
     ./stylix.nix
+    ./zellij.nix
 
     ./kitty.nix
 
