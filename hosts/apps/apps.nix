@@ -48,7 +48,7 @@
     ffmpegthumbnailer # tuhmbnel creater
     mediainfo # media info tool.
     easyeffects # Poweramp EQ enspired Equaliser.
-    davinci-resolve # video editing
+    pinta # D.Photo editor
 
     # CLI Utils:
     bat
