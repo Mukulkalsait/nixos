@@ -75,15 +75,18 @@
           separate-outputs = true;
 
           rewrite = {
-            "(.*)nvim" = " Nvim"; # Neovim
-            "(.*)Kitty" = " Kitty"; # Neovim
-            "(.*)Zellij" = " Zellij"; # Neovim
-            "(.*)Zen Browser" = " Zen"; # Zen Browser (Firefox-based)
-            "(.*)Yazi" = " Yazi"; # Yazi file manager
+            "(.*)nvim*" = " Nvim"; # Neovim
+            "(.*)Kitty*" = " Kitty"; # Neovim
+            # "(.*)Zellij" = " Zellij"; # Neovim
+            "(.*)WhatsApp Business - Zen Twilight" =
+              "  Whatsapp"; # Zen Browser (Firefox-based)
+            "(.*)WhatsApp Business - Zen Twilight" =
+              "  Whatsapp"; # Zen Browser (Firefox-based)
+            "(.*)Yazi*" = " Yazi"; # Yazi file manager
             "(.*)OBS Studio" = "󰻑 OBS"; # OBS
             "(.*)Mission Center" = "󰨇 SysMon";
-            "(.*)Discord" = " Discord"; # Optional: Discord
-            "(.*)Spotify" = " Spotify"; # Optional: Spotify
+            # "(.*)Discord" = " Discord"; # Optional: Discord
+            # "(.*)Spotify" = " Spotify"; # Optional: Spotify
           };
         };
 
