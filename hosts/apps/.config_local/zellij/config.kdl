@@ -271,7 +271,7 @@ pane_frames true
  
  
 // copy_clipboard "primary" - system (default) - primary
-// on_force_close "quit"  // options - detach (Default)
+on_force_close "detach"  // options - detach (Default)
 copy_command "wl-copy"                    // wayland | hyprland
 copy_on_select true
  

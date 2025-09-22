@@ -80,8 +80,7 @@
             # "(.*)Zellij" = " Zellij"; # Neovim
             "(.*)WhatsApp Business - Zen Twilight" =
               "  Whatsapp"; # Zen Browser (Firefox-based)
-            "(.*)WhatsApp Business - Zen Twilight" =
-              "  Whatsapp"; # Zen Browser (Firefox-based)
+            # "(.*)*Zen Twilight" = "  Zen"; # Zen Browser (Firefox-based)
             "(.*)Yazi*" = " Yazi"; # Yazi file manager
             "(.*)OBS Studio" = "󰻑 OBS"; # OBS
             "(.*)Mission Center" = "󰨇 SysMon";
