@@ -57,7 +57,6 @@
     neovim # D>Editor.
     starship # zsh prompt costumise.
     yazi # D.FileManager
-    pinta # D.Photo editor
 
     # TUI Utils : 
     btop # Task manager.

@@ -12,7 +12,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = true;
-    open = false;
+    open = false; # Use proprietary for CUDA
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     forceFullCompositionPipeline = false;
@@ -49,11 +49,21 @@
 }
 
 /* G: command avialable
-   ------------------------
-       nvidia-offload <game>
-       nvidia-offload <cmd>
-       gamemodrun  <cmd>
-       mangohud <cmd>
-       gamescope <cmd>
+    ------------------------
+        nvidia-offload <game>
+        nvidia-offload <cmd>
+        gamemodrun  <cmd>
+        mangohud <cmd>
+        gamescope <cmd>
+
+   # hardware.graphics.extraPackages = with pkgs; [
+   #   ocl-icd
+   #   opencl-headers
+   #   nvidia-vaapi-driver
+   # ];
+   # hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [
+   #   ocl-icd
+   #   opencl-headers
+   # ];
 */
 
