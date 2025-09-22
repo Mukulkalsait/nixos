@@ -13,6 +13,11 @@
     QT_IM_MODULE = "wayland"; # unset, let Wayland IM handle
     XMODIFIERS = "@im=fcitx";
     GLFW_IM_MODULE = "ibus"; # optional, some games/toolkits expect this
+
+    # Y: openGL for "davinci-resolve" = DaVinci-Resolve
+    # LIBGL_ALWAYS_INDIRECT = "0";
+    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    # OCL_ICD_VENDORS = "/etc/OpenCL/vendors";
   };
 
 }
