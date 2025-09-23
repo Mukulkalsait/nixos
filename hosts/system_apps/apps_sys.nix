@@ -67,6 +67,7 @@
 
     # stress-ng # cpu stress tests
     mangohud # fps overlay
+    linuxPackages.nvidia_x11
     steam
     protonup
     (pkgs.writeShellScriptBin "prime-run" ''

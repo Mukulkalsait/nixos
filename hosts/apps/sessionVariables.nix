@@ -19,8 +19,6 @@
     # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     # OCL_ICD_VENDORS = "/etc/OpenCL/vendors";
 
-    #mangohud aoto start withs steam
-    MANGOHUD = "1";
   };
 
 }
