@@ -52,7 +52,7 @@
       "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
 
       # Y: Special Space
-      "$mainMod,       S, togglespecialworkspace,  magic"
+      "$mainMod,       S, togglespecialworkspace, magic"
       "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
       # G: Mislenious: 

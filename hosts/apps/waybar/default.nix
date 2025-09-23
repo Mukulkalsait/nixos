@@ -109,7 +109,6 @@
             "7" = "🔐";
             "8" = "💗";
             "9" = "Be bsdk kitne tab kholega 🤬";
-            "special" = "🪄";
             "magic" = "🪄";
           };
           persistent-workspaces = { "*" = 3; };

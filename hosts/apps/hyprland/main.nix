@@ -42,7 +42,6 @@
         # "col.inactive_border" = "rgba(3c3836ff)";
 
         resize_on_border = true;
-
         allow_tearing = false;
         layout = "dwindle"; # master, dwindle
       };
@@ -101,23 +100,19 @@
       };
 
       windowrulev2 = [
-        "bordersize 0, floating:0, onworkspace:w[t1]"
-
-        "float,class:(mpv)|(imv)|(showmethekey-gtk)"
-        "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
-        "noborder,nofocus,class:(showmethekey-gtk)"
 
         # Nmtui popup
         "float,title:^(nmtui-term)$"
         "size 22% 60%,title:^(nmtui-term)$"
         "move 75% 5%,title:^(nmtui-term)$"
 
-        # "workspace 3,class:(obsidian)"
-        # "workspace 3,class:(zathura)"
-        # "workspace 4,class:(com.obsproject.Studio)"
-        # "workspace 5,class:(telegram)"
-        # "workspace 5,class:(vesktop)"
-        # "workspace 6,class:(teams-for-linux)"
+        "opacity 0.6, class:SpecialOverlay" # special class opacity
+
+        "bordersize 0, floating:0, onworkspace:w[t1]"
+
+        "float,class:(mpv)|(imv)|(showmethekey-gtk)"
+        "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
+        "noborder,nofocus,class:(showmethekey-gtk)"
 
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
@@ -128,6 +123,13 @@
         "maxsize 1 1, class:^(xwaylandvideobridge)$"
         "noblur, class:^(xwaylandvideobridge)$"
         "nofocus, class:^(xwaylandvideobridge)$"
+
+        # "workspace 3,class:(obsidian)"
+        # "workspace 3,class:(zathura)"
+        # "workspace 4,class:(com.obsproject.Studio)"
+        # "workspace 5,class:(telegram)"
+        # "workspace 5,class:(vesktop)"
+        # "workspace 6,class:(teams-for-linux)"
       ];
 
       workspace = [ "w[tv1], gapsout:0, gapsin:0" "f[1], gapsout:0, gapsin:0" ];
