@@ -62,11 +62,11 @@
     btop # Task manager.
 
     # GPU: 
-    nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs
+    # nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs LAEGER
+    nvtopPackages.nvidia # GPU monitoring TUI Specific for Nvidia GPUs SMALLER
 
     # stress-ng # cpu stress tests
     mangohud # fps overlay
-    nvidia-utils # nvidia-tool
     steam
     protonup
     (pkgs.writeShellScriptBin "prime-run" ''
