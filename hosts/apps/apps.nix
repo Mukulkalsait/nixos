@@ -29,6 +29,35 @@
     playerctl # media controller
     pavucontrol # All audio IO gui tool very usefull.⭐
 
+    # Y: Lang (Programing)|>
+    nodejs # node js
+    bun # bun replacement for npm.
+    uv # PIP replacement. python package /dependency manager.
+    (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
+
+    # DX: {
+    # ---- LSPs via Nix (stable + fragile ones) ----
+    # lua-language-server
+    # pyright
+    # clang-tools
+    # --------------
+    # nodePackages.typescript-language-server # TypeScript / JavaScript
+    # nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
+    # nodePackages."@tailwindcss/language-server" # Tailwind
+    # phpPackages.php-codesniffer # PHP
+    # ___  }
+
+    # B: CLI Essentilas |>
+    bat
+    eza
+    rustscan # rust port scanner
+
+    # B: TUI |>
+    dua # rust disk utility use " dua i " intereative.
+    dust # Disk space shower.
+    pv # pipe viwer = shows prograssbar when used with pype.
+    # adbfs-rootless # adm-mount
+
     # Terminal:
     kitty
     zellij
@@ -45,31 +74,6 @@
     mediainfo # media info tool.
     easyeffects # Poweramp EQ enspired Equaliser.
     pinta # D.Photo editor
-
-    # CLI Utils:
-    bat
-    eza
-    rustscan # rust port scanner
-    dua # rust disk utility use " dua i " intereative.
-    dust # Disk space shower.
-    pv # pipe viwer = shows prograssbar when used with pype.
-    # adbfs-rootless # adm-mount
-
-    # Programing Languages:
-    nodejs # node js
-    bun # bun replacement for npm.
-    uv # PIP replacement. python package /dependency manager.
-    (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
-
-    # ---- LSPs via Nix (stable + fragile ones) ----
-    # lua-language-server
-    # pyright
-    # clang-tools
-    #
-    # nodePackages.typescript-language-server # TypeScript / JavaScript
-    # nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
-    # nodePackages."@tailwindcss/language-server" # Tailwind
-    # phpPackages.php-codesniffer # PHP
 
     # Desktop apps:
     mpv
