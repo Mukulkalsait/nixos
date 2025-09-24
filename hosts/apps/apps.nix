@@ -44,7 +44,7 @@
     pavucontrol # All audio IO gui tool very usefull.⭐
 
     # Media & essentials:
-    ffmpeg # ffmpeg
+    ffmpeg-full # ffmpeg
     ffmpegthumbnailer # tuhmbnel creater
     mediainfo # media info tool.
     easyeffects # Poweramp EQ enspired Equaliser.
