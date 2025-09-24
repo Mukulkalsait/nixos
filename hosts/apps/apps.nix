@@ -6,27 +6,28 @@
 
   # Minimal user packages (keep it simple for now)
   home.packages = with pkgs; [
-    # IMP: OTHER app installation LOCATIONS.
+    # CARD: OTHER app installation LOCATIONS |>
     # /etc/nixos/hosts/system_apps/nvidia.nix
     # /etc/nixos/hosts/apps/stylix.nix
 
-    # DX:TEMPERORY
+    # DX: System Imp |>
 
-    # Window Mmanager: 
-    libnotify # notification
+    # Y: Hyprland + Plugins|>
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
-    hyprpicker # color picker tool
-    hyprshot # Screenshot
     rofi # MenuBar For Hyprland
-    w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
-    wtype # wayland keyboard input
     swww # Walpaper
+    libnotify # notification
+    hyprshot # Screenshot
+    wtype # FUN_3: wayland keyboard input= i am using "fcitx5" in /configuration.nix USE ONLY 1.
+    hyprpicker # color picker tool
     wev # input event check + debug, <keyboard, mouse>
-    # Y: dispaly tv and other things.
-    # nvidia-settings # settings for nvidia app
-    # xorg.xrandr # xrandr= list display ops
-    # xorg.setxkbmap # another display management
+    # w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
+
+    # Y: Hardware Control |>
+    brightnessctl # brightness controller
+    playerctl # media controller
+    pavucontrol # All audio IO gui tool very usefull.⭐
 
     # Terminal:
     kitty
@@ -37,11 +38,6 @@
     kdash # TUI kuberneties dashboard.
     dive # TUI Docker Images Layers.
     lazydocker # TUI lazy Docker.
-
-    # Hardware Control:
-    brightnessctl # brightness controller
-    playerctl # media controller
-    pavucontrol # All audio IO gui tool very usefull.⭐
 
     # Media & essentials:
     ffmpeg-full # ffmpeg
