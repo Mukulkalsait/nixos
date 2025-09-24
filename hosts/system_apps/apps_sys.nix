@@ -7,16 +7,18 @@
     # System Imp :
     greetd.tuigreet # TUI login manager.
 
-    # nvidia-settings # imoprtant
+    # Y: Hyprland: 
     hyprland # wayland compositer.
-    zsh # shell.
     wl-clipboard # clipboard.
-    cliphist # clipboard history manager
     wlr-randr # wayland display manager tool.
+
+    # Y: Hardware:
     lm_sensors # for senseor of laptop.
     android-tools # ADB. android debuging.
 
-    # Lang-supporter : 
+    # Y: Essentials: 
+    zsh # shell.
+    cliphist # clipboard history manager
     gnumake # Build automation tool (MakeFiles).
     cmake # Cross Platform build system generator.
 
