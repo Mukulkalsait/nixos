@@ -15,9 +15,11 @@
     # Y: Hyprland + Plugins|>
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
+    pcmanfm-qt # FILE MANAGER WHICH TRIGGERS WHEN BROWSE BUTTON CLICKED
     rofi # MenuBar For Hyprland
     swww # Walpaper
     libnotify # notification
+    papirus-icon-theme # Themes pack for menu
     hyprshot # Screenshot
     wtype # FUN_3: wayland keyboard input= i am using "fcitx5" in /configuration.nix USE ONLY 1.
     hyprpicker # color picker tool
@@ -58,17 +60,17 @@
     pv # pipe viwer = shows prograssbar when used with pype.
     # adbfs-rootless # adm-mount
 
-    # Terminal:
+    # ID: Terminal |>
     kitty
     zellij
     # tmux
 
-    # DevOps
+    # TEST: DevOps |>
     kdash # TUI kuberneties dashboard.
     dive # TUI Docker Images Layers.
     lazydocker # TUI lazy Docker.
 
-    # Media & essentials:
+    # B: Media & essentials |>
     ffmpeg-full # ffmpeg
     ffmpegthumbnailer # tuhmbnel creater
     mediainfo # media info tool.
@@ -76,26 +78,21 @@
     pinta # D.Photo editor
 
     # Desktop apps:
-    mpv
+    mission-center
+    libreoffice-fresh # community driven latest version fo libreoffice.
     obs-studio
     vlc
+    # testdisk # DIV: Data recovery tool.
+    # blender  #      Blender tests 
+
+    # mpv
     # spotify
     # spicetify-cli
-    mission-center
-    # blender # B: blender tests 
-    libreoffice-fresh # community driven latest version fo libreoffice.
-    testdisk # Data recovery tool.
 
-    papirus-icon-theme
-    pcmanfm-qt
+    # DX: REFERENCES |>
 
-    # GITHUB APPS:
-    # inputs.zen-browser.packages."${system}".specific
-
-    # CLI utils: bc bottom brightnessctl git-graph grimblast  ntfs3g playerctl showmethekey silicon udisks ueberzugpp wtype yt-dlp 
-
+    # CLI utils: bc bottom git-graph grimblast ntfs3g playerctl showmethekey silicon udisks ueberzugpp wtype yt-dlp 
     # Coding stuff: openjdk23 python311
-
     # Other: bemoji nix-prefetch-scripts
   ];
 
