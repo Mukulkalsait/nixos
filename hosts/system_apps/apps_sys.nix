@@ -3,26 +3,23 @@
 
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+    # CARD: OTHER app installation LOCATIONS |>
+    # /etc/nixos/hosts/system_apps/nvidia.nix
+    # /etc/nixos/hosts/apps/stylix.nix
 
-    # System Imp :
+    # DX: System Imp |>
     greetd.tuigreet # TUI login manager.
 
-    # Y: Hyprland: 
+    # Y: Hyprland |>
     hyprland # wayland compositer.
     wl-clipboard # clipboard.
     wlr-randr # wayland display manager tool.
 
-    # Y: Hardware:
+    # Y: Hardware |>
     lm_sensors # for senseor of laptop.
     android-tools # ADB. android debuging.
 
-    # Y: Essentials: 
-    zsh # shell.
-    cliphist # clipboard history manager
-    gnumake # Build automation tool (MakeFiles).
-    cmake # Cross Platform build system generator.
-
-    # Lang:
+    # Y: Lang |>
     gcc # GUN C compailer.
     cargo # rust package manager.
     rustup # latet rust {nightly}
@@ -30,8 +27,7 @@
     lua # lua lang.
     luarocks # Lua package manager.
 
-    # Kernal Related
-    # Y: PREDATOR SENSE FUNCTIONALITY |>
+    # DX: PREDATOR SENSE FUNCTIONALITY + Kernal Modifiers |>
     linuxPackages.kernel.dev # Kernel development headers/tools (needed for building modules).
     pkg-config # helper for compiling/linking libraris.
     bc # CLI calculater for Scripting features.
@@ -39,35 +35,38 @@
     usbutils # lsusb + usb funcanilitys.
     bolt # Thunderbolt devices manager
 
-    # CLI Essentilas:
-    openssh
-    git
+    # B: CLI Essentilas |>
+    gnumake # Build automation tool (MakeFiles).
+    cmake # Cross Platform build system generator.
+    glib # LOW lever system lib, {many app needed.}
+
+    git # git
     gh # Git hub
     wget # HTTP FTP file downloader.
     curl # URL trnasfer tool (HTTP/FTP/APIS)
+    cliphist # clipboard history manager
+    zsh # shell.
+    openssh
+
+    # B: CLI Utils |>
     jq # JSON parser.
     fd # Fast alternative for find
-    ripgrep # Fast Test Search Tool | grep alternative?
-    glib # LOW lever system lib, {many app needed.}
     fzf # fuzzy finder.
+    ripgrep # Fast Test Search Tool | grep alternative?
     fastfetch # SYSTEM INFO
-
-    # CLI Utils : 
     p7zip # archiv/ unarchiv
 
-    # Daily Drivers :
-    neovim # D>Editor.
-    starship # zsh prompt costumise.
+    # B: Daily Drivers |>
     yazi # D.FileManager
+    neovim # D.Editor.
+    starship # D.Prompt UI zsh prompt costumise.
 
-    # TUI Utils : 
+    # B: TUI Utils |>
     btop # Task manager.
-
-    # GPU: 
+    nvtopPackages.nvidia # G: GPU monitoring TUI Specific for Nvidia GPUs SMALLER
     # nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs LAEGER
-    nvtopPackages.nvidia # GPU monitoring TUI Specific for Nvidia GPUs SMALLER
 
-    # stress-ng # cpu stress tests
+    # FUN_2: APPS |>
     mangohud # fps overlay
     linuxPackages.nvidia_x11
     steam
@@ -76,6 +75,9 @@
       #!/bin/sh
       __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
     '')
+
+    # TAG: DISABELED Extras |>
+    # stress-ng # cpu stress tests
 
   ];
 
