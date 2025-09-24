@@ -18,7 +18,7 @@
   # IMP: INPUT METHODS + input Selector
   i18n.defaultLocale = "en_US.UTF-8"; # Input Method.
   i18n.inputMethod = {
-    type = "fcitx5";
+    enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
       fcitx5-m17n # Hindi/Marathi transliteration
       fcitx5-gtk # GTK apps
