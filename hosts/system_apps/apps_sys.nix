@@ -69,8 +69,9 @@
     # FUN_2: APPS |>
     mangohud # fps overlay
     linuxPackages.nvidia_x11
-    steam
-    protonup
+    steam # steam app itself
+    protonup # Steam Compatiblelity tool
+    gamescope # full screen Window manager STEAM
     (pkgs.writeShellScriptBin "prime-run" ''
       #!/bin/sh
       __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
