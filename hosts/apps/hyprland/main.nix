@@ -13,7 +13,7 @@
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];
 
-      monitor = ",1920x1200@165,auto,1";
+      monitor = ",1920x1200@165,auto,1,vrr,0";
       "$mainMod" = "SUPER";
       "$menu" = "rofi";
       "$TERMINAL" = "kitty";
@@ -123,6 +123,9 @@
         "maxsize 1 1, class:^(xwaylandvideobridge)$"
         "noblur, class:^(xwaylandvideobridge)$"
         "nofocus, class:^(xwaylandvideobridge)$"
+
+        "fullscreen, class:^(steam_app_[0-9]+)$"
+        "nofullscreenrequest, class:^(steam_app_[0-9]+)$"
 
         # "workspace 3,class:(obsidian)"
         # "workspace 3,class:(zathura)"
