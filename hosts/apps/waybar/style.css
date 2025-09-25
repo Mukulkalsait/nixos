@@ -68,6 +68,10 @@ window#waybar {
   border-color: #d65d0e;
 }
 
+#tray > * {
+  padding: 5pt 5pt;
+}
+
 #pulseaudio {
   color: #689d6a;
   border-color: #689d6a;

@@ -21,6 +21,7 @@
 
     shellAliases = let flakeDir = "~/flake";
     in {
+      wA = "bat /home/mukuldk/.zshrc";
       # G: Aliases 
       rm = "rm -i";
       gpu = "git push";
