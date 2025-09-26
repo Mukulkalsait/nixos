@@ -14,6 +14,7 @@
     hyprland # wayland compositer.
     wl-clipboard # clipboard.
     wlr-randr # wayland display manager tool.
+    # pipewire # to use Screen Sharing hone must needed.
 
     # Y: Hardware |>
     lm_sensors # for senseor of laptop.

@@ -36,7 +36,7 @@
         inner_color = "rgb(40, 40, 40)";
         outer_color = "rgb(60, 56, 54)";
         outline_thickness = 5;
-        placeholder_text = "mukuldk";
+        placeholder_text = "$USER";
         shadow_passes = 1;
       }];
     };

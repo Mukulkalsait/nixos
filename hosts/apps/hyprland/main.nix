@@ -3,6 +3,16 @@
     enable = true;
     systemd.enable = true;
     settings = {
+
+      "$mainMod" = "SUPER";
+      "$menu" = "rofi";
+      "$TERMINAL" = "kitty";
+      "$FILEMANAGER" = "$terminal -e sh -c 'yazi'";
+      "$EDITOR" = "nvim";
+      "$VISUAL" = "nvim";
+      "$BROWSER" = "zen";
+      "$TASKMANAGER" = "missioncenter";
+
       env = [
         # Hint Electron apps to use Wayland
         "NIXOS_OZONE_WL,1"
@@ -12,19 +22,9 @@
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];
-      # render = {
-      #   explicit_sync = 1; # Enables explicit sync for NVIDIA
-      # };
 
-      monitor = ",1920x1200@165,auto,1,vrr,0";
-      "$mainMod" = "SUPER";
-      "$menu" = "rofi";
-      "$TERMINAL" = "kitty";
-      "$FILEMANAGER" = "$terminal -e sh -c 'yazi'";
-      "$EDITOR" = "nvim";
-      "$VISUAL" = "nvim";
-      "$BROWSER" = "zen";
-      "$TASKMANAGER" = "missioncenter";
+      # DX: monitor = name, resolution, position, scale
+      monitor = [ ",1920x1200@165,auto,1" ",3840x2160@120,auto,1" ];
 
       exec-once = [
         "waybar"
@@ -70,7 +70,6 @@
 
       animations = {
         enabled = true;
-        # Smooth, fast animations
         bezier = [ "myBezier, 0.05, 0.9, 0.1, 1.0" ];
 
         animation = [
@@ -79,7 +78,8 @@
           "border, 1, 6, default"
           "fade, 1, 7, default"
           "workspaces, 1, 4, default"
-          "specialWorkspace,slidevert,default"
+          "specialWorkspaceIn,1,4,myBezier,slidefadevert"
+          "specialWorkspaceOut,1,2,myBezier,slidefadevert"
 
         ];
       };
