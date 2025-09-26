@@ -12,6 +12,9 @@
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];
+      # render = {
+      #   explicit_sync = 1; # Enables explicit sync for NVIDIA
+      # };
 
       monitor = ",1920x1200@165,auto,1,vrr,0";
       "$mainMod" = "SUPER";
@@ -81,8 +84,9 @@
 
       input = {
         kb_layout = "us,in";
-        repeat_delay = 280; # like above
-        repeat_rate = 55; # repeats per second
+        repeat_delay = 250; # like above
+        repeat_rate = 60; # repeats per second
+        force_no_accel = 1;
 
         # kb_variant = "marathi";
         # kb_options = "ctrl:nocaps";
@@ -97,6 +101,8 @@
       misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = false;
+        vfr = true; # Y: variable refresh rate.
+        # force_default_amdgpu_renderer = false; # Y:NVIDIA compatibility
       };
 
       windowrulev2 = [
@@ -125,7 +131,7 @@
         "nofocus, class:^(xwaylandvideobridge)$"
 
         "fullscreen, class:^(steam_app_[0-9]+)$"
-        "nofullscreenrequest, class:^(steam_app_[0-9]+)$"
+        # "nofullscreenrequest, class:^(steam_app_[0-9]+)$"
 
         # "workspace 3,class:(obsidian)"
         # "workspace 3,class:(zathura)"

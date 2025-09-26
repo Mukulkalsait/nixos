@@ -31,12 +31,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # Fan contorl 
-    # nbfc-linux = {
-    #   url = "github:nbfc-linux/nbfc-linux";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     #  Neovim NIGHTLY OVERLAY
     # neovim-nightly-overlay = { url = "github:nix-community/neovim-nightly-overlay"; };
 
