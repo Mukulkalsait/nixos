@@ -79,6 +79,8 @@
           "border, 1, 6, default"
           "fade, 1, 7, default"
           "workspaces, 1, 4, default"
+          "specialWorkspace,slidevert,default"
+
         ];
       };
 
