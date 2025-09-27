@@ -70,7 +70,8 @@
 
       animations = {
         enabled = true;
-        bezier = [ "myBezier, 0.05, 0.9, 0.1, 1.0" ];
+        bezier =
+          [ "myBezier, 0.05, 0.9, 0.1, 1.0" "reBezier, 1, 0.99, 0.48,1.12" ];
 
         animation = [
           "windows, 1, 4, myBezier"
@@ -78,8 +79,8 @@
           "border, 1, 6, default"
           "fade, 1, 7, default"
           "workspaces, 1, 4, default"
-          "specialWorkspaceIn,1,4,myBezier,slidefadevert"
-          "specialWorkspaceOut,1,2,myBezier,slidefadevert"
+          "specialWorkspaceIn,1,3,myBezier,slidefadevert"
+          "specialWorkspaceOut,1,1.4,reBezier,slidefadevert"
 
         ];
       };
@@ -111,12 +112,12 @@
 
         # Nmtui popup
         "float,title:^(nmtui-term)$"
-        "size 22% 60%,title:^(nmtui-term)$"
-        "move 75% 5%,title:^(nmtui-term)$"
+        "size 28% 65%,title:^(nmtui-term)$"
+        "move 65% 3%,title:^(nmtui-term)$"
 
-        "opacity 0.6, class:SpecialOverlay" # special class opacity
+        "opacity 0.3, class:SpecialOverlay" # special class opacity
 
-        "bordersize 0, floating:0, onworkspace:w[t1]"
+        "bordersize 1, floating:0, onworkspace:w[t1]"
 
         "float,class:(mpv)|(imv)|(showmethekey-gtk)"
         "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
