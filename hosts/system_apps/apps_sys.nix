@@ -55,6 +55,8 @@
     fzf # fuzzy finder.
     ripgrep # Fast Test Search Tool | grep alternative?
     fastfetch # SYSTEM INFO
+    zip
+    unzip
     p7zip # archiv/ unarchiv
 
     # B: Daily Drivers |>
