@@ -1,6 +1,6 @@
 layout{
   pane{
-    command "zsh"
-    args "-c" "fastfetch; exec zsh"
+    // command "zsh"
+    // args "-c" "fastfetch; exec zsh"
   }
 }
