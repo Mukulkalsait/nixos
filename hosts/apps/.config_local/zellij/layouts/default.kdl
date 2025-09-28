@@ -3,12 +3,10 @@ layout {
         plugin location="tab-bar"
     }
     pane {
-      command="zsh"
-      args=["-c", "fastfetch; exec zsh"]
+        command "zsh"
+        args "-c" "fastfetch; exec zsh"
     }
-
     pane size=1 borderless=true {
         plugin location="status-bar"
     }
 }
-
