@@ -314,7 +314,7 @@ copy_on_select true
 ui {
     pane_frames {
         rounded_corners true
-        command "fastfetch"
+
     }
 }
 show_startup_tips false
@@ -337,7 +337,7 @@ show_startup_tips false
 // default_layout "compact"
  
 // The folder in which Zellij will look for layouts (Requires restart)
-// layout_dir "/tmp"
+layout_dir "./Layouts/"
  
 
 // Use a simplified UI without special fonts (arrow glyphs) Options: - true - false (Default)
