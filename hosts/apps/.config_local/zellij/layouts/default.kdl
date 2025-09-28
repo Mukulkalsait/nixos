@@ -3,6 +3,7 @@ layout{
     command "zsh"
     args "-c" "fastfetch; exec zsh"
   }
-  tab-bar {}
-  status-bar {}
+    pane_frames true
+    tab_bar true
+    status_bar true
 }
