@@ -19,7 +19,7 @@
     ./fzf.nix
     ./eza.nix
     ./stylix.nix
-    ./zellij.nix
+    ./config_local.nix.nix
 
     ./kitty.nix
 
