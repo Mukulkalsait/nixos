@@ -1,9 +1,8 @@
 layout{
-  pane{
+  tab{
     command "zsh"
     args "-c" "fastfetch; exec zsh"
   }
-    pane_frames true
     tab_bar true
     status_bar true
 }
