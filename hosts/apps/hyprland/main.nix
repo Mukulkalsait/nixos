@@ -117,7 +117,7 @@
 
         "opacity 0.3, class:SpecialOverlay" # special class opacity
 
-        "bordersize 1, floating:0, onworkspace:w[t1]"
+        "bordersize 0, floating:1, onworkspace:w[t1]"
 
         "float,class:(mpv)|(imv)|(showmethekey-gtk)"
         "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
