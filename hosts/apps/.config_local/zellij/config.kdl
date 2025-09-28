@@ -337,7 +337,7 @@ show_startup_tips false
 // default_layout "compact"
  
 // The folder in which Zellij will look for layouts (Requires restart)
-layout_dir "./Layouts/"
+// layout_dir "./Layouts/"
 
  
 
