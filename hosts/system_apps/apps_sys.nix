@@ -46,6 +46,8 @@
     wget # HTTP FTP file downloader.
     curl # URL trnasfer tool (HTTP/FTP/APIS)
     cliphist # clipboard history manager
+    zip # zip
+    unzip # unzip
     zsh # shell.
     openssh
 
@@ -55,8 +57,6 @@
     fzf # fuzzy finder.
     ripgrep # Fast Test Search Tool | grep alternative?
     fastfetch # SYSTEM INFO
-    zip
-    unzip
     p7zip # archiv/ unarchiv
 
     # B: Daily Drivers |>
