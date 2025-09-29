@@ -1,4 +1,4 @@
-# Y: Neovim with home config.
+# Y:  Neovim with home config.
 { config, pkgs, ... }: {
   programs.neovim = {
     enable = true;
@@ -28,44 +28,33 @@
           p.rust
           p.nix
           p.bash
-          # Add KDL if available in your Nixpkgs (may need overlay/tree-sitter-kdl)
-          p.kdl
         ]))
       ];
   };
 
   # Install LSP servers and formatters
   home.packages = with pkgs; [
-    nil # nix-LSP
-    nixpkgs-fmt # FORMATTER
+    nil # LSP
+    nixpkgs-fmt # FORMATER
 
     lua-language-server # LSP
-    rustfmt # FORMATTER
+    rustfmt # FORMATER
     rust-analyzer # LSP
 
-    stylua # FORMATTER
+    stylua # FORMATER
     emmet-ls # LSP
     tailwindcss-language-server # LSP
     phpactor # LSP
 
     # Formatters & Linters
     nodePackages.typescript-language-server # LSP
-    nodePackages.vscode-langservers-extracted # LSP (includes html, css, json)
-    nodePackages.prettier # FORMATTER
-    nodePackages.eslint # LINTER
-    nodePackages.stylelint # LINTER (for CSS)
-    nodePackages.bash-language-server # LSP (for Bash/ZSH)
-    nodePackages.yaml-language-server # LSP (for YAML/Kubernetes)
-    nodePackages.dockerfile-language-server-nodejs # LSP (for Dockerfiles)
-    nodePackages.sql-formatter # FORMATTER (for SQL)
-    # nodePackages."@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
-    phpPackages.php-codesniffer # LINTER (for PHP)
-    shfmt # FORMATTER (for Bash/ZSH)
-    sqls # LSP (for SQL)
+    nodePackages.vscode-langservers-extracted # LSP
+    nodePackages.prettier # FORMATER
+    nodePackages.eslint # Linters
 
   ];
 
-  # DX: This is here to keep the file in home for changing configs.
+  # DX: Theis is here to keep the file in home for chaingin configs.
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "/home/mukuldk/1_file/2_git_repos/nvim";
 

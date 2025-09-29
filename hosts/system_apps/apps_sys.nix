@@ -6,6 +6,7 @@
     # CARD: OTHER app installation LOCATIONS |>
     # /etc/nixos/hosts/system_apps/nvidia.nix
     # /etc/nixos/hosts/apps/stylix.nix
+    # /etc/nixos/hosts/apps/neovim.nix
 
     # DX: System Imp |>
     greetd.tuigreet # TUI login manager.
@@ -27,6 +28,7 @@
     rust-analyzer # analyzer user latest nightly version
     lua # lua lang.
     luarocks # Lua package manager.
+    nodejs # nodejs
 
     # DX: PREDATOR SENSE FUNCTIONALITY + Kernal Modifiers |>
     linuxPackages.kernel.dev # Kernel development headers/tools (needed for building modules).
@@ -56,6 +58,7 @@
     fd # Fast alternative for find
     fzf # fuzzy finder.
     ripgrep # Fast Test Search Tool | grep alternative?
+    tree-sitter # treesitter for neovim
     fastfetch # SYSTEM INFO
     p7zip # archiv/ unarchiv
 

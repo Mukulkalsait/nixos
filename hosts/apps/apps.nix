@@ -9,6 +9,7 @@
     # CARD: OTHER app installation LOCATIONS |>
     # /etc/nixos/hosts/system_apps/nvidia.nix
     # /etc/nixos/hosts/apps/stylix.nix
+    # /etc/nixos/hosts/apps/neovim.nix
 
     # DX: System Imp |>
 
@@ -36,18 +37,6 @@
     bun # bun replacement for npm.
     uv # PIP replacement. python package /dependency manager.
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
-
-    # DX: {
-    # ---- LSPs via Nix (stable + fragile ones) ----
-    # lua-language-server
-    # pyright
-    # clang-tools
-    # --------------
-    # nodePackages.typescript-language-server # TypeScript / JavaScript
-    # nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
-    # nodePackages."@tailwindcss/language-server" # Tailwind
-    # phpPackages.php-codesniffer # PHP
-    # ___  }
 
     # B: CLI Essentilas |>
     bat
