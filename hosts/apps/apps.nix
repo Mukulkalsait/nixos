@@ -34,6 +34,7 @@
 
     # Y: Lang (Programing)|>
     nodejs # node js
+    php # php
     bun # bun replacement for npm.
     uv # PIP replacement. python package /dependency manager.
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
