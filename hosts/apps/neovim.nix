@@ -47,11 +47,12 @@
     emmet-ls # LSP
     tailwindcss-language-server # LSP
     phpactor # LSP
+    biome # Added: Replaces Prettier/ESLint for JS/TS/JSON
+    shellcheck # For Bash linting if needed
 
     # Formatters & Linters
     nodePackages.typescript-language-server # LSP
     nodePackages.vscode-langservers-extracted # LSP (includes html, css, json)
-    nodePackages.prettier # FORMATTER
     nodePackages.eslint # LINTER
     nodePackages.stylelint # LINTER (for CSS)
     nodePackages.bash-language-server # LSP (for Bash/ZSH)
