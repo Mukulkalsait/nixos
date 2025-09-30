@@ -50,8 +50,7 @@ let
       platforms = platforms.linux;
     };
   };
-in
-{
+in {
   boot.extraModulePackages = [ linuwu-sense ];
   boot.kernelModules = [ "linuwu_sense" ];
   boot.blacklistedKernelModules = [ "acer_wmi" ];
