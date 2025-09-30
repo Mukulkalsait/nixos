@@ -10,6 +10,8 @@
 
     # DX: System Imp |>
     greetd.tuigreet # TUI login manager.
+    nix-prefetch-git # Y: RunToFindInfo: nix-prefetch-git --url https://github.com/0x7375646F/Linuwu-Sense --rev refs/heads/main
+
 
     # Y: Hyprland |>
     hyprland # wayland compositer.
