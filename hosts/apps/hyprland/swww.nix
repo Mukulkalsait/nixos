@@ -1,16 +1,28 @@
+# Y: this file generates 2 scripts  A and B 
 { config, pkgs, ... }:
 
-let wallpaperDir = "${config.home.homeDirectory}/1_file/9_Pictures/Walpapers";
-in {
-  # Script 1: Startup
+let
+  wallpaperDir = "${config.home.homeDirectory}/1_file/9_Pictures/Walpapers";
+  queueFile = "\${XDG_CACHE_HOME:-$HOME/.cache}/swww_wallpaper_queue";
+in
+{
+  # Y: A => Script 1: Startup
   xdg.configFile."swww/start.sh".text = ''
     #!/bin/sh
-    # start daemon
+    wallpaperDir="${wallpaperDir}"
+    queueFile="${queueFile}"
+
     swww init &
-    # wait for socket
     sleep 1
-    # set random wallpaper
-    swww img $(find ${wallpaperDir} -type f | shuf -n 1) \
+
+    # Rebuild queue at startup
+    find "$wallpaperDir" -type f | shuf > "$queueFile"
+
+    # First wallpaper from queue
+    firstWp=$(head -n 1 "$queueFile")
+    tail -n +2 "$queueFile" > "$queueFile.tmp" && mv "$queueFile.tmp" "$queueFile"
+
+    swww img "$firstWp" \
       --transition-step 90 \
       --transition-fps 60 \
       --transition-type any \
@@ -19,10 +31,22 @@ in {
   '';
   xdg.configFile."swww/start.sh".executable = true;
 
-  # Script 2: Change wallpaper
+  # Y: B =>  Script 2: Change wallpaper
   xdg.configFile."swww/change.sh".text = ''
     #!/bin/sh
-    swww img $(find ${wallpaperDir} -type f | shuf -n 1) \
+    wallpaperDir="${wallpaperDir}"
+    queueFile="${queueFile}"
+
+    # If queue is empty, regenerate
+    if [ ! -s "$queueFile" ]; then
+      find "$wallpaperDir" -type f | shuf > "$queueFile"
+    fi
+
+    # Next wallpaper
+    nextWp=$(head -n 1 "$queueFile")
+    tail -n +2 "$queueFile" > "$queueFile.tmp" && mv "$queueFile.tmp" "$queueFile"
+
+    swww img "$nextWp" \
       --transition-step 90 \
       --transition-fps 60 \
       --transition-type any \
@@ -32,10 +56,9 @@ in {
   '';
   xdg.configFile."swww/change.sh".executable = true;
 
+  # Hook into Hyprland startup
   wayland.windowManager.hyprland.extraConfig = ''
-    # Run daemon + initial wallpaper once
     exec-once = ${config.home.homeDirectory}/.config/swww/start.sh
   '';
 }
 
-# in bindd= ["$mainMod, ALT, W, exec, ${config.home.homeDirectory}/.config/swww/change.sh"] 
