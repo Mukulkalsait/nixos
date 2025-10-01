@@ -39,6 +39,8 @@
     elfutils # EBL librari working tools {kernal, perf, debuging}
     usbutils # lsusb + usb funcanilitys.
     bolt # Thunderbolt devices manager
+    kmod # find
+    flex # find
 
     # B: CLI Essentilas |>
     gnumake # Build automation tool (MakeFiles).
