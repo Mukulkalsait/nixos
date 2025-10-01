@@ -57,7 +57,7 @@
     nodePackages.stylelint # LINTER (for CSS)
     nodePackages.bash-language-server # LSP (for Bash/ZSH)
     nodePackages.yaml-language-server # LSP (for YAML/Kubernetes)
-    nodePackages.dockerfile-language-server-nodejs # LSP (for Dockerfiles)
+    dockerfile-language-server
     nodePackages.sql-formatter # FORMATTER (for SQL)
     # nodePackages."@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
     phpPackages.php-codesniffer # LINTER (for PHP)
