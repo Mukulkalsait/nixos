@@ -2,9 +2,21 @@
 { config, pkgs, ... }: {
   # Y: x.server = OpenGL :
   services.xserver.videoDrivers = [ "nvidia" ];
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      cudatoolkit
+      nvidia-vaapi-driver
+      ocl-icd
+      opencl-headers
+    ];
+    # Uncomment if you need 32-bit OpenCL (Proton/Wine/Resolve plugins)
+    # extraPackages32 = with pkgs.pkgsi686Linux; [
+    #   ocl-icd
+    #   opencl-headers
+    # ];
   };
 
   # Y: NVIDIA: 
@@ -51,18 +63,13 @@
 }
 
 /* G: command avialable
-    ------------------------
+  ------------------------
         nvidia-offload <game>
         nvidia-offload <cmd>
         gamemodrun  <cmd>
         mangohud <cmd>
         gamescope <cmd>
 
-   # hardware.graphics.extraPackages = with pkgs; [
-   #   ocl-icd
-   #   opencl-headers
-   #   nvidia-vaapi-driver
-   # ];
    # hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [
    #   ocl-icd
    #   opencl-headers
