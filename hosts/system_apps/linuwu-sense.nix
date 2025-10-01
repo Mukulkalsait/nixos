@@ -2,7 +2,7 @@
 { pkgs, lib, ... }:
 
 let
-  kernel = pkgs.linuxPackages_latest.kernel; # Consider linuxPackages_6_6 if 6.16.9 has issues
+  kernel = pkgs.linuxPackages_latest.kernel; # Keep latest kernel (6.16.9)
   linuwu-sense = pkgs.stdenv.mkDerivation rec {
     pname = "linuwu-sense";
     version = "unstable-2025-09-06";
@@ -10,9 +10,13 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "0x7375646F";
       repo = "Linuwu-Sense";
-      rev = "df84ac7a020efebd4cd1097e73940d93eb959093"; # Latest commit on main (2025-09-25)
+      rev = "df84ac7a020efebd4cd1097e73940d93eb959093";
       sha256 = "sha256-vSvNaSzd5Q8nXBGjYXaXcM4k924QV54x9UgKiFLMBVs=";
     };
+
+    postPatch = ''
+      sed -i 's/KDIR  := \/lib\/modules\/$(KVER)\/build/KDIR  := $(KERNELDIR)/' Makefile
+    '';
 
     nativeBuildInputs = with pkgs; [ pkg-config kmod gcc gnumake ];
     buildInputs = [ kernel.dev ];
@@ -30,7 +34,7 @@ let
     '';
 
     buildPhase = ''
-      make $makeFlags M=$(pwd) modules
+      make $makeFlags M=$(pwd) all
     '';
 
     installPhase = ''
