@@ -25,7 +25,7 @@
     powerManagement.enable = true;
     powerManagement.finegrained = true;
     open = false; # Use proprietary for CUDA
-    nvidiaPersistenced = false; # this will keep tools working Y: can be turned commented out if i dont see much improvement.
+    nvidiaPersistenced = false; #  DX: Turned off because breaking GPU.= {basically keep nvidia running} / we are fine without it.
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     forceFullCompositionPipeline = false;
