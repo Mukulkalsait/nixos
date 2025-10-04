@@ -28,8 +28,12 @@
           p.rust
           p.nix
           p.bash
-          # Add KDL if available in your Nixpkgs (may need overlay/tree-sitter-kdl)
           p.kdl
+          # Added for snacks.nvim => all are TreeSitter Parser.
+          p.latex # Markdown with diagrams or LaTeX Math sxpression 
+          p.svelte
+          p.vue
+          p.typst
         ]))
       ];
   };
@@ -47,19 +51,25 @@
     emmet-ls # LSP
     tailwindcss-language-server # LSP
     phpactor # LSP
-    biome # Added: Replaces Prettier/ESLint for JS/TS/JSON
-    shellcheck # For Bash linting if needed
+    biome # Y: Replacement for => Prettier/ESLint for JS/TS/JSON (FORMATER + LINTER)
+    shellcheck # BASH LINTER
+
+    ghostscript # For PDF rendering (gs) snack.nvim
+    tectonic # For LaTeX rendering snack.nvim
 
     # Formatters & Linters
+    dockerfile-language-server # NixRepo
+
     nodePackages.typescript-language-server # LSP
     nodePackages.vscode-langservers-extracted # LSP (includes html, css, json)
     nodePackages.eslint # LINTER
     nodePackages.stylelint # LINTER (for CSS)
     nodePackages.bash-language-server # LSP (for Bash/ZSH)
     nodePackages.yaml-language-server # LSP (for YAML/Kubernetes)
-    dockerfile-language-server
+    nodePackages.mermaid-cli # For Mermaid diagrams (mmdc) snack.nvim
     nodePackages.sql-formatter # FORMATTER (for SQL)
     # nodePackages."@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
+
     phpPackages.php-codesniffer # LINTER (for PHP)
     shfmt # FORMATTER (for Bash/ZSH)
     sqls # LSP (for SQL)
