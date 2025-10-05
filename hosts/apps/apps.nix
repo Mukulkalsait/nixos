@@ -34,6 +34,7 @@
 
     # Y: Lang (Programing)|>
     nodejs # node js
+    go # go-lang
     php # php
     bun # bun replacement for npm.
     uv # PIP replacement. python package /dependency manager.
@@ -43,6 +44,7 @@
     bat
     eza
     rustscan # rust port scanner
+
 
     # B: TUI |>
     dua # rust disk utility use " dua i " intereative.
