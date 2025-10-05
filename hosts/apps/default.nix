@@ -26,6 +26,9 @@
 
     ./bat.nix
     ./neovim.nix
+
+    # Y: GitHub repos
+    ./newDockerfile.nix # cli tool new-dockerilfe
     # ./others.nix
 
   ];
