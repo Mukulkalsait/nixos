@@ -1,5 +1,4 @@
-# Y: Home Packages
-
+# Y: Home Paths
 { lib, config, pkgs, yazi, ... }: {
   home.sessionPath = [
     "$HOME/.cargo/bin"
