@@ -74,6 +74,7 @@
     libreoffice-fresh # community driven latest version fo libreoffice.
     obs-studio
     vlc
+    graphviz # graph vitrulisatoin tool extreamly multypurpose. 
     # davinci-resolve
     # libxcb # for davinci-resovle
     # testdisk # DIV: Data recovery tool.
