@@ -74,8 +74,8 @@
     libreoffice-fresh # community driven latest version fo libreoffice.
     obs-studio
     vlc
-    davinci-resolve
-    libxcb # for davinci-resovle
+    # davinci-resolve
+    # libxcb # for davinci-resovle
     # testdisk # DIV: Data recovery tool.
     # blender  #      Blender tests 
 
