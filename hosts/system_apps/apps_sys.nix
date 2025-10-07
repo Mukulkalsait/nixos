@@ -4,9 +4,10 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     # CARD: OTHER app installation LOCATIONS |>
-    # /etc/nixos/hosts/system_apps/nvidia.nix
-    # /etc/nixos/hosts/apps/stylix.nix
-    # /etc/nixos/hosts/apps/neovim.nix
+    # /etc/nixos/hosts/system_apps/nvidia.nix => Gpu, kuda, Vaapi, OpenCL, Prime, STEAM
+    # /etc/nixos/hosts/system_apps/virtualisation.nix => Docker and MiniKube
+    # /etc/nixos/hosts/apps/stylix.nix =>
+    # /etc/nixos/hosts/apps/neovim.nix => LSP's, Langs, npm packages.
 
     # DX: System Imp |>
     greetd.tuigreet # TUI login manager.
