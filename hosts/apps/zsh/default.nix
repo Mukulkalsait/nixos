@@ -22,9 +22,9 @@
     shellAliases =
       let flakeDir = "~/flake";
       in {
-        wA = "bat /home/mukuldk/.zshrc";
+        # wA = "bat /home/mukuldk/.zshrc";
         # G: Aliases 
-        rm = "rm -i";
+        rm = "rm -iv";
         gpu = "git push";
         cat = "bat";
 
@@ -39,7 +39,8 @@
         # Y:  NIX os 
         snrsf = "sudo nixos-rebuild switch --flake /etc/nixos#PredatorNix";
         deadNix = "nix-store --ge --print-dead";
-        nixSize = "du -sh /nix/store/";
+        nixSize = "dust -sh /nix/store/";
+        nixSizeFull = "dua i -sh /nix/store/";
         nixVer =
           "sudo nix-env -p /nix/var/nix/profiles/system"; # Y: Use => {--list-generatoins, --delete-generatinos }
         nixOptimise = "sudo nix store optimise";
