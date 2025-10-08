@@ -7,6 +7,7 @@
     dockerSocket.enable = false;
     enableNvidia = true;
     defaultNetwork.settings.dns_enabled = true;
+    # ⏫ fixes DNS resolution in rootless containers.
   };
 
   # FIX: Set environment variable to point tools to rootless socket
