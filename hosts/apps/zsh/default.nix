@@ -81,10 +81,6 @@
         # Y: costome
         # sysnmpp = "sudo systemctl start nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
         # systnmpp = "sudo systemctl stop nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
-        sysd =
-          "sudo systemctl start docker.service docker.socket && sudo systemctl status docker.service docker.socket";
-        systd =
-          "sudo systemctl stop docker.service docker.socket && sudo systemctl status docker.service docker.socket";
 
         chownMK =
           "sudo chown -R mukuldk:users ./* && sudo chown -R mukuldk:users ./.*";
@@ -150,6 +146,17 @@
 
         suM = "sudo su mukuldk";
         findJava = "readlink -f $(which java)";
+
+        # IMP: DevOps Engeneering.
+        sysp = "sudo systemctl start podman.socket podman.service && sudo systemctl status podman.socket podman.service"; # Start Podman
+        systp = "sudo systemctl stop podman.socket podman.service && sudo systemctl status podman.socket podman.service"; # Stop Podman (stops Minikube too)
+
+        kubeOnX = "minikube start --driver=podman "; # G: provide =>  --cpus= --memory= 
+        kubeOn = "minikube start --driver=podman --cpus=4 --memory=8g"; # Start Minikube
+        KubeOff = "minikube stop"; # Stop Minikube
+        # DX: Docker 
+        # sysd = "sudo systemctl start docker.service docker.socket && sudo systemctl status docker.service docker.socket";
+        # systd = "sudo systemctl stop docker.service docker.socket && sudo systemctl status docker.service docker.socket";
 
         # bashConfig="nvim ~/.bashrc";
         # spfConfig="nvim ~/.config/superfile/config.toml";

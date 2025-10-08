@@ -1,5 +1,5 @@
 # Y: Costome Session Variables.
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
 
   home.sessionVariables = {
     TERMINAL = "kitty";
@@ -14,11 +14,12 @@
     XMODIFIERS = "@im=fcitx";
     GLFW_IM_MODULE = "ibus"; # optional, some games/toolkits expect this
 
-    # Y: openGL for "davinci-resolve" = DaVinci-Resolve
-    # LIBGL_ALWAYS_INDIRECT = "0";
-    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    # OCL_ICD_VENDORS = "/etc/OpenCL/vendors";
-
+    DOCKER_HOST = "unix://$XDG_RUNTIME_DIR/podman/podman.sock";
+    PATH = lib.mkForce (lib.makeBinPath [
+      pkgs.podman
+      pkgs.podman-compose
+      pkgs.buildah
+    ]);
   };
 
 }

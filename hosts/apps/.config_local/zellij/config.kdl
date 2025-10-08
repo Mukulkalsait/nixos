@@ -290,8 +290,8 @@ copy_on_select true
   // theme "catppuccin-mocha"
   // theme "cyber-noir"
   // theme "blade-runner"
-  theme "retro-wave" //DX:
-  // theme "retro-wave-costume" //DX: COSTOMESED
+  // theme "retro-wave" //DX:
+  theme "retro-wave-costume" //DX: COSTOMESED
   // theme "dracula"
   // theme "everforest-dark"
   // theme "gruvbox-dark"
