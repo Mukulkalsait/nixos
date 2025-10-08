@@ -151,24 +151,30 @@
         sysp = "sudo systemctl start podman.socket podman.service && sudo systemctl status podman.socket podman.service"; # Start Podman
         systp = "sudo systemctl stop podman.socket podman.service && sudo systemctl status podman.socket podman.service"; # Stop Podman (stops Minikube too)
 
-        kubeOnX = "minikube start --driver=podman "; # G: provide =>  --cpus= --memory= 
-        kubeOn = "minikube start --driver=podman --cpus=4 --memory=8g"; # Start Minikube
-        KubeOff = "minikube stop"; # Stop Minikube
-        # DX: Docker 
-        # sysd = "sudo systemctl start docker.service docker.socket && sudo systemctl status docker.service docker.socket";
-        # systd = "sudo systemctl stop docker.service docker.socket && sudo systemctl status docker.service docker.socket";
+        kubeOn = "minikube start --driver=podman "; # Y: provide =>  --cpus= --memory= 
+        kubeOnX = "minikube start --driver=podman --cpus=4 --memory=8g && echo 'minikube start --driver=podman --cpus=4 --memory=8g'"; # Start Minikube
+        kubeOnY = "minikube start --driver=podman --container-runtime=crun --cpus=2 --memory=8192 && echo '--driver=podman --container-runtime=crun --cpus=2 --memory=8192' ";
 
-        # bashConfig="nvim ~/.bashrc";
-        # spfConfig="nvim ~/.config/superfile/config.toml";
-        # dumpNvimConfig="cp -rv /home/mukuldk/.config/nvim /mnt/i/5.WSL/mukuldk"
-        # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
-        # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
-        # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
-        # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
-        # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
-        # Y:  APPS 
-        # Davinci-resolve
-        davinci-resolve = "QT_QPA_PLATFORM=xcb davinci-resolve";
+        KubeOff = "minikube stop"; # Stop Minikube
+
+        minikubeDelete = "minikube delete";
+        minikubeDeleteFull = "minikube delete --all --purge &&  rm -rfv ~/.minikube"
+
+          # DX: Docker 
+          # sysd = "sudo systemctl start docker.service docker.socket && sudo systemctl status docker.service docker.socket";
+          # systd = "sudo systemctl stop docker.service docker.socket && sudo systemctl status docker.service docker.socket";
+
+          # bashConfig="nvim ~/.bashrc";
+          # spfConfig="nvim ~/.config/superfile/config.toml";
+          # dumpNvimConfig="cp -rv /home/mukuldk/.config/nvim /mnt/i/5.WSL/mukuldk"
+          # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
+          # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
+          # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
+          # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
+          # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
+          # Y:  APPS 
+          # Davinci-resolve
+          davinci-resolve = "QT_QPA_PLATFORM=xcb davinci-resolve";
 
       };
 
