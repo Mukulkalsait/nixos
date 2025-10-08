@@ -11,7 +11,21 @@
 //     }
 // }
 
-layout swap_tiled_layouts=true {
+// layout swap_tiled_layouts=true {
+//     pane size=1 borderless=true {
+//         plugin location="tab-bar"
+//     }
+//     pane {
+//         command "zsh"
+//         args "-c" "fastfetch; exec zsh"
+//     }
+//     pane size=1 borderless=true {
+//         plugin location="status-bar"
+//     }
+// }
+
+
+layout name="custom" swap_tiled_layouts=true {
     pane size=1 borderless=true {
         plugin location="tab-bar"
     }
@@ -24,17 +38,3 @@ layout swap_tiled_layouts=true {
     }
 }
 
-//
-// layout name="custom" swap_tiled_layouts=true {
-//     pane size=1 borderless=true {
-//         plugin location="tab-bar"
-//     }
-//     pane {
-//         command "zsh"
-//         args "-c" "fastfetch; exec zsh"
-//     }
-//     pane size=1 borderless=true {
-//         plugin location="status-bar"
-//     }
-// }
-//
