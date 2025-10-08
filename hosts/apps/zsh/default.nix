@@ -158,23 +158,23 @@
         KubeOff = "minikube stop"; # Stop Minikube
 
         minikubeDelete = "minikube delete";
-        minikubeDeleteFull = "minikube delete --all --purge &&  rm -rfv ~/.minikube"
+        minikubeDeleteFull = "minikube delete --all --purge &&  rm -rfv ~/.minikube";
 
-          # DX: Docker 
-          # sysd = "sudo systemctl start docker.service docker.socket && sudo systemctl status docker.service docker.socket";
-          # systd = "sudo systemctl stop docker.service docker.socket && sudo systemctl status docker.service docker.socket";
+        # DX: Docker 
+        # sysd = "sudo systemctl start docker.service docker.socket && sudo systemctl status docker.service docker.socket";
+        # systd = "sudo systemctl stop docker.service docker.socket && sudo systemctl status docker.service docker.socket";
 
-          # bashConfig="nvim ~/.bashrc";
-          # spfConfig="nvim ~/.config/superfile/config.toml";
-          # dumpNvimConfig="cp -rv /home/mukuldk/.config/nvim /mnt/i/5.WSL/mukuldk"
-          # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
-          # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
-          # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
-          # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
-          # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
-          # Y:  APPS 
-          # Davinci-resolve
-          davinci-resolve = "QT_QPA_PLATFORM=xcb davinci-resolve";
+        # bashConfig="nvim ~/.bashrc";
+        # spfConfig="nvim ~/.config/superfile/config.toml";
+        # dumpNvimConfig="cp -rv /home/mukuldk/.config/nvim /mnt/i/5.WSL/mukuldk"
+        # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
+        # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
+        # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
+        # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
+        # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
+        # Y:  APPS 
+        # Davinci-resolve
+        davinci-resolve = "QT_QPA_PLATFORM=xcb davinci-resolve";
 
       };
 
