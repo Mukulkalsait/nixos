@@ -14,12 +14,12 @@
     XMODIFIERS = "@im=fcitx";
     GLFW_IM_MODULE = "ibus"; # optional, some games/toolkits expect this
 
-    DOCKER_HOST = "unix://$XDG_RUNTIME_DIR/podman/podman.sock";
-    PATH = lib.mkForce (lib.makeBinPath [
-      pkgs.podman
-      pkgs.podman-compose
-      pkgs.buildah
-    ]);
+    # DOCKER_HOST = "unix://$XDG_RUNTIME_DIR/podman/podman.sock";
+    # PATH = lib.mkForce (lib.makeBinPath [
+    #   pkgs.podman
+    #   pkgs.podman-compose
+    #   pkgs.buildah
+    # ]);
   };
 
 }
