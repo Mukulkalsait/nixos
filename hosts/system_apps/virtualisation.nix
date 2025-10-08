@@ -21,6 +21,8 @@
     kubectl # dont know
     k9s # TUI fro kube
     kubernetes-helm # dont know
+    crun # c-liberary for kube
+    nvidia-container-toolkit
 
     podman-compose # podman compose to compose file
     buildah # podman compose lieke another thign
