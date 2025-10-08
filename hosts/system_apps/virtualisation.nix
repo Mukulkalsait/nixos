@@ -17,13 +17,15 @@
 
   # System-wide packages for Kubernetes and container tools
   environment.systemPackages = with pkgs; [
-    minikube # kuberneties creater
+    # minikube # kuberneties creater
+    # nvidia-container-toolkit # For NVIDIA support
+
+    kind # Kubernetes IN Docker
     kubectl # dont know
     k9s # TUI fro kube
     kubernetes-helm # dont know
     crun # c-liberary for kube
-    nvidia-container-toolkit
-
+    nvidia-podman-kit # Additional NVIDIA support for Podman
     podman-compose # podman compose to compose file
     buildah # podman compose lieke another thign
   ];
