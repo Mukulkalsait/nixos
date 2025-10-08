@@ -19,13 +19,13 @@
   environment.systemPackages = with pkgs; [
     # minikube # kuberneties creater
     # nvidia-container-toolkit # For NVIDIA support
+    # nvidia-podman-kit # Additional NVIDIA support for Podman Y: not found 
 
     kind # Kubernetes IN Docker
     kubectl # dont know
     k9s # TUI fro kube
     kubernetes-helm # dont know
     crun # c-liberary for kube
-    nvidia-podman-kit # Additional NVIDIA support for Podman
     podman-compose # podman compose to compose file
     buildah # podman compose lieke another thign
   ];
