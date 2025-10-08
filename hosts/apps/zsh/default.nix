@@ -155,7 +155,8 @@
         kubeOnX = "minikube start --driver=podman --cpus=4 --memory=8g && echo 'minikube start --driver=podman --cpus=4 --memory=8g'"; # Start Minikube
         kubeOnY = "minikube start --driver=podman --container-runtime=crun --cpus=2 --memory=8192 && echo '--driver=podman --container-runtime=crun --cpus=2 --memory=8192' ";
 
-        KubeOff = "minikube stop"; # Stop Minikube
+        kubeOff = "minikube stop"; # Stop Minikube
+        miniSet = "minikube config set rootless true && minikube config set driver podman";
 
         minikubeDelete = "minikube delete";
         minikubeDeleteFull = "minikube delete --all --purge &&  rm -rfv ~/.minikube";
