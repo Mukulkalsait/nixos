@@ -1,0 +1,34 @@
+# Y: virtualisation.nix |> Configuration for Podman, Minikube, and Kubernetes tools
+{ config, pkgs, ... }: {
+  # DX: Initial Docker config.
+  # virtualisation.docker = {
+  #   enable = true; # service enabled
+  #   enableOnBoot = false; # systemctl service stoped
+  # };
+  # users.users.mukuldk.extraGroups = [ "docker" ]; # group add to user.
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    dockerSocket.enable = false;
+    enableNvidia = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
+
+  # FIX: Set environment variable to point tools to rootless socket
+  environment.sessionVariables = {
+    DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock";
+  };
+
+  # System-wide packages for Kubernetes and container tools
+  environment.systemPackages = with pkgs; [
+    minikube
+    kubectl
+    k9s
+    kubernetes-helm
+    podman-compose
+    buildah
+  ];
+}
+
+
