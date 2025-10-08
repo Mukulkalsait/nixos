@@ -10,6 +10,7 @@
       "audio"
       "video"
       "podman"
+      "docker"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [ zsh ];
