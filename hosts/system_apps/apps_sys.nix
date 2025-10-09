@@ -25,11 +25,17 @@
     android-tools # ADB. android debuging.
 
     # Y: Lang |>
+    # rustup # latet rust {nightly}
     gcc # GUN C compailer.
+    binutils
+    lld
+
+    # rustup # latet rust {nightly}
     cargo # rust package manager.
-    clippy
-    rustup # latet rust {nightly}
+    clippy # 
     rust-analyzer # analyzer user latest nightly version
+    rust-src # standard lib
+
     lua # lua lang.
     luarocks # Lua package manager.
     nodejs # nodejs
