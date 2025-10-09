@@ -31,9 +31,11 @@
     lld
 
     # rustup # latet rust {nightly}
+    rustc # Add this for the Rust compiler
     cargo # rust package manager.
     clippy # 
     rust-analyzer # analyzer user latest nightly version
+    rustPlatform.rustLibSrc # Add this for standard library source code
 
     lua # lua lang.
     luarocks # Lua package manager.
