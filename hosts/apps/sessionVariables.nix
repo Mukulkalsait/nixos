@@ -20,7 +20,6 @@
     #   pkgs.podman-compose
     #   pkgs.buildah
     # ]);
-    PATH = "$HOME/.cache/.bun/bin:$PATH";
   };
 
 }
