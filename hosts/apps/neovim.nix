@@ -59,15 +59,17 @@
 
     # Formatters & Linters
     dockerfile-language-server # NixRepo
+    dockfmt
 
     nodePackages.typescript-language-server # LSP
     nodePackages.vscode-langservers-extracted # LSP (includes html, css, json)
     nodePackages.eslint # LINTER
     nodePackages.stylelint # LINTER (for CSS)
     nodePackages.bash-language-server # LSP (for Bash/ZSH)
-    nodePackages.yaml-language-server # LSP (for YAML/Kubernetes)
     nodePackages.mermaid-cli # For Mermaid diagrams (mmdc) snack.nvim
     nodePackages.sql-formatter # FORMATTER (for SQL)
+
+    # nodePackages.yaml-language-server # DX: broken so added with |> bun i -g yaml-language-server 
     # nodePackages."@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
 
     phpPackages.php-codesniffer # LINTER (for PHP)
