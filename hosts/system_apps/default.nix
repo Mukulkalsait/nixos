@@ -16,6 +16,7 @@
     ./virtualisation.nix
 
     # Y: After booting.
+    ./envVariables.nix
     ./apps_sys.nix
     ./git.nix
     ./lazygit.nix
