@@ -34,7 +34,6 @@
     cargo # rust package manager.
     clippy # 
     rust-analyzer # analyzer user latest nightly version
-    rust-src # standard lib
 
     lua # lua lang.
     luarocks # Lua package manager.
