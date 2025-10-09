@@ -27,6 +27,7 @@
     # Y: Lang |>
     gcc # GUN C compailer.
     cargo # rust package manager.
+    clippy
     rustup # latet rust {nightly}
     rust-analyzer # analyzer user latest nightly version
     lua # lua lang.
