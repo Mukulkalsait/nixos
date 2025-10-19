@@ -21,13 +21,17 @@
     # nvidia-container-toolkit # For NVIDIA support
     # nvidia-podman-kit # Additional NVIDIA support for Podman Y: not found 
 
-    kind # Kubernetes IN Docker
-    kubectl # dont know
-    k9s # TUI fro kube
-    kubernetes-helm # dont know
-    crun # c-liberary for kube
-    podman-compose # podman compose to compose file
-    buildah # podman compose lieke another thign
+    lazydocker # TUI lazy Docker.
+    podman-tui # TUI Tool for Podman Specific.
+    ctop # Top utility for Containerisation.
+    podman-compose # podman compose to compose file.
+    buildah # podman compose lieke another thign.
+
+    kind # Kubernetes IN Docker.
+    kubectl # dont know.
+    k9s # TUI fro kube.
+    kubernetes-helm # dont know.
+    crun # c-liberary for kube.
   ];
 }
 
