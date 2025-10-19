@@ -60,6 +60,7 @@
     gh # Git hub
     wget # HTTP FTP file downloader.
     curl # URL trnasfer tool (HTTP/FTP/APIS)
+    file # shows file tipe
     cliphist # clipboard history manager
     zip # zip
     unzip # unzip
