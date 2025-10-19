@@ -61,7 +61,6 @@
     # TEST: DevOps |>
     kdash # TUI kuberneties dashboard.
     dive # TUI Docker Images Layers.
-    lazydocker # TUI lazy Docker.
 
     # B: Media & essentials |>
     ffmpeg-full # ffmpeg
