@@ -45,6 +45,7 @@
     bat
     eza
     rustscan # rust port scanner
+    nettools # set of networking tools.
 
 
     # B: TUI |>
