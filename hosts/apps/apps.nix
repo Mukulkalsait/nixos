@@ -45,7 +45,7 @@
     bat
     eza
     rustscan # rust port scanner
-    nettools # set of networking tools.
+    # nettools # set of networking tools. DX: depcreated && replaced by SS and IP
 
 
     # B: TUI |>
