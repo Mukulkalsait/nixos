@@ -59,8 +59,8 @@
     # tmux
 
     # TEST: DevOps |>
-    kdash # TUI kuberneties dashboard.
     dive # TUI Docker Images Layers.
+    kdash # TUI kuberneties dashboard.
 
     # B: Media & essentials |>
     ffmpeg-full # ffmpeg
