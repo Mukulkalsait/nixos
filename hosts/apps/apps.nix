@@ -46,6 +46,7 @@
     eza
     rustscan # rust port scanner
     # nettools # set of networking tools. DX: depcreated && replaced by SS and IP
+    # IMP: both iproute2 (ip) and ss are present.
 
 
     # B: TUI |>
