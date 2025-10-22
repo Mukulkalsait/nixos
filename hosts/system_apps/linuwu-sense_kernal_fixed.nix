@@ -1,4 +1,5 @@
 # Y: PREDATOR Sense Solution In NixOs (grok ai fixed kernal 6.17.2)
+
 { pkgs, lib, ... }:
 
 let
@@ -8,7 +9,7 @@ let
       modDirVersion = "6.17.2";
       src = pkgs.fetchurl {
         url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-        sha256 = "3e7557f0de28c0e8cd2c858c6ff3726aeb778db91b9da14bfc79e6df4169f8bd"; # Verify this hash; update if mismatched
+        sha256 = "/evLBlBl9cG43Gim+1nNpQzd2/kQPSB8IZbVXqdk9X8="; # Updated hash from error message
       };
     };
   };

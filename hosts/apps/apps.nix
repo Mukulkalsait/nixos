@@ -45,6 +45,8 @@
     bat
     eza
     rustscan # rust port scanner
+    dig # network tool
+    mtr # my trace route
     # nettools # set of networking tools. DX: depcreated && replaced by SS and IP
     # IMP: both iproute2 (ip) and ss are present.
 
