@@ -1,8 +1,18 @@
-# Y: PREDATOR Sense Solution In NixOs (grok ai )
+# Y: PREDATOR Sense Solution In NixOs (grok ai fixed kernal 6.17.2)
 { pkgs, lib, ... }:
 
 let
-  kernel = pkgs.linuxPackages_6_17.kernel; # Pin to 6.17 series (aim for 6.17.2)
+  customKernel = pkgs.linux_6_17.override {
+    argsOverride = rec {
+      version = "6.17.2";
+      modDirVersion = "6.17.2";
+      src = pkgs.fetchurl {
+        url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
+        sha256 = "3e7557f0de28c0e8cd2c858c6ff3726aeb778db91b9da14bfc79e6df4169f8bd"; # Verify this hash; update if mismatched
+      };
+    };
+  };
+
   linuwu-sense = pkgs.stdenv.mkDerivation rec {
     pname = "linuwu-sense";
     version = "unstable-2025-09-06";
@@ -19,18 +29,18 @@ let
     '';
 
     nativeBuildInputs = with pkgs; [ pkg-config kmod gcc gnumake ];
-    buildInputs = [ kernel.dev ];
+    buildInputs = [ customKernel.dev ];
 
     makeFlags = [
-      "KERNELDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+      "KERNELDIR=${customKernel.dev}/lib/modules/${customKernel.modDirVersion}/build"
     ];
 
     preBuild = ''
-      if [ ! -d "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build" ]; then
-        echo "Error: Kernel build directory not found: ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+      if [ ! -d "${customKernel.dev}/lib/modules/${customKernel.modDirVersion}/build" ]; then
+        echo "Error: Kernel build directory not found: ${customKernel.dev}/lib/modules/${customKernel.modDirVersion}/build"
         exit 1
       fi
-      export MODULES_DIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}
+      export MODULES_DIR=${customKernel.dev}/lib/modules/${customKernel.modDirVersion}
     '';
 
     buildPhase = ''
@@ -38,7 +48,7 @@ let
     '';
 
     installPhase = ''
-      install -D src/linuwu_sense.ko $out/lib/modules/${kernel.modDirVersion}/extra/linuwu_sense.ko
+      install -D src/linuwu_sense.ko $out/lib/modules/${customKernel.modDirVersion}/extra/linuwu_sense.ko
     '';
 
     meta = with lib; {
@@ -49,7 +59,7 @@ let
   };
 in
 {
-  boot.kernelPackages = pkgs.linuxPackages_6_17; # Explicitly set kernel
+  boot.kernelPackages = pkgs.linuxPackagesFor customKernel;
   boot.extraModulePackages = [ linuwu-sense ];
   boot.kernelModules = [ "linuwu_sense" ];
   boot.blacklistedKernelModules = [ "acer_wmi" ];
