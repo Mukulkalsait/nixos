@@ -1,0 +1,72 @@
+# Y: PREDATOR Sense Solution In NixOs (grok ai )
+{ pkgs, lib, ... }:
+
+let
+  kernel = pkgs.linuxPackages_6_17.kernel; # Pin to 6.17 series (aim for 6.17.2)
+  linuwu-sense = pkgs.stdenv.mkDerivation rec {
+    pname = "linuwu-sense";
+    version = "unstable-2025-09-06";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "0x7375646F";
+      repo = "Linuwu-Sense";
+      rev = "df84ac7a020efebd4cd1097e73940d93eb959093";
+      sha256 = "sha256-vSvNaSzd5Q8nXBGjYXaXcM4k924QV54x9UgKiFLMBVs=";
+    };
+
+    postPatch = ''
+      sed -i 's/KDIR  := \/lib\/modules\/$(KVER)\/build/KDIR  := $(KERNELDIR)/' Makefile
+    '';
+
+    nativeBuildInputs = with pkgs; [ pkg-config kmod gcc gnumake ];
+    buildInputs = [ kernel.dev ];
+
+    makeFlags = [
+      "KERNELDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+    ];
+
+    preBuild = ''
+      if [ ! -d "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build" ]; then
+        echo "Error: Kernel build directory not found: ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+        exit 1
+      fi
+      export MODULES_DIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}
+    '';
+
+    buildPhase = ''
+      make $makeFlags M=$(pwd) all
+    '';
+
+    installPhase = ''
+      install -D src/linuwu_sense.ko $out/lib/modules/${kernel.modDirVersion}/extra/linuwu_sense.ko
+    '';
+
+    meta = with lib; {
+      description = "Kernel module for Acer Predator fan/RGB/turbo/battery control";
+      license = licenses.gpl2Only;
+      platforms = platforms.linux;
+    };
+  };
+in
+{
+  boot.kernelPackages = pkgs.linuxPackages_6_17; # Explicitly set kernel
+  boot.extraModulePackages = [ linuwu-sense ];
+  boot.kernelModules = [ "linuwu_sense" ];
+  boot.blacklistedKernelModules = [ "acer_wmi" ];
+
+  systemd.services.linuwu-sense-setup = {
+    description = "Apply Linuwu-Sense tweaks (RGB + Battery limiter)";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "sys-module-linuwu_sense.service" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = [
+        "${pkgs.findutils}/bin/find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 660 {} +"
+        "${pkgs.findutils}/bin/find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chgrp wheel {} +"
+        "${pkgs.bash}/bin/sh -c 'echo \"3,1,100,2,0,0,0\" | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode'"
+        "${pkgs.bash}/bin/sh -c 'echo \"1\" | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter'"
+      ];
+    };
+  };
+}

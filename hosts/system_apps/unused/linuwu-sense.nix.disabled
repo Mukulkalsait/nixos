@@ -1,4 +1,4 @@
-# Y: PREDATOR Sense Solution In NixOs (chat gpt version)
+# Y: PREDATOR Sense Solution In NixOs (chat gpt versio)
 
 { pkgs, lib, ... }:
 
