@@ -65,7 +65,8 @@
     zip # zip
     unzip # unzip
     zsh # shell.
-    openssh
+    openssh # ssh client.
+    mtr # my traceroute.
 
     # B: CLI Utils |>
     jq # JSON parser.
