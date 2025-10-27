@@ -74,25 +74,30 @@
           }
 
           # Y: LINUWU SENSE LOCKED:
-          ({ pkgs, ... }: {
-            # Embed local backup into store
-            system.extraDependencies = pkgs.lib.attrsets.attrVals [
-              (builtins.path {
+          #
+          # Y: LINUWU SENSE LOCKED FOREVER
+          ({ pkgs, ... }:
+            let
+              linuwuDir = builtins.path {
                 path = ./hosts/system_apps/linuwu_sense/kernel-6.17.2;
                 name = "linuwu-sense-6.17.2";
-              })
-            ];
+              };
+            in
+            {
+              # Pin entire directory in Nix store
+              system.extraDependencies = [ linuwuDir ];
 
-            # Optional: Load module on boot (if compatible)
-            boot.extraModulePackages = [
-              (pkgs.runCommand "linuwu-sense-pinned" { } ''
-                mkdir -p $out/lib/modules/6.17.2/extra
-                cp ${./hosts/system_apps/linuwu_sense/kernel-6.17.2/linuwu_sense.ko} $out/lib/modules/6.17.2/extra/linuwu_sense.ko
-              '')
-            ];
-          })
+              # Load module on boot (from pinned copy)
+              boot.extraModulePackages = [
+                (pkgs.runCommand "linuwu-sense-pinned" { } ''
+                  mkdir -p $out/lib/modules/6.17.2/extra
+                  cp ${linuwuDir}/linuwu_sense.ko $out/lib/modules/6.17.2/extra/linuwu_sense.ko
+                '')
+              ];
 
-
+              # Blacklist acer_wmi (optional, if needed)
+              # boot.blacklistedKernelModules = [ "acer_wmi" ];
+            })
         ];
       };
     };
