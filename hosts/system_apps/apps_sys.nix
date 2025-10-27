@@ -104,45 +104,6 @@
     # TAG: DISABELED Extras |>
     # stress-ng # cpu stress tests
 
-    #Y: PredatorNonSense - Userspace Fan/RGB Control (NO KERNEL BUILD)
-    # PredatorNonSense - Userspace Fan/RGB Control
-    (
-      let
-        pns = pkgs.stdenv.mkDerivation {
-          pname = "predator-nonsense";
-          version = "unstable-2025-10-27";
-          src = pkgs.fetchFromGitHub {
-            owner = "kphanipavan";
-            repo = "PredatorNonSense";
-            rev = "main";
-            sha256 = "sha256-N0bV0EivAKlUNUfc/8i/DyMJ01zselE8mo/jl3h9dK8="; #IMP: ← UPDATE THIS with nix-prefetch-github kphanipavan PredatorNonSense
-            # sha256 = "sha256-1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z"; # ← YOUR HASH
-          };
-          nativeBuildInputs = [ pkgs.makeWrapper ];
-          buildInputs = [ pkgs.evtest ];
-          installPhase = ''
-                      mkdir -p $out/bin $out/share/pns
-                      cp -r $src/* $out/share/pns/
-
-                      cat > $out/bin/pns << EOF
-            #!/bin/sh
-            export QT_QPA_PLATFORM_PLUGIN_PATH=${pkgs.qt5.qtbase}/lib/qt-${pkgs.qt5.qtbase.version}/plugins
-            export QT_PLUGIN_PATH=${pkgs.qt5.qtbase}/lib/qt-${pkgs.qt5.qtbase.version}
-            export XDG_RUNTIME_DIR=/run/user/$(id -u)
-            export WAYLAND_DISPLAY=wayland-0
-            export DISPLAY=:0
-
-            PYTHON=${pkgs.python3.withPackages (ps: [ ps.pyqt5 ])}/bin/python
-            exec "\$PYTHON" "$out/share/pns/main.py" "\$@"
-            EOF
-                      chmod +x $out/bin/pns
-          '';
-        };
-      in
-      pns
-    )
-    #
-
   ];
 
   programs.zsh.enable = true;

@@ -81,17 +81,9 @@
                 path = ./hosts/system_apps/linuwu_sense/kernel-6.17.2;
                 name = "linuwu-sense-6.17.2";
               };
-              modulePath = "${linuwuDir}/linuwu_sense.ko"; # ← ROOT FILE
             in
             {
               system.extraDependencies = [ linuwuDir ];
-
-              boot.extraModulePackages = [
-                (pkgs.runCommand "linuwu-sense-pinned" { } ''
-                  mkdir -p $out/lib/modules/6.17.2/extra
-                  cp ${modulePath} $out/lib/modules/6.17.2/extra/linuwu_sense.ko
-                '')
-              ];
 
               boot.blacklistedKernelModules = [ "acer_wmi" ];
             })
