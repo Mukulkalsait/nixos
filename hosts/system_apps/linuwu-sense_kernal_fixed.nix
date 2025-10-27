@@ -1,19 +1,43 @@
-# Y: PREDATOR Sense Solution In NixOs (grok ai fixed kernal 6.17.2)
+# Y: PREDATOR Sense – kernel 6.17.2, debug stripped, clean build
 
 { pkgs, lib, ... }:
 
 let
-  customKernel = pkgs.linux_6_17.override {
+  # -----------------------------------------------------------------
+  # 1. Custom kernel – 6.17.2 + debug/BTF disabled
+  # -----------------------------------------------------------------
+  customKernel = (pkgs.linux_6_17.override {
     argsOverride = rec {
       version = "6.17.2";
       modDirVersion = "6.17.2";
+
       src = pkgs.fetchurl {
         url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-        sha256 = "/evLBlBl9cG43Gim+1nNpQzd2/kQPSB8IZbVXqdk9X8="; # Updated hash from error message
+        sha256 = "/evLBlBl9cG43Gim+1nNpQzd2/kQPSB8IZbVXqdk9X8=";
       };
-    };
-  };
 
+      # ---- TURN OFF EVERYTHING THAT BLOWS UP TEMP SPACE ----
+      extraConfig = ''
+        CONFIG_DEBUG_INFO=n
+        CONFIG_DEBUG_INFO_BTF=n
+        CONFIG_DEBUG_INFO_DWARF5=n
+        CONFIG_DEBUG_INFO_REDUCED=n
+        CONFIG_BPF=n
+        CONFIG_BPF_SYSCALL=n
+        CONFIG_MODULE_COMPRESS_NONE=y   # no gzip/xz for modules
+      '';
+    };
+  }).overrideAttrs (old: {
+    # Guarantee a pristine source tree on every rebuild
+    postPatch = (old.postPatch or "") + ''
+      make mrproper
+    '';
+  });
+
+  # -----------------------------------------------------------------
+  # 2. linuwu-sense module – unchanged except it now builds against
+  #     the stripped kernel above
+  # -----------------------------------------------------------------
   linuwu-sense = pkgs.stdenv.mkDerivation rec {
     pname = "linuwu-sense";
     version = "unstable-2025-09-06";
@@ -26,7 +50,7 @@ let
     };
 
     postPatch = ''
-      sed -i 's/KDIR  := \/lib\/modules\/$(KVER)\/build/KDIR  := $(KERNELDIR)/' Makefile
+      sed -i 's|KDIR  := /lib/modules/$(KVER)/build|KDIR  := $(KERNELDIR)|' Makefile
     '';
 
     nativeBuildInputs = with pkgs; [ pkg-config kmod gcc gnumake ];
@@ -38,28 +62,29 @@ let
 
     preBuild = ''
       if [ ! -d "${customKernel.dev}/lib/modules/${customKernel.modDirVersion}/build" ]; then
-        echo "Error: Kernel build directory not found: ${customKernel.dev}/lib/modules/${customKernel.modDirVersion}/build"
+        echo "Error: Kernel build directory not found"
         exit 1
       fi
       export MODULES_DIR=${customKernel.dev}/lib/modules/${customKernel.modDirVersion}
     '';
 
-    buildPhase = ''
-      make $makeFlags M=$(pwd) all
-    '';
-
+    buildPhase = ''make $makeFlags M=$(pwd) all'';
     installPhase = ''
-      install -D src/linuwu_sense.ko $out/lib/modules/${customKernel.modDirVersion}/extra/linuwu_sense.ko
+      install -D src/linuwu_sense.ko \
+        $out/lib/modules/${customKernel.modDirVersion}/extra/linuwu_sense.ko
     '';
 
     meta = with lib; {
-      description = "Kernel module for Acer Predator fan/RGB/turbo/battery control";
+      description = "Acer Predator fan/RGB/turbo/battery control";
       license = licenses.gpl2Only;
       platforms = platforms.linux;
     };
   };
 in
 {
+  # -----------------------------------------------------------------
+  # 3. System integration – exactly the same as before
+  # -----------------------------------------------------------------
   boot.kernelPackages = pkgs.linuxPackagesFor customKernel;
   boot.extraModulePackages = [ linuwu-sense ];
   boot.kernelModules = [ "linuwu_sense" ];
@@ -75,9 +100,12 @@ in
       ExecStart = [
         "${pkgs.findutils}/bin/find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 660 {} +"
         "${pkgs.findutils}/bin/find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chgrp wheel {} +"
-        "${pkgs.bash}/bin/sh -c 'echo \"3,1,100,2,0,0,0\" | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode'"
-        "${pkgs.bash}/bin/sh -c 'echo \"1\" | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter'"
+        ''${pkgs.bash}/bin/sh -c 'echo "3,1,100,2,0,0,0" | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode'''
+        ''${pkgs.bash}/bin/sh -c 'echo "1" | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter'''
       ];
     };
   };
 }
+
+
+
