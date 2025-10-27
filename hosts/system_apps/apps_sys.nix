@@ -101,6 +101,17 @@
     # TAG: DISABELED Extras |>
     # stress-ng # cpu stress tests
 
+    (pkgs.python3.withPackages (ps: with ps; [
+      pyqt5
+    ])).pkgs.callPackage
+    (pkgs.fetchFromGitHub {
+      owner = "kphanipavan";
+      repo = "PredatorNonSense";
+      rev = "main"; # or specific commit, e.g., "v1.0"
+      sha256 = "sha256-0000000000000000000000000000000000000000000="; # Run `nix-prefetch-github kphanipavan PredatorNonSense` to get hash
+    })
+    { }
+
   ];
 
   programs.zsh.enable = true;
