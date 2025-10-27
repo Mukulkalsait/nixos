@@ -1,27 +1,30 @@
 { config, lib, pkgs, inputs, ... }:
 
-# DX: temporary workaround start =>
+# DX: temperory woalkthrough start => 
 let
   qtPrivateOverlay = self: super: {
     libfm-qt = super.libfm-qt.overrideAttrs (old: {
       nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
-        super.qt6Packages.qtbase.dev # Includes private headers
+        super.qt6.qtbase.dev
+        super.qt6.qtbase.privateHeaders # Adds the missing qpa/ headers
       ];
       cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DQT_ENABLE_PRIVATE_HEADERS=ON" ];
     });
 
     pcmanfm-qt = super.pcmanfm-qt.overrideAttrs (old: {
       nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
-        super.qt6Packages.qtbase.dev # Includes private headers
+        super.qt6.qtbase.dev
+        super.qt6.qtbase.privateHeaders # Adds the missing qpa/ headers
       ];
       cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DQT_ENABLE_PRIVATE_HEADERS=ON" ];
     });
   };
 in
-# DX: temporary workaround end =|
 
+# DX: temperory woalkthrough end =|
 {
-  nixpkgs.overlays = [ qtPrivateOverlay ]; # DX: temporary workaround extra line
+
+  nixpkgs.overlays = [ qtPrivateOverlay ]; # DX: temperory walkthrough extra line
 
   imports = [
     ./hardware-configuration.nix # Y: Hardware Config.
@@ -71,3 +74,4 @@ in
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
+
