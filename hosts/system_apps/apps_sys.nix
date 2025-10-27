@@ -105,6 +105,7 @@
     # stress-ng # cpu stress tests
 
     #Y: PredatorNonSense - Userspace Fan/RGB Control (NO KERNEL BUILD)
+    # PredatorNonSense - Userspace Fan/RGB Control
     (
       let
         pns = pkgs.stdenv.mkDerivation {
@@ -115,22 +116,22 @@
             repo = "PredatorNonSense";
             rev = "main";
             sha256 = "sha256-N0bV0EivAKlUNUfc/8i/DyMJ01zselE8mo/jl3h9dK8="; #IMP: ← UPDATE THIS with nix-prefetch-github kphanipavan PredatorNonSense
+            # sha256 = "sha256-1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z"; # ← YOUR HASH
           };
           nativeBuildInputs = [ pkgs.makeWrapper ];
-          buildInputs = [ (pkgs.python3.withPackages (ps: [ ps.pyqt5 ])) pkgs.evtest ];
+          buildInputs = [ pkgs.evtest ];
           installPhase = ''
             mkdir -p $out/bin $out/share/pns
             cp -r $src/* $out/share/pns/
-            makeWrapper ${pkgs.python3.withPackages (ps: [ ps.pyqt5 ])}/bin/python $out/bin/pns \
-              --add-flags "$out/share/pns/PNS.py" \
+            chmod +x $out/share/pns/PNS.sh
+            makeWrapper $out/share/pns/PNS.sh $out/bin/pns \
               --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.evtest ]}
           '';
         };
       in
       pns
     )
-
-
+    #
 
   ];
 

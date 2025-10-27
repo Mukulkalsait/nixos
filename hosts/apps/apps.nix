@@ -80,7 +80,8 @@
     vlc
     ardour
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
-    anydesk
+
+    # anydesk
     # davinci-resolve
     # libxcb # for davinci-resovle
     # testdisk # DIV: Data recovery tool.
