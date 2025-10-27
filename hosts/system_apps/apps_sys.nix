@@ -101,16 +101,24 @@
     # TAG: DISABELED Extras |>
     # stress-ng # cpu stress tests
 
-    (pkgs.python3.withPackages (ps: with ps; [
-      pyqt5
-    ])).pkgs.callPackage
-    (pkgs.fetchFromGitHub {
-      owner = "kphanipavan";
-      repo = "PredatorNonSense";
-      rev = "main"; # or specific commit, e.g., "v1.0"
-      sha256 = "sha256-0000000000000000000000000000000000000000000="; # Run `nix-prefetch-github kphanipavan PredatorNonSense` to get hash
+    (pkgs.python3.withPackages (ps: [ ps.pyqt5 ])).overrideAttrs
+    (old: {
+      name = "predator-nonsense";
+      src = pkgs.fetchFromGitHub {
+        owner = "kphanipavan";
+        repo = "PredatorNonSense";
+        rev = "main";
+        sha256 = "sha256-N0bV0EivAKlUNUfc/8i/DyMJ01zselE8mo/jl3h9dK8="; #IMP: ← UPDATE THIS with nix-prefetch-github kphanipavan PredatorNonSense
+      };
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+      installPhase = ''
+        mkdir -p $out/bin
+        cp -r $src/* $out/
+        makeWrapper ${pkgs.python3.withPackages (ps: [ ps.pyqt5 ])}/bin/python $out/bin/pns \
+          --add-flags "$out/PNS.py" \
+          --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.evtest ]}
+      '';
     })
-    { }
 
   ];
 
