@@ -51,6 +51,9 @@
     kmod # find
     flex # find
 
+    # DX: PredatorNonSense |>
+    evtest #
+
     # B: CLI Essentilas |>
     gnumake # Build automation tool (MakeFiles).
     cmake # Cross Platform build system generator.
@@ -101,24 +104,33 @@
     # TAG: DISABELED Extras |>
     # stress-ng # cpu stress tests
 
-    (pkgs.python3.withPackages (ps: [ ps.pyqt5 ])).overrideAttrs
-    (old: {
-      name = "predator-nonsense";
-      src = pkgs.fetchFromGitHub {
-        owner = "kphanipavan";
-        repo = "PredatorNonSense";
-        rev = "main";
-        sha256 = "sha256-N0bV0EivAKlUNUfc/8i/DyMJ01zselE8mo/jl3h9dK8="; #IMP: ← UPDATE THIS with nix-prefetch-github kphanipavan PredatorNonSense
-      };
-      nativeBuildInputs = [ pkgs.makeWrapper ];
-      installPhase = ''
-        mkdir -p $out/bin
-        cp -r $src/* $out/
-        makeWrapper ${pkgs.python3.withPackages (ps: [ ps.pyqt5 ])}/bin/python $out/bin/pns \
-          --add-flags "$out/PNS.py" \
-          --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.evtest ]}
-      '';
-    })
+    #Y: PredatorNonSense - Userspace Fan/RGB Control (NO KERNEL BUILD)
+    (
+      let
+        pns = pkgs.stdenv.mkDerivation {
+          pname = "predator-nonsense";
+          version = "unstable-2025-10-27";
+          src = pkgs.fetchFromGitHub {
+            owner = "kphanipavan";
+            repo = "PredatorNonSense";
+            rev = "main";
+            sha256 = "sha256-N0bV0EivAKlUNUfc/8i/DyMJ01zselE8mo/jl3h9dK8="; #IMP: ← UPDATE THIS with nix-prefetch-github kphanipavan PredatorNonSense
+          };
+          nativeBuildInputs = [ pkgs.makeWrapper ];
+          buildInputs = [ (pkgs.python3.withPackages (ps: [ ps.pyqt5 ])) pkgs.evtest ];
+          installPhase = ''
+            mkdir -p $out/bin $out/share/pns
+            cp -r $src/* $out/share/pns/
+            makeWrapper ${pkgs.python3.withPackages (ps: [ ps.pyqt5 ])}/bin/python $out/bin/pns \
+              --add-flags "$out/share/pns/PNS.py" \
+              --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.evtest ]}
+          '';
+        };
+      in
+      pns
+    )
+
+
 
   ];
 

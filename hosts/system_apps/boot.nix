@@ -7,7 +7,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.loader.systemd-boot.editor = false; # optional: hide editor
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest; # latest Kernal Pkg. # DX: kernal selector but its inside Linuvu-sense*.nix
+  boot.kernelPackages = pkgs.linuxPackages_latest; # latest Kernal Pkg. # DX: kernal selector but its inside Linuvu-sense*.nix
   boot.kernelModules = [
     # Y:  Enable Kernal MODULES
 
