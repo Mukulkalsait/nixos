@@ -7,28 +7,26 @@ let
   # -----------------------------------------------------------------
   # 1. Custom kernel – 6.17.2 + debug/BTF disabled
   # -----------------------------------------------------------------
+
   customKernel = (pkgs.linux_6_17.override {
     argsOverride = rec {
       version = "6.17.2";
       modDirVersion = "6.17.2";
-
       src = pkgs.fetchurl {
         url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
         sha256 = "/evLBlBl9cG43Gim+1nNpQzd2/kQPSB8IZbVXqdk9X8=";
       };
-
-      # ---- TURN OFF EVERYTHING THAT BLOWS UP TEMP SPACE ----
-      structuredExtraConfig = with lib.kernel; {
-        DEBUG_INFO = no;
-        DEBUG_INFO_BTF = no;
-        DEBUG_INFO_DWARF5 = no;
-        DEBUG_INFO_REDUCED = no;
-        BPF = no;
-        BPF_SYSCALL = no;
-        MODULE_COMPRESS_NONE = yes;
-      };
     };
   }).overrideAttrs (old: {
+    structuredExtraConfig = with lib.kernel; {
+      DEBUG_INFO = mkForce no;
+      DEBUG_INFO_BTF = mkForce no;
+      DEBUG_INFO_DWARF5 = mkForce no;
+      DEBUG_INFO_REDUCED = mkForce no;
+      BPF = mkForce no;
+      BPF_SYSCALL = mkForce no;
+      MODULE_COMPRESS_NONE = yes;
+    };
     postPatch = (old.postPatch or "") + ''
       make mrproper
     '';
