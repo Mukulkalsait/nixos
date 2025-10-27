@@ -44,7 +44,8 @@
       # Y: VARIALBES =>
       system = "x86_64-linux";
 
-    in {
+    in
+    {
       nixosConfigurations.PredatorNix = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
@@ -71,6 +72,27 @@
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.mukuldk = import ./hosts/home.nix;
           }
+
+          # Y: LINUWU SENSE LOCKED:
+          ({ pkgs, ... }: {
+            # Embed local backup into store
+            system.extraDependencies = pkgs.lib.attrsets.attrVals [
+              (builtins.path {
+                path = ./hosts/system_apps/linuwu_sense/kernel-6.17.2;
+                name = "linuwu-sense-6.17.2";
+              })
+            ];
+
+            # Optional: Load module on boot (if compatible)
+            boot.extraModulePackages = [
+              (pkgs.runCommand "linuwu-sense-pinned" { } ''
+                mkdir -p $out/lib/modules/6.17.2/extra
+                cp ${./hosts/system_apps/linuwu_sense/kernel-6.17.2/linuwu_sense.ko} $out/lib/modules/6.17.2/extra/linuwu_sense.ko
+              '')
+            ];
+          })
+
+
         ];
       };
     };
