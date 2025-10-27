@@ -1,3 +1,4 @@
+# /etc/nixos/hosts/system_apps/linuwu-sense_kernal_fixed.nix
 # Y: PREDATOR Sense – kernel 6.17.2, debug stripped, clean build
 
 { pkgs, lib, ... }:
@@ -28,15 +29,13 @@ let
       '';
     };
   }).overrideAttrs (old: {
-    # Guarantee a pristine source tree on every rebuild
     postPatch = (old.postPatch or "") + ''
       make mrproper
     '';
   });
 
   # -----------------------------------------------------------------
-  # 2. linuwu-sense module – unchanged except it now builds against
-  #     the stripped kernel above
+  # 2. linuwu-sense module
   # -----------------------------------------------------------------
   linuwu-sense = pkgs.stdenv.mkDerivation rec {
     pname = "linuwu-sense";
@@ -83,7 +82,7 @@ let
 in
 {
   # -----------------------------------------------------------------
-  # 3. System integration – exactly the same as before
+  # 3. System integration
   # -----------------------------------------------------------------
   boot.kernelPackages = pkgs.linuxPackagesFor customKernel;
   boot.extraModulePackages = [ linuwu-sense ];
@@ -100,12 +99,14 @@ in
       ExecStart = [
         "${pkgs.findutils}/bin/find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chmod 660 {} +"
         "${pkgs.findutils}/bin/find /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/ -type f -exec chgrp wheel {} +"
-        ''${pkgs.bash}/bin/sh -c 'echo "3,1,100,2,0,0,0" | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode'''
-        ''${pkgs.bash}/bin/sh -c 'echo "1" | ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter'''
+        "${pkgs.writeShellScript "linuwu-four-zone" ''
+          echo "3,1,100,2,0,0,0" | tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/four_zoned_kb/four_zone_mode
+        ''}"
+        "${pkgs.writeShellScript "linuwu-battery-limit" ''
+          echo "1" | tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter
+        ''}"
       ];
     };
   };
 }
-
-
 
