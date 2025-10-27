@@ -38,8 +38,14 @@
         gaps_out = 1;
         border_size = 2;
 
-        "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 90deg";
+        "col.active_border" = "rgba(3d59ffff) rgba(b23dffff) 90deg";
         "col.inactive_border" = "rgba(3c3836aa)";
+        # rgba(d65d0eff) rgba(98971aff) 90deg # orignal orange + green
+        # rgba(3d59ffff) rgba(b23dffff) 90deg # 🧊 Blue–Purple Contrast (cool & futuristic)
+        # rgba(ff3366ff) rgba(ff66ccff) 90deg # ❤️‍🔥 Red–Magenta Energy (bold & vivid)
+        # rgba(ff63acff) rgba(c85affff) 90deg # 🌅 Pink–Purple Luxe (soft contrast)
+        # rgba(0078ffff) rgba(ff1e00ff) 90deg # 🧬 Electric Blue–Red Clash (high impact)
+
 
         # "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 45deg";
         # "col.inactive_border" = "rgba(3c3836ff)";
