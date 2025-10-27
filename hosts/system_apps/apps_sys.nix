@@ -121,11 +121,21 @@
           nativeBuildInputs = [ pkgs.makeWrapper ];
           buildInputs = [ pkgs.evtest ];
           installPhase = ''
-            mkdir -p $out/bin $out/share/pns
-            cp -r $src/* $out/share/pns/
-            chmod +x $out/share/pns/PNS.sh
-            makeWrapper $out/share/pns/PNS.sh $out/bin/pns \
-              --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.evtest ]}
+                      mkdir -p $out/bin $out/share/pns
+                      cp -r $src/* $out/share/pns/
+
+                      cat > $out/bin/pns << EOF
+            #!/bin/sh
+            export QT_QPA_PLATFORM_PLUGIN_PATH=${pkgs.qt5.qtbase}/lib/qt-${pkgs.qt5.qtbase.version}/plugins
+            export QT_PLUGIN_PATH=${pkgs.qt5.qtbase}/lib/qt-${pkgs.qt5.qtbase.version}
+            export XDG_RUNTIME_DIR=/run/user/$(id -u)
+            export WAYLAND_DISPLAY=wayland-0
+            export DISPLAY=:0
+
+            PYTHON=${pkgs.python3.withPackages (ps: [ ps.pyqt5 ])}/bin/python
+            exec "\$PYTHON" "$out/share/pns/main.py" "\$@"
+            EOF
+                      chmod +x $out/bin/pns
           '';
         };
       in
