@@ -1,6 +1,31 @@
 { config, lib, pkgs, inputs, ... }:
 
+# DX: temperory woalkthrough start => 
+let
+  qtPrivateOverlay = self: super: {
+    libfm-qt = super.libfm-qt.overrideAttrs (old: {
+      nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+        super.qt6.qtbase.dev
+        super.qt6.qtbase.privateHeaders # Adds the missing qpa/ headers
+      ];
+      cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DQT_ENABLE_PRIVATE_HEADERS=ON" ];
+    });
+
+    pcmanfm-qt = super.pcmanfm-qt.overrideAttrs (old: {
+      nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+        super.qt6.qtbase.dev
+        super.qt6.qtbase.privateHeaders # Adds the missing qpa/ headers
+      ];
+      cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DQT_ENABLE_PRIVATE_HEADERS=ON" ];
+    });
+  };
+in
+
+# DX: temperory woalkthrough end =|
 {
+
+  nixpkgs.overlays = [ qtPrivateOverlay ]; # DX: temperory walkthrough extra line
+
   imports = [
     ./hardware-configuration.nix # Y: Hardware Config.
     ./system_apps # Y: ROOT FILES |>
