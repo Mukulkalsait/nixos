@@ -71,21 +71,4 @@ in
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
 
-
-  # --- Nix daemon: max-jobs = 1, use /nix/tmp as build temp ---
-  nix.settings = {
-    sandbox = true;
-    max-jobs = 1;
-    cores = 0;
-    trusted-users = [ "root" "@wheel" ];
-  };
-
-  # Use /nix/tmp as temporary build directory (replaces invalid tmp-dir)
-  environment.variables.TMPDIR = "/nix/tmp";
-
-  # Create large persistent /nix/tmp on every boot
-  systemd.tmpfiles.rules = [
-    "d /nix/tmp 1777 root root 30d"
-  ];
-
 }
