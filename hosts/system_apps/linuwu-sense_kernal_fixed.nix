@@ -18,15 +18,15 @@ let
       };
 
       # ---- TURN OFF EVERYTHING THAT BLOWS UP TEMP SPACE ----
-      extraConfig = ''
-        CONFIG_DEBUG_INFO=n
-        CONFIG_DEBUG_INFO_BTF=n
-        CONFIG_DEBUG_INFO_DWARF5=n
-        CONFIG_DEBUG_INFO_REDUCED=n
-        CONFIG_BPF=n
-        CONFIG_BPF_SYSCALL=n
-        CONFIG_MODULE_COMPRESS_NONE=y   # no gzip/xz for modules
-      '';
+      structuredExtraConfig = with lib.kernel; {
+        DEBUG_INFO = no;
+        DEBUG_INFO_BTF = no;
+        DEBUG_INFO_DWARF5 = no;
+        DEBUG_INFO_REDUCED = no;
+        BPF = no;
+        BPF_SYSCALL = no;
+        MODULE_COMPRESS_NONE = yes;
+      };
     };
   }).overrideAttrs (old: {
     postPatch = (old.postPatch or "") + ''

@@ -72,21 +72,18 @@ in
   system.stateVersion = "25.05"; # Did you read the comment?
 
 
-  # --- Nix daemon settings (replaces /etc/nix/nix.conf) ---
-  nix = {
-    settings = {
-      sandbox = true;
-      max-jobs = 1; # ONE kernel build at a time → low peak disk
-      cores = 0; # use all cores *inside* that single job
-      trusted-users = [ "root" "@wheel" ];
-    };
-
-    extraOptions = ''
-      tmp-dir = /nix/tmp
-    '';
+  # --- Nix daemon: max-jobs = 1, use /nix/tmp as build temp ---
+  nix.settings = {
+    sandbox = true;
+    max-jobs = 1;
+    cores = 0;
+    trusted-users = [ "root" "@wheel" ];
   };
 
-  # Create persistent /nix/tmp on every boot
+  # Use /nix/tmp as temporary build directory (replaces invalid tmp-dir)
+  environment.variables.TMPDIR = "/nix/tmp";
+
+  # Create large persistent /nix/tmp on every boot
   systemd.tmpfiles.rules = [
     "d /nix/tmp 1777 root root 30d"
   ];
