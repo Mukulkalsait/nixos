@@ -23,7 +23,7 @@
 
     # Y:  Dependencys
     # ./linuwu-sense.nix # latest kernal puller.
-    ./linuwu-sense_kernal_fixed.nix # fixed the kernal version to the working.
+    # ./linuwu-sense_kernal_fixed.nix # fixed the kernal version to the working.
     ./mchose_ace_68.nix
 
   ];
