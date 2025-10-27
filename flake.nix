@@ -73,8 +73,7 @@
             home-manager.users.mukuldk = import ./hosts/home.nix;
           }
 
-          # Y: LINUWU SENSE LOCKED:
-          #
+
           # Y: LINUWU SENSE LOCKED FOREVER
           ({ pkgs, ... }:
             let
@@ -82,22 +81,23 @@
                 path = ./hosts/system_apps/linuwu_sense/kernel-6.17.2;
                 name = "linuwu-sense-6.17.2";
               };
+              modulePath = "${linuwuDir}/linuwu_sense.ko"; # ← ROOT FILE
             in
             {
-              # Pin entire directory in Nix store
               system.extraDependencies = [ linuwuDir ];
 
-              # Load module on boot (from pinned copy)
               boot.extraModulePackages = [
                 (pkgs.runCommand "linuwu-sense-pinned" { } ''
                   mkdir -p $out/lib/modules/6.17.2/extra
-                  cp ${linuwuDir}/linuwu_sense.ko $out/lib/modules/6.17.2/extra/linuwu_sense.ko
+                  cp ${modulePath} $out/lib/modules/6.17.2/extra/linuwu_sense.ko
                 '')
               ];
 
-              # Blacklist acer_wmi (optional, if needed)
-              # boot.blacklistedKernelModules = [ "acer_wmi" ];
+              boot.blacklistedKernelModules = [ "acer_wmi" ];
             })
+
+          #-------------
+
         ];
       };
     };
