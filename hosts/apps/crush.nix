@@ -1,11 +1,13 @@
+{ config, pkgs, inputs, ... }:
+
 {
+  imports = [
+    inputs.nur.repos.charmbracelet.modules.crush
+  ];
+
   programs.crush = {
     enable = true;
-    # Optional: you can configure providers or settings here
-    settings = {
-      # Example placeholder
-      # providers = { openai.api_key = "your-key"; };
-    };
+    settings = { };
   };
 }
 
