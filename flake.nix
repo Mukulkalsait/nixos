@@ -31,15 +31,9 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    #  Neovim NIGHTLY OVERLAY
-    # neovim-nightly-overlay = { url = "github:nix-community/neovim-nightly-overlay"; };
-
-    # YAZI:
-    # yazi.url = "github:sxyazi/yazi";
-
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, lib, config, ... }@inputs:
     let
       # Y: VARIALBES =>
       system = "x86_64-linux";
@@ -73,22 +67,10 @@
             home-manager.users.mukuldk = import ./hosts/home.nix;
           }
 
-
-          # Y: LINUWU SENSE LOCKED FOREVER
-          ({ pkgs, ... }:
-            let
-              linuwuDir = builtins.path {
-                path = ./hosts/system_apps/linuwu_sense/kernel-6.17.2;
-                name = "linuwu-sense-6.17.2";
-              };
-            in
-            {
-              system.extraDependencies = [ linuwuDir ];
-
-              boot.blacklistedKernelModules = [ "acer_wmi" ];
-            })
-
-          #-------------
+          {
+            boot.blacklistedKernelModules = lib.optionals (config.boot.blacklistedKernelModules or [ ]) (x: x != "acer_wmi"); # Or just [] if no other blacklists => Ensure acer-wmi loads (remove any old blacklists)
+            boot.kernelParams = [ "acer_wmi.predator_v4=1" ]; # Optional: Force Predator v4 detection if needed (for full 5 profiles)
+          }
 
         ];
       };
