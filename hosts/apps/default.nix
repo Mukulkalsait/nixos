@@ -26,7 +26,7 @@
 
     ./bat.nix
     ./neovim.nix
-    ./crush.nix
+    # ./crush.nix
 
     # Y: GitHub repos
     # ./newDockerfile.nix # cli tool new-dockerilfe

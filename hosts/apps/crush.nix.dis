@@ -1,11 +1,8 @@
-{ config, pkgs, inputs, ... }:
-
+{ config, pkgs, inputs, nur, ... }:
 {
-  imports = [
-    # Import the Crush module directly from NUR
-    inputs.nur.repos.charmbracelet.modules.crush
+  import = [
+    nur.repos.charmbracelet.modules.crush
   ];
-
   programs.crush = {
     enable = true;
     settings = {
@@ -15,7 +12,7 @@
           name = "OpenAI";
           base_url = "https://api.openai.com/v1";
           type = "openai";
-          api_key = "sk-fake123456789abcdef..."; # replace later
+          api_key = "sk-fake123456789abcdef...";
           models = [
             {
               id = "gpt-4";
@@ -36,4 +33,3 @@
     };
   };
 }
-

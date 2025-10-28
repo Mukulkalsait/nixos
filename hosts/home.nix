@@ -1,7 +1,8 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, nur, ... }: {
   # inputs.home-manager.nixosModules.default
 
-  imports = [ # apps
+  imports = [
+    # apps
     ./apps
     inputs.zen-browser.homeModules.twilight
   ];
