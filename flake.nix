@@ -6,6 +6,7 @@
     nur.url = "github:nix-community/NUR"; # Y: NUR packages from ARCH 👏
 
 
+
     # HOME-MANAGER: (*)
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -52,7 +53,6 @@
 
           # Y: NUR overlay
           { nixpkgs.overlays = [ inputs.nur.overlays.default ]; }
-          # { nixpkgs.overlays = [ nur.overlay ]; }
 
           # Hyperland setup
           {
