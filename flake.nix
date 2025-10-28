@@ -3,9 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # Y:  Use unstable for latest packages
-    nur.url = "github:nix-community/NUR"; # Y: NUR packages from ARCH 👏
 
-
+    # Y: NUR packages from ARCH 👏
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # HOME-MANAGER: (*)
     home-manager = {
@@ -52,7 +55,8 @@
           ./hosts/configuration.nix
 
           # Y: NUR overlay
-          { nixpkgs.overlays = [ inputs.nur.overlays.default ]; }
+          { nixpkgs.overlays = [ nur.overlays.default ]; }
+          # { nixpkgs.overlays = [ inputs.nur.overlays.default ]; }
 
           # Hyperland setup
           {

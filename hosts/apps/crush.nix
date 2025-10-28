@@ -1,14 +1,39 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Import ONLY the Crush module, not all NUR modules
   imports = [
-    "${inputs.nur}/repos/charmbracelet/modules/crush"
+    # Import the Crush module directly from NUR
+    inputs.nur.repos.charmbracelet.modules.crush
   ];
 
   programs.crush = {
     enable = true;
-    settings = { };
+    settings = {
+      providers = {
+        openai = {
+          id = "openai";
+          name = "OpenAI";
+          base_url = "https://api.openai.com/v1";
+          type = "openai";
+          api_key = "sk-fake123456789abcdef..."; # replace later
+          models = [
+            {
+              id = "gpt-4";
+              name = "GPT-4";
+            }
+          ];
+        };
+      };
+      lsp = {
+        go = { command = "gopls"; enabled = true; };
+        nix = { command = "nil"; enabled = true; };
+      };
+      options = {
+        context_paths = [ "/etc/nixos/configuration.nix" ];
+        tui = { compact_mode = true; };
+        debug = false;
+      };
+    };
   };
 }
 
