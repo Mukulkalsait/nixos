@@ -1,18 +1,11 @@
-{ lib, config, pkgs, ... }: {
-  # imports = [ <nur> ]; # this line ensures your NUR modules are seen
-
+{
   programs.crush = {
     enable = true;
+    # Optional: you can configure providers or settings here
     settings = {
-      # providers = { … };
-      # lsp = { … };
-      # options = { … };
+      # Example placeholder
+      # providers = { openai.api_key = "your-key"; };
     };
   };
-
-  # DX: RUN THIS FIRST :
-  # nix-channel --add https://github.com/nix-community/NUR/archive/main.tar.gz nur
-  # nix-channel --update
-
 }
 
