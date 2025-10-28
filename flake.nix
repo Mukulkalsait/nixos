@@ -2,8 +2,9 @@
   description = "Mukul's NixOS with Hyprland and Home Manager";
 
   inputs = {
-    # Use unstable for latest packages
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # Y:  Use unstable for latest packages
+    nur.url = "github:nix-community/NUR"; # Y: NUR packages from ARCH 👏
+
 
     # HOME-MANAGER: (*)
     home-manager = {
@@ -33,7 +34,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, nur, ... }@inputs:
     let
       # Y: VARIALBES =>
       system = "x86_64-linux";
@@ -48,6 +49,9 @@
         };
         modules = [
           ./hosts/configuration.nix
+
+          # Y: NUR overlay
+          { nixpkgs.overlays = [ nur.overlay ]; }
 
           # Hyperland setup
           {

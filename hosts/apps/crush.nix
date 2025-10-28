@@ -1,5 +1,5 @@
 { lib, config, pkgs, ... }: {
-  imports = [ <nur> ]; # this line ensures your NUR modules are seen
+  # imports = [ <nur> ]; # this line ensures your NUR modules are seen
 
   programs.crush = {
     enable = true;
