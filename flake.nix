@@ -33,7 +33,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, lib, config, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, ... }@inputs:
     let
       # Y: VARIALBES =>
       system = "x86_64-linux";
@@ -67,10 +67,10 @@
             home-manager.users.mukuldk = import ./hosts/home.nix;
           }
 
-          {
-            boot.blacklistedKernelModules = lib.optionals (config.boot.blacklistedKernelModules or [ ]) (x: x != "acer_wmi"); # Or just [] if no other blacklists => Ensure acer-wmi loads (remove any old blacklists)
-            boot.kernelParams = [ "acer_wmi.predator_v4=1" ]; # Optional: Force Predator v4 detection if needed (for full 5 profiles)
-          }
+          # {
+          #   boot.blacklistedKernelModules = lib.optionals (config.boot.blacklistedKernelModules or [ ]) (x: x != "acer_wmi"); # Or just [] if no other blacklists => Ensure acer-wmi loads (remove any old blacklists)
+          #   boot.kernelParams = [ "acer_wmi.predator_v4=1" ]; # Optional: Force Predator v4 detection if needed (for full 5 profiles)
+          # }
 
         ];
       };
