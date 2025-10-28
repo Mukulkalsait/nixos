@@ -23,12 +23,15 @@
     # Y: Hardware |>
     lm_sensors # for senseor of laptop.
     android-tools # ADB. android debuging.
+    usbutils # lsusb + usb funcanilitys.
+    bolt # Thunderbolt devices manager
 
     # Y: Lang |>
     # rustup # latet rust {nightly}
     gcc # GUN C compailer.
     binutils
     lld
+    kmod # Core NixOS package for module management—likely already implicit.
 
     # rustup # latet rust {nightly}
     rustc # Add this for the Rust compiler
@@ -41,18 +44,16 @@
     luarocks # Lua package manager.
     nodejs # nodejs
 
-    # DX: PREDATOR SENSE FUNCTIONALITY + Kernal Modifiers |>
-    linuxPackages.kernel.dev # Kernel development headers/tools (needed for building modules).
-    pkg-config # helper for compiling/linking libraris.
-    bc # CLI calculater for Scripting features.
-    elfutils # EBL librari working tools {kernal, perf, debuging}
-    usbutils # lsusb + usb funcanilitys.
-    bolt # Thunderbolt devices manager
-    kmod # find
-    flex # find
+    # TAG: PREDATOR SENSE FUNCTIONALITY + Kernal Modifiers |>
+    # linuxPackages.kernel.dev # Kernel development headers/tools (needed for building modules).
+    # elfutils # EBL librari working tools {kernal, perf, debuging}
+    # flex # Build time needed no other use 
 
-    # DX: PredatorNonSense |>
-    evtest #
+    # DX: PredatorNonSense Future Build |>
+    evtest # Predator-specific debugging (e.g., testing mode button events). Use evtest sparingly if you ever need input diagnostics.
+    # pkg-config # helper for compiling/linking libraris. RUST & C
+    # bc # CLI calculater for Scripting features. FOR FAN CURVES SO WE MIGHT NEED IT WITH RUST
+
 
     # B: CLI Essentilas |>
     gnumake # Build automation tool (MakeFiles).
