@@ -5,10 +5,10 @@
     enable = true;
     dockerCompat = true;
     dockerSocket.enable = false;
-    enableNvidia = true;
     defaultNetwork.settings.dns_enabled = true;
     # ⏫ fixes DNS resolution in rootless containers.
   };
+  hardware.nvidia-container-toolkit = { enable = true; };
 
   # FIX: Set environment variable to point tools to rootless socket
   environment.sessionVariables = {
