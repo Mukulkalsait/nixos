@@ -163,6 +163,7 @@
         klei = "kubectl exec -it ";
         klg = "kubectl get ";
         kls = "kubectl scale ";
+        klr = "kubectl rollout ";
 
 
 
@@ -179,8 +180,8 @@
         | klei(exec -it)          |
         | klg(get)                |
         | kls(scale)              |
+        | klr(rollout)            |
         |                         |
-        | klr(api-Resources)      |
         |_________________________|
 
         '"; # HELP
