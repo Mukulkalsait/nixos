@@ -151,16 +151,50 @@
         sysp = "sudo systemctl start podman.socket podman.service && sudo systemctl status podman.socket podman.service"; # Start Podman
         systp = "sudo systemctl stop podman.socket podman.service && sudo systemctl status podman.socket podman.service"; # Stop Podman (stops Minikube too)
 
-        kubeOn = "minikube start --driver=podman "; # Y: provide =>  --cpus= --memory= 
-        kubeOnX = "minikube start --driver=podman --cpus=4 --memory=8g && echo 'minikube start --driver=podman --cpus=4 --memory=8g'"; # Start Minikube
-        kubeOnY = "minikube start --driver=podman --container-runtime=crun --cpus=2 --memory=8192 && echo '--driver=podman --container-runtime=crun --cpus=2 --memory=8192' ";
-        kubeOnDebug = "echo 'add |>  --alsologtostderr -v=9 {where -v is 1-10 scale for debuging }'";
 
-        kubeOff = "minikube stop"; # Stop Minikube
-        miniSet = "minikube config set rootless true && minikube config set driver podman && minikube config view";
+        kl = "kubectl ";
 
-        minikubeDelete = "minikube delete";
-        minikubeDeleteFull = "minikube delete --all --purge &&  rm -rfv ~/.minikube";
+        kla = "kubectl attach ";
+        klar = "kubectl api-resources ";
+        klc = "kubectl create -f ";
+        klci = "kubectl cluster-info ";
+        kld = "kubectl describe ";
+        kle = "kubectl exec ";
+        klei = "kubectl exec -it ";
+        klg = "kubectl get ";
+        kls = "kubectl scale ";
+
+
+
+        klh = "echo '
+                 Alias Help 
+         _________________________ 
+        |                         |
+        | kla(attach)             |
+        | klar(api-Resources)     |
+        | klc(create)             |
+        | klci(cluster-Info)      |
+        | kld(describe)           |
+        | kle(exec)               |
+        | klei(exec -it)          |
+        | klg(get)                |
+        | kls(scale)              |
+        |                         |
+        | klr(api-Resources)      |
+        |_________________________|
+
+        '"; # HELP
+
+        # kubeOn = "minikube start --driver=podman "; # Y: provide =>  --cpus= --memory= 
+        # kubeOnX = "minikube start --driver=podman --cpus=4 --memory=8g && echo 'minikube start --driver=podman --cpus=4 --memory=8g'"; # Start Minikube
+        # kubeOnY = "minikube start --driver=podman --container-runtime=crun --cpus=2 --memory=8192 && echo '--driver=podman --container-runtime=crun --cpus=2 --memory=8192' ";
+        # kubeOnDebug = "echo 'add |>  --alsologtostderr -v=9 {where -v is 1-10 scale for debuging }'";
+        #
+        # kubeOff = "minikube stop"; # Stop Minikube
+        # miniSet = "minikube config set rootless true && minikube config set driver podman && minikube config view";
+        #
+        # minikubeDelete = "minikube delete";
+        # minikubeDeleteFull = "minikube delete --all --purge &&  rm -rfv ~/.minikube";
 
         # DX: Docker 
         # sysd = "sudo systemctl start docker.service docker.socket && sudo systemctl status docker.service docker.socket";
