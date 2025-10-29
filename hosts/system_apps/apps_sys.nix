@@ -10,7 +10,8 @@
     # /etc/nixos/hosts/apps/neovim.nix => LSP's, Langs, npm packages.
 
     # DX: System Imp |>
-    greetd.tuigreet # TUI login manager.
+    # greetd.tuigreet # TUI login manager.
+    tuigreet # TUI login manager.
     nix-prefetch-github # Y: RunToFindInfo: nix-prefetch-git --url https://github.com/0x7375646F/Linuwu-Sense --rev refs/heads/main
 
 
