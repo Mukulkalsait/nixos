@@ -26,6 +26,7 @@
     powerManagement.finegrained = true;
     open = false; # Use proprietary for CUDA
     nvidiaPersistenced = false; #  DX: Turned off because breaking GPU.= {basically keep nvidia running} / we are fine without it.
+
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     forceFullCompositionPipeline = false;
