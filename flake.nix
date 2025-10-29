@@ -57,6 +57,7 @@
           # Y: NUR overlay
           { nixpkgs.overlays = [ nur.overlays.default ]; }
 
+
           # Hyperland setup
           {
             programs.hyprland.enable = true;
@@ -74,40 +75,6 @@
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.mukuldk = import ./hosts/home.nix;
           }
-          nur.repos.charmbracelet.modules.crush
-
-          {
-            programs.crush = {
-              enable = true;
-              settings = {
-                providers = {
-                  openai = {
-                    id = "openai";
-                    name = "OpenAI";
-                    base_url = "https://api.openai.com/v1";
-                    type = "openai";
-                    api_key = "sk-fake123456789abcdef...";
-                    models = [
-                      {
-                        id = "gpt-4";
-                        name = "GPT-4";
-                      }
-                    ];
-                  };
-                };
-                lsp = {
-                  go = { command = "gopls"; enabled = true; };
-                  nix = { command = "nil"; enabled = true; };
-                };
-                options = {
-                  context_paths = [ "/etc/nixos/configuration.nix" ];
-                  tui = { compact_mode = true; };
-                  debug = false;
-                };
-              };
-            };
-          }
-
 
         ];
       };
