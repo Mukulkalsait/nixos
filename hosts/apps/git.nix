@@ -2,8 +2,12 @@
 { config, pkgs, ... }: {
   programs.git = {
     enable = true;
-    userName = "Mukulkalsait";
-    userEmail = "mdk.121.72633.sg@gmail.com";
+    settings = {
+      user = {
+        name = "Mukulkalsait";
+        email = "mdk.121.72633.sg@gmail.com";
+      };
+    };
     signing = {
       key = null;
       signByDefault = false;
