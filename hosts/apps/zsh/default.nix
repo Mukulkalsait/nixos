@@ -163,7 +163,7 @@
         klei = "kubectl exec -it ";
         klg = "kubectl get ";
         kls = "kubectl scale ";
-        klr = "kubectl rollout ";
+        klr = "kubectl scale ";
 
 
 
@@ -173,7 +173,7 @@
         |                         |
         | kla(attach)             |
         | klar(api-Resources)     |
-        | klc(create)             |
+        | klc(create) -f          |
         | klci(cluster-Info)      |
         | kld(describe)           |
         | kle(exec)               |
