@@ -1,27 +1,27 @@
 { config, lib, pkgs, inputs, nur, ... }:
 
 # DX: temporary workaround start =>
-let
-  qtPrivateOverlay = self: super: {
-    libfm-qt = super.libfm-qt.overrideAttrs (old: {
-      nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
-        super.qt6Packages.qtbase.dev # Includes private headers
-      ];
-      cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DQT_ENABLE_PRIVATE_HEADERS=ON" ];
-    });
-
-    pcmanfm-qt = super.pcmanfm-qt.overrideAttrs (old: {
-      nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
-        super.qt6Packages.qtbase.dev # Includes private headers
-      ];
-      cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DQT_ENABLE_PRIVATE_HEADERS=ON" ];
-    });
-  };
-in
+# let
+#   qtPrivateOverlay = self: super: {
+#     libfm-qt = super.libfm-qt.overrideAttrs (old: {
+#       nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+#         super.qt6Packages.qtbase.dev # Includes private headers
+#       ];
+#       cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DQT_ENABLE_PRIVATE_HEADERS=ON" ];
+#     });
+#
+#     pcmanfm-qt = super.pcmanfm-qt.overrideAttrs (old: {
+#       nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+#         super.qt6Packages.qtbase.dev # Includes private headers
+#       ];
+#       cmakeFlags = (old.cmakeFlags or [ ]) ++ [ "-DQT_ENABLE_PRIVATE_HEADERS=ON" ];
+#     });
+#   };
+# in
 # DX: temporary workaround end =|
 
 {
-  nixpkgs.overlays = [ qtPrivateOverlay ]; # DX: temporary workaround extra line
+  # nixpkgs.overlays = [ qtPrivateOverlay ]; # DX: temporary workaround extra line
 
   imports = [
     ./hardware-configuration.nix # Y: Hardware Config.
@@ -32,7 +32,8 @@ in
 
   # IMP: Flakes + Kernal
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Flake:
-  nixpkgs.config.allowUnfree = true; # Use latest kernel.
+
+  # nixpkgs.config.allowUnfree = true; # Use latest kernel.
 
   # IMP: TimeZone.
   time.timeZone = "Asia/Kolkata"; # TimeZone.

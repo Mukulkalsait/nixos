@@ -55,7 +55,7 @@
           ./hosts/configuration.nix
 
           # Y: NUR overlay
-          { nixpkgs.overlays = [ nur.overlays.default ]; }
+          # { nixpkgs.overlays = [ nur.overlays.default ]; }
 
 
           # Hyperland setup
