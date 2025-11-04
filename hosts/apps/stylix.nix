@@ -14,7 +14,7 @@
     noto-fonts
     # lohit-fonts
     # noto-fonts-lgc-plus
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     noto-fonts-extra # Marathi fonts
     # lohit-fonts.devnagari # Marathi fonts
     # ttf-indic-fonts # Marathi fonts
