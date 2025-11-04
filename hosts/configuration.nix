@@ -33,7 +33,7 @@
   # IMP: Flakes + Kernal
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Flake:
 
-  # nixpkgs.config.allowUnfree = true; # Use latest kernel.
+  nixpkgs.config.allowUnfree = true; # Use latest kernel.
 
   # IMP: TimeZone.
   time.timeZone = "Asia/Kolkata"; # TimeZone.
