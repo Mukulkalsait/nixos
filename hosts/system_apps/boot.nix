@@ -18,7 +18,6 @@
     "ec_sys" # EC fan controls.
   ];
   boot.kernelParams = [ "acpi_ec.gpe_debug=1" ]; # Enable Kernal parameters
-  networking.enableIPv6 = true;
 
 
 }
