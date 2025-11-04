@@ -2,8 +2,12 @@
 { config, pkgs, ... }: {
 
   # G:  Networking.
-  networking.hostName = "PredatorNix"; # Define your hostname.
-  networking.networkmanager.enable = true;
+
+  networking = {
+    hostName = "PredatorNix"; # Define your hostname.
+    networkmanager.enable = true;
+    enableIPv6 = true; # newly added
+  };
 
   # G:  Bluetooth.
   hardware.bluetooth.enable = true; # Enable Bluetooth

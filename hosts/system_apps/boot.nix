@@ -7,8 +7,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.loader.systemd-boot.editor = false; # optional: hide editor
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest; # latest Kernal Pkg. # DX: kernal selector but its inside Linuvu-sense*.nix
-  boot.kernelPackages = pkgs.linuxPackages_6_17; # Stable 6.17.3
+  boot.kernelPackages = pkgs.linuxPackages_latest; # latest Kernal Pkg. # DX: kernal selector but its inside Linuvu-sense*.nix
+  # boot.kernelPackages = pkgs.linuxPackages_6_17; # Stable 6.17.3
   boot.kernelModules = [
     # Y:  Enable Kernal MODULES
 
@@ -18,6 +18,8 @@
     "ec_sys" # EC fan controls.
   ];
   boot.kernelParams = [ "acpi_ec.gpe_debug=1" ]; # Enable Kernal parameters
+  networking.enableIPv6 = true;
+
 
 }
 
