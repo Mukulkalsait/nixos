@@ -96,7 +96,7 @@
     mangohud # fps overlay
     linuxPackages.nvidia_x11
     steam # steam app itself
-    protonup # Steam Compatiblelity tool
+    protonup-ng # Steam Compatiblelity tool
     gamescope # full screen Window manager STEAM
     (pkgs.writeShellScriptBin "prime-run" ''
       #!/bin/sh
