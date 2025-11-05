@@ -154,13 +154,16 @@
 
         kl = "kubectl ";
 
-        kla = "kubectl attach ";
+        kla = "kubectl apply -f ";
         klar = "kubectl api-resources ";
-        klc = "kubectl create -f ";
+        klat = "kubectl attach ";
+
         klci = "kubectl cluster-info ";
         kld = "kubectl describe ";
+
         kle = "kubectl exec ";
         klei = "kubectl exec -it ";
+
         klg = "kubectl get ";
         kls = "kubectl scale ";
         klr = "kubectl scale ";
@@ -171,13 +174,16 @@
                  Alias Help 
          _________________________ 
         |                         |
-        | kla(attach)             |
+        | kla(apply) -f           |
         | klar(api-Resources)     |
-        | klc(create) -f          |
+        | klat(attach)            |
+        |                         |
         | klci(cluster-Info)      |
         | kld(describe)           |
+        |                         |
         | kle(exec)               |
         | klei(exec -it)          |
+        |                         |
         | klg(get)                |
         | kls(scale)              |
         | klr(rollout)            |
