@@ -75,6 +75,7 @@
     pinta # D.Photo editor
 
     # Desktop apps:
+    nginx # Reverse Proxy Server
     mission-center
     libreoffice-fresh # community driven latest version fo libreoffice.
     obs-studio
