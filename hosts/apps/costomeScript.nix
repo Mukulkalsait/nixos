@@ -1,7 +1,7 @@
 # Y : systemwide Costome Scripts which run with single cmd
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     (writeShellScriptBin "vihaanDEstart" ''
       echo "🚀 Starting dev stack for VihaanAI Technologies ..."
       if sudo systemctl start nginx php-fpm mysql; then
