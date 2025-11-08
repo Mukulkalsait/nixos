@@ -124,8 +124,11 @@
   };
 
 
-  # IMP: NGINX
+  # IMP: DEV SERVICES
+  services.phpfpm.enable = true;
+  services.mysql.enable = true;
   services.nginx.enable = true;
+
   services.nginx = {
     recommendedGzipSettings = true;
     recommendedProxySettings = true;
@@ -136,8 +139,10 @@
       locations."/" = { index = "index.html"; };
     };
   };
-  systemd.services.nginx.wantedBy = lib.mkForce [ ]; # Y:  prevent nginx (or any services.<name>) from starting automatically at boot
-
+  # Y:  prevent any services.<name> from starting automatically at boot
+  systemd.services.nginx.wantedBy = lib.mkForce [ ];
+  systemd.services.phpfpm.wantedBy = lib.mkForce [ ];
+  systemd.services.mysql.wantedBy = lib.mkForce [ ];
 
 
 
