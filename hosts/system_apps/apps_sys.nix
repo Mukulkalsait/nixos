@@ -125,10 +125,8 @@
 
 
   # IMP: DEV SERVICES
-  services.phpfpm.enable = true;
   services.mysql.enable = true;
   services.nginx.enable = true;
-
   services.nginx = {
     recommendedGzipSettings = true;
     recommendedProxySettings = true;
@@ -141,7 +139,6 @@
   };
   # Y:  prevent any services.<name> from starting automatically at boot
   systemd.services.nginx.wantedBy = lib.mkForce [ ];
-  systemd.services.phpfpm.wantedBy = lib.mkForce [ ];
   systemd.services.mysql.wantedBy = lib.mkForce [ ];
 
 
