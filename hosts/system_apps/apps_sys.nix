@@ -1,5 +1,5 @@
 # Y:  Define the SYSTEM WIDE APPS
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
 
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -117,12 +117,29 @@
   };
 
   programs.ssh = {
-    startAgent = true;
-    # settings does not exisists:
-    # settings = {     #   PasswordAuthentication = false; # use keys only
-    #   PermitRootLogin = "no";
-    # };
+    startAgent = true; # local background process (ssh-agent) => store ssh keys + Help you connect to Outer server
+    # services.openssh.enable = true; # DX: starts => sshd.service + Open port 22 + Let others connect to your pc.
+    # services.openssh.wantedBy = lib.mkForce []; Y: thsi will add the service but "WILL NOT START AT BOOT".
+
   };
+
+  services.nginx = {
+    enable = true;
+    wantedBy = lib.mkForce [ ]; # Y:  prevent nginx (or any services.<name>) from starting automatically at boot
+
+    recommendedGzipSettings = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+
+    virtualHosts."localhost" = {
+      root = "/home/mukuldk/1_files";
+      listen = [{ addr = "0.0.0.0"; port = 80; }];
+      locations."/" = {
+        index = "index.html";
+      };
+    };
+  };
+
 
 }
 
