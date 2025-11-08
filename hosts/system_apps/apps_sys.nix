@@ -123,22 +123,22 @@
 
   };
 
-  services.nginx = {
-    enable = true;
-    wantedBy = lib.mkForce [ ]; # Y:  prevent nginx (or any services.<name>) from starting automatically at boot
 
+  # IMP: NGINX
+  services.nginx.enable = true;
+  services.nginx = {
     recommendedGzipSettings = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
-
     virtualHosts."localhost" = {
       root = "/home/mukuldk/1_files";
       listen = [{ addr = "0.0.0.0"; port = 80; }];
-      locations."/" = {
-        index = "index.html";
-      };
+      locations."/" = { index = "index.html"; };
     };
   };
+  systemd.services.nginx.wantedBy = lib.mkForce [ ]; # Y:  prevent nginx (or any services.<name>) from starting automatically at boot
+
+
 
 
 }
