@@ -125,8 +125,11 @@
 
 
   # IMP: DEV SERVICES
-  services.mysql.enable = true;
   services.nginx.enable = true;
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb; # or pkgs.mysql80 if you prefer
+  };
   services.nginx = {
     recommendedGzipSettings = true;
     recommendedProxySettings = true;
