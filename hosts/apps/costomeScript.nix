@@ -83,7 +83,7 @@
             echo "================================================================================== $s =================================================================================="
             sudo systemctl status "$s" --no-pager
           done
-          echo "✅ All service statuses printed."
+          echo "------------ All service statuses printed. ------------"
           ;;
         h|--help|"")
           print_help
