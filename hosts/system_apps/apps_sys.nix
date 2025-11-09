@@ -144,6 +144,10 @@
   systemd.services.nginx.wantedBy = lib.mkForce [ ];
   systemd.services.mysql.wantedBy = lib.mkForce [ ];
 
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.valent;
+  };
 
 
 }
