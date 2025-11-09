@@ -102,5 +102,6 @@
   };
   systemd.user.startServices = "sd-switch"; # Auto-start on login (Clipboard helper somehow grok ai)
 
+
 }
 
