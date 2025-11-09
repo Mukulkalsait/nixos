@@ -92,7 +92,10 @@
     nvtopPackages.nvidia # G: GPU monitoring TUI Specific for Nvidia GPUs SMALLER
     # nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs LAEGER
 
+
     # FUN_2: APPS |>
+    libsForQt5.kdeconnect-kde # kde connect for android connection
+    indicator-kdeconnect # Android connecti helper.
     mangohud # fps overlay
     linuxPackages.nvidia_x11
     steam # steam app itself
@@ -144,6 +147,7 @@
   systemd.services.nginx.wantedBy = lib.mkForce [ ];
   systemd.services.mysql.wantedBy = lib.mkForce [ ];
 
+  # Y: kde connect valent app pluign added.
   programs.kdeconnect = {
     enable = true;
     package = pkgs.valent;
