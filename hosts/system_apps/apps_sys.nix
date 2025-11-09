@@ -3,18 +3,19 @@
 
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    gh # Git hub
-    wget # HTTP FTP file downloader.
-    curl # URL trnasfer tool (HTTP/FTP/APIS)
+
+    # DX: OS-GUI Utils |>
     file # shows file tipe
+    copyq # Clipboard manager
     cliphist # clipboard history manager
+
+    # G: CLI Utils |>
+    curl # URL trnasfer tool (HTTP/FTP/APIS)
+    wget # HTTP FTP file downloader.
     zip # zip
     unzip # unzip
     zsh # shell.
-    openssh # ssh client.
-    mtr # my traceroute.
-
-    # B: CLI Utils |>
+    gh # Git hub
     jq # JSON parser.
     fd # Fast alternative for find
     fzf # fuzzy finder.
@@ -22,8 +23,9 @@
     tree-sitter # treesitter for neovim
     fastfetch # SYSTEM INFO
     p7zip # archiv/ unarchiv
+    openssh # ssh client.
 
-    # B: Daily Drivers |>
+    # IMP: Daily Drivers |>
     yazi # D.FileManager
     neovim # D.Editor.
     starship # D.Prompt UI zsh prompt costumise.
@@ -45,9 +47,6 @@
       __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
     '')
 
-    # TAG: DISABELED Extras |>
-    # stress-ng # cpu stress tests
-
   ];
 
   programs.zsh.enable = true;
@@ -64,13 +63,6 @@
     # services.openssh.wantedBy = lib.mkForce []; Y: thsi will add the service but "WILL NOT START AT BOOT".
 
   };
-
-  # # Y: kde connect valent app pluign added.
-  # programs.kdeconnect = {
-  #   enable = true;
-  #   package = pkgs.valent;
-  # };
-
 
 }
 

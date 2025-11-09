@@ -1,20 +1,15 @@
 # Y: Home Packages
 
-{ lib, config, pkgs, yazi, ... }: {
-  # Y: this will put the .config_local/zellij into ~/.config/zellij
-  home.file.".config/zellij".source = ./.config_local/zellij;
+{ pkgs, ... }: {
 
-  # Minimal user packages (keep it simple for now)
   home.packages = with pkgs; [
-    # CARD: OTHER app installation LOCATIONS |>
+    # OTHER app installation LOCATIONS |>
     # /etc/nixos/hosts/system_apps/nvidia.nix => Gpu, kuda, Vaapi, OpenCL, Prime, STEAM
     # /etc/nixos/hosts/system_apps/virtualisation.nix => Docker and MiniKube
     # /etc/nixos/hosts/apps/stylix.nix =>
     # /etc/nixos/hosts/apps/neovim.nix => LSP's, Langs, npm packages.
 
-    # DX: System Imp |>
-
-    # Y: Hyprland + Plugins|>
+    # DX: Hyprland + Plugins |>
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
     pcmanfm-qt # FILE MANAGER WHICH TRIGGERS WHEN BROWSE BUTTON CLICKED
@@ -33,24 +28,26 @@
     playerctl # media controller
     pavucontrol # All audio IO gui tool very usefull.⭐
 
-    # Y: Lang (Programing)|>
+    # Y: Lang (Programing) |>
     nodejs # node js
     go # go-lang
-    # php # php
     bun # bun replacement for npm.
-    uv # PIP replacement. python package /dependency manager.
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
+    uv # PIP replacement. python package /dependency manager.
+
+    # ID: Terminal |>
+    kitty
+    zellij
+    # tmux
 
     # B: CLI Essentilas |>
-    bat
-    eza
+    nginx # Reverse Proxy Server
+    bat # modern cat
+    eza # Modern ls
     rustscan # rust port scanner
     dig # network tool
     mtr # my trace route
     bottom # TUI task manager
-    # nettools # set of networking tools. DX: depcreated && replaced by SS and IP
-    # IMP: both iproute2 (ip) and ss are present.
-
 
     # B: TUI |>
     dua # rust disk utility use " dua i " intereative.
@@ -58,48 +55,40 @@
     pv # pipe viwer = shows prograssbar when used with pype.
     # adbfs-rootless # adm-mount
 
-    # ID: Terminal |>
-    kitty
-    zellij
-    # tmux
-
     # TEST: DevOps |>
     dive # TUI Docker Images Layers.
     kdash # TUI kuberneties dashboard.
 
     # B: Media & essentials |>
-    # libsForQt5.kdeconnect-kde # kde connect for android connection
-    # indicator-kdeconnect # Android connecti helper.
     ffmpeg-full # ffmpeg
     ffmpegthumbnailer # tuhmbnel creater
     mediainfo # media info tool.
     easyeffects # Poweramp EQ enspired Equaliser.
     pinta # D.Photo editor
+    # libsForQt5.kdeconnect-kde # kde connect for android connection
+    # indicator-kdeconnect # Android connecti helper.
 
-    # Desktop apps:
-    nginx # Reverse Proxy Server
-    mission-center
+    # B: Desktop GUI apps:
+    mission-center # Task Manager
     libreoffice-fresh # community driven latest version fo libreoffice.
-    obs-studio
-    vlc
-    ardour
+    obs-studio # Screen recorder + Steamer
+    vlc # Video Lan Converter
+    ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
 
-    # anydesk
-    # davinci-resolve
+
+    # TAG: REFERENCES |>
+    # anydesk # desktop Connection Creater
+    # davinci-resolve # Best Video editors
     # libxcb # for davinci-resovle
-    # testdisk # DIV: Data recovery tool.
-    # blender  #      Blender tests 
+    # testdisk # Data recovery tool.
+    # blender  # Blender tests 
+    # stress-ng # cpu stress tests
 
-    # mpv
-    # spotify
-    # spicetify-cli
-
-    # DX: REFERENCES |>
-
+    # REMFERENCE |>
     # CLI utils: bc bottom git-graph grimblast ntfs3g playerctl showmethekey silicon udisks ueberzugpp wtype yt-dlp 
     # Coding stuff: openjdk23 python311
-    # Other: bemoji nix-prefetch-scripts
+    # Other: bemoji nix-prefetch-scripts mpv spotify spicetify-cli
   ];
 
   qt = {
@@ -111,5 +100,7 @@
     # };
   };
 
+  # Y: this will put the .config_local/zellij into ~/.config/zellij
+  home.file.".config/zellij".source = ./.config_local/zellij;
 }
 
