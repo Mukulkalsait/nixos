@@ -2,6 +2,7 @@
 
 { pkgs, ... }: {
 
+  home.file.".config/zellij".source = ./.config_local/zellij; # this will put the .config_local/zellij into ~/.config/zellij
   home.packages = with pkgs; [
     # OTHER app installation LOCATIONS |>
     # /etc/nixos/hosts/system_apps/nvidia.nix => Gpu, kuda, Vaapi, OpenCL, Prime, STEAM
@@ -99,8 +100,7 @@
     #   name = "adwaita-dark";
     # };
   };
+  systemd.user.startServices = "sd-switch"; # Auto-start on login (Clipboard helper somehow grok ai)
 
-  # Y: this will put the .config_local/zellij into ~/.config/zellij
-  home.file.".config/zellij".source = ./.config_local/zellij;
 }
 

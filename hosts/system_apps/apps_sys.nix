@@ -35,7 +35,6 @@
     nvtopPackages.nvidia # G: GPU monitoring TUI Specific for Nvidia GPUs SMALLER
     # nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs LAEGER
 
-
     # FUN_2: APPS |>
     mangohud # fps overlay
     linuxPackages.nvidia_x11
@@ -51,17 +50,28 @@
 
   programs.zsh.enable = true;
 
-  # HYPRLAND:
+  # Y: HYPRLAND:
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
 
+  # Y: SSH
   programs.ssh = {
     startAgent = true; # local background process (ssh-agent) => store ssh keys + Help you connect to Outer server
     # services.openssh.enable = true; # DX: starts => sshd.service + Open port 22 + Let others connect to your pc.
     # services.openssh.wantedBy = lib.mkForce []; Y: thsi will add the service but "WILL NOT START AT BOOT".
+  };
 
+  # Y: Clipboard Config
+  systemd.user.services.copyq = {
+    description = "CopyQ Clipboard Manager";
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.copyq}/bin/copyq server";
+      Restart = "always";
+    };
+    environment = { COPYQ_TAB = "History"; }; # Optional config
   };
 
 }
