@@ -3,65 +3,6 @@
 
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    # CARD: OTHER app installation LOCATIONS |>
-    # /etc/nixos/hosts/system_apps/nvidia.nix => Gpu, kuda, Vaapi, OpenCL, Prime, STEAM
-    # /etc/nixos/hosts/system_apps/virtualisation.nix => Docker and MiniKube
-    # /etc/nixos/hosts/apps/stylix.nix =>
-    # /etc/nixos/hosts/apps/neovim.nix => LSP's, Langs, npm packages.
-
-    # DX: System Imp |>
-    # greetd.tuigreet # TUI login manager.
-    tuigreet # TUI login manager.
-    nix-prefetch-github # Y: RunToFindInfo: nix-prefetch-git --url https://github.com/0x7375646F/Linuwu-Sense --rev refs/heads/main
-
-
-    # Y: Hyprland |>
-    hyprland # wayland compositer.
-    wl-clipboard # clipboard.
-    wlr-randr # wayland display manager tool.
-    # pipewire # to use Screen Sharing hone must needed.
-
-    # Y: Hardware |>
-    lm_sensors # for senseor of laptop.
-    android-tools # ADB. android debuging.
-    usbutils # lsusb + usb funcanilitys.
-    bolt # Thunderbolt devices manager
-
-    # Y: Lang |>
-    # rustup # latet rust {nightly}
-    gcc # GUN C compailer.
-    binutils
-    lld
-    kmod # Core NixOS package for module management—likely already implicit.
-
-    # rustup # latet rust {nightly}
-    rustc # Add this for the Rust compiler
-    cargo # rust package manager.
-    clippy # 
-    rust-analyzer # analyzer user latest nightly version
-    rustPlatform.rustLibSrc # Add this for standard library source code
-
-    lua # lua lang.
-    luarocks # Lua package manager.
-    nodejs # nodejs
-
-    # TAG: PREDATOR SENSE FUNCTIONALITY + Kernal Modifiers |>
-    # linuxPackages.kernel.dev # Kernel development headers/tools (needed for building modules).
-    # elfutils # EBL librari working tools {kernal, perf, debuging}
-    # flex # Build time needed no other use 
-
-    # DX: PredatorNonSense Future Build |>
-    evtest # Predator-specific debugging (e.g., testing mode button events). Use evtest sparingly if you ever need input diagnostics.
-    # pkg-config # helper for compiling/linking libraris. RUST & C
-    # bc # CLI calculater for Scripting features. FOR FAN CURVES SO WE MIGHT NEED IT WITH RUST
-
-
-    # B: CLI Essentilas |>
-    gnumake # Build automation tool (MakeFiles).
-    cmake # Cross Platform build system generator.
-    glib # LOW lever system lib, {many app needed.}
-
-    git # git
     gh # Git hub
     wget # HTTP FTP file downloader.
     curl # URL trnasfer tool (HTTP/FTP/APIS)
@@ -94,8 +35,6 @@
 
 
     # FUN_2: APPS |>
-    libsForQt5.kdeconnect-kde # kde connect for android connection
-    indicator-kdeconnect # Android connecti helper.
     mangohud # fps overlay
     linuxPackages.nvidia_x11
     steam # steam app itself

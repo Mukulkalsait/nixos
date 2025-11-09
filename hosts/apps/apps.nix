@@ -68,6 +68,8 @@
     kdash # TUI kuberneties dashboard.
 
     # B: Media & essentials |>
+    # libsForQt5.kdeconnect-kde # kde connect for android connection
+    # indicator-kdeconnect # Android connecti helper.
     ffmpeg-full # ffmpeg
     ffmpegthumbnailer # tuhmbnel creater
     mediainfo # media info tool.
