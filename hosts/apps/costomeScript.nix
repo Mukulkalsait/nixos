@@ -1,16 +1,13 @@
-# Y : systemwide Costome Scripts which run with single cmd
-
+# Y : systemwide Custom Scripts which run with single cmd
 { pkgs, ... }:
 {
-  # Y:  use "environment.systemPackages" for Root user scripts.
   home.packages = with pkgs; [
     (writeShellScriptBin "vde" ''
       #!/usr/bin/env bash
-
       # Vihaan Dev Environment Control Script
       SERVICES=("nginx" "mysql")
-
       print_help() {
+
         echo "⚙️vde [ Vihaan Dev Environment ]  
       ==================================================
       |             Usage: vde [cmd]                   |
@@ -28,7 +25,6 @@
       |___________|____________________________________|
       "
       }
-
       start_service() {
         local svc=$1
         if systemctl is-active --quiet "$svc"; then
@@ -42,7 +38,6 @@
           fi
         fi
       }
-
       stop_service() {
         local svc=$1
         if systemctl is-active --quiet "$svc"; then
@@ -74,16 +69,23 @@
           ;;
         r)
           echo "🔄 Restarting Vihaan Dev Environment ..."
-          sudo systemctl restart "''${SERVICES[@]}"
-          echo "✅ All services restarted."
+          for s in "''${SERVICES[@]}"; do
+            echo "🔄 Restarting $s ..."
+            if sudo systemctl restart "$s"; then
+              echo "✅ $s restarted successfully."
+            else
+              echo "❌ Failed to restart $s."
+            fi
+          done
+          echo "✨ All restart operations complete."
           ;;
         sta)
           echo "📊 Status for Vihaan Dev Environment:"
           for s in "''${SERVICES[@]}"; do
-            echo "================================================================================== $s =================================================================================="
+            echo "|==========================================| $s |==========================================|"
             sudo systemctl status "$s" --no-pager
           done
-          echo "------------ All service statuses printed. ------------"
+          echo "|------------ All service statuses printed. ------------|"
           ;;
         h|--help|"")
           print_help
@@ -93,8 +95,7 @@
           print_help
           ;;
       esac
+
     '')
   ];
 }
-
-
