@@ -108,6 +108,10 @@
     #   name = "adwaita-dark";
     # };
   };
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.valent;
+  };
 
 }
 

@@ -20,7 +20,7 @@
       # sudo systemctl status php-fpm --no-pager
       echo "=================================================================================== MySQL ==================================================================================="
       sudo systemctl status mysql --no-pager
-      echo "✅ All service statuses printed."
+      echo "All service statuses printed."
     '')
 
     (writeShellScriptBin "vihaanDEstop" ''
