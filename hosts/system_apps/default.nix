@@ -18,6 +18,7 @@
     # Y: After booting.
     ./envVariables.nix
     ./apps_sys.nix
+    ./devEnv.nix
     ./git.nix
     ./lazygit.nix
 
