@@ -65,11 +65,11 @@
 
   };
 
-  # Y: kde connect valent app pluign added.
-  programs.kdeconnect = {
-    enable = true;
-    package = pkgs.valent;
-  };
+  # # Y: kde connect valent app pluign added.
+  # programs.kdeconnect = {
+  #   enable = true;
+  #   package = pkgs.valent;
+  # };
 
 
 }
