@@ -15,7 +15,7 @@
     recommendedTlsSettings = true;
     virtualHosts = {
       "localhost" = {
-        root = "/home/mukuldk/1_file";
+        root = "/home/mukuldk/1_file/3_Repos_All/0_LIVE_Projects";
         listen = [{ addr = "0.0.0.0"; port = 80; }];
         locations."/" = {
           extraConfig = ''
@@ -35,7 +35,7 @@
         };
       };
       "127.0.0.1" = {
-        root = "/home/mukuldk/1_file";
+        root = "/home/mukuldk/1_file/3_Repos_All/0_LIVE_Projects";
         locations."/" = {
           extraConfig = ''
             # Enable directory listing

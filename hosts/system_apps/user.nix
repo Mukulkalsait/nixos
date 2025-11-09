@@ -23,5 +23,11 @@
     options = [ "uid=1000" "gid=100" "umask=0022" ];
   };
 
+  script = ''
+    chmod o+x /home/mukuldk
+    chmod o+rx /home/mukuldk/1_file /home/mukuldk/1_file/3_Repos_All/
+    chmod -R o+rx /home/mukuldk/1_file/3_Repos_All/0_LIVE_Projects/
+  '';
+
 }
 
