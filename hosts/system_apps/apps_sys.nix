@@ -65,31 +65,6 @@
 
   };
 
-
-  # IMP: DEV SERVICES
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb; # or pkgs.mysql80 if you prefer
-  };
-
-  services.nginx.enable = true;
-  services.nginx = {
-    defaultHTTPListenPort = 80;
-    virtualHosts = {
-      "default" = {
-        root = "/home/mukuldk/1_files";
-        default = true;
-        locations."/" = { index = "index.html"; };
-      };
-    };
-  };
-  # Y:  prevent any services.<name> from starting automatically at boot
-  systemd.services.nginx.wantedBy = lib.mkForce [ ];
-  systemd.services.mysql.wantedBy = lib.mkForce [ ];
-
-
-
-
   # Y: kde connect valent app pluign added.
   programs.kdeconnect = {
     enable = true;
