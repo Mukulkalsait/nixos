@@ -270,7 +270,8 @@ theme_dir "/home/mukuldk/.config/zellij/themes/"
 pane_frames true
 on_force_close "detach"  // options - detach (Default)
 copy_clipboard "primary" // system (default) - primary
-copy_command "cliphist encode | cliphist store"                    // wayland | hyprland
+// copy_command "cliphist encode | cliphist store" // wayland | hyprland
+copy_command "wl-copy" // wayland | hyprland
 copy_on_select true
  
 // Path to the default editor to use to edit pane scrollbuffer
