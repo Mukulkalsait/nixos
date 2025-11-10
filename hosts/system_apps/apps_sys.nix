@@ -6,8 +6,9 @@
 
     # DX: OS-GUI Utils |>
     file # shows file tipe
-    copyq # Clipboard manager
+    wl-clipboard # System wide clipboard
     cliphist # clipboard history manager
+    # copyq # Clipboard manager
 
     # G: CLI Utils |>
     curl # URL trnasfer tool (HTTP/FTP/APIS)
@@ -61,17 +62,6 @@
     startAgent = true; # local background process (ssh-agent) => store ssh keys + Help you connect to Outer server
     # services.openssh.enable = true; # DX: starts => sshd.service + Open port 22 + Let others connect to your pc.
     # services.openssh.wantedBy = lib.mkForce []; Y: thsi will add the service but "WILL NOT START AT BOOT".
-  };
-
-  # Y: Clipboard Config
-  systemd.user.services.copyq = {
-    description = "CopyQ Clipboard Manager";
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.copyq}/bin/copyq server";
-      Restart = "always";
-    };
-    environment = { COPYQ_TAB = "History"; }; # Optional config
   };
 
 }
