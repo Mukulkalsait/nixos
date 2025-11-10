@@ -22,6 +22,8 @@
     shellAliases =
       let flakeDir = "~/flake";
       in {
+
+        clip = "cliphist list | rofi -dmenu -p 'Clip' | cliphist decode | wl-copy";
         # wA = "bat /home/mukuldk/.zshrc";
         # G: Aliases 
         rm = "rm -iv";
