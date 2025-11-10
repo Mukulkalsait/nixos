@@ -1,6 +1,6 @@
 # Y: Home Packages
 
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
 
   home.file.".config/zellij".source = ./.config_local/zellij; # this will put the .config_local/zellij into ~/.config/zellij
   home.packages = with pkgs; [
@@ -11,17 +11,19 @@
     # /etc/nixos/hosts/apps/neovim.nix => LSP's, Langs, npm packages.
 
     # DX: Hyprland + Plugins |>
+    wev # input event check + debug, <keyboard, mouse>
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
     pcmanfm-qt # FILE MANAGER WHICH TRIGGERS WHEN BROWSE BUTTON CLICKED
-    rofi # MenuBar For Hyprland
-    swww # Walpaper
-    libnotify # notification
     papirus-icon-theme # Themes pack for menu
+    swww # Walpaper
     hyprshot # Screenshot
-    wtype # FUN_3: wayland keyboard input= i am using "fcitx5" in /configuration.nix USE ONLY 1.
     hyprpicker # color picker tool
-    wev # input event check + debug, <keyboard, mouse>
+    libnotify # notification
+    rofi # MenuBar For Hyprland [ ROFI is the main now rofi-wayland is merged ]
+    wl-clipboard # clipboard service
+    cliphist # clipboard history manager
+    wtype # FUN_3: wayland keyboard input= i am using "fcitx5" in /configuration.nix USE ONLY 1.
     # w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
 
     # Y: Hardware Control |>
@@ -92,6 +94,12 @@
     # Other: bemoji nix-prefetch-scripts mpv spotify spicetify-cli
   ];
 
+  # Y:  MenuBar For Hyprland
+  # programs.rofi = {
+  #   enable = true;
+  #   package = pkgs.rofi-wayland;
+  # };
+
   qt = {
     enable = true;
     # platformTheme.name = "gtk";
@@ -100,8 +108,29 @@
     #   name = "adwaita-dark";
     # };
   };
-  systemd.user.startServices = "sd-switch"; # Auto-start on login (Clipboard helper somehow grok ai)
 
+  # Y: Clipboard Config
+  systemd.user.services.cliphist-watcher = {
+    Unit = {
+      Description = "Cliphist Wayland Clipboard Watcher";
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";
+      Restart = "always";
+      RestartSec = 5;
+    };
+  };
+
+  # DB perms for root sharing (optional, runs on switch)
+  home.activation.setupCliphistDB = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    DB_DIR="$HOME/.local/state/cliphist"
+    mkdir -p "$DB_DIR"
+    chmod 777 "$DB_DIR"
+    [ -f "$DB_DIR/db" ] && chmod 666 "$DB_DIR/db"
+  '';
 
 }
 
