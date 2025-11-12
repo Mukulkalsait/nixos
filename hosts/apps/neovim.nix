@@ -41,6 +41,7 @@
   # Install LSP servers and formatters
   home.packages = with pkgs; [
     glow # TUI for markdown files 
+    nixd # NIX lsp
     nil # nix-LSP
     nixpkgs-fmt # FORMATTER
 
