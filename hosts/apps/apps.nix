@@ -52,6 +52,8 @@
     dig # network tool
     mtr # my trace route
     bottom # TUI task manager
+    lazysql # db TUI
+    nix-search # nix Online Pkg Searcher
 
     # B: TUI |>
     dua # rust disk utility use " dua i " intereative.
