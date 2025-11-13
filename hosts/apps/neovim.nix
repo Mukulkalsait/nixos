@@ -71,6 +71,7 @@
     nodePackages.mermaid-cli # For Mermaid diagrams (mmdc) snack.nvim
     nodePackages.sql-formatter # FORMATTER (for SQL)
 
+    # Y:  addsometinfg for terraform
     # nodePackages.yaml-language-server # DX: broken so added with |> bun i -g yaml-language-server 
     # nodePackages."@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
 

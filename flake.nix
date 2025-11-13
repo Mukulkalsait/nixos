@@ -36,9 +36,26 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    # Terraform
+    nixpkgs-terraform = {
+      url = "github:stackbuilders/nixpkgs-terraform";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, nur, ... }@inputs:
+  nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://hyprland.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8wA5R7Zty6U/3+VNRG0cL1wEw="
+      "hyprland.cachix.org-1:8F8mQAFN2wVYyTn+zBPRK6ZKqx0fP5cH3gX2rT9C/Rw="
+    ];
+  };
+
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, nur, nixpkgs-terraform, ... }@inputs:
     let
       # Y: VARIALBES =>
       system = "x86_64-linux";
@@ -75,6 +92,16 @@
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.mukuldk = import ./hosts/home.nix;
           }
+
+          # terraform
+          {
+            nixpkgs = {
+              overlays = [ inputs.nixpkgs-terraform.overlays.default ];
+              config.allowUnfree = true;
+            };
+          }
+
+
 
         ];
       };

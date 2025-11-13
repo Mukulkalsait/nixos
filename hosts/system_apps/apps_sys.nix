@@ -30,6 +30,7 @@
     yazi # D.FileManager
     neovim # D.Editor.
     starship # D.Prompt UI zsh prompt costumise.
+    bluetuith # tui Bluetooth
 
     # B: TUI Utils |>
     btop # Task manager.
