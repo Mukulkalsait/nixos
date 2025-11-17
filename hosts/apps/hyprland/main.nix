@@ -24,7 +24,7 @@
       ];
 
       # DX: monitor = name, resolution, position, scale
-      monitor = [ ",1920x1200@165,auto,1" ",3840x2160@120,auto,1" ];
+      monitor = [ ",1920x1200@165,auto,0.8" ",3840x2160@120,auto,1" ];
 
       exec-once = [
         "waybar"
