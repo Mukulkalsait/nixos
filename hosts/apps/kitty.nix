@@ -8,7 +8,7 @@
     themeFile = "Catppuccin-Mocha";
     font = {
       name = "JetBrainsMono Nerd Font";
-      size = 9;
+      size = 7.5;
     };
     settings = {
       background = "#000000";
