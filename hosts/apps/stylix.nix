@@ -2,7 +2,7 @@
 { pkgs, inputs, ... }: {
   imports = [ inputs.stylix.homeModules.stylix ];
   stylix.targets.kitty.enable = false;
-  stylix.targets.zen-browser.profileNames = [ "mukul" ];
+  # stylix.targets.zen-browser.profileNames = [ "mukul" ];
 
   # IMP:  All fonts moved to system apps.
 
@@ -55,7 +55,7 @@
 
     cursor = {
       name = "DMZ-Black";
-      size = 24;
+      size = 20;
       package = pkgs.vanilla-dmz;
     };
 
@@ -78,8 +78,8 @@
       };
 
       sizes = {
-        terminal = 9;
-        applications = 10;
+        terminal = 8;
+        applications = 8;
       };
     };
 
