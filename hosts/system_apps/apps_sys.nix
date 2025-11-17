@@ -34,19 +34,19 @@
 
     # B: TUI Utils |>
     btop # Task manager.
-    nvtopPackages.nvidia # G: GPU monitoring TUI Specific for Nvidia GPUs SMALLER
+    # nvtopPackages.nvidia # G: GPU monitoring TUI Specific for Nvidia GPUs SMALLER
     # nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs LAEGER
 
     # FUN_2: APPS |>
-    mangohud # fps overlay
-    linuxPackages.nvidia_x11
-    steam # steam app itself
-    protonup-ng # Steam Compatiblelity tool
-    gamescope # full screen Window manager STEAM
-    (pkgs.writeShellScriptBin "prime-run" ''
-      #!/bin/sh
-      __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
-    '')
+    # mangohud # fps overlay
+    # linuxPackages.nvidia_x11
+    # steam # steam app itself
+    # protonup-ng # Steam Compatiblelity tool
+    # gamescope # full screen Window manager STEAM
+    # (pkgs.writeShellScriptBin "prime-run" ''
+    #   #!/bin/sh
+    #   __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
+    # '')
 
   ];
 
