@@ -39,7 +39,7 @@
         tta = "zellij a";
 
         # Y:  NIX os 
-        snrsf = "sudo nixos-rebuild switch --flake /etc/nixos#PredatorNix";
+        snrsf = "sudo nixos-rebuild switch --flake /etc/nixos#Nix2";
         deadNix = "nix-store --ge --print-dead";
         nixSize = "dust -sh /nix/store/";
         nixSizeFull = "dua i -sh /nix/store/";
