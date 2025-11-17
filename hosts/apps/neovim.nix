@@ -82,8 +82,7 @@
   ];
 
   # DX: This is here to keep the file in home for changing configs.
-  home.file.".config/nvim".source =
-    config.lib.file.mkOutOfStoreSymlink "/home/mukuldk/1_file/2_git_repos/nvim";
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/mukuldk/A_Files/2_git_repos/nvim";
 
   #================================================================================================================================================
   #  Pull your config directly from GIT into ~/.config/nvim
