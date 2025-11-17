@@ -12,7 +12,7 @@
     ./greetd.nix
 
     # Y: While booting
-    ./nvidia.nix
+    # ./nvidia.nix
     ./virtualisation.nix
 
     # Y: After booting.
