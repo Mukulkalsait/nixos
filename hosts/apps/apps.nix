@@ -45,7 +45,7 @@
     # tmux
 
     # B: CLI Essentilas |>
-    nginx # Reverse Proxy Server
+    # nginx # Reverse Proxy Server
     bat # modern cat
     eza # Modern ls
     rustscan # rust port scanner
@@ -64,7 +64,7 @@
     # TEST: DevOps |>
     dive # TUI Docker Images Layers.
     kdash # TUI kuberneties dashboard.
-    terraform-versions."1.9.8" # Terraform with version 
+    # terraform-versions."1.9.8" # Terraform with version 
 
     # B: Media & essentials |>
     ffmpeg-full # ffmpeg
@@ -78,9 +78,9 @@
     # B: Desktop GUI apps:
     mission-center # Task Manager
     libreoffice-fresh # community driven latest version fo libreoffice.
-    obs-studio # Screen recorder + Steamer
+    # obs-studio # Screen recorder + Steamer
     vlc # Video Lan Converter
-    ardour # Music Produciton DAW
+    # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
 
 
@@ -135,6 +135,20 @@
     chmod 777 "$DB_DIR"
     [ -f "$DB_DIR/db" ] && chmod 666 "$DB_DIR/db"
   '';
+
+#   xdg.configFile."zen/profiles.ini" = {
+#   text = ''
+#     [General]
+#     StartWithLastProfile=1
+#
+#     [Profile0]
+#     Name=default
+#     IsRelative=1
+#     Path=profiles/mukuldk
+#     Default=1
+#   '';
+#   force = true;
+# };
 
 }
 
