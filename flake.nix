@@ -62,7 +62,7 @@
 
     in
     {
-      nixosConfigurations.PredatorNix = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.Nix2 = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit inputs;
@@ -94,18 +94,12 @@
           }
 
           # terraform
-          {
-            nixpkgs = {
-              overlays = [ inputs.nixpkgs-terraform.overlays.default ];
-              config.allowUnfree = true;
-            };
-          }
-
-
-
+	   # {
+	   #         nixpkgs.overlays = [ inputs.nixpkgs-terraform.overlays.default ];
+	   #         nixpkgs.config.allowUnfree = true;
+	   # }
         ];
       };
     };
 }
 
-# test
