@@ -4,7 +4,7 @@
   # G:  Networking.
 
   networking = {
-    hostName = "PredatorNix"; # Define your hostname.
+    hostName = "Nix2"; # Define your hostname.
     networkmanager.enable = true;
     enableIPv6 = true; # newly added
   };
@@ -17,13 +17,12 @@
   hardware.i2c.enable = true; # Enable sensors.
 
   # Y: THUNDERBOLT
-  services.hardware.bolt.enable = true; # Bolt daemon:Thunderbolt
-  services.udev.packages =
-    [ pkgs.bolt ]; # Optional:udevRules BetterDeviceHandling.
+  # services.hardware.bolt.enable = true; # Bolt daemon:Thunderbolt
+  # services.udev.packages =[ pkgs.bolt ];
+  # Optional:udevRules BetterDeviceHandling.
 
   # R: i dont know if its really for thunderbolt or powerprofilectl command. => or use "tlp"
-  services.power-profiles-daemon.enable =
-    true; # better Thunderbolt  power management
+  # services.power-profiles-daemon.enable = true; # better Thunderbolt  power management
 
   # Y:  Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true; 
