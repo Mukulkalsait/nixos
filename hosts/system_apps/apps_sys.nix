@@ -17,6 +17,8 @@
     unzip # unzip
     zsh # shell.
     gh # Git hub
+    gitFull # git full
+    libsecret # credential helper
     jq # JSON parser.
     fd # Fast alternative for find
     fzf # fuzzy finder.
