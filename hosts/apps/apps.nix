@@ -80,7 +80,7 @@
     libreoffice-fresh # community driven latest version fo libreoffice.
     obs-studio # Screen recorder + Steamer
     vlc # Video Lan Converter
-    ardour # Music Produciton DAW
+    # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
 
 
