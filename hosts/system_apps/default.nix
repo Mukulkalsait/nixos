@@ -21,6 +21,7 @@
     # ./devEnv.nix
     ./git.nix
     ./lazygit.nix
+    ./firewall.nix
 
     # Y:  Dependencys
     # ./linuwu-sense.nix # latest kernal puller.
