@@ -32,6 +32,9 @@
     starship # D.Prompt UI zsh prompt costumise.
     bluetuith # tui Bluetooth
 
+    # G: Tradin Apps |>
+    tradingview
+
     # B: TUI Utils |>
     btop # Task manager.
     nvtopPackages.nvidia # G: GPU monitoring TUI Specific for Nvidia GPUs SMALLER
