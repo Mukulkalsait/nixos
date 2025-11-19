@@ -94,12 +94,12 @@
           }
 
           # terraform
-          {
-            nixpkgs = {
-              overlays = [ inputs.nixpkgs-terraform.overlays.default ];
-              config.allowUnfree = true;
-            };
-          }
+          # {
+          #   nixpkgs = {
+          #     overlays = [ inputs.nixpkgs-terraform.overlays.default ];
+          #     config.allowUnfree = true;
+          #   };
+          # }
 
 
 
