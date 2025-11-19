@@ -42,6 +42,8 @@
     # ID: Terminal |>
     kitty
     zellij
+    vscode
+    code-cursor
     # tmux
 
     # B: CLI Essentilas |>
