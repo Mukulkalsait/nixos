@@ -64,7 +64,7 @@
     # TEST: DevOps |>
     dive # TUI Docker Images Layers.
     kdash # TUI kuberneties dashboard.
-    terraform-versions."1.9.8" # Terraform with version 
+    # terraform-versions."1.9.8" # Terraform with version 
 
     # B: Media & essentials |>
     ffmpeg-full # ffmpeg
