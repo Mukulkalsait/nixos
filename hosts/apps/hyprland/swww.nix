@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 
 let
-  wallpaperDir = "${config.home.homeDirectory}/1_file/9_Pictures/Walpapers";
+  wallpaperDir = "${config.home.homeDirectory}/A_Files/9_Pictures/Walpapers";
   queueFile = "\${XDG_CACHE_HOME:-$HOME/.cache}/swww_wallpaper_queue";
 in
 {

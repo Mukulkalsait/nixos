@@ -36,6 +36,7 @@
     go # go-lang
     php # php
     bun # bun replacement for npm.
+    pnpm
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
     uv # PIP replacement. python package /dependency manager.
 
@@ -136,19 +137,19 @@
     [ -f "$DB_DIR/db" ] && chmod 666 "$DB_DIR/db"
   '';
 
-#   xdg.configFile."zen/profiles.ini" = {
-#   text = ''
-#     [General]
-#     StartWithLastProfile=1
-#
-#     [Profile0]
-#     Name=default
-#     IsRelative=1
-#     Path=profiles/mukuldk
-#     Default=1
-#   '';
-#   force = true;
-# };
+  #   xdg.configFile."zen/profiles.ini" = {
+  #   text = ''
+  #     [General]
+  #     StartWithLastProfile=1
+  #
+  #     [Profile0]
+  #     Name=default
+  #     IsRelative=1
+  #     Path=profiles/mukuldk
+  #     Default=1
+  #   '';
+  #   force = true;
+  # };
 
 }
 

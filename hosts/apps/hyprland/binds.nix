@@ -173,7 +173,7 @@
       ", XF86AudioPause, exec, playerctl play-pause"
       ", XF86AudioPlay,  exec, playerctl play-pause"
       ", XF86AudioPrev,  exec, playerctl previous"
-      ", Print, exec,hyprshot -m region -o ~/1_file/9_Pictures/Screenshots/ " # Y: Screen shot.
+      ", Print, exec,hyprshot -m region -o ~/A_Files/9_Pictures/Screenshots/ " # Y: Screen shot.
       # ", F10, exec, $scrPath/volumecontrol.sh -o m " # toggle audio mute
       # ", XF86AudioMute, exec, $scrPath/volumecontrol.sh -o m " # toggle audio mute
       # ", XF86AudioMicMute, exec, $scrPath/volumecontrol.sh -i m " # toggle microphone mute
