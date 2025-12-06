@@ -55,7 +55,12 @@
     mtr # my trace route
     bottom # TUI task manager
     lazysql # db TUI
+
+    # G: NIX-Related |>
+    zsh-nix-shell # enable zsh in nixshell.
+    nix-inspect # tell about packages in nix
     nix-search # nix Online Pkg Searcher
+    nix-search-tv # another package search may be offline.
 
     # B: TUI |>
     dua # rust disk utility use " dua i " intereative.
