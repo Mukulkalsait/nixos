@@ -32,6 +32,9 @@
     k9s # TUI fro kube.
     kubernetes-helm # dont know.
     crun # c-liberary for kube.
+
+    # B: Cloud |>
+    awscli2
   ];
 }
 
