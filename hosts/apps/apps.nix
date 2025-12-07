@@ -79,6 +79,9 @@
     mediainfo # media info tool.
     easyeffects # Poweramp EQ enspired Equaliser.
     pinta # D.Photo editor
+
+    # G: Android Relates |>
+    android-tools # adb
     # libsForQt5.kdeconnect-kde # kde connect for android connection
     # indicator-kdeconnect # Android connecti helper.
 
