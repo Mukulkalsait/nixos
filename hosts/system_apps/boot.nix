@@ -8,7 +8,11 @@
   # boot.loader.systemd-boot.editor = false; # optional: hide editor
 
   boot.kernelPackages = pkgs.linuxPackages_latest; # latest Kernal Pkg. # DX: kernal selector but its inside Linuvu-sense*.nix
-  # boot.kernelPackages = pkgs.linuxPackages_6_17; # Stable 6.17.3
+
+  boot.extraModulePackages = [
+    pkgs.linuxKernel.packages.linux_6_18.acer-wmi-battery # B: Acer kernal module for 6.18 => (⭐) 
+  ];
+
   boot.kernelModules = [
     # Y:  Enable Kernal MODULES
 
@@ -16,8 +20,11 @@
     "usb_storage" # usb
     "uas" # dont know
     "ec_sys" # EC fan controls.
+    "acer-wmi-battery" # G: acer battery module to work with  -> (⭐) 
   ];
   boot.kernelParams = [ "acpi_ec.gpe_debug=1" ]; # Enable Kernal parameters
+
+
 
 
 }
