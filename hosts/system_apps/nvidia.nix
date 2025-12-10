@@ -7,10 +7,16 @@
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
+      # NVIDIA DRIVERS
       cudatoolkit
       nvidia-vaapi-driver
       ocl-icd
       opencl-headers
+
+      # INTEL DRIVERS
+      intel-media-driver
+      libva
+      mesa
     ];
     # Uncomment if you need 32-bit OpenCL (Proton/Wine/Resolve plugins)
     # extraPackages32 = with pkgs.pkgsi686Linux; [
