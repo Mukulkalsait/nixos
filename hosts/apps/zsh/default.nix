@@ -46,6 +46,7 @@
         nixVer =
           "sudo nix-env -p /nix/var/nix/profiles/system"; # Y: Use => {--list-generatoins, --delete-generatinos }
         nixOptimise = "sudo nix store optimise";
+        nixCopy = "rm -rf /home/mukuldk/nixos_copy/* && sudo cp /etc/nixos* /home/mukuldk/nixos_copy/ && sudo chmod -R 776 /home/mukuldk/nixos_copy";
         # Y: Easy to learn but kept in case I forgot. 
         # nixGarbage="nix-collect-garbage";
         # nixGarbageD="nix-collect-garbage -d";
