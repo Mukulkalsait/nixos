@@ -45,8 +45,9 @@
     nil # nix-LSP
     nixpkgs-fmt # FORMATTER
 
-    cargo
-    rustc
+    cargo # cargo setups
+    gcc # for rust linkekrs
+    rustc # rust compiller
 
     lua-language-server # LSP
     rustfmt # FORMATTER
