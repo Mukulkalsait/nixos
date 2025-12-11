@@ -1,5 +1,4 @@
 # Y: Costome Session Variables.
-{ lib, config, pkgs, yazi, ... }:
 { config, pkgs, lib, ... }: {
 
   home.sessionVariables = {
