@@ -89,6 +89,7 @@
     mission-center # Task Manager
     libreoffice-fresh # community driven latest version fo libreoffice.
     obs-studio # Screen recorder + Steamer
+    droidcam-obs # To connect android camera directly 
     vlc # Video Lan Converter
     # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
