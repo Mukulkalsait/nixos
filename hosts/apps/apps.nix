@@ -88,10 +88,7 @@
     # B: Desktop GUI apps:
     mission-center # Task Manager
     libreoffice-fresh # community driven latest version fo libreoffice.
-    obs-studio # Screen recorder + Steamer
     scrcpy # Same for above
-    obs-studio-plugins.backgroundremoval # to remove background 
-    # obs-studio-plugins.droidcam-obs # To connect android camera directly 
     vlc # Video Lan Converter
     # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
@@ -140,6 +137,15 @@
       RestartSec = 5;
     };
   };
+
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-backgroundremoval
+    ];
+  };
+
 
   # DB perms for root sharing (optional, runs on switch)
   home.activation.setupCliphistDB = config.lib.dag.entryAfter [ "writeBoundary" ] ''
