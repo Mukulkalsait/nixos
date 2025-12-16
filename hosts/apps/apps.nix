@@ -89,7 +89,9 @@
     mission-center # Task Manager
     libreoffice-fresh # community driven latest version fo libreoffice.
     obs-studio # Screen recorder + Steamer
-    obs-studio-plugins.droidcam-obs # To connect android camera directly 
+    scrcpy # Same for above
+    obs-studio-plugins.backgroundremoval # to remove background 
+    # obs-studio-plugins.droidcam-obs # To connect android camera directly 
     vlc # Video Lan Converter
     # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
