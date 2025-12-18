@@ -32,7 +32,9 @@
 
         lsl = "eza -lagh --icons --group-directories-first --git --sort name";
         lsli = "eza -laihgH --icons --group-directories-first --git --sort name";
-        lsd = "lazydocker";
+        # lsd = "lazydocker";
+        lsd = "podman-tui";
+
 
         tt = "zellij";
         tth = "zellij -l welcome";
