@@ -34,6 +34,7 @@
         lsli = "eza -laihgH --icons --group-directories-first --git --sort name";
         # lsd = "lazydocker";
         lsd = "podman-tui";
+        gmd = "gomanagedocker p";
 
 
         tt = "zellij";

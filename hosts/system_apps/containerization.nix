@@ -23,7 +23,7 @@
     # nvidia-podman-kit # Additional NVIDIA support for Podman Y: not found 
 
     # lazydocker # TUI lazy Docker.
-    gmd # go manage doker/podman
+    gomanagedocker # go manage doker/podman
     podman-tui # TUI Tool for Podman Specific.
     ctop # Top utility for Containerisation.
     podman-compose # podman compose to compose file.
