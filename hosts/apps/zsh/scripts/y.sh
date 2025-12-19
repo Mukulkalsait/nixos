@@ -1,3 +1,5 @@
+bindkey -e # making it v will enable vim mode in zsh
+
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
   yazi "$@" --cwd-file="$tmp"
