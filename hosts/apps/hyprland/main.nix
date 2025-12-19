@@ -6,7 +6,8 @@
 
       "$mainMod" = "SUPER";
       "$menu" = "rofi";
-      "$TERMINAL" = "kitty";
+      # "$TERMINAL" = "kitty";
+      "$TERMINAL" = "ghostty";
       "$FILEMANAGER" = "$terminal -e sh -c 'yazi'";
       "$EDITOR" = "nvim";
       "$VISUAL" = "nvim";
