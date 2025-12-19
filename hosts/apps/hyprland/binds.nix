@@ -30,12 +30,16 @@
       "$mainMod, Q, killactive," # Y: Exit Window
 
       "$mainMod , C, exec , kitty zsh -ic 'fastfetch; exec zsh'"
+
       "$mainMod , I, exec , ghostty "
       # "$mainMod, C, exec, $TERMINAL" # fallback just in case.
+
       "$mainMod SHIFT, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
       "$mainMod, B,  exec, $BROWSER" # Zen
       "$mainMod, N,  exec,$TERMINAL -e $EDITOR" # Nvim
-      "$mainMod, E, exec,$TERMINAL -e $FILEMANAGER" # yazi
+      # "$mainMod, E, exec,$TERMINAL -e $FILEMANAGER" # yazi
+
+      "$mainMod, E, exec,kitty -e $FILEMANAGER" # yazi
       "CTRL SHIFT, Escape,  exec, $TASKMANAGER" # Mission Center.
       # "CTRL SHIFT, Escape,  exec, kitty -e btop" # Y: btop
 
