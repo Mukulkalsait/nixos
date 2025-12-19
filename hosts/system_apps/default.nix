@@ -13,7 +13,7 @@
 
     # Y: While booting
     ./nvidia.nix
-    ./virtualisation.nix
+    ./containerization.nix
 
     # Y: After booting.
     ./envVariables.nix
