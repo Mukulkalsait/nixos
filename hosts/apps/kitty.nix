@@ -29,6 +29,19 @@
       "ctrl+shift+v" = "paste_from_clipboard";
       "ctrl+shift+q" = "no_op"; # unbind close_tab
     };
+
+    colors = {
+      bright_black = "#8a8a8a"; # color8 equivalent
+      bright_red = "#c14a4a"; # color9
+      bright_green = "#6a9955"; # color10
+      bright_yellow = "#b07a00"; # color11
+      bright_blue = "#4078b8"; # color12
+      bright_magenta = "#a0316b"; # color13
+      bright_cyan = "#0f7a8a"; # color14 (anti-whitish)
+      bright_white = "#8a8a8a"; # color15
+    };
   };
+
+
 
 }
