@@ -40,6 +40,7 @@
     uv # PIP replacement. python package /dependency manager.
 
     # ID: Terminal |>
+    ghostty
     kitty
     zellij
     vscode
