@@ -30,7 +30,7 @@
       "$mainMod, Q, killactive," # Y: Exit Window
 
       "$mainMod , I, exec , kitty zsh -ic 'fastfetch; exec zsh'"
-      "$mainMod , G, exec , ghostty zsh -ic 'fastfetch; exec zsh'"
+      "$mainMod , G, exec , ghostty "
       "$mainMod, C, exec, $TERMINAL" # fallback just in case.
       "$mainMod SHIFT, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
       "$mainMod, B,  exec, $BROWSER" # Zen
