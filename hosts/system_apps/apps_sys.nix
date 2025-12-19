@@ -55,6 +55,7 @@
 
   programs.zsh.enable = true;
 
+
   # Y: HYPRLAND:
   programs.hyprland = {
     enable = true;
