@@ -4,14 +4,14 @@
 
   # Y: 👇 in .comfig/zsh/scripts/y.sh put this file 👇
   #
-  home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh;
+  home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh; #yaxi = y script
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    history.size = 10000;
+    history.size = 100000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     # Y: Commands to run as soon as zsh loaded 🔻 
