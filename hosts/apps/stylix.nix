@@ -36,7 +36,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
     # Y: OPTOINS
     # ls /nix/store/*base16-schemes*/share/themes <- run
-    #gruvbox-dark-medium.yaml DEFAULT
+    # gruvbox-dark-medium.yaml DEFAULT
     # tokyo-night-night.yaml
     # tokyo-night-night.yaml
     # tokyo-night-storm.yaml

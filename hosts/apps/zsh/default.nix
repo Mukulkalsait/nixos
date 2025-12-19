@@ -35,6 +35,7 @@
         # lsd = "lazydocker";
         lsd = "podman-tui";
         gmd = "gomanagedocker p";
+        dive = "dive --source podman";
 
 
         tt = "zellij";
