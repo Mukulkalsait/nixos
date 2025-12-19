@@ -1,4 +1,4 @@
-# Y: virtualisation.nix |> Configuration for Podman, Minikube, and Kubernetes tools
+# Y: containerisation.nix |> Configuration for Podman, Minikube, and Kubernetes tools
 { config, pkgs, ... }: {
 
   virtualisation.podman = {
