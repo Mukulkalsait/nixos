@@ -36,6 +36,7 @@
         lsd = "podman-tui";
         gmd = "gomanagedocker p";
         dive = "dive --source podman";
+        editVideo = "nvidia-offload kdenlive";
 
 
         tt = "zellij";
