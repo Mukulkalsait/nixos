@@ -80,6 +80,7 @@
     mediainfo # media info tool.
     easyeffects # Poweramp EQ enspired Equaliser.
     pinta # D.Photo editor
+    kdePackages.kdenlive
 
     # G: Android Relates |>
     android-tools # adb
