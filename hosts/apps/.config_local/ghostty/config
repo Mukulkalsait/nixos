@@ -1,0 +1,68 @@
+font-size = 9
+background-opacity = 0.95
+font-synthetic-style = true
+bold-is-bright = true
+
+command = zsh -ic "fastfetch; exec zsh"
+
+
+# Cursor Trail via Shader (Neovide/Kitty-like: fade trail on movement)
+# custom-shader = shaders/cursor_sweep.glsl
+# custom-shader = shaders/cursor_warp.glsl
+# custom-shader = shaders/rectangle_boom_cursor.glsl
+# custom-shader = shaders/ripple_cursor.glsl
+# custom-shader = shaders/ripple_rectangle_cursor.glsl
+#B: best
+custom-shader-animation = always
+custom-shader = shaders/cursor_tail.glsl
+custom-shader = shaders/sonic_boom_cursor.glsl
+
+# TAG:  Tweak shader params (edit in shaders/cursor_warp.glsl; top constants)
+# DURATION = 0.20  # Fade time (s; like cursor_trail_decay 0.20)
+# TRAIL_SIZE = 3    # Number of ghosts (like cursor_trail "3")
+# TRAIL_THICKNESS = 1.2  # Trail width (X/Y; like cursor_trail_thickness "1.2 1.2")
+# FADE_ENABLED = 1  # Enable fade (1=yes)
+# FADE_EXPONENT = 5  # Fade curve (higher = sharper; ease-out like Kitty)
+# initial-command = fastfetch
+# command = fastfetch
+
+confirm-close-surface = false
+
+clipboard-read = allow
+clipboard-write = allow
+
+window-subtitle = working-directory
+window-theme = dark
+window-padding-y = 1
+
+theme = TokyoNight Moon
+background = #000000
+foreground = #c8d3f5
+
+
+# Y: ===== CLEAN & SIMPLE (fonts)=====
+#
+font-family = "Go Mono for Powerline"
+font-family-bold = "DejaVu Sans Mono"
+# font-family = "Liberation Mono"
+# font-family = "Hack"
+# font-family = "Cousine for Powerline"
+# font-family = "Meslo LG M for Powerline"
+# font-family = "Go Mono for Powerline"
+#
+#-R: NON GOOD
+# font-family = "Source Code Pro for Powerline"
+# font-family = "Inconsolata for Powerline"
+# font-family = "Space Mono"
+# font-family = "Ubuntu Mono derivative Powerline"
+# ===== UNIQUE / RETRO =====
+# font-family = "IBM 3270"
+# font-family = "IBM 3270 Narrow"
+# font-family = "ProFont for Powerline"
+# font-family = "monofur for Powerline"
+# font-family = "NovaMono for Powerline"
+# ===== LAST RESORT =====
+# font-family = "FreeMono"
+# font-family = "Courier New"
+# font-family = "Andale Mono"
+
