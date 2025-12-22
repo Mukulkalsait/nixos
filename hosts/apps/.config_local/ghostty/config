@@ -44,8 +44,8 @@ foreground = #c8d3f5
 
 # Y: ===== CLEAN & SIMPLE (fonts)=====
 #
-font-family = "Go Mono for Powerline"
-font-family-bold = "DejaVu Sans Mono"
+# font-family = "Go Mono for Powerline"
+# font-family-bold = "DejaVu Sans Mono"
 # font-family = "Liberation Mono"
 # font-family = "Hack"
 # font-family = "Cousine for Powerline"
