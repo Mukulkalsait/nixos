@@ -4,5 +4,6 @@
   home.file.".config/MangoHud".source = ./.config_local/MangoHud;
   home.file.".config/ghostty".source = ./.config_local/ghostty;
   home.file.".config_local/ghostty/shaders".source = ./.config_local/ghostty/shaders;
+  # home.file.".config_local/ghostty/shaders".source = ./.config_local/ghostty/shaders;
 }
 
