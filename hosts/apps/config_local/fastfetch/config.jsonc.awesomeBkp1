@@ -1,0 +1,73 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "builtin",
+    "height": 15,
+    "width": 30,
+    "padding": {
+      "top": 3,
+      "left": 2,
+    },
+  },
+  "modules": [
+    { "type": "title", "key": "󰍲 Host Info", "keyColor": "#33A1E0" },
+    { "type": "users", "key": "│ ├ Users", "keyColor": "#33A1E0" },
+    { "type": "host", "key": "│ └󱄕 Machine", "keyColor": "#33A1E0" },
+
+    { "type": "cpu", "key": "├  CPU", "keyColor": "#F5C542" },
+    { "type": "gpu", "key": "│ ├ GPU", "keyColor": "#00FF7F" },
+    { "type": "memory", "key": "│ ├ RAM", "keyColor": "#8EC07C" },
+    { "type": "swap", "key": "│ ├ Swap", "keyColor": "#8EC07C" },
+    { "type": "disk", "key": "│ ├🖴 Disk", "keyColor": "#83A598" },
+    { "type": "btrfs", "key": "│ └󰣭 Btrfs", "keyColor": "#83A598" },
+
+    { "type": "display", "key": "├󰍹 Display", "keyColor": "#FABD2F" },
+    { "type": "de", "key": "│ ├ DE", "keyColor": "#458588" },
+    { "type": "wm", "key": "│ ├ WM", "keyColor": "#458588" },
+    { "type": "wmtheme", "key": "│ ├󰉼 WM Theme", "keyColor": "#458588" },
+    { "type": "theme", "key": "│ ├󰉼 Theme", "keyColor": "#458588" },
+    { "type": "icons", "key": "│ ├󰀻 Icons", "keyColor": "#458588" },
+    { "type": "font", "key": "│ ├ Font", "keyColor": "#458588" },
+    { "type": "cursor", "key": "│ ├󰇀 Cursor", "keyColor": "#458588" },
+    { "type": "terminalfont", "key": "│ └ TermFont", "keyColor": "#458588" },
+
+    { "type": "board", "key": "├󰍛 Board", "keyColor": "#D3869B" },
+    { "type": "keyboard", "key": "│ ├ Keyboard", "keyColor": "#D3869B" },
+    { "type": "mouse", "key": "│ ├󰍽 Mouse", "keyColor": "#D3869B" },
+    { "type": "sound", "key": "│ ├ Sound", "keyColor": "#D3869B" },
+    { "type": "tpm", "key": "│ └󰌋 TPM", "keyColor": "#D3869B" },
+
+    { "type": "os", "key": "├ OS", "keyColor": "#FABD2F" },
+    { "type": "kernel", "key": "│ ├ Kernel", "keyColor": "#FABD2F" },
+    { "type": "bios", "key": "│ ├ BIOS", "keyColor": "#FABD2F" },
+    { "type": "bootmgr", "key": "│ ├󰣇 BootMgr", "keyColor": "#FABD2F" },
+    { "type": "initsystem", "key": "│ └󰒲 Init", "keyColor": "#FABD2F" },
+
+    { "type": "lm", "key": "├󰾆 LM Sensors", "keyColor": "#83A598" },
+    { "type": "loadavg", "key": "│ ├󰒓 LoadAvg", "keyColor": "#83A598" },
+    { "type": "uptime", "key": "│ ├󰉼 Uptime", "keyColor": "#83A598" },
+    { "type": "processes", "key": "│ └󰈸 Processes", "keyColor": "#83A598" },
+
+    { "type": "packages", "key": "├󰏖 Packages", "keyColor": "#B8BB26" },
+    { "type": "terminal", "key": "│ ├ Terminal", "keyColor": "#B8BB26" },
+    { "type": "shell", "key": "│ └ Shell", "keyColor": "#B8BB26" },
+
+    { "type": "localip", "key": "├󰩠 Local IP", "keyColor": "#83A598" },
+    { "type": "publicip", "key": "│ ├󰩠 Public IP", "keyColor": "#83A598" },
+    { "type": "dns", "key": "│ ├󰖟 DNS", "keyColor": "#83A598" },
+    { "type": "bluetooth", "key": "│ └󰂯 BT", "keyColor": "#83A598" },
+
+    { "type": "battery", "key": "├󰁹 Battery", "keyColor": "#D3869B" },
+    { "type": "poweradapter", "key": "│ └󰂄 Adapter", "keyColor": "#D3869B" },
+    { "type": "locale", "key": "│   Locale", "keyColor": "#D3869B" },
+
+    { "type": "version", "key": "├󰔠 Fastfetch", "keyColor": "#FABD2F" },
+    {
+      "type": "colors",
+      "key": "└󰌠 Colors",
+      "keyColor": "#FFFFFF",
+      "paddingLeft": 2,
+      "symbol": "circle",
+    },
+  ],
+}

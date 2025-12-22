@@ -1,0 +1,75 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "modules": [
+    "title",
+    "users",
+    "separator",
+
+    "cpu",
+    "gpu",
+
+    "memory",
+    "swap",
+    "disk",
+    "btrfs",
+
+    "separator",
+    "display",
+    "de",
+    "board",
+    "keyboard",
+    "mouse",
+    "sound",
+    "tpm",
+    "bios",
+
+    "separator",
+    "os",
+    "bootmgr",
+    "kernel",
+    "initsystem",
+    "host",
+    "lm",
+    "loadavg",
+    "uptime",
+    "processes",
+
+    "separator",
+
+    "wm",
+    "packages",
+    "wmtheme",
+    "theme",
+    "terminal",
+    "shell",
+
+    "separator",
+    "icons",
+    "font",
+    "cursor",
+    "terminalfont",
+
+    "separator",
+    "localip",
+    "publicip",
+    // "netio",
+    "dns",
+    "bluetooth",
+    "battery",
+    "poweradapter",
+    "locale",
+
+    "break",
+    "version",
+    "colors",
+  ],
+}
+
+//Y:  "add somewher",
+// datetime
+
+// Y: takes time
+// "diskio",
+// "opencl",
+// "opengl",
+// "vulkan",
