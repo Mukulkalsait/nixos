@@ -7,6 +7,7 @@ bold-is-bright = true
 # ghostty is default fallback if fastfetch kitty did not work so we well not put fastfetch in it
 
 
+
 # Cursor Trail via Shader (Neovide/Kitty-like: fade trail on movement)
 # custom-shader = shaders/cursor_sweep.glsl
 # custom-shader = shaders/cursor_warp.glsl
@@ -42,9 +43,13 @@ foreground = #c8d3f5
 
 
 # Y: ===== CLEAN & SIMPLE (fonts)=====
-#
-# font-family = "Go Mono for Powerline"
-# font-family-bold = "DejaVu Sans Mono"
+
+
+font-family = "JetBrains Mono" 
+# => -> |> === |- -|  ( working on JetBrains Mono )
+font-family-bold= "Go Mono for Powerline"
+
+# font-family = "DejaVu Sans Mono"
 # font-family = "Liberation Mono"
 # font-family = "Hack"
 # font-family = "Cousine for Powerline"
