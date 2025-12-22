@@ -8,10 +8,9 @@
     themeFile = "Catppuccin-Mocha";
     font = {
       size = 9;
-      # ======= FONT =======
+      # ======= FONT==============
       # name = "JetBrainsMono Nerd Font";
       name = "Go Mono for Powerline";
-      # name = "Go Mono for Powerline";
       # name = "Liberation Mono";
       # name = "Hack";
       # name = "Cousine for Powerline";
@@ -25,7 +24,7 @@
       confirm_os_window_close = 0;
       # cursor_shape = "beam";
       cursor_trail = "5";
-      cursor_trail_decay = "0.20 0.2"; # X and Y decay
+      cursor_trail_decay = "0.20 0.5"; # X and Y decay
       cursor_trail_thickness = "1.2 1.2"; # X and Y thickness
       # Y: faster
       # cursor_trail = "6"; # number of ghost cursors
