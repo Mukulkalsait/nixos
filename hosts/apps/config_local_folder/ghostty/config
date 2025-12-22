@@ -3,9 +3,8 @@ background-opacity = 0.95
 font-synthetic-style = true
 bold-is-bright = true
 
-# command = zsh -ic "fastfetch; exec zsh"
-# ghostty is set to fallback if
-# fastfetch did not work so we well not put fastfetch in it
+ command = zsh -ic "fastfetch; exec zsh"
+# ghostty is default fallback if fastfetch kitty did not work so we well not put fastfetch in it
 
 
 # Cursor Trail via Shader (Neovide/Kitty-like: fade trail on movement)

@@ -10,9 +10,9 @@
       size = 9;
       # ======= FONT==============
       # name = "JetBrainsMono Nerd Font";
-      name = "Go Mono for Powerline";
+      #set to name = "Go Mono for Powerline";
       # name = "Liberation Mono";
-      # name = "Hack";
+      name = "Hack";
       # name = "Cousine for Powerline";
       # name = "Meslo LG M for Powerline";
       # name = "Go Mono for Powerline";
