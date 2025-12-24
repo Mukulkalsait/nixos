@@ -32,7 +32,7 @@
 
       "$mainMod , I, exec ,$TERMINAL" # fallback Ghostty has fastfetch
       # "$mainMod , C, exec ,$TERMINAL zsh -ic 'fastfetch; exec zsh'"
-      #
+
       "$mainMod, C, exec, kitty" # fallback with NO FASTfetch.
       # "$mainMod, C, exec, ghostty" # fallback with NO FASTfetch.
 
