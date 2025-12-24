@@ -30,9 +30,11 @@
       "$mainMod, Q, killactive," # Y: Exit Window
 
 
-      "$mainMod , I, exec , ghostty" # fallback Ghostty has fastfetch
-      # "$mainMod , C, exec , kitty zsh -ic 'fastfetch; exec zsh'"
-      "$mainMod, C, exec, $TERMINAL" # fallback with NO FASTfetch.
+      "$mainMod , I, exec ,$TERMINAL" # fallback Ghostty has fastfetch
+      # "$mainMod , C, exec ,$TERMINAL zsh -ic 'fastfetch; exec zsh'"
+      #
+      "$mainMod, C, exec, kitty" # fallback with NO FASTfetch.
+      # "$mainMod, C, exec, ghostty" # fallback with NO FASTfetch.
 
       "$mainMod SHIFT, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
       "$mainMod, B, exec, $BROWSER" # Zen
