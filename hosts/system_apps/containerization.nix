@@ -23,14 +23,16 @@
     # nvidia-podman-kit # Additional NVIDIA support for Podman Y: not found 
 
     # lazydocker # TUI lazy Docker.
+    dive # TUI Docker Images Layers.
     gomanagedocker # go manage doker/podman
     podman-tui # TUI Tool for Podman Specific.
-    ctop # Top utility for Containerisation.
     podman-compose # podman compose to compose file.
+    ctop # Top utility for Containerisation.
     buildah # podman compose lieke another thign.
 
     kind # Kubernetes IN Docker.
     kubectl # dont know.
+    kdash # TUI kuberneties dashboard.
     k9s # TUI fro kube.
     kubernetes-helm # helm
     crun # c-liberary for kube.
