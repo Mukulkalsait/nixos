@@ -79,7 +79,7 @@
     # nodePackages.yaml-language-server # DX: broken so added with |> bun i -g yaml-language-server 
     # nodePackages."@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
 
-    phpPackages.php-codesniffer # LINTER (for PHP)
+    # php84Packages.php-codesniffer # LINTER (for PHP)
     shfmt # FORMATTER (for Bash/ZSH)
     sqls # LSP (for SQL)
 
