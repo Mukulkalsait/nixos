@@ -95,7 +95,7 @@
 
         # Y: MCHOSE ace 68 FE
         mChose =
-          "nix run nixpkgs#ungoogled-chromium -- --enable-experimental-web-platform-features";
+          "nix run nixpkgs#ungoogled-chromium -- --enable-experimental-web-platform-features  --enable-easy-off-store-extension-install %U ";
         mycli = "nix shell nixpkgs#mycli -c mycli";
 
         whichProfiles = "cat /sys/firmware/acpi/platform_profile";
