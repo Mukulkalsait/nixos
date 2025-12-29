@@ -46,8 +46,10 @@
     nixpkgs-fmt # FORMATTER
 
     cargo # cargo setups
-    gcc # for rust linkekrs
     rustc # rust compiller
+    gcc # for rust linkekrs
+    rust-src # starndard source
+    rustup # toolchain management (clippy)
 
     lua-language-server # LSP
     rustfmt # FORMATTER
