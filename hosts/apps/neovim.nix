@@ -45,15 +45,15 @@
     nil # nix-LSP
     nixpkgs-fmt # FORMATTER
 
-    cargo # cargo setups
     rustc # rust compiller
     gcc # for rust linkekrs
-    rust-src # starndard source
-    rustup # toolchain management (clippy)
-
-    lua-language-server # LSP
+    rustup # toolchain management (clippy) Y: incluede cargo
+    # rust-src # starndard source          #  NOT AVIALABLE NO NEED
+    # cargo # cargo setups
     rustfmt # FORMATTER
     rust-analyzer # LSP
+
+    lua-language-server # LSP
 
     stylua # FORMATTER
     emmet-ls # LSP
