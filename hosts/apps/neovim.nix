@@ -52,6 +52,16 @@
     # rustc # rust compiller
     # rustfmt # FORMATTER
     # rust-analyzer # LSP
+    # Y: usage of rust 
+    # 1. create file in root or project
+    # --------------
+    # rust-toolchain.toml
+    # --------------
+    # [toolchain]
+    # channel = "nightly" # or "stable"
+    # components = ["rust-src", "clippy", "rustfmt", more we needed]
+    #
+    #===============
 
     lua-language-server # LSP
 
