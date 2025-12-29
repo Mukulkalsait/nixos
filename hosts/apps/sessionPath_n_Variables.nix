@@ -5,7 +5,6 @@
     TERMINAL = "kitty";
     FILEMANAGER = "yazi";
     EDITOR = "nvim";
-    CARGO_TARGET_DIR = "${config.home.homeDirectory}/.cargo/target";
 
     # # Wayland-specific Y: IMPUT METHODS 
     INPUT_METHOD = "fcitx";
@@ -20,6 +19,30 @@
     #   pkgs.podman-compose
     #   pkgs.buildah
     # ]);
+
+    # Y: RUST part----------------------
+    CARGO_TARGET_DIR = "${config.home.homeDirectory}/.cargo/target";
+    # Updated RUST_SRC_PATH: Use rustup's if available, fallback to Nix
+    RUST_SRC_PATH =
+      if (builtins.pathExists "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library") then
+        "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
+      else
+        "${pkgs.rust-src}/lib/rustlib/src/rust/library";
+    # Isolate rustup to avoid PATH pollution
+    RUSTUP_HOME = "${config.home.homeDirectory}/.rustup";
+    CARGO_HOME = "${config.home.homeDirectory}/.cargo";
+    PATH = "${config.home.homeDirectory}/.cargo/bin:${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH"; # Prioritize rustup
+
+    # Y: -------------------------------
+  };
+
+  home.activation = {
+    initRustup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      if [ ! -d $HOME/.rustup ]; then
+        ${pkgs.rustup}/bin/rustup toolchain install stable
+        ${pkgs.rustup}/bin/rustup component add rust-src clippy rustfmt
+      fi
+    '';
   };
 
   # Y: Home Paths
@@ -28,8 +51,5 @@
     "$HOME/go/bin"
     "$HOME/.cache/.bun/bin"
   ];
-
-
-
 
 }
