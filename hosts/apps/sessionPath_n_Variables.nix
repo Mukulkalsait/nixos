@@ -22,18 +22,26 @@
 
     # Y: RUST part----------------------
     CARGO_TARGET_DIR = "${config.home.homeDirectory}/.cargo/target";
-    # Updated RUST_SRC_PATH: Use rustup's if available, fallback to Nix
+    # B: Updated RUST_SRC_PATH: Use rustup's if available, fallback to Nix
     RUST_SRC_PATH =
-      if (builtins.pathExists "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library") then
-        "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
-      else
-        "${pkgs.rust-src}/lib/rustlib/src/rust/library";
-    # Isolate rustup to avoid PATH pollution
+      if builtins.pathExists "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
+      then "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
+      else "${pkgs.rustPlatform.rustLibSrc}/lib/rustlib/src/rust/library"; # Use rustPlatform for Nix fallback
+    # B: Isolate rustup to avoid PATH pollution
     RUSTUP_HOME = "${config.home.homeDirectory}/.rustup";
     CARGO_HOME = "${config.home.homeDirectory}/.cargo";
-    PATH = "${config.home.homeDirectory}/.cargo/bin:${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH"; # Prioritize rustup
+    PATH = "${config.home.homeDirectory}/.cargo/bin:${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH"; # G: Prioritize rustup
 
     # Y: -------------------------------
+    # in case of conflicts 
+    # cretate "rust-toolchain.toml" in project root
+    # ----
+    #  add thsi 
+    # ----
+    #  [toolchain]
+    #     channel = "stable"
+    #     components = ["rust-src", "clippy", "rustfmt"]
+    #
   };
 
   home.activation = {
