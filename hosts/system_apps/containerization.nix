@@ -32,7 +32,7 @@
 
     kind # Kubernetes IN Docker.
     kubectl # dont know.
-    kdash # TUI kuberneties dashboard.
+    # kdash # TUI kuberneties dashboard.Y: unstable deu to NixUpdates = will be stable soon so uncommit it whenn you see it.
     k9s # TUI fro kube.
     kubernetes-helm # helm
     crun # c-liberary for kube.
