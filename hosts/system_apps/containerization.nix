@@ -36,6 +36,7 @@
     k9s # TUI fro kube.
     kubernetes-helm # helm
     crun # c-liberary for kube.
+    # terraform-versions."1.9.8" # Terraform with version 
 
     # B: Cloud |>
     awscli2
