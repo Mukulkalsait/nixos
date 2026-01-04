@@ -12,14 +12,19 @@
         exclusive = true;
         passthrough = false;
         reload_style_on_change = true;
-        modules-left = [ "tray" "clock" "cpu" "memory" "temperature" ];
-        modules-center = [ "hyprland/workspaces" "hyprland/window" ];
-        modules-right = [ "pulseaudio" "network" "backlight" "battery" ];
+        modules-left = [ "hyprland/workspaces" "tray" "cpu" "memory" "clock" "hyprland/window" ];
+        modules-center = [ ];
+        modules-right = [ "network" "pulseaudio" "temperature" "backlight" "battery" ];
+
+        "tray" = {
+          icon-size = 14;
+          spacing = 1;
+        };
 
         "clock" = {
           format = "{:%I:%M %p}";
           rotate = 0;
-          format-alt = "{:%R udb80udced %du00b7%mu00b7%y}";
+          format-alt = "{:%H:%M  %d-%m-%Y}";
           tooltip-format = "<span>{calendar}</span>";
           calendar = {
             mode = "month";
@@ -41,25 +46,19 @@
           };
         };
 
+
         "cpu" = {
           interval = 2;
-          format = "{usage}% ";
+          format = "{usage}%  |";
           min-length = 6;
         };
 
         "memory" = {
           interval = 3;
-          format = "{used} / {total} ";
+          format = " {used} / {total} ";
           tooltip = true;
         };
 
-        "temperature" = {
-          thermal-zone = 8;
-          critical-threshold = 85;
-          format = "{temperatureC}°C {icon}";
-          format-icons = [ "" "" "" "" "" ];
-          tooltip = false;
-        };
 
         "hyprland/language" = {
           format-en = "🇺🇸";
@@ -69,25 +68,6 @@
           tooltip = false;
         };
 
-        "hyprland/window" = {
-          format = " {0}";
-          max-length = 50;
-          separate-outputs = true;
-
-          rewrite = {
-            "(.*)nvim*" = " Nvim"; # Neovim
-            "(.*)Kitty*" = " Kitty"; # Neovim
-            # "(.*)Zellij" = " Zellij"; # Neovim
-            "(.*)WhatsApp Business - Zen Twilight" =
-              "  Whatsapp"; # Zen Browser (Firefox-based)
-            # "(.*)*Zen Twilight" = "  Zen"; # Zen Browser (Firefox-based)
-            "(.*)Yazi*" = " Yazi"; # Yazi file manager
-            "(.*)OBS Studio" = "󰻑 OBS"; # OBS
-            "(.*)Mission Center" = "󰨇 SysMon";
-            # "(.*)Discord" = " Discord"; # Optional: Discord
-            # "(.*)Spotify" = " Spotify"; # Optional: Spotify
-          };
-        };
 
         "hyprland/workspaces" = {
           class = "no-margin-padding";
@@ -100,30 +80,42 @@
           persistent-workspaces = { };
           format = "{icon}";
           format-icons = {
-            "1" = "🚀";
-            "2" = "💻";
-            "3" = "🎮";
-            "4" = "📺";
-            "5" = "🎼";
+            "1" = "💻";
+            "2" = "🌈";
+            "3" = "🎬";
+            "4" = "🕹️";
+            "5" = "🛞";
             "6" = "📱";
             "7" = "🔐";
-            "8" = "💗";
-            "9" = "Be bsdk kitne tab kholega 🤬";
-            "magic" = "🪄";
+            "8" = "📟";
+            "9" = "💗";
+            "10" = "🎮Be🎼bsdk💻kitne🖥️tab📺kholega🤬";
+            "special" = "🪄";
           };
           persistent-workspaces = { "*" = 3; };
         };
 
-        "tray" = {
-          icon-size = 14;
-          spacing = 1;
+        "hyprland/window" = {
+          format = "{0}";
+          max-length = 50;
+          separate-outputs = true;
+
+          rewrite = {
+            "(.*)nvim*" = " Nvim"; # Neovim
+            "(.*)Kitty*" = " Kitty"; # Neovim
+            "(.*)WhatsApp Business - Zen Twilight" = "  Whatsapp"; # Zen Browser (Firefox-based)
+            "(.*)Yazi*" = " Yazi:*"; # Yazi file manager
+            "(.*)OBS Studio" = "󰻑 OBS"; # OBS
+            "(.*)Mission Center" = "󰨇 SysMon";
+          };
         };
 
+
         "pulseaudio" = {
-          format = "{icon} {volume}%  {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-muted = "🔇 0%{format_source}";
-          format-source = "🎤 {volume}%";
+          format = "{icon} {volume} {format_source}";
+          format-bluetooth = "🎧 {volume} {format_source}";
+          format-muted = "🔇 {format_source}";
+          format-source = "🎤 {volume}";
           format-icons = {
             "headphones" = "🔈";
             "handsfree" = "🎧";
@@ -137,17 +129,25 @@
         };
 
         "network" = {
-          interface =
-            "wlp0s20f3"; # (Optional) To force the use of this interface
-          format-wifi = " ({signalStrength}%) {essid} ";
+          # interface = "wlp0s20f3"; # (Optional) To force the use of this interface
+          format-wifi = "|{essid}|{signalStrength}";
           format-ethernet = "🖧 {ipaddr}/{cidr}";
-          tooltip-format = "󰀂 {ifname} via {gwaddr}";
-          format-linked = "󰩠 {ifname} (No IP)";
-          format-disconnected = "  Disconnected ";
-          format-alt = "{ifname}: {ipaddr}/{cidr}";
-          on-click =
-            "kitty -T nmtui-term -e nmtui"; # -> check hyprland/main.nix for windowrulev2
+          format-linked = "󰩠 {ifname} (No-IP)";
+          format-disconnected = "  Disconnected";
+          # Y: |  󱛁 󱚾 󱛇 󰸋  󰤟 󰤥 󰤨 󰤪 |
+          tooltip-format = "{ifname}\nIP: {ipaddr}/{cidr}\nGW: {gwaddr}\nSignal: {signalStrength}%";
+          on-click = "ghostty --title='NMTUI-󱛆 ' -e nmtui"; # Y: -> check hyprland/main.nix for windowrulev2
         };
+
+
+        "temperature" = {
+          thermal-zone = 8;
+          critical-threshold = 85;
+          format = "{icon} {temperatureC}°C";
+          format-icons = [ "" "" "" "" "" ];
+          tooltip = true;
+        };
+
 
         "backlight" = {
           device = "nvidia_wmi_ec_backlight";
@@ -161,9 +161,9 @@
             warning = 30;
             critical = 10;
           };
-          format = "{icon} {capacity}%";
-          format-charging = " {capacity}%";
-          format-alt = "{time} {icon}";
+          format = "{icon} {capacity}";
+          format-charging = "⚡ {capacity}";
+          format-alt = "{icon} {time}";
           format-icons = [ "" "" "" "" "" ];
         };
 
