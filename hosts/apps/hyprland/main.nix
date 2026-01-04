@@ -117,10 +117,18 @@
 
       windowrulev2 = [
 
-        # Nmtui popup
+        # Nmtui popup Y: not workign this also
         "float,title:^(nmtui-term)$"
         "size 28% 65%,title:^(nmtui-term)$"
         "move 65% 3%,title:^(nmtui-term)$"
+
+        # Y: not working anymore
+        # "float,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        # "size 28% 65%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        # "move 65% 3%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        # "float,title:^(floating-ghostty)$"
+        # "size 60% 35%,title:^(floating-ghostty)$"
+        # "move 20% 5%,title:^(floating-ghostty)$"
 
         "opacity 0.3, class:SpecialOverlay" # special class opacity
 
