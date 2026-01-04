@@ -36,10 +36,11 @@
       "$mainMod, C, exec, kitty" # fallback with NO FASTfetch.
       # "$mainMod, C, exec, ghostty" # fallback with NO FASTfetch.
 
-      "$mainMod SHIFT, I,  exec, [float; move 20% 5%; size 60% 60%] $TERMINAL"
+      "$mainMod SHIFT, I,  exec, $TERMINAL --title=floating-ghostty"
       "$mainMod, B, exec, $BROWSER" # Zen
       "$mainMod, N, exec, $TERMINAL -e $EDITOR" # Nvim
       "$mainMod, E, exec, kitty -e $FILEMANAGER" # yazi
+      "$mainMod, PERIOD , exec, rofimoji" # yazi
       # "$mainMod, E, exec, $TERMINAL -e $FILEMANAGER" # we are not using this as we want the yazi to open yazi in kitty only
 
       "CTRL SHIFT, Escape,  exec, $TASKMANAGER" # Mission Center.
