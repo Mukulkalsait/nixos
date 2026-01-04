@@ -35,7 +35,8 @@ clipboard-write = allow
 
 window-subtitle = working-directory
 window-theme = dark
-window-padding-y = 1
+window-padding-y = 0
+window-padding-x = 0
 
 theme = TokyoNight Moon
 background = #000000
