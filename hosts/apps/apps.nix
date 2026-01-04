@@ -62,22 +62,18 @@
     nix-search # nix Online Pkg Searcher
     nix-search-tv # another package search may be offline.
 
-    # B: TUI |>
+    # R: TUI |>
     dua # rust disk utility use " dua i " intereative.
     dust # Disk space shower.
     pv # pipe viwer = shows prograssbar when used with pype.
     # adbfs-rootless # adm-mount
-
-    # TEST: DevOps |>
-    dive # TUI Docker Images Layers.
-    kdash # TUI kuberneties dashboard.
-    # terraform-versions."1.9.8" # Terraform with version 
 
     # B: Media & essentials |>
     ffmpeg-full # ffmpeg
     ffmpegthumbnailer # tuhmbnel creater
     mediainfo # media info tool.
     easyeffects # Poweramp EQ enspired Equaliser.
+    sxiv # image previewer basic
     pinta # D.Photo editor
     kdePackages.kdenlive
 
