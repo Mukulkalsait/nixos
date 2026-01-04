@@ -25,6 +25,7 @@
     fastfetch # SYSTEM INFO
     p7zip # archiv/ unarchiv
     openssh # ssh client.
+    firewalld # firewall deamon
 
     # IMP: Daily Drivers |>
     yazi # D.FileManager
