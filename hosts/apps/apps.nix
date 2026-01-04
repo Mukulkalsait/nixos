@@ -19,6 +19,7 @@
     hyprshot # Screenshot
     hyprpicker # color picker tool
     libnotify # notification
+    rofimoji # rofi Emojy picker
     rofi # MenuBar For Hyprland [ ROFI is the main now rofi-wayland is merged ]
     wl-clipboard # clipboard service
     cliphist # clipboard history manager
