@@ -33,7 +33,7 @@
         lsl = "eza -lagh --icons --group-directories-first --git --sort name";
         lsli = "eza -laihgH --icons --group-directories-first --git --sort name";
         # lsd = "lazydocker";
-        lsd = "podman-tui";
+        pti = "podman-tui";
         gmd = "gomanagedocker p";
         dive = "dive --source podman";
         editVideo = "nvidia-offload kdenlive";
