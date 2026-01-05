@@ -44,7 +44,8 @@ window#waybar {
   padding: 0px 10px;
   margin: 2px 2px;
   border-radius: 5pt 5pt 5pt 5pt;
-  border-bottom: 2px solid #eeeeee;
+  border-right: 2px solid #eeeeee;
+  border-left: 2px solid #eeeeee;
   background: rgba(0, 0, 0, 0.85);
 }
 /* G:  ====================================================================== */
