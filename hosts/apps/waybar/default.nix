@@ -89,7 +89,7 @@
             "7" = "🔐";
             "8" = "📟";
             "9" = "💗";
-            "10" = "🎮Be🎼bsdk💻kitne🖥️tab📺kholega🤬";
+            "10" = "🎮Be🎼bsdk💻kitne🖥️spaces📺kholega🤬";
             "special" = "🪄";
           };
           persistent-workspaces = { "*" = 3; };
