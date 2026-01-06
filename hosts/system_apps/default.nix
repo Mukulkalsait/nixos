@@ -7,6 +7,7 @@
     # Y: Before Booting.
     ./hardware_and_services.nix
     ./boot.nix
+    ./root_zsh.nix
     ./user.nix
     ./console.nix
     ./greetd.nix
