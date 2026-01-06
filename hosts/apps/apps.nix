@@ -50,7 +50,6 @@
     # B: CLI Essentilas |>
     nginx # Reverse Proxy Server
     bat # modern cat
-    eza # Modern ls
     rustscan # rust port scanner
     dig # network tool
     mtr # my trace route
