@@ -6,7 +6,7 @@
     # G: Files |>
     # Y: Before Booting.
     ./hardware_and_services.nix
-    ./boot.nix
+    ./boot_and_Kernal.nix
     ./root_zsh.nix
     ./user.nix
     ./console.nix
