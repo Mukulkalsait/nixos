@@ -25,6 +25,8 @@
     fastfetch # SYSTEM INFO
     p7zip # archiv/ unarchiv
     openssh # ssh client.
+    eza # Modern ls
+
 
     # IMP: Daily Drivers |>
     yazi # D.FileManager
