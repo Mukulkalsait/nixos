@@ -17,11 +17,18 @@
   };
 
   # IMP: SD MOUNNTING PERMENANT
-  # fileSystems."/home/mukuldk/1_file/8_MOUNTINGS/SD_512" = {
-  #   device = "UUID=9C33-6BBD";
-  #   fsType = "exfat";
-  #   options = [ "uid=1000" "gid=100" "umask=0022" ];
-  # };
+  fileSystems."/home/mukuldk/1_file/8_MOUNTINGS/SD_512" = {
+    device = "UUID=9C33-6BBD";
+    fsType = "exfat";
+    options = [
+      "uid=1000"
+      "gid=100"
+      "umask=0022"
+      "nofail" # System boots even if SD is missing
+      "x-systemd.automount" # Mounts only when accessed
+    ];
+  };
+
 
   # script = ''
   #   chmod o+x /home/mukuldk
