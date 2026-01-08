@@ -96,7 +96,7 @@ in
         font_color = colors.uname;
         check_color = colors.accent;
 
-        placeholder_text = "SecretKey-X";
+        placeholder_text = "$USER";
         hide_input = false;
 
         halign = "center";
@@ -109,17 +109,46 @@ in
       # =====================
       label = [
 
+        # ---- NETWORK ----
+        {
+          monitor = "";
+          # REQUIRED SCRIPT:
+          path = "~/.config/hypr/scripts/wifi.sh";
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/scripts/wifi.sh)"'';
+          font_size = 10;
+          font_family = "JetBrains Mono";
+          color = colors.accent2;
+          position = "12, -10";
+          halign = "left";
+          valign = "top";
+        }
+
+        # ---- BATTERY ----
+        {
+          monitor = "";
+          # REQUIRED SCRIPT:
+          path = "~/.config/hypr/scripts/battery.sh";
+          text = ''cmd[update:30000] echo "$(~/.config/hypr/scripts/battery.sh)"'';
+          font_size = 10;
+          font_family = "JetBrains Mono";
+          color = colors.battery;
+          position = "-12, -10";
+          halign = "right";
+          valign = "top";
+        }
+
         # ---- DATE ----
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"'';
           # text = "$DATE";
-          font_size = 22;
+          font_size = 18;
           font_family = "JetBrains Mono";
-          color = colors.date;
-          position = "0, 300";
+          color = colors.accent3;
+          position = "0, -150";
+          # "0 , -200 " => went the img down.
           halign = "center";
-          valign = "center";
+          valign = "top";
         }
 
         # ---- TIME ----
@@ -127,13 +156,26 @@ in
           monitor = "";
           # text = ''cmd[update:1000] echo "$(date +"%-I:%M")"'';
           text = "$TIME";
-          font_size = 95;
+          font_size = 75;
           font_family = "JetBrains Mono Extrabold";
           color = colors.fg;
-          position = "0, 200";
+          position = "0, -30";
           halign = "center";
-          valign = "center";
+          valign = "top";
         }
+
+        # ---- USER ----
+        # {
+        #   monitor = "";
+        #   # or use $USER directly
+        #   text = "$USER";
+        #   font_size = 10;
+        #   font_family = "JetBrains Mono";
+        #   color = colors.uname;
+        #   position = "12, 10";
+        #   halign = "left";
+        #   valign = "bottom";
+        # }
 
         # ---- CURRENT SONG ----
         {
@@ -148,46 +190,6 @@ in
           valign = "bottom";
         }
 
-        # ---- USER ----
-        {
-          monitor = "";
-          # or use $USER directly
-          text = "$USER";
-          font_size = 14;
-          font_family = "JetBrains Mono";
-          color = colors.uname;
-          position = "0, -10";
-          halign = "center";
-          valign = "top";
-        }
-
-        # ---- BATTERY ----
-        {
-          monitor = "";
-          # REQUIRED SCRIPT:
-          path = "~/.config/hypr/scripts/battery.sh";
-          text = ''cmd[update:30000] echo "$(~/.config/hypr/scripts/battery.sh)"'';
-          font_size = 10;
-          font_family = "JetBrains Mono";
-          color = colors.battery;
-          position = "-20, -10";
-          halign = "right";
-          valign = "top";
-        }
-
-        # ---- NETWORK ----
-        {
-          monitor = "";
-          # REQUIRED SCRIPT:
-          path = "~/.config/hypr/scripts/wifi.sh";
-          text = ''cmd[update:1000] echo "$(~/.config/hypr/scripts/wifi.sh)"'';
-          font_size = 10;
-          font_family = "JetBrains Mono";
-          color = colors.accent2;
-          position = "-20, 10";
-          halign = "left";
-          valign = "top";
-        }
       ];
 
       # =====================
