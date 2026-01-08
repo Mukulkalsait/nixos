@@ -179,7 +179,7 @@ in
         {
           monitor = "";
           # REQUIRED:
-          path = "./media/yangKai-square-small-dp.jpg";
+          path = "./media/profileImg.jpg";
           size = 100;
           border_size = 2;
           border_color = colors.fg;
