@@ -87,11 +87,12 @@ in
         dots_size = 0.25;
         dots_spacing = 0.35;
 
-        outline_thickness = 2;
+        outline_thickness = 5;
         rounding = -1;
 
         inner_color = colors.bgDim;
-        outer_color = colors.fg;
+        outer_color = "rgb(60, 56, 54)";
+        # outer_color = colors.fg;
         font_color = colors.uname;
         check_color = colors.accent;
 
@@ -112,6 +113,7 @@ in
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"'';
+          # text = "$DATE";
           font_size = 22;
           font_family = "JetBrains Mono";
           color = colors.date;
@@ -123,7 +125,8 @@ in
         # ---- TIME ----
         {
           monitor = "";
-          text = ''cmd[update:1000] echo "$(date +"%-I:%M")"'';
+          # text = ''cmd[update:1000] echo "$(date +"%-I:%M")"'';
+          text = "$TIME";
           font_size = 95;
           font_family = "JetBrains Mono Extrabold";
           color = colors.fg;
@@ -136,7 +139,7 @@ in
         {
           monitor = "";
           path = "~/.config/hypr/scripts/runnins_song.sh";
-          text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/whatsong.sh)"'';
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/scripts/runnins_song.sh)"'';
           font_size = 18;
           font_family = "Metropolis Light, Font Awesome 6 Free Solid";
           color = colors.accent2;
@@ -163,11 +166,11 @@ in
           monitor = "";
           # REQUIRED SCRIPT:
           path = "~/.config/hypr/scripts/battery.sh";
-          text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/battery.sh)"'';
-          font_size = 24;
+          text = ''cmd[update:30000] echo "$(~/.config/hypr/scripts/battery.sh)"'';
+          font_size = 10;
           font_family = "JetBrains Mono";
           color = colors.battery;
-          position = "-90, -10";
+          position = "-20, -10";
           halign = "right";
           valign = "top";
         }
@@ -177,12 +180,12 @@ in
           monitor = "";
           # REQUIRED SCRIPT:
           path = "~/.config/hypr/scripts/wifi.sh";
-          text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/network-status.sh)"'';
-          font_size = 24;
+          text = ''cmd[update:1000] echo "$(~/.config/hypr/scripts/wifi.sh)"'';
+          font_size = 10;
           font_family = "JetBrains Mono";
           color = colors.accent2;
-          position = "-20, -10";
-          halign = "right";
+          position = "-20, 10";
+          halign = "left";
           valign = "top";
         }
       ];
