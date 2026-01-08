@@ -4,9 +4,14 @@ let
 
   # Gruvbox
   # colors = {
-  #   fg = "rgba(235, 219, 178, 1.0)";
-  #   bgDim = "rgba(40, 40, 40, 0.4)";
-  #   accent = "rgba(204, 136, 34, 1.0)";
+  # fg = "rgba(235, 219, 178, 1.0)";
+  # bgDim = "rgba(40, 40, 40, 0.4)";
+  # accent = "rgba(204, 136, 34, 1.0)";
+  # date = "rgba(242, 243, 244, 0.75)";
+  # accent2 = "rgba(136, 192, 208, 1.0)";
+  # accent3 = "rgba(204, 136, 34, 1.0)";
+  # uname = "rgb(149 198 104 / 100%)";
+  # battery = "rgb(255 229 104 / 100%)";
   # };
 
   # Catppuccin Mocha
@@ -14,13 +19,24 @@ let
     fg = "rgba(205, 214, 244, 1.0)";
     bgDim = "rgba(30, 30, 46, 0.4)";
     accent = "rgba(243, 139, 168, 1.0)";
+
+    date = "rgba(242, 243, 244, 0.75)";
+    accent2 = "rgba(136, 192, 208, 1.0)";
+    accent3 = "rgba(204, 136, 34, 1.0)";
+    uname = "rgb(149 198 104 / 100%)";
+    battery = "rgb(255 229 104 / 100%)";
   };
 
   # Nord
   # colors = {
-  #   fg = "rgba(216, 222, 233, 1.0)";
-  #   bgDim = "rgba(46, 52, 64, 0.4)";
-  #   accent = "rgba(136, 192, 208, 1.0)";
+  # fg = "rgba(216, 222, 233, 1.0)";
+  # bgDim = "rgba(46, 52, 64, 0.4)";
+  # accent = "rgba(136, 192, 208, 1.0)";
+  # date = "rgba(242, 243, 244, 0.75)";
+  # accent2 = "rgba(136, 192, 208, 1.0)";
+  # accent3 = "rgba(204, 136, 34, 1.0)";
+  # uname = "rgb(149 198 104 / 100%)";
+  # battery = "rgb(255 229 104 / 100%)";
   # };
 in
 {
@@ -96,7 +112,7 @@ in
           text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"'';
           font_size = 22;
           font_family = "JetBrains Mono";
-          color = "rgba(242, 243, 244, 0.75)";
+          color = colors.date;
           position = "0, 300";
           halign = "center";
           valign = "center";
@@ -115,18 +131,17 @@ in
         }
 
         # ---- CURRENT SONG ----
-        # {
-        #   monitor = "";
-        #   # REQUIRED SCRIPT:
-        #   # /home/you/Documents/Scripts/whatsong.sh
-        #   text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/whatsong.sh)"'';
-        #   font_size = 18;
-        #   font_family = "Metropolis Light, Font Awesome 6 Free Solid";
-        #   color = colors.fg;
-        #   position = "0, 50";
-        #   halign = "center";
-        #   valign = "bottom";
-        # }
+        {
+          monitor = "";
+          path = "~/.config/hypr/scripts/runnins_song.sh";
+          text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/whatsong.sh)"'';
+          font_size = 18;
+          font_family = "Metropolis Light, Font Awesome 6 Free Solid";
+          color = colors.accent2;
+          position = "0, 50";
+          halign = "center";
+          valign = "bottom";
+        }
 
         # ---- USER ----
         {
@@ -135,39 +150,39 @@ in
           text = "$USER";
           font_size = 14;
           font_family = "JetBrains Mono";
-          color = colors.fg;
+          color = colors.uname;
           position = "0, -10";
           halign = "center";
           valign = "top";
         }
 
         # ---- BATTERY ----
-        # {
-        #   monitor = "";
-        #   # REQUIRED SCRIPT:
-        #   # /home/you/Documents/Scripts/battery.sh
-        #   text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/battery.sh)"'';
-        #   font_size = 24;
-        #   font_family = "JetBrains Mono";
-        #   color = colors.fg;
-        #   position = "-90, -10";
-        #   halign = "right";
-        #   valign = "top";
-        # }
+        {
+          monitor = "";
+          # REQUIRED SCRIPT:
+          path = "~/.config/hypr/scripts/battery.sh";
+          text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/battery.sh)"'';
+          font_size = 24;
+          font_family = "JetBrains Mono";
+          color = colors.battery;
+          position = "-90, -10";
+          halign = "right";
+          valign = "top";
+        }
 
         # ---- NETWORK ----
-        # {
-        #   monitor = "";
-        #   # REQUIRED SCRIPT:
-        #   # /home/you/Documents/Scripts/network-status.sh
-        #   text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/network-status.sh)"'';
-        #   font_size = 24;
-        #   font_family = "JetBrains Mono";
-        #   color = colors.fg;
-        #   position = "-20, -10";
-        #   halign = "right";
-        #   valign = "top";
-        # }
+        {
+          monitor = "";
+          # REQUIRED SCRIPT:
+          path = "~/.config/hypr/scripts/wifi.sh";
+          text = ''cmd[update:1000] echo "$(/home/you/Documents/Scripts/network-status.sh)"'';
+          font_size = 24;
+          font_family = "JetBrains Mono";
+          color = colors.accent2;
+          position = "-20, -10";
+          halign = "right";
+          valign = "top";
+        }
       ];
 
       # =====================
@@ -179,8 +194,8 @@ in
         {
           monitor = "";
           # REQUIRED:
-          path = "./media/profileImg.jpg";
-          size = 100;
+          path = "~/.config/hypr/media/profileImg.jpg";
+          size = 200;
           border_size = 2;
           border_color = colors.fg;
           position = "0, -100";
