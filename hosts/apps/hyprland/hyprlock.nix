@@ -16,16 +16,17 @@ let
 
   # Catppuccin Mocha
   colors = {
-    fg = "rgba(205, 214, 244, 1.0)";
+    fg = "rgb(206, 230, 249, 0.8)";
+    fg2 = "rgba(235, 219, 178, 1.0)";
     bgDim = "rgba(30, 30, 46, 0.4)";
-    accent = "rgba(243, 139, 168, 1.0)";
+    accent = "rgb(255 103 124 / 100%)";
 
     date = "rgba(242, 243, 244, 0.75)";
-    accent2 = "rgb(95 159 217 / 100%)";
-    accent3 = "rgba(204, 136, 34, 1.0)";
+    accent2 = "rgba( 95, 159, 217, 1.0)";
+    accent3 = "rgba(204, 136,  34, 1.0)";
     accent4 = "rgba(136, 192, 208, 1.0)";
-    uname = "rgb(149 198 104 / 100%)";
-    battery = "rgb(255 229 104 / 100%)";
+    uname = "rgba(149, 198, 104, 1.0)";
+    battery = "rgba(255, 229, 104,  1.0)";
   };
 
   # Nord
