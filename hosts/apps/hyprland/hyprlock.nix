@@ -77,7 +77,7 @@ in
         font_color = colors.fg;
         check_color = colors.accent;
 
-        placeholder_text = "Input Password...";
+        placeholder_text = "PassWD";
         hide_input = false;
 
         halign = "center";
