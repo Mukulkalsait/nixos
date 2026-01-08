@@ -21,8 +21,9 @@ let
     accent = "rgba(243, 139, 168, 1.0)";
 
     date = "rgba(242, 243, 244, 0.75)";
-    accent2 = "rgba(136, 192, 208, 1.0)";
+    accent2 = "rgb(95 159 217 / 100%)";
     accent3 = "rgba(204, 136, 34, 1.0)";
+    accent4 = "rgba(136, 192, 208, 1.0)";
     uname = "rgb(149 198 104 / 100%)";
     battery = "rgb(255 229 104 / 100%)";
   };
@@ -79,7 +80,7 @@ in
       input-field = [{
         monitor = "";
         size = "250, 60";
-        position = "0, -200";
+        position = "0, -300";
 
         dots_center = true;
         dots_size = 0.25;
@@ -89,11 +90,11 @@ in
         rounding = -1;
 
         inner_color = colors.bgDim;
-        outer_color = "rgba(0, 0, 0, 0)";
-        font_color = colors.fg;
+        outer_color = "colors.fg";
+        font_color = colors.uname;
         check_color = colors.accent;
 
-        placeholder_text = "PassWD";
+        placeholder_text = "SecretKey-X";
         hide_input = false;
 
         halign = "center";
@@ -195,10 +196,10 @@ in
           monitor = "";
           # REQUIRED:
           path = "~/.config/hypr/media/profileImg.jpg";
-          size = 200;
+          size = 170;
           border_size = 2;
-          border_color = colors.fg;
-          position = "0, -100";
+          border_color = colors.accent2;
+          position = "0, 0";
           halign = "center";
           valign = "center";
         }
