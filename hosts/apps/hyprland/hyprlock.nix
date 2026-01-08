@@ -80,7 +80,7 @@ in
       input-field = [{
         monitor = "";
         size = "250, 60";
-        position = "0, -300";
+        position = "0, -200";
 
         dots_center = true;
         dots_size = 0.25;
@@ -90,7 +90,7 @@ in
         rounding = -1;
 
         inner_color = colors.bgDim;
-        outer_color = "colors.fg";
+        outer_color = colors.fg;
         font_color = colors.uname;
         check_color = colors.accent;
 
@@ -200,6 +200,7 @@ in
           border_size = 2;
           border_color = colors.accent2;
           position = "0, 0";
+          # "0 , -200 " => went the img down.
           halign = "center";
           valign = "center";
         }
