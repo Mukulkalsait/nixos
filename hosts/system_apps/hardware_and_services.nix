@@ -21,9 +21,29 @@
   services.udev.packages =
     [ pkgs.bolt ]; # Optional:udevRules BetterDeviceHandling.
 
-  # R: i dont know if its really for thunderbolt or powerprofilectl command. => or use "tlp"
-  services.power-profiles-daemon.enable =
-    true; # better Thunderbolt  power management
+  # Y: Battery Indicator may be.
+  powerManagement.enable = true;
+  services.power-profiles-daemon.enable = true; # better Thunderbolt power management
+  # 👆🏻 thunderbolt or powerprofilectl command. => or use "tlp"
+  services.dbus.enable = true;
+  services.upower = {
+    enable = true;
+    percentageLow = 20;
+    percentageCritical = 10;
+    percentageAction = 5;
+    criticalPowerAction = "HybridSleep";
+  };
+  services.logind = {
+    lidSwitch = "suspend";
+    settings.Login = {
+      HandlePowerKey = "ignore";
+      HandleSuspendKey = "suspend";
+      HandleHibernateKey = "hibernate";
+      HandleLidSwitch = "suspend";
+      HandleLidSwitchExternalPower = "ignore";
+    };
+  };
+
 
   # Y:  Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true; 
