@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cat /sys/class/power_supply/BAT0/capacity | awk '{print "⚡" $1 }'
+cat /sys/class/power_supply/BAT1/capacity | awk '{print "⚡" $1 }'
