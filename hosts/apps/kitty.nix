@@ -20,7 +20,7 @@
     };
     settings = {
       background = "#000000";
-      background_opacity = "0.55";
+      background_opacity = "0.60";
       confirm_os_window_close = 0;
       # cursor_shape = "beam";
       cursor_trail = "5";
