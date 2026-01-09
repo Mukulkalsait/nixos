@@ -131,7 +131,8 @@
       "type": "command",
       "key": "  ├─🌍 Public IP",
       "keyColor": "#E62727",
-      "text": "echo 'timeout 2 curl -4/6 ifconfig.me || <echo-no-internete> ' ",
+ 
+      "text": "echo '🚀 dig +short myip.opendns.com @resolver1.opendns.com'",
       "outputColor": "#B9F6CA",
     },
     {
