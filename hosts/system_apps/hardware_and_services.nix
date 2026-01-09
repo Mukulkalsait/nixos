@@ -1,5 +1,5 @@
 # Y: Hardware Services
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
 
   # G:  Networking and DNS resolver.
   services.resolved = {
@@ -8,9 +8,9 @@
   };
   services.resolved.extraConfig = ''
     DNSStubListener=yes
-    DNSSEC=no
+    DNSSEC=no 
     DNSOverTLS=no
-  '';
+  ''; # here we enable stub and disabled DNSoverTLS=> slow + we disabled DNSSecurity => not reliable. only good on servers. DNS + TLS + HTTPS is real security. 
 
   networking = {
     hostName = "PredatorNix"; # Define your hostname.
