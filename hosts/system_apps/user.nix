@@ -26,6 +26,8 @@
       "umask=0022"
       "nofail" # System boots even if SD is missing
       "x-systemd.automount" # Mounts only when accessed
+      "x-systemd.device-timeout=5s" # timeout = 5s (default 90s)
+      "noatime" # Stops updating “last accessed” timestamps
     ];
   };
 
