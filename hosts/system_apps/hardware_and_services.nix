@@ -1,14 +1,31 @@
 # Y: Hardware Services
 { config, pkgs, ... }: {
 
-  # G:  Networking.
+  # G:  Networking and DNS resolver.
+  services.resolved = {
+    enable = true; # This gives Local stub dns-resolver at 127.0.0.53 by systemd
+    # R: Local DNS stub is => application{ Local library of DNS+IP }=> that saves time + cpu + RECURSOVE-RESOLVATION ⭐ in local mashine.
+  };
+  services.resolved.extraConfig = ''
+    DNSStubListener=yes
+    DNSSEC=no
+    DNSOverTLS=no
+  '';
 
   networking = {
     hostName = "PredatorNix"; # Define your hostname.
-    networkmanager.enable = true;
     enableIPv6 = true; # newly added
+    networkmanager.enable = true;
+    networkmanager.dns = "systemd-resolved"; # For custome DNS=> by systemd.resolver 👇
+    nameservers = [
+      "1.1.1.1" # Cloudflare
+      "1.0.0.1"
+      "8.8.8.8" # Google (fallback)
+      "8.8.4.4"
+    ];
   };
-
+  # ----------------------------
+  #
   # G:  Bluetooth.
   hardware.bluetooth.enable = true; # Enable Bluetooth
   services.blueman.enable = true; # optional: nice GTK tray app
