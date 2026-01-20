@@ -33,6 +33,8 @@
     neovim # D.Editor.
     starship # D.Prompt UI zsh prompt costumise.
     bluetuith # tui Bluetooth
+    pipewire # Controller for pipewire.
+    pulseaudio # Controller for pulseaudio.
 
     # G: Tradin Apps |>
     tradingview
