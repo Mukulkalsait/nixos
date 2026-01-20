@@ -6,11 +6,12 @@
     enable = true; # This gives Local stub dns-resolver at 127.0.0.53 by systemd
     # R: Local DNS stub is => application{ Local library of DNS+IP }=> that saves time + cpu + RECURSOVE-RESOLVATION ⭐ in local mashine.
   };
-  services.resolved.extraConfig = ''
+  environment.etc."systemd/resolved.conf.d/00-custom.conf".text = ''
+    [Resolve]
     DNSStubListener=yes
-    DNSSEC=no 
+    DNSSEC=no
     DNSOverTLS=no
-  ''; # here we enable stub and disabled DNSoverTLS=> slow + we disabled DNSSecurity => not reliable. only good on servers. DNS + TLS + HTTPS is real security. 
+  '';
 
   networking = {
     hostName = "PredatorNix"; # Define your hostname.
