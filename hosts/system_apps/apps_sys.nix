@@ -27,6 +27,10 @@
     openssh # ssh client.
     eza # Modern ls
 
+    # DX: Network dependency for rust project
+    openssl_legacy
+    pkgconf
+
 
     # IMP: Daily Drivers |>
     yazi # D.FileManager
