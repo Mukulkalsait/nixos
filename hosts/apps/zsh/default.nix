@@ -37,7 +37,7 @@
         gmd = "gomanagedocker p";
         dive = "dive --source podman";
         editVideo = "nvidia-offload kdenlive";
-
+        rustMaintain = "rustup update && rustup component add rust-analyzer rust-src clippy rustfmt && rustup component add clippy --toolchain nightly ";
 
         tt = "zellij";
         tth = "zellij -l welcome";
