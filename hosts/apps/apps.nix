@@ -75,7 +75,7 @@
     easyeffects # Poweramp EQ enspired Equaliser.
     sxiv # image previewer basic
     pinta # D.Photo editor
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
 
     # G: Android Relates |>
     android-tools # adb

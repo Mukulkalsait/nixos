@@ -36,7 +36,7 @@
         pti = "podman-tui";
         gmd = "gomanagedocker p";
         dive = "dive --source podman";
-        editVideo = "nvidia-offload kdenlive";
+        # editVideo = "nvidia-offload kdenlive";
         rustMaintain = "rustup update && rustup component add rust-analyzer rust-src clippy rustfmt && rustup component add clippy --toolchain nightly ";
 
         tt = "zellij";
