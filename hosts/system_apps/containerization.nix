@@ -1,6 +1,8 @@
 # Y: containerization.nix |> Configuration for Podman, Minikube, and Kubernetes tools
 { config, pkgs, ... }: {
 
+  virtualisation.lxd.enable = true;
+
   virtualisation.podman = {
     enable = true;
     dockerCompat = false; # true will alias docker utility route to podman.
