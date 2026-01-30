@@ -11,8 +11,8 @@
       "video"
       "podman"
       "docker"
-      "incus"
-      "incus-admin"
+      # "incus"
+      # "incus-admin"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [ zsh ];
