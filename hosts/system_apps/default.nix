@@ -20,6 +20,7 @@
     ./envVariables.nix
     ./apps_sys.nix
     # ./devEnv.nix
+    ../apps/starship
     ./git.nix
     ./lazygit.nix
     ./firewall.nix
