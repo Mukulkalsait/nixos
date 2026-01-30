@@ -2,7 +2,8 @@
 { config, pkgs, ... }: {
   programs.starship = {
     enable = true;
-    settings = pkgs.lib.importTOML ./starship-tokyonight.toml;
+    settings = pkgs.lib.importTOML ./starship-powerline.toml;
+
   };
 }
 
