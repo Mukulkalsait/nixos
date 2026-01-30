@@ -5,6 +5,7 @@
     settings = {
       pkgs.lib.importTOML = ./starship-.toml;
       # palette = lib.mkForce "catppuccin-latte";
+      #
     };
   };
 }
