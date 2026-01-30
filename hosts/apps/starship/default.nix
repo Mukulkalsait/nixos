@@ -2,7 +2,7 @@
 { config, pkgs, ... }: {
   programs.starship = {
     enable = true;
-    settings = pkgs.lib.importTOML ./starship-grovebox.toml;
+    settings = pkgs.lib.importTOML ./starship-powerline.toml;
 
   };
 }
