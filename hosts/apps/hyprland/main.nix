@@ -115,41 +115,35 @@
         # force_default_amdgpu_renderer = false; # Y:NVIDIA compatibility
       };
 
-      windowrulev2 = [
 
+      windowrule = [
         # Nmtui popup Y: not workign this also
-        "float,title:^(nmtui-term)$"
-        "size 28% 65%,title:^(nmtui-term)$"
-        "move 65% 3%,title:^(nmtui-term)$"
+        "float on, match:title ^(nmtui-term)$"
+        "size 28% 65%, match:title ^(nmtui-term)$"
+        "move 65% 3%, match:title ^(nmtui-term)$"
+        "opacity 0.3, match:class SpecialOverlay" # Assuming no regex needed; add ^$ if required
+        "border_size 0, match:floating 1, match:workspace w[t1]"
+        "float on, match:class (mpv)|(imv)|(showmethekey-gtk)"
+        "move 990 60, size 900 170, pin on, no_initial_focus on, match:class (showmethekey-gtk)"
+        "border_size 0, no_focus on, match:class (showmethekey-gtk)" # Converted noborder to border_size 0 (common equivalent)
+        "suppress_event maximize, match:class .*"
+        "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:floating 1, match:fullscreen 0, match:pin 0"
+        "opacity 0.0 override, match:class ^(xwaylandvideobridge)$"
+        "no_anim on, match:class ^(xwaylandvideobridge)$"
+        "no_initial_focus on, match:class ^(xwaylandvideobridge)$"
+        "max_size 1 1, match:class ^(xwaylandvideobridge)$"
+        "no_blur on, match:class ^(xwaylandvideobridge)$"
+        "no_focus on, match:class ^(xwaylandvideobridge)$"
+        "fullscreen on, match:class ^(steam_app_[0-9]+)$"
 
         # Y: not working anymore
-        # "float,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
-        # "size 28% 65%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
-        # "move 65% 3%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
-        # "float,title:^(floating-ghostty)$"
-        # "size 60% 35%,title:^(floating-ghostty)$"
-        # "move 20% 5%,title:^(floating-ghostty)$"
-
-        "opacity 0.3, class:SpecialOverlay" # special class opacity
-
-        "bordersize 0, floating:1, onworkspace:w[t1]"
-
-        "float,class:(mpv)|(imv)|(showmethekey-gtk)"
-        "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
-        "noborder,nofocus,class:(showmethekey-gtk)"
-
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-
-        "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-        "noanim, class:^(xwaylandvideobridge)$"
-        "noinitialfocus, class:^(xwaylandvideobridge)$"
-        "maxsize 1 1, class:^(xwaylandvideobridge)$"
-        "noblur, class:^(xwaylandvideobridge)$"
-        "nofocus, class:^(xwaylandvideobridge)$"
-
-        "fullscreen, class:^(steam_app_[0-9]+)$"
-        # "nofullscreenrequest, class:^(steam_app_[0-9]+)$"
+        "float,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        "size 28% 65%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        "move 65% 3%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        "float,title:^(floating-ghostty)$"
+        "size 60% 35%,title:^(floating-ghostty)$"
+        "move 20% 5%,title:^(floating-ghostty)$"
+        "nofullscreenrequest, class:^(steam_app_[0-9]+)$"
 
         # "workspace 3,class:(obsidian)"
         # "workspace 3,class:(zathura)"
@@ -158,6 +152,7 @@
         # "workspace 5,class:(vesktop)"
         # "workspace 6,class:(teams-for-linux)"
       ];
+
 
       workspace = [ "w[tv1], gapsout:0, gapsin:0" "f[1], gapsout:0, gapsin:0" ];
     };
