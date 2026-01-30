@@ -43,9 +43,11 @@
     ghostty
     kitty
     zellij
-    vscode
-    code-cursor
     # tmux
+
+    # ID: Editors.
+    # vscode
+    # code-cursor
 
     # B: CLI Essentilas |>
     nginx # Reverse Proxy Server
