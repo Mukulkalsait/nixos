@@ -1,32 +1,60 @@
-# "$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = 'https://starship.rs/config-schema.json'
+#
+# format = """
+# [](bg:#d20f39)\
+# $os\
+# $username\
+# [](bg:#fe640b fg:#d20f39)\
+# $directory\
+# [](bg:#df8e1d fg:#fe640b)\
+# $git_branch\
+# $git_status\
+# [](fg:#df8e1d bg:#40a02b)\
+# $c\
+# $rust\
+# $golang\
+# $nodejs\
+# $php\
+# $java\
+# $kotlin\
+# $haskell\
+# $python\
+# [](fg:#40a02b bg:#209fb5)\
+# $conda\
+# [](fg:#209fb5 bg:#7287fd)\
+# $time\
+# [ ](fg:#7287fd)\
+# $cmd_duration\
+# $line_break\
+# $character"""
 
-format = """
-[](red)\
-$os\
-$username\
-[](bg:peach fg:red)\
-$directory\
-[](bg:yellow fg:peach)\
-$git_branch\
-$git_status\
-[](fg:yellow bg:green)\
-$c\
-$rust\
-$golang\
-$nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
-$python\
-[](fg:green bg:sapphire)\
-$conda\
-[](fg:sapphire bg:lavender)\
-$time\
-[ ](fg:lavender)\
-$cmd_duration\
-$line_break\
-$character"""
+ format = """
+ [](bg:red)\
+ $os\
+ $username\
+ [](bg:peach fg:red)\
+ $directory\
+ [](bg:yellow fg:peach)\
+ $git_branch\
+ $git_status\
+ [](fg:yellow bg:green)\
+ $c\
+ $rust\
+ $golang\
+ $nodejs\
+ $php\
+ $java\
+ $kotlin\
+ $haskell\
+ $python\
+ [](fg:green bg:sapphire)\
+ $conda\
+ [](fg:sapphire bg:lavender)\
+ $time\
+ [ ](fg:lavender)\
+ $cmd_duration\
+ $line_break\
+ $character"""
 
 # palette = 'catppuccin_mocha'
  palette = 'catppuccin_latte'
