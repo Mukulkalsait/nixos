@@ -3,9 +3,8 @@
   programs.starship = {
     enable = true;
     settings = {
-      pkgs.lib.importTOML = ./starship-grovebox.toml;
+      pkgs.lib.importTOML = ./starship-tokyonight.toml;
       # palette = lib.mkForce "catppuccin-latte";
-      #
     };
   };
 }
