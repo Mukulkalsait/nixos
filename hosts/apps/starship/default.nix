@@ -1,11 +1,9 @@
 # Y: Starship Rust.
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, ... }: {
   programs.starship = {
     enable = true;
-    settings = {
-      pkgs.lib.importTOML = ./starship-tokyonight.toml;
-      # palette = lib.mkForce "catppuccin-latte";
-    };
+    settings = pkgs.lib.importTOML ./starship-grovebox.toml;
+
   };
 }
 
