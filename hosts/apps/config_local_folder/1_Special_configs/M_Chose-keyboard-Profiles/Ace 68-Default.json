@@ -10,7 +10,7 @@
     "productId": 8470,
     "productName": "MCHOSE Ace68-II"
   },
-  "exportedAt": 1769786734479,
+  "exportedAt": 1769787137881,
   "data": {
     "userKeys": [
       {
@@ -99,6 +99,11 @@
             "type": 16,
             "code1": 0,
             "code2": 83
+          },
+          "76": {
+            "type": 48,
+            "code1": 205,
+            "code2": 0
           }
         }
       },
