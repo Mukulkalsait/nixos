@@ -144,7 +144,9 @@
         "fullscreen on, match:class ^(steam_app_[0-9]+)$"
 
 
-        "float on, size 28% 65%, move 65% 3%, match:class ^(com.mitchellh.ghostty)$$   , match:title ^(nmtui-term)   $$"
+        # "float on, size 28% 65%, move 65% 3%, match:class ^(com.mitchellh.ghostty)$$   , match:title ^(nmtui-term)   $$"
+        "float on, size 28% 65%, move 65% 3%, match:title ^(NMTUI-󱛆 )$"
+
         "float on, match:title ^(floating-ghostty)$"
         "size 60% 35%, match:title ^(floating-ghostty)$"
         "move 20% 5%, match:title ^(floating-ghostty)$"
