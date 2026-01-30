@@ -1,15 +1,6 @@
 # Y: containerization.nix |> Configuration for Podman, Minikube, and Kubernetes tools
 { config, pkgs, ... }: {
 
-
-  # LXD fork
-  # virtualisation.incus = {
-  #   enable = true;
-  # };
-  # networking.nftables.enable = true; # R: ONLY FOR INCUS/LXD use make srue to delete it. 
-  #-----------------make sure to delete everyting above if no lxd used
-
-
   virtualisation.podman = {
     enable = true;
     dockerCompat = false; # true will alias docker utility route to podman.
@@ -27,10 +18,8 @@
 
   # System-wide packages for Kubernetes and container tools
   environment.systemPackages = with pkgs; [
-    # minikube # kuberneties creater
-    # nvidia-container-toolkit # For NVIDIA support
-    # nvidia-podman-kit # Additional NVIDIA support for Podman Y: not found 
 
+    # B: CONTAINER-TOOLS |>
     # lazydocker # TUI lazy Docker.
     dive # TUI Docker Images Layers.
     gomanagedocker # go manage doker/podman
@@ -39,6 +28,7 @@
     ctop # Top utility for Containerisation.
     buildah # podman compose lieke another thign.
 
+    # G: Kubernetes-Tools |>
     kind # Kubernetes IN Docker.
     kubectl # dont know.
     # kdash # TUI kuberneties dashboard.Y: unstable deu to NixUpdates = will be stable soon so uncommit it whenn you see it.
@@ -49,6 +39,23 @@
 
     # B: Cloud |>
     awscli2
+
+    # B: GPU SUPPORT |>
+    # minikube # kuberneties creater
+    # nvidia-container-toolkit # For NVIDIA support
+    # nvidia-podman-kit # Additional NVIDIA support for Podman Y: not found 
   ];
+
+  #-----------------| INCUS (LSD) |-----------------
+  #
+  # LXD fork
+  # virtualisation.incus = {
+  #   enable = true;
+  # };
+  # networking.nftables.enable = true; 
+  # R: ONLY FOR INCUS/LXD use make srue to delete it. 
+  #
+  # TAG: in ./user.nix make sure add user "incus", "incus-admin"
+  #-------------------------------------------------
 }
 
