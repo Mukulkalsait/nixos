@@ -3,7 +3,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      pkgs.lib.importTOML = ./starship-grovebox.toml;
+      pkgs.lib.importTOML = ./starship-.toml;
       # palette = lib.mkForce "catppuccin-latte";
     };
   };

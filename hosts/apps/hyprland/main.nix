@@ -122,12 +122,19 @@
         "size 28% 65%, match:title ^(nmtui-term)$"
         "move 65% 3%, match:title ^(nmtui-term)$"
         "opacity 0.3, match:class SpecialOverlay" # Assuming no regex needed; add ^$ if required
-        "border_size 0, match:floating 1, match:workspace w[t1]"
+
+        # Original: windowrule=border_size 0, match:floating 1, match:workspace w[t1]
+        # Corrected:
+        "border_size 0, match:float true, match:workspace w[t1]" # Or "match:workspace name:w[t1]" if it's a named workspace
+
+        # Original: windowrule=no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:floating 1, match:fullscreen 0, match:pin 0
+        # Corrected:
+        "no_focus on, match:class ^$, match:title ^$, match:xwayland true, match:float true, match:fullscreen false, match:pin false"
+
         "float on, match:class (mpv)|(imv)|(showmethekey-gtk)"
         "move 990 60, size 900 170, pin on, no_initial_focus on, match:class (showmethekey-gtk)"
         "border_size 0, no_focus on, match:class (showmethekey-gtk)" # Converted noborder to border_size 0 (common equivalent)
         "suppress_event maximize, match:class .*"
-        "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:floating 1, match:fullscreen 0, match:pin 0"
         "opacity 0.0 override, match:class ^(xwaylandvideobridge)$"
         "no_anim on, match:class ^(xwaylandvideobridge)$"
         "no_initial_focus on, match:class ^(xwaylandvideobridge)$"
@@ -136,14 +143,21 @@
         "no_focus on, match:class ^(xwaylandvideobridge)$"
         "fullscreen on, match:class ^(steam_app_[0-9]+)$"
 
+
+        "float on, size 28% 65%, move 65% 3%, match:class ^(com.mitchellh.ghostty)$$   , match:title ^(nmtui-term)   $$"
+        "float on, match:title ^(floating-ghostty)$"
+        "size 60% 35%, match:title ^(floating-ghostty)$"
+        "move 20% 5%, match:title ^(floating-ghostty)$"
+
+
         # Y: not working anymore
-        "float,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
-        "size 28% 65%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
-        "move 65% 3%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
-        "float,title:^(floating-ghostty)$"
-        "size 60% 35%,title:^(floating-ghostty)$"
-        "move 20% 5%,title:^(floating-ghostty)$"
-        "nofullscreenrequest, class:^(steam_app_[0-9]+)$"
+        # "float,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        # "size 28% 65%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        # "move 65% 3%,class:^(com.mitchellh.ghostty)$,title:^(nmtui-term)$"
+        # "float,title:^(floating-ghostty)$"
+        # "size 60% 35%,title:^(floating-ghostty)$"
+        # "move 20% 5%,title:^(floating-ghostty)$"
+        # "nofullscreenrequest, class:^(steam_app_[0-9]+)$"
 
         # "workspace 3,class:(obsidian)"
         # "workspace 3,class:(zathura)"
