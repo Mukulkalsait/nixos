@@ -3,10 +3,10 @@
 
 
   # LXD fork
-  virtualisation.incus = {
-    enable = true;
-  };
-  networking.nftables.enable = true; # R: ONLY FOR INCUS/LXD use make srue to delete it. 
+  # virtualisation.incus = {
+  #   enable = true;
+  # };
+  # networking.nftables.enable = true; # R: ONLY FOR INCUS/LXD use make srue to delete it. 
   #-----------------make sure to delete everyting above if no lxd used
 
 
