@@ -47,18 +47,16 @@
 
     rustup # toolchain management (clippy) Y: This fucker have RUSTc, Cargo, rustFmt-rustup and even rust-analyzer
     # G: for rust linkekrs
-    gcc
     pkg-config
     openssl
+
     clang
     llvm
+    lld
     gnumake
     perl
-    # rust-src # starndard source          #  NOT AVIALABLE NO NEED
-    # cargo # cargo setups
-    # rustc # rust compiller
-    # rustfmt # FORMATTER
-    # rust-analyzer # LSP
+
+    # DX: none of this work: rust-src # starndard source {NOT AVIALABLE NO NEED} cargo # cargo setups rustc # rust compiller rustfmt # FORMATTER rust-analyzer # LSP
     # Y: usage of rust 
     # 1. create file in root or project
     # --------------
@@ -67,7 +65,6 @@
     # [toolchain]
     # channel = "nightly" # or "stable"
     # components = ["rust-src", "clippy", "rustfmt", more we needed]
-    #
     #===============
 
     lua-language-server # LSP
