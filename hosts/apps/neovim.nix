@@ -45,8 +45,15 @@
     nil # nix-LSP
     nixpkgs-fmt # FORMATTER
 
-    gcc # for rust linkekrs
     rustup # toolchain management (clippy) Y: This fucker have RUSTc, Cargo, rustFmt-rustup and even rust-analyzer
+    # G: for rust linkekrs
+    gcc
+    pkg-config
+    openssl
+    clang
+    llvm
+    gnumake
+    perl
     # rust-src # starndard source          #  NOT AVIALABLE NO NEED
     # cargo # cargo setups
     # rustc # rust compiller
