@@ -37,7 +37,7 @@
     pulseaudio # Controller for pulseaudio.
 
     # G: Tradin Apps |>
-    tradingview
+    # tradingview
 
     # B: TUI Utils |>
     btop # Task manager.
