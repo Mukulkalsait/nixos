@@ -77,7 +77,7 @@
     shellcheck # BASH LINTER
 
     ghostscript # For PDF rendering (gs) snack.nvim
-    tectonic # For LaTeX rendering snack.nvim
+    tectonic # For LaTeX rendering snack.nvim  🈸 Application added.
 
     # Formatters & Linters
     dockerfile-language-server # NixRepo
