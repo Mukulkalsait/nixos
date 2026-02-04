@@ -55,7 +55,7 @@
     rustscan # rust port scanner
     dig # network tool
     mtr # my trace route
-    bottom # TUI task manager
+    # bottom # TUI task manager BTOP is best
     lazysql # db TUI
 
     # G: NIX-Related |>
