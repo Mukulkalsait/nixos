@@ -32,6 +32,7 @@
         "swww-daemon &"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "while true; do ~/.config/swaync/scripts/battery-warning.sh; sleep 60; done &"
       ];
 
       general = {
