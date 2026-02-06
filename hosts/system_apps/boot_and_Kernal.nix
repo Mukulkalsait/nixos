@@ -19,7 +19,7 @@
     "usb_storage" # usb
     "uas" # dont know
     "ec_sys" # EC fan controls.
-    "acer-wmi-battery" # G: acer battery module to work with  -> (⭐) 
+    "acer_wmi_battery" # G: acer battery module to work with  -> (⭐) 
   ];
   boot.kernelParams = [
     "acpi_ec.gpe_debug=1" # Enable Kernal parameters
