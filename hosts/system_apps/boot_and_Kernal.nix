@@ -9,9 +9,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest; # latest Kernal Pkg. # DX: kernal selector but its inside Linuvu-sense*.nix
 
-  # boot.extraModulePackages = [
-  #   pkgs.linuxKernel.packages.linux_6_18.acer-wmi-battery # B: Acer kernal module for 6.18 => (⭐) 
-  # ];
+  boot.extraModulePackages = [ ];
 
   boot.kernelModules = [
     # Y:  Enable Kernal MODULES
@@ -19,7 +17,7 @@
     "usb_storage" # usb
     "uas" # dont know
     "ec_sys" # EC fan controls.
-    "acer_wmi_battery" # G: acer battery module to work with  -> (⭐) 
+    # "acer_wmi_battery" DX: Kernal has DEFAULT "acer_wmi" =>  fan profile so this will now load no matter what.
   ];
   boot.kernelParams = [
     "acpi_ec.gpe_debug=1" # Enable Kernal parameters
