@@ -5,6 +5,9 @@
 
   # Y:  add into hyrpland config => exec-once = while true; do ~/.config/swaync/scripts/battery-warning.sh; sleep 60; done &
   # havnt added till now.
+  #
+  #             ~/.config/swaync/scripts/battery-warning.sh
+  # /home/mukuldk/.config/swaync/scripts/battery-warning.sh
 
   services.swaync = {
     enable = true;

@@ -10,7 +10,7 @@ if [ "$BATTERY_STATUS" = "Discharging" ]; then
     notify-send -a "battery" -u critical -i battery-low "Battery Super Low! 🪫" "${BATTERY_LEVEL}% remaining\nPlease plug in charger!"
   elif [ "$BATTERY_LEVEL" -le 20 ]; then
     notify-send -a "battery" -u normal -i battery-low "Battery Low ⚠️" "${BATTERY_LEVEL}% remaining"
-  else
-    notify-send -a "battery" -u normal -i battery-low "Battery is working" "${BATTERY_LEVEL}% ⚡"
+  # else
+  #   notify-send -a "battery" -u normal -i battery-low "Battery is working" "${BATTERY_LEVEL}% ⚡"
   fi
 fi
