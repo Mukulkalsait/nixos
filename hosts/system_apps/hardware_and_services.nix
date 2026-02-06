@@ -75,14 +75,21 @@
     lidSwitch = "suspend";
     lidSwitchDocked = "ignore";
     lidSwitchExternalPower = "ignore";
-    extraConfig = ''
-      HandlePowerKey=ignore
-      HandleSuspendKey=suspend
-      HandleHibernateKey=hibernate
-      IdleAction=ignore
-      IdleActionSec=30min
-    '';
+
+    settings.Login = {
+
+      HandlePowerKey = "ignore";
+      HandleSuspendKey = "suspend";
+      HandleHibernateKey = "hibernate";
+
+      HandleLidSwitch = "suspend";
+      HandleLidSwitchExternalPower = "ignore";
+
+      IdleAction = "ignore";
+      IdleActionSec = "30min";
+    };
   };
+
 
   # Y:  Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true; 
