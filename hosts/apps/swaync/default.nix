@@ -12,160 +12,116 @@
   services.swaync = {
     enable = true;
     settings = {
-      # Position and appearance
+      # General control center settings (defaults, adjust as needed)
       positionX = "right";
       positionY = "top";
+      layer = "overlay";
       control-center-margin-top = 10;
       control-center-margin-bottom = 10;
       control-center-margin-right = 10;
-      control-center-margin-left = 10;
-      control-center-width = 500;
+      control-center-margin-left = 0;
+      control-center-width = 400;
       control-center-height = 600;
-      control-center-radius = 12;
-
-      # Layer settings
       fit-to-screen = true;
-      layer-shell = true;
-      layer = "overlay";
-      control-center-layer = "overlay";
-      cssPriority = "user";
+      hide-on-clear = true;
+      hide-on-action = true;
 
-      # Notification settings
+      # Notification settings (defaults)
       notification-icon-size = 64;
       notification-body-image-height = 100;
-      notification-body-image-width = 200;
-      notification-window-width = 400;
-
-      # Timeouts
       timeout = 10;
       timeout-low = 5;
       timeout-critical = 0;
+      notification-window-width = 300;
 
-      # Behavior
-      hide-on-clear = false;
-      hide-on-action = true;
-      script-fail-notify = true;
-      notification-inline-replies = false;
-      notification-2fa-action = true;
-
-      # Image visibility
-      image-visibility = "when-available";
-      transition-time = 200;
-
-      # Keyboard shortcuts
-      keyboard-shortcuts = true;
-
-      # Widget order - MORE WIDGETS!
+      # Widgets to display in control center (add/remove as needed)
       widgets = [
-        "inhibitors"
         "title"
         "dnd"
-        "mpris"
-        "volume"
-        "backlight"
-        "buttons-grid"
-        "menubar"
+        "mpris" # Music player if you want it
+        "buttons-grid" # For toggles like bluetooth
+        "menubar" # For dropdown menus (now with content)
         "notifications"
       ];
 
-      # Widget configurations
+      # Configure specific widgets
       widget-config = {
-        # Title widget
         title = {
-          text = "Notifications";
+          text = "Control Center";
           clear-all-button = true;
-          button-text = " Clear All";
+          button-text = "Clear All";
         };
 
-        # Do Not Disturb
         dnd = {
           text = "Do Not Disturb";
         };
 
-        # Inhibitors (prevents sleep/screen off)
-        inhibitors = {
-          text = "Inhibitors";
-          button-text = "Clear All";
-          clear-all-button = true;
-        };
-
-        # Media player controls
-        mpris = {
-          image-size = 96;
-          image-radius = 8;
-          blur = true;
-        };
-
-        # Volume control
-        volume = {
-          label = "󰕾";
-          show-per-app = true;
-        };
-
-        # Brightness control
-        backlight = {
-          label = "󰃠";
-          device = "intel_backlight";
-          subsystem = "backlight";
-        };
-
-        # Buttons grid - quick actions
         buttons-grid = {
           actions = [
+            # Bluetooth toggle (fixed with proper commands)
             {
-              label = "󰐥";
-              command = "systemctl poweroff";
+              label = "Bluetooth";
+              type = "toggle";
+              active = false; # Default off; update-command will check real state
+              command = "bluetoothctl power $( [ \"$SWAYNC_TOGGLE_STATE\" = true ] && echo on || echo off )";
+              update-command = "bluetoothctl show | grep -q 'Powered: yes' && echo true || echo false";
             }
+
+            # Example wifi toggle (assuming NetworkManager; add if you have it)
             {
-              label = "󰜉";
-              command = "systemctl reboot";
+              label = "WiFi";
+              type = "toggle";
+              active = false;
+              command = "nmcli radio wifi $( [ \"$SWAYNC_TOGGLE_STATE\" = true ] && echo on || echo off )";
+              update-command = "sh -c '[ \"$(nmcli radio wifi)\" = \"enabled\" ] && echo true || echo false'";
             }
+
+            # Other example toggles (e.g., airplane mode via rfkill)
             {
-              label = "󰤄";
-              command = "nmcli radio wifi toggle";
-            }
-            {
-              label = "󰂯";
-              command = "bluetoothctl power toggle";
+              label = "Airplane Mode";
+              type = "toggle";
+              active = false;
+              command = "rfkill $( [ \"$SWAYNC_TOGGLE_STATE\" = true ] && echo block || echo unblock ) all";
+              update-command = "rfkill list | grep -q 'Soft blocked: yes' && echo true || echo false";
             }
           ];
         };
 
-        # Menu bar - custom scripts
         menubar = {
-          menu.power-profiles = {
-            label = "󰈐";
-            position = "right";
+          # Position buttons on the left or right
+          position = "left";
+
+          # Add a basic menu (not empty anymore)
+          "menu#system" = {
+            label = "System";
+            position = "left";
             actions = [
+              # Removed reboot and poweroff; added suspend as "something else"
               {
-                label = " Performance";
-                command = "echo performance | sudo tee /sys/firmware/acpi/platform_profile";
+                label = "Suspend";
+                command = "systemctl suspend";
               }
+              # Example: Add a logout button if you want
               {
-                label = " Balanced";
-                command = "echo balanced | sudo tee /sys/firmware/acpi/platform_profile";
+                label = "Logout";
+                command = "loginctl terminate-user $USER";
               }
+              # Add more custom actions here, e.g., a script
               {
-                label = " Low Power";
-                command = "echo low-power | sudo tee /sys/firmware/acpi/platform_profile";
+                label = "Custom Script";
+                command = "echo 'Hello' > ~/test.txt"; # Replace with your command
               }
             ];
           };
-          menu.screenshots = {
-            label = "󰹑";
+
+          # Optional: Direct buttons in the bar (no dropdown)
+          buttons = {
             position = "right";
             actions = [
+              # Example direct button
               {
-                label = " Screen";
-                command = "grimblast copy screen";
-              }
-              {
-                label = " Area";
-                command = "grimblast copy area";
-              }
-              {
-                label = " Window";
-                command = "grimblast copy active";
+                label = "Settings";
+                command = "gnome-control-center"; # Or your preferred settings app
               }
             ];
           };
