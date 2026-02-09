@@ -76,6 +76,7 @@
         nvimConfig = "nvim /home/mukuldk/1_file/2_git_repos/nvim/";
         # IMP: config non NIX nor imported because they download there own files.
         yaziConfig = "nvim /home/mukuldk/.config/yazi/";
+        sshConfig = "nvim /home/mukuldk/.ssh/config";
 
         # Y: Movements
         cdN = "cd /etc/nixos/";
