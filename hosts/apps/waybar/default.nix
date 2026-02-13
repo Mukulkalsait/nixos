@@ -136,7 +136,11 @@
           format-disconnected = "  Disconnected";
           # Y: |  󱛁 󱚾 󱛇 󰸋  󰤟 󰤥 󰤨 󰤪 |
           tooltip-format = "{ifname}\nIP: {ipaddr}/{cidr}\nGW: {gwaddr}\nSignal: {signalStrength}%";
-          on-click = "ghostty --title='NMTUI-󱛆 ' -e nmtui"; # Y: -> check hyprland/main.nix for windowrulev2
+          # on-click = "sh -c 'hyprctl clients | grep iwd-impala && hyprctl dispatch closewindow class:iwd-impala || kitty --class=\"iwd-impala\" --title=\"IWD-Impala 󱛆 \" -e impala'";
+          on-click = "~/.config/hypr/scripts/floating_network.sh";
+
+
+
         };
 
 
