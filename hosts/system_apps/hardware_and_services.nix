@@ -1,8 +1,41 @@
 # Y: Hardware Services
 { pkgs, ... }: {
-  # G:  Networking and DNS resolver.
+  # G:  Networking and DNS resolver. =============================================================================
+  systemd.network.enable = true; # systemd-networkd. only on if IWD is enable not needed for NMCLI.
+
+  networking = {
+    hostName = "PredatorNix"; # our Hostname
+    enableIPv6 = true;
+    nameservers = [
+      "1.1.1.1" # Cloudfare
+      "1.0.0.1"
+      "8.8.8.8" # google (fallback)
+      "8.8.4.4"
+    ];
+
+    # IWD --------------------------------
+    wireless.iwd = {
+      enable = true; # Gives IWCTL
+      settings = {
+        General = {
+          EnableNetworkConfiguration = true; # Auto IP configure every time.
+        };
+        Settings = {
+          AutoConnect = true; # Reconnect on restart.
+        };
+      };
+    };
+    # IWD --------------------------------
+
+    # IMP: NMCLI : Network Manager Disabled => still keep it supports DHCP. 
+    # networkmanager.enable = true;
+    # networkmanager.dns = "systemd-resolved"; # CostumeDNS => systemd.resolver
+
+  };
+
   services.resolved = { enable = true; };
-  # R: Local DNS stub is => application{ Local library of DNS+IP }=> that saves time + cpu + RECURSOVE-RESOLVATION ⭐ in local mashine.
+  # Y: Local DNS stub is => application{ Local library of DNS+IP }
+  # => that saves time + cpu + RECURSOVE-RESOLVATION ⭐ in local mashine.
 
   environment.etc."systemd/resolved.conf.d/00-custom.conf".text = ''
     [Resolve]
@@ -11,31 +44,23 @@
     DNSOverTLS=no
   '';
 
-  networking = {
-    hostName = "PredatorNix"; # our Hostname
-    enableIPv6 = true;
-    networkmanager.enable = true;
-    networkmanager.dns = "systemd-resolved"; # CostumeDNS => systemd.resolver
-    nameservers = [
-      "1.1.1.1" # Cloudfare
-      "1.0.0.1"
-      "8.8.8.8" # google (fallback)
-      "8.8.4.4"
-    ];
-  };
+  # TAG:  Networking and DNS resolver. =============================================================================
 
-  # G: Bluetooth.
+
+
+
+  # G: Bluetooth. ==================================================================================================
   hardware.bluetooth.enable = true;
   services.blueman.enable = true; # gtx tray app.
 
-  # G: Sensors.
+  # G: Sensors. ====================================================================================================
   hardware.i2c.enable = true; # enable sensors.
 
-  # Y: THUNDERBOLT
+  # Y: THUNDERBOLT =================================================================================================
   services.hardware.bolt.enable = true; #BOLT daemon Thunderbold
   services.udev.packages = [ pkgs.bolt ]; #UDEV.Rules battery device handling.
 
-  # Y: POWER MANAGEMENT - FIXED
+  # Y: POWER MANAGEMENT - FIXED ====================================================================================
   powerManagement.enable = true;
 
   # DX: REMOVE this - it conflicts with proper battery management
