@@ -8,6 +8,8 @@
     file # shows file tipe
     wl-clipboard # System wide clipboard
     cliphist # clipboard history manager
+    iw # internet wifi for IWD in ./hardware_and_services.nix
+    impala # IW frontend TUI : Required IW
     # copyq # Clipboard manager
 
     # G: CLI Utils |>
@@ -41,6 +43,7 @@
 
     # B: TUI Utils |>
     btop # Task manager.
+    htop # Most imp.
     nvtopPackages.nvidia # G: GPU monitoring TUI Specific for Nvidia GPUs SMALLER
     # nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs LAEGER
 
