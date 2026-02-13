@@ -33,15 +33,16 @@
       "$mainMod , I, exec ,$TERMINAL" # fallback Ghostty has fastfetch
       # "$mainMod , C, exec ,$TERMINAL zsh -ic 'fastfetch; exec zsh'"
 
-      "$mainMod, C, exec, kitty" # fallback with NO FASTfetch.
+      "$mainMod, C, exec, $KTERM" # fallback with NO FASTfetch.
       # "$mainMod, C, exec, ghostty" # fallback with NO FASTfetch.
 
-      "$mainMod SHIFT, I,  exec, $TERMINAL --title=floating-ghostty"
+      # "$mainMod SHIFT, I,  exec, kitty --title=floating-ghostty"
       "$mainMod, B, exec, $BROWSER" # Zen
       "$mainMod, N, exec, $TERMINAL -e $EDITOR" # Nvim
-      "$mainMod, E, exec, kitty -e $FILEMANAGER" # yazi
+      "$mainMod, E, exec, $KTERM -e $FILEMANAGER" # yazi on kitty
       "$mainMod, PERIOD , exec, rofimoji" # yazi
-      # "$mainMod, E, exec, $TERMINAL -e $FILEMANAGER" # we are not using this as we want the yazi to open yazi in kitty only
+      "$mainMod, W, exec, ~/.config/hypr/scripts/floating_network.sh"
+      # "$mainMod, W, exec, hyprctl clients | grep iwd-impala && hyprctl dispatch closewindow class:iwd-impala || $KTERM --class=\"iwd-impala\" --title=\"IWD-Impala 󱛆 \" -e impala"
 
       "CTRL SHIFT, Escape,  exec, $TASKMANAGER" # Mission Center.
       # "CTRL SHIFT, Escape,  exec, kitty -e btop" # Y: btop
