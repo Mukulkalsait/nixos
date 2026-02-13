@@ -8,6 +8,7 @@
       "$menu" = "rofi";
       # "$TERMINAL" = "kitty";
       "$TERMINAL" = "ghostty";
+      "$KTERM" = "kitty";
       "$FILEMANAGER" = "$terminal -e sh -c 'yazi'";
       "$EDITOR" = "nvim";
       "$VISUAL" = "nvim";
@@ -58,15 +59,18 @@
       };
 
       dwindle = {
-        pseudotile = true;
-        preserve_split = true;
+        # pseudotile = true;
+        pseudotile = false;
+        # preserve_split = true;
+        preserve_split = false;
       };
 
-      master = {
-        new_status = "slave";
-        new_on_top = false;
-        mfact = 0.5;
-      };
+      # Dont use this one i dont like it.
+      # master = {
+      #   new_status = "slave";
+      #   new_on_top = false;
+      #   mfact = 0.5;
+      # };
 
       decoration = {
         rounding = 3;
@@ -118,39 +122,40 @@
 
 
       windowrule = [
-        # Nmtui popup Y: not workign this also
-        "float on, match:title ^(IWD-Impala 󱛆 )$"
-        "size 28% 65%, match:title ^(IWD-Impala 󱛆 )$"
-        "move 65% 3%, match:title ^(IWD-Impala 󱛆 )$"
-        "opacity 0.3, match:class SpecialOverlay" # Assuming no regex needed; add ^$ if required
+        # "float on, size 537 780, move 1248 36, match:class ^iwd-impala$"
+        "float on,  match:class ^nmtui$"
+        "float on,  match:class ^wiremix$"
 
-        # Original: windowrule=border_size 0, match:floating 1, match:workspace w[t1]
-        # Corrected:
-        "border_size 0, match:float true, match:workspace w[t1]" # Or "match:workspace name:w[t1]" if it's a named workspace
-
-        # Original: windowrule=no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:floating 1, match:fullscreen 0, match:pin 0
-        # Corrected:
-        "no_focus on, match:class ^$, match:title ^$, match:xwayland true, match:float true, match:fullscreen false, match:pin false"
-
-        "float on, match:class (mpv)|(imv)|(showmethekey-gtk)"
-        "move 990 60, size 900 170, pin on, no_initial_focus on, match:class (showmethekey-gtk)"
-        "border_size 0, no_focus on, match:class (showmethekey-gtk)" # Converted noborder to border_size 0 (common equivalent)
-        "suppress_event maximize, match:class .*"
-        "opacity 0.0 override, match:class ^(xwaylandvideobridge)$"
-        "no_anim on, match:class ^(xwaylandvideobridge)$"
-        "no_initial_focus on, match:class ^(xwaylandvideobridge)$"
-        "max_size 1 1, match:class ^(xwaylandvideobridge)$"
-        "no_blur on, match:class ^(xwaylandvideobridge)$"
-        "no_focus on, match:class ^(xwaylandvideobridge)$"
+        # IMP:STEAM FULL SCREEN:
         "fullscreen on, match:class ^(steam_app_[0-9]+)$"
 
 
-        # "float on, size 28% 65%, move 65% 3%, match:class ^(com.mitchellh.ghostty)$$   , match:title ^(nmtui-term)   $$"
-        "float on, size 28% 65%, move 65% 3%, match:title ^(NMTUI-󱛆 )$"
 
-        "float on, match:title ^(floating-ghostty)$"
-        "size 60% 35%, match:title ^(floating-ghostty)$"
-        "move 20% 5%, match:title ^(floating-ghostty)$"
+        #G: commands:
+        # hyprctl clients 
+        # hyprctl clients + grep awk and all.
+
+
+
+        # Y:  COMMENTED OUT MOST BECAUSE WE DONT KNOW WHAT IS THER USE:
+        # "opacity 0.3, match:class SpecialOverlay" # Assuming no regex needed; add ^$ if required
+        # Original: windowrule=border_size 0, match:floating 1, match:workspace w[t1]
+        # Corrected:
+        # "border_size 0, match:float true, match:workspace w[t1]" # Or "match:workspace name:w[t1]" if it's a named workspace
+        # Original: windowrule=no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:floating 1, match:fullscreen 0, match:pin 0
+        # Corrected:
+        # "no_focus on, match:class ^$, match:title ^$, match:xwayland true, match:float true, match:fullscreen false, match:pin false"
+        #
+        # "float on, match:class (mpv)|(imv)|(showmethekey-gtk)"
+        # "move 990 60, size 900 170, pin on, no_initial_focus on, match:class (showmethekey-gtk)"
+        # "border_size 0, no_focus on, match:class (showmethekey-gtk)" # Converted noborder to border_size 0 (common equivalent)
+        # # "suppress_event maximize, match:class .*"
+        # "opacity 0.0 override, match:class ^(xwaylandvideobridge)$"
+        # "no_anim on, match:class ^(xwaylandvideobridge)$"
+        # "no_initial_focus on, match:class ^(xwaylandvideobridge)$"
+        # "max_size 1 1, match:class ^(xwaylandvideobridge)$"
+        # "no_blur on, match:class ^(xwaylandvideobridge)$"
+        # "no_focus on, match:class ^(xwaylandvideobridge)$"
 
 
         # Y: not working anymore
