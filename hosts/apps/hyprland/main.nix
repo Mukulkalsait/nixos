@@ -119,9 +119,9 @@
 
       windowrule = [
         # Nmtui popup Y: not workign this also
-        "float on, match:title ^(nmtui-term)$"
-        "size 28% 65%, match:title ^(nmtui-term)$"
-        "move 65% 3%, match:title ^(nmtui-term)$"
+        "float on, match:title ^(IWD-Impala 󱛆 )$"
+        "size 28% 65%, match:title ^(IWD-Impala 󱛆 )$"
+        "move 65% 3%, match:title ^(IWD-Impala 󱛆 )$"
         "opacity 0.3, match:class SpecialOverlay" # Assuming no regex needed; add ^$ if required
 
         # Original: windowrule=border_size 0, match:floating 1, match:workspace w[t1]
