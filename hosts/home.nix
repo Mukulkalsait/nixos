@@ -17,14 +17,14 @@
   # enable XDG Support:
   xdg.enable = true;
 
-  xdg.desktopEntries.kitty = {
-    name = "Kitty";
-    genericName = "Terminal";
-    exec = "${pkgs.kitty}/bin/kitty";
-    icon = "kitty";
-    type = "Application";
-    categories = [ "System" "TerminalEmulator" ];
-  };
+  # xdg.desktopEntries.kitty = {
+  #   name = "Kitty";
+  #   genericName = "Terminal";
+  #   exec = "${pkgs.kitty}/bin/kitty";
+  #   icon = "kitty";
+  #   type = "Application";
+  #   categories = [ "System" "TerminalEmulator" ];
+  # };
 
   # default apps: 
   xdg.mimeApps.defaultApplications = {
