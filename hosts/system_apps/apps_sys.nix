@@ -8,8 +8,10 @@
     file # shows file tipe
     wl-clipboard # System wide clipboard
     cliphist # clipboard history manager
-    iw # internet wifi for IWD in ./hardware_and_services.nix
-    impala # IW frontend TUI : Required IW
+    # nmux # nmtui Refreshed.=
+    # iw # internet wifi for IWD in ./hardware_and_services.nix
+    # impala # IW frontend TUI : Required IW
+    wiremix # another tui for audio:=
     # copyq # Clipboard manager
 
     # G: CLI Utils |>

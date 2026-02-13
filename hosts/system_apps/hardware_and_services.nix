@@ -1,7 +1,7 @@
 # Y: Hardware Services
 { pkgs, ... }: {
   # G:  Networking and DNS resolver. =============================================================================
-  systemd.network.enable = true; # systemd-networkd. only on if IWD is enable not needed for NMCLI.
+  # systemd.network.enable = true; # systemd-networkd. only on if IWD is enable not needed for NMCLI.
 
   networking = {
     hostName = "PredatorNix"; # our Hostname
@@ -14,22 +14,22 @@
     ];
 
     # IWD --------------------------------
-    wireless.iwd = {
-      enable = true; # Gives IWCTL
-      settings = {
-        General = {
-          EnableNetworkConfiguration = true; # Auto IP configure every time.
-        };
-        Settings = {
-          AutoConnect = true; # Reconnect on restart.
-        };
-      };
-    };
+    # wireless.iwd = {
+    #   enable = true; # Gives IWCTL
+    #   settings = {
+    #     General = {
+    #       EnableNetworkConfiguration = true; # Auto IP configure every time.
+    #     };
+    #     Settings = {
+    #       AutoConnect = true; # Reconnect on restart.
+    #     };
+    #   };
+    # };
     # IWD --------------------------------
 
     # IMP: NMCLI : Network Manager Disabled => still keep it supports DHCP. 
-    # networkmanager.enable = true;
-    # networkmanager.dns = "systemd-resolved"; # CostumeDNS => systemd.resolver
+    networkmanager.enable = true;
+    networkmanager.dns = "systemd-resolved"; # CostumeDNS => systemd.resolver
 
   };
 
