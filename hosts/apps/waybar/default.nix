@@ -125,7 +125,8 @@
             "car" = "📇";
             "default" = [ "🔈" "🔉" "🔊" ];
           };
-          on-click = "pavucontrol";
+          # on-click = "pavucontrol";
+          on-click = "~/.config/hypr/scripts/floating_audio.sh";
         };
 
         "network" = {
