@@ -2,7 +2,8 @@
 
 # If impala exists → kill it
 if hyprctl clients | grep -q "class: wiremix"; then
-  pkill -f "kitty --class=\"wiremix\""
+  # hyprctl dispatch closewindow class:wiremix &&
+  pkill -f "kitty --class=wiremix"
 else
   kitty --class="wiremix" --title="WireMix-Audio 📢 " -e wiremix &
   sleep 0.07
