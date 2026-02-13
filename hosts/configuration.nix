@@ -20,15 +20,15 @@
   # IMP: INPUT METHODS + input Selector
   i18n.defaultLocale = "en_US.UTF-8"; # Input Method.
 
-  # i18n.inputMethod = {
-  #   enabled = "fcitx5";
-  #   fcitx5.addons = with pkgs; [
-  #     fcitx5-m17n # Y:  Hindi/Marathi transliteration
-  #     fcitx5-gtk # GTK apps
-  #     libsForQt5.fcitx5-qt # Qt5 apps
-  #     qt6Packages.fcitx5-qt # Qt6 apps
-  #   ];
-  # };
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-m17n # Y:  Hindi/Marathi transliteration
+      fcitx5-gtk # GTK apps
+      libsForQt5.fcitx5-qt # Qt5 apps
+      qt6Packages.fcitx5-qt # Qt6 apps
+    ];
+  };
 
 
   # DX: don not change after this --------------------------------------------------------------------------------------------------------------------------------|
