@@ -23,11 +23,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    # Stylix: (*)
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # # Stylix: (*)
+    # stylix = {
+    #   url = "github:danth/stylix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # ZEN Browser: 
     zen-browser = {
