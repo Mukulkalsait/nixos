@@ -33,6 +33,18 @@
   #   ];
   # };
 
+  # Y: Language settings:
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-m17n
+      fcitx5-gtk
+    ];
+  };
+
+
+
+
 
   # script = ''
   #   chmod o+x /home/mukuldk
