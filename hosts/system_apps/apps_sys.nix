@@ -1,5 +1,5 @@
 # Y:  Define the SYSTEM WIDE APPS
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
 
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -8,10 +8,8 @@
     file # shows file tipe
     wl-clipboard # System wide clipboard
     cliphist # clipboard history manager
-    # nmux # nmtui Refreshed.=
-    # iw # internet wifi for IWD in ./hardware_and_services.nix
-    # impala # IW frontend TUI : Required IW
     wiremix # another tui for audio:=
+    inputs.wifitui.packages.${pkgs.system}.default # Y :WIFITUI
     # copyq # Clipboard manager
 
     # G: CLI Utils |>
