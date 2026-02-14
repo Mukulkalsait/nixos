@@ -125,6 +125,7 @@
         # "float on, size 537 780, move 1248 36, match:class ^iwd-impala$"
         "float on,  match:class ^nmtui$"
         "float on,  match:class ^wiremix$"
+        "float on,  match:class ^wifitui$"
 
         # IMP:STEAM FULL SCREEN:
         "fullscreen on, match:class ^(steam_app_[0-9]+)$"
