@@ -8,6 +8,27 @@
     # /etc/nixos/hosts/system_apps/virtualisation.nix => Docker and MiniKube
     # /etc/nixos/hosts/apps/stylix.nix =>
     # /etc/nixos/hosts/apps/neovim.nix => LSP's, Langs, npm packages.
+    #
+    #
+    #
+
+    # ----------------------------------------------------------------
+    # Apps From stylix page.
+    dejavu_fonts
+    jetbrains-mono
+    noto-fonts
+    noto-fonts-color-emoji
+    font-awesome
+    powerline-fonts
+    powerline-symbols
+    pkgs.nerd-fonts.symbols-only
+    corefonts
+
+    nautilus # File manager
+    gnome-control-center # Settings panel
+    adwaita-icon-theme # GNOME default icons
+    lxappearance
+    # ----------------------------------------------------------------
 
     # DX: Hyprland + Plugins |>
     wev # input event check + debug, <keyboard, mouse>
@@ -80,13 +101,10 @@
     easyeffects # Poweramp EQ enspired Equaliser.
     sxiv # image previewer basic
     pinta # D.Photo editor
-    # kdePackages.kdenlive # DX: too hesele to add.
     shotcut
 
     # G: Android Relates |>
     android-tools # adb
-    # libsForQt5.kdeconnect-kde # kde connect for android connection
-    # indicator-kdeconnect # Android connecti helper.
 
     # B: Desktop GUI apps:
     mission-center # Task Manager
