@@ -42,6 +42,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # wifiTUI:
+    wifitui = {
+      url = "github:shazow/wifitui";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   nixConfig = {
@@ -72,7 +78,7 @@
           ./hosts/configuration.nix
 
           # Y: NUR overlay
-          # { nixpkgs.overlays = [ nur.overlays.default ]; }
+          { nixpkgs.overlays = [ nur.overlays.default ]; }
 
 
           # Hyperland setup
