@@ -9,10 +9,10 @@
   stylix.targets.wofi.enable = false;
   stylix.targets.hyprland.enable = false;
   stylix.targets.hyprlock.enable = false;
+  stylix.targets.gtk.enable = true;
+
 
   # Let Stylix handle Qt/GTK theming automatically
-  stylix.targets.qt.enable = true;
-  stylix.targets.gtk.enable = true;
 
   home.packages = with pkgs; [
     dejavu_fonts
@@ -25,10 +25,24 @@
     pkgs.nerd-fonts.symbols-only
     corefonts
 
+    nautilus # File manager
+    gnome-control-center # Settings panel
+    gnome-text-editor # Simple GTK editor
+    adwaita-icon-theme # GNOME default icons
+
+
     # Optional: Add these if you want to use Kvantum Manager manually
-    libsForQt5.qtstyleplugin-kvantum
-    qt6Packages.qtstyleplugin-kvantum
   ];
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome.adwaita-icon-theme;
+    };
+  };
+
+
 
   stylix = {
     enable = true;
