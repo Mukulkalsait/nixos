@@ -27,20 +27,9 @@
 
     nautilus # File manager
     gnome-control-center # Settings panel
-    gnome-text-editor # Simple GTK editor
     adwaita-icon-theme # GNOME default icons
 
-
-    # Optional: Add these if you want to use Kvantum Manager manually
   ];
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.adwaita-icon-theme;
-    };
-  };
 
 
 
@@ -86,6 +75,4 @@
     };
   };
 
-  # DO NOT configure qt.* here - let Stylix handle it completely
-  # qt = { ... };  # REMOVE THIS ENTIRE SECTION
 }
