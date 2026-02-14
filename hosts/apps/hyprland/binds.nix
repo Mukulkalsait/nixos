@@ -41,7 +41,9 @@
       "$mainMod, N, exec, $TERMINAL -e $EDITOR" # Nvim
       "$mainMod, E, exec, $KTERM -e $FILEMANAGER" # yazi on kitty
       "$mainMod, PERIOD , exec, rofimoji" # yazi
-      "$mainMod, W, exec, ~/.config/hypr/scripts/floating_network.sh"
+      "$mainMod, W, exec, ~/.config/hypr/scripts/floating_network1.sh"
+      "$mainMod SHIFT, N, exec, ~/.config/hypr/scripts/floating_network.sh"
+
       "$mainMod, A, exec, ~/.config/hypr/scripts/floating_audio.sh"
       # "$mainMod, W, exec, hyprctl clients | grep iwd-impala && hyprctl dispatch closewindow class:iwd-impala || $KTERM --class=\"iwd-impala\" --title=\"IWD-Impala 󱛆 \" -e impala"
 
