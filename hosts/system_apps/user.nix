@@ -1,7 +1,7 @@
 # Y:  define the users
 { pkgs, ... }: {
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # B: Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mukuldk = {
     isNormalUser = true;
     extraGroups = [
@@ -18,6 +18,20 @@
     packages = with pkgs; [ zsh ];
   };
 
+  # G: Lang & INPUT METHODS + input Selector
+  i18n = {
+    defaultLocale = "en_US.UTF-8"; # Input Method.
+    inputMethod = {
+      enabled = "fcitx5";
+      fcitx5.addons = with pkgs; [
+        fcitx5-m17n
+        fcitx5-gtk
+      ];
+    };
+  };
+
+
+
   # IMP: SD MOUNNTING PERMENANT
   # fileSystems."/home/mukuldk/1_file/8_MOUNTINGS/SD_512" = {
   #   device = "UUID=9C33-6BBD";
@@ -33,24 +47,6 @@
   #   ];
   # };
 
-  # Y: Language settings:
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-m17n
-      fcitx5-gtk
-    ];
-  };
-
-
-
-
-
-  # script = ''
-  #   chmod o+x /home/mukuldk
-  #   chmod o+rx /home/mukuldk/1_file /home/mukuldk/1_file/3_Repos_All/
-  #   chmod -R o+rx /home/mukuldk/1_file/3_Repos_All/0_LIVE_Projects/
-  # '';
 
 }
 
