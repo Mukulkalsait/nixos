@@ -13,7 +13,6 @@
     wev # input event check + debug, <keyboard, mouse>
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
-    pcmanfm-qt # FILE MANAGER WHICH TRIGGERS WHEN BROWSE BUTTON CLICKED
     papirus-icon-theme # Themes pack for menu
     swww # Walpaper
     hyprshot # Screenshot
@@ -57,6 +56,11 @@
     mtr # my trace route
     # bottom # TUI task manager BTOP is best
     lazysql # db TUI
+    tig # GIT Digger
+    lnav # Log File NAVigator
+    termshark #Wireshark cli
+    fx # json viewer.
+    sniffnet # cross platform monitor for Trafic 
 
     # G: NIX-Related |>
     zsh-nix-shell # enable zsh in nixshell.
@@ -67,7 +71,6 @@
     # R: TUI |>
     dua # rust disk utility use " dua i " intereative.
     dust # Disk space shower.
-    pv # pipe viwer = shows prograssbar when used with pype.
     # adbfs-rootless # adm-mount
 
     # B: Media & essentials |>
@@ -114,14 +117,6 @@
   #   package = pkgs.rofi-wayland;
   # };
 
-  qt = {
-    enable = true;
-    # platformTheme.name = "gtk";
-    # style = {
-    #   package = pkgs.adwaita-qt;
-    #   name = "adwaita-dark";
-    # };
-  };
 
   # Y: Clipboard Config
   systemd.user.services.cliphist-watcher = {
