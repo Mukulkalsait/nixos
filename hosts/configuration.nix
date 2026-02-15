@@ -17,8 +17,6 @@
   # IMP: TimeZone.
   time.timeZone = "Asia/Kolkata"; # TimeZone.
 
-  # IMP: INPUT METHODS + input Selector
-  i18n.defaultLocale = "en_US.UTF-8"; # Input Method.
 
 
   # DX: don not change after this --------------------------------------------------------------------------------------------------------------------------------|
