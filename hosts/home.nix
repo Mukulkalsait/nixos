@@ -11,8 +11,19 @@
   home.homeDirectory = "/home/mukuldk";
   home.stateVersion = "25.05";
 
+
   programs.home-manager.enable = true;
-  programs.zen-browser = { enable = true; };
+
+  # Y: ZEN Browser.
+  programs.zen-browser = {
+    enable = true;
+
+    profiles.mukul = {
+      id = 0;
+      isDefault = true;
+    };
+  };
+
 
   # enable XDG Support:
   xdg.enable = true;
