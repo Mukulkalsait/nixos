@@ -1,6 +1,6 @@
 # Y: Home Packages
 
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, zen-browser, ... }: {
 
   home.packages = with pkgs; [
     # OTHER app installation LOCATIONS |>
@@ -107,7 +107,7 @@
     android-tools # adb
 
     # B: Desktop GUI apps:
-    zen-twilight
+    inputs.zen-browser.packages.${pkgs.system}.default
     mission-center # Task Manager
     libreoffice-fresh # community driven latest version fo libreoffice.
     scrcpy # Same for above
