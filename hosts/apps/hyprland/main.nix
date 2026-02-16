@@ -12,7 +12,7 @@
       "$FILEMANAGER" = "$terminal -e sh -c 'yazi'";
       "$EDITOR" = "nvim";
       "$VISUAL" = "nvim";
-      "$BROWSER" = "zen";
+      "$BROWSER" = "zen-twilight";
       # "$BROWSER" = "zen-twilight";
       "$TASKMANAGER" = "missioncenter";
 
