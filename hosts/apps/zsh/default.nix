@@ -8,6 +8,7 @@
 
   programs.zsh = {
     enable = true;
+    dotDir = "${config.xdg.configHome}/zsh";
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -76,6 +77,8 @@
         # IMP: config non NIX nor imported because they download there own files.
         yaziConfig = "nvim /home/mukuldk/.config/yazi/";
         sshConfig = "nvim /home/mukuldk/.ssh/config";
+
+        catZ = "cat /home/mukuldk/.config/zsh/.zshrc";
 
         # Y: Movements
         cdN = "cd /etc/nixos/";
