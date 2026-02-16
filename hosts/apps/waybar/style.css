@@ -13,8 +13,7 @@ window#waybar {
 #clock,
 #pulseaudio,
 #window,
-#network,
-#tray {
+#network {
   padding: 0px 12px;
   margin: 3px 3px;
   background: rgba(0, 0, 0, 0.85);
@@ -26,6 +25,10 @@ window#waybar {
 #tray {
   color: #d65d0e;
   border-color: #d65d0e;
+  padding: 0px 6px;
+  margin: 3px 3px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 2pt 2pt 2pt 2pt;
 }
 
 /* G:  ====================================================================== */
