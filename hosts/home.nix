@@ -17,9 +17,9 @@
   # Y: ZEN Browser.
   programs.zen-browser = {
     enable = true;
-
     profiles.mukul = {
       id = 0;
+      name = "mukul";
       isDefault = true;
     };
   };
