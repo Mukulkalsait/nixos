@@ -25,7 +25,7 @@
     corefonts
 
     nautilus # File manager
-    gnome-control-center # Settings panel
+    # gnome-control-center # Settings panel
     adwaita-icon-theme # GNOME default icons
     lxappearance
     # ----------------------------------------------------------------
@@ -107,6 +107,7 @@
     android-tools # adb
 
     # B: Desktop GUI apps:
+    zen-twilight
     mission-center # Task Manager
     libreoffice-fresh # community driven latest version fo libreoffice.
     scrcpy # Same for above
