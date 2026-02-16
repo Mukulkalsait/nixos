@@ -12,7 +12,7 @@
         exclusive = true;
         passthrough = false;
         reload_style_on_change = true;
-        modules-left = [ "hyprland/workspaces" "tray" "cpu" "memory" "clock" "hyprland/window" ];
+        modules-left = [ "hyprland/workspaces" "cpu" "memory" "clock" "tray" "hyprland/window" ];
         modules-center = [ ];
         modules-right = [ "network" "pulseaudio" "temperature" "backlight" "battery" ];
 
