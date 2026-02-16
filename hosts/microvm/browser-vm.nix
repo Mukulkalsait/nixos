@@ -7,14 +7,17 @@
     hypervisor = "qemu";
 
     vcpu = 2;
-    mem = 2048;
+    mem = 3072;
 
     volumes = [
       {
-        mountPoint = "/var";
-        size = 2048;
+        mountPoint = "/";
+        image = "root.img";
+        size = 8192; # 8GB
       }
     ];
+
+
 
     shares = [
       {
