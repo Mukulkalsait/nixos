@@ -7,7 +7,8 @@
     hypervisor = "qemu";
 
     vcpu = 2;
-    mem = 3072;
+    memory = 3072;
+
 
     volumes = [
       {
@@ -19,18 +20,11 @@
 
 
 
-    shares = [
-      {
-        source = "/nix/store";
-        mountPoint = "/nix/store";
-        tag = "ro-store";
-        proto = "virtiofs";
-      }
-    ];
+    shares = [ ];
   };
 
   environment.systemPackages = with pkgs; [
-    tor-browser-bundle-bin
+    tor-browser
   ];
 
   services.getty.autologinUser = "root";
