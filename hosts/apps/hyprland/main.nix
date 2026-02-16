@@ -12,7 +12,8 @@
       "$FILEMANAGER" = "$terminal -e sh -c 'yazi'";
       "$EDITOR" = "nvim";
       "$VISUAL" = "nvim";
-      "$BROWSER" = "zen-twilight";
+      "$BROWSER" = "zen";
+      # "$BROWSER" = "zen-twilight";
       "$TASKMANAGER" = "missioncenter";
 
       env = [
