@@ -22,11 +22,15 @@
     # B: CONTAINER-TOOLS |>
     # lazydocker # TUI lazy Docker.
     dive # TUI Docker Images Layers.
-    gomanagedocker # go manage doker/podman
     podman-tui # TUI Tool for Podman Specific.
+    podman-desktop # temp
     podman-compose # podman compose to compose file.
+    skopeo # image inspection tool ( skopeo  inspect ) local + online everyting.
     ctop # Top utility for Containerisation.
-    buildah # podman compose lieke another thign.
+    buildah # Most Powerfull Image Builder Used by Podman while "podman build -t ." running. 
+
+    # gomanagedocker # go manage doker/podman
+
 
     # G: Kubernetes-Tools |>
     kind # Kubernetes IN Docker.
