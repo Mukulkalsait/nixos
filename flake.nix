@@ -23,11 +23,12 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    # # Stylix: (*)
-    # stylix = {
-    #   url = "github:danth/stylix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    # microvm
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
 
     # ZEN Browser: 
     zen-browser = {
@@ -48,6 +49,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+
   };
 
   nixConfig = {
@@ -61,56 +63,64 @@
     ];
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, nur, nixpkgs-terraform, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, nur, nixpkgs-terraform, microvm, ... }@inputs:
     let
       # Y: VARIALBES =>
       system = "x86_64-linux";
 
     in
     {
-      nixosConfigurations.PredatorNix = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit inputs;
-          user = "mukuldk";
+      nixosConfigurations = {
+
+        PredatorNix = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs;
+            user = "mukuldk";
+          };
+          modules = [
+            ./hosts/configuration.nix
+            { nixpkgs.overlays = [ nur.overlays.default ]; } # Y: NUR overlay
+
+            {
+              programs.hyprland.enable = true;
+              programs.hyprland.package =
+                hyprland.packages.${system}.hyprland;
+              programs.hyprland.portalPackage =
+                hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+            }
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.mukuldk =
+                import ./hosts/home.nix;
+            }
+
+            # terraform
+            # {
+            #   nixpkgs = {
+            #     overlays = [ inputs.nixpkgs-terraform.overlays.default ];
+            #     config.allowUnfree = true;
+            #   };
+            # }
+          ];
         };
-        modules = [
-          ./hosts/configuration.nix
 
-          # Y: NUR overlay
-          { nixpkgs.overlays = [ nur.overlays.default ]; }
+        browser-vm = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            microvm.nixosModules.microvm
+            ./hosts/microvm/browser-vm.nix
+          ];
+        };
 
-
-          # Hyperland setup
-          {
-            programs.hyprland.enable = true;
-            programs.hyprland.package = hyprland.packages.${system}.hyprland;
-            programs.hyprland.portalPackage =
-              hyprland.packages.${system}.xdg-desktop-portal-hyprland;
-          }
-
-          # Home-Manager as nixos module.
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.mukuldk = import ./hosts/home.nix;
-          }
-
-          # terraform
-          # {
-          #   nixpkgs = {
-          #     overlays = [ inputs.nixpkgs-terraform.overlays.default ];
-          #     config.allowUnfree = true;
-          #   };
-          # }
-
-
-
-        ];
       };
     };
+
 }
+
 
