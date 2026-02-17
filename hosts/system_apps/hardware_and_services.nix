@@ -95,24 +95,22 @@
     criticalPowerAction = "PowerOff"; # Changed to PowerOff for reliability
   };
 
+
+
   # Logind settings
-  services.logind = {
-    lidSwitch = "suspend";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
+  services.logind.settings.Login = {
 
-    settings.Login = {
+    HandlePowerKey = "ignore";
+    HandleSuspendKey = "suspend";
+    HandleHibernateKey = "hibernate";
 
-      HandlePowerKey = "ignore";
-      HandleSuspendKey = "suspend";
-      HandleHibernateKey = "hibernate";
+    HandleLidSwitch = "suspend";
+    # HandleLidSwitch = "ignore";
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
 
-      HandleLidSwitch = "suspend";
-      HandleLidSwitchExternalPower = "ignore";
-
-      IdleAction = "ignore";
-      IdleActionSec = "30min";
-    };
+    IdleAction = "ignore";
+    IdleActionSec = "30min";
   };
 
 
