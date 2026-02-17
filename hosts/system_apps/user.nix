@@ -22,7 +22,8 @@
   i18n = {
     defaultLocale = "en_US.UTF-8"; # Input Method.
     inputMethod = {
-      enabled = "fcitx5";
+      enable = true;
+      type = "fcitx5";
       fcitx5.addons = with pkgs; [
         fcitx5-m17n
         fcitx5-gtk
