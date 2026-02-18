@@ -7,6 +7,7 @@
     hypervisor = "qemu";
     vcpu = 2; # 2cpu
     mem = 3072; # 3Gb
+    graphics.enable = true;
     shares = [ ];
     volumes = [{
       mountPoint = "/";
