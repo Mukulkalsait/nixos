@@ -16,11 +16,20 @@
     }];
   };
 
-  services.getty.autologinUser = "root";
-
   services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
+  services.xserver.displayManager.lightdm.enable = true; # Display manager
+  services.xserver.displayManager.defaultSession = "none+openbox";
+
   services.xserver.windowManager.openbox.enable = true;
+  services.xserver.libinput.enable = true; # keyboard input
+
+  services.getty.autologinUser = "null"; # primarrly set to root.
+
+  users.users.tor = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "video" ];
+    password = "asdf";
+  };
 
   environment.systemPackages = with pkgs; [
     tor-browser
