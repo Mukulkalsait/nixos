@@ -14,7 +14,11 @@
       image = "root.img";
       size = 8192; # 8GB
     }];
-    interfaces = [{ type = "user"; id = "vmnat0"; }];
+    interfaces = [{
+      type = "user";
+      id = "vmnat0";
+      mac = "02:00:00:00:00:01";
+    }];
 
     # TMPFS = FS in TMP folder 
     # fileSystems."/" = {
@@ -42,16 +46,17 @@
   # Display
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true; # Display manager
-  services.xserver.displayManager.defaultSession = "none+openbox";
+  services.displayManager.defaultSession = "none+openbox";
 
   services.xserver.windowManager.openbox.enable = true;
-  services.xserver.libinput.enable = true; # keyboard input
+  services.libinput.enable = true; # keyboard input
 
   services.getty.autologinUser = "null"; # primarrly set to root.
   services.tor = { enable = true; client.enable = true; };
 
-  users.users.tor = {
+  users.users.toruser = {
     isNormalUser = true;
+    description = "Tor Browser User";
     extraGroups = [ "video" ];
     password = "asdf";
   };
