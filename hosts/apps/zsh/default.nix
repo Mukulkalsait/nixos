@@ -79,7 +79,7 @@
         sshConfig = "nvim /home/mukuldk/.ssh/config";
         catZ = "cat /home/mukuldk/.config/zsh/.zshrc";
         # B: DarkNet-Starter
-        DarkNet = "cd /home/mukuldk/MicroVM/ && nix run /etc/nixos#nixosConfigurations.browser-vm.config.microvm.declaredRunner";
+        DarkNet = "cd /home/mukuldk/MicroVM/ && nix run /etc/nixos#nixosConfigurations.dark-net.config.microvm.declaredRunner";
 
         # Y: Movements
         cdN = "cd /etc/nixos/";
