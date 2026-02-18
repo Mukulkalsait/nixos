@@ -1,8 +1,8 @@
-# Y:  zsh.nix
+# Y:  ~/.config/zsh/zsh.nix
 
 { lib, config, pkgs, ... }: {
 
-  # Y: 👇 in .comfig/zsh/scripts/y.sh put this file 👇
+  # Y: 👇 in .config/zsh/scripts/y.sh put this file 👇
   #
   home.file.".config/zsh/scripts/y.sh".source = ./scripts/y.sh; #yaxi = y script
 
@@ -25,7 +25,7 @@
       in {
 
         clip = "cliphist list | rofi -dmenu -p 'Clip' | cliphist decode | wl-copy";
-        # wA = "bat /home/mukuldk/.zshrc";
+        # wA = "bat /home/mukuldk/.config/zsh/.zshrc";
         # G: Aliases 
         rm = "rm -iv";
         gpu = "git push";
@@ -88,7 +88,7 @@
         cdD = "cd /home/mukuldk/1_file/5_ZenDownloads/";
 
         # Y: resource:
-        resource = "source /home/mukuldk/.zshrc";
+        resource = "source /home/mukuldk/.config/zsh/.zshrc";
 
         # Y: costome
         # sysnmpp = "sudo systemctl start nginx php8.4-fpm && sudo systemctl status nginx php8.4-fpm ";
@@ -207,7 +207,7 @@
         # spfConfig="nvim ~/.config/superfile/config.toml";
         # dumpNvimConfig="cp -rv /home/mukuldk/.config/nvim /mnt/i/5.WSL/mukuldk"
         # dumpWezConfig="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /mnt/i/5.WSL/mukuldk"
-        # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
+        # dumpDotFiles="cp -rv /mnt/c/Users/mdk12/.wezterm.lua /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zsh/.zshrc /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/  && cp -rv /home/mukuldk/.config/zellij/config.kdl /home/mukuldk/1Home/1.Configs_All/2.config_Online/dotfiles-test/userFolder/ "
         # sysnmpp="sudo systemctl start nginx mysql php8.4-fpm "
         # systnmpp="sudo systemctl stop nginx mysql php8.4-fpm "
         # nvimConfig="sudo nvim /etc/nixos/hosts/apps/.config_local/nvim/"; # Y: keept here if i want to make it inside nix i will use it.
