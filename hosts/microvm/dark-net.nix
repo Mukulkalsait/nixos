@@ -14,10 +14,32 @@
       image = "root.img";
       size = 8192; # 8GB
     }];
+    interfaces = [{ type = "user"; id = "vmnat0"; }];
 
+    # TMPFS = FS in TMP folder 
+    # fileSystems."/" = {
+    #   device = "tmpfs";
+    #   fsType = "tmpfs";
+    # };
   };
 
+  # Networking
+  services.resolved.enable = true;
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  networking.useNetworkd = true;
   networking.useDHCP = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ ];
+    extraCommands = ''
+      iptables -A OUTPUT -m owner --uid-owner tor -j ACCEPT
+      iptables -A OUTPUT -d 127.0.0.1  -j ACCEPT
+      iptables -A OUTPUT -j REJECT
+
+    '';
+  };
+
+  # Display
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true; # Display manager
   services.xserver.displayManager.defaultSession = "none+openbox";
@@ -26,10 +48,11 @@
   services.xserver.libinput.enable = true; # keyboard input
 
   services.getty.autologinUser = "null"; # primarrly set to root.
+  services.tor = { enable = true; client.enable = true; };
 
   users.users.tor = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" ];
+    extraGroups = [ "video" ];
     password = "asdf";
   };
 
