@@ -14,8 +14,10 @@
       image = "root.img";
       size = 8192; # 8GB
     }];
+
   };
 
+  networking.useDHCP = true;
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true; # Display manager
   services.xserver.displayManager.defaultSession = "none+openbox";
