@@ -110,11 +110,11 @@
           ];
         };
 
-        browser-vm = nixpkgs.lib.nixosSystem {
+        dark-net = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             microvm.nixosModules.microvm
-            ./hosts/microvm/browser-vm.nix
+            ./hosts/microvm/dark-net.nix
           ];
         };
 
