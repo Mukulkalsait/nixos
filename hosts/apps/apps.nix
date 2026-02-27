@@ -10,22 +10,6 @@
     # /etc/nixos/hosts/apps/neovim.nix => LSP's, Langs, npm packages.
 
     # ----------------------------------------------------------------
-    # Apps From stylix page.
-    dejavu_fonts
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-    noto-fonts-color-emoji
-    font-awesome
-    powerline-fonts
-    powerline-symbols
-    pkgs.nerd-fonts.symbols-only
-    corefonts
-
-    nautilus # File manager
-    # gnome-control-center # Settings panel
-    adwaita-icon-theme # GNOME default icons
-    lxappearance
-    # ----------------------------------------------------------------
 
     # DX: Hyprland + Plugins |>
     wev # input event check + debug, <keyboard, mouse>
@@ -44,17 +28,30 @@
     # w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
 
     # Y: Hardware Control |>
-    brightnessctl # brightness controller
-    playerctl # media controller
     pavucontrol # All audio IO gui tool very usefull.⭐
+    playerctl # media controller
 
-    # Y: Lang (Programing) |>
-    nodejs # node js
-    go # go-lang
-    php # php
-    bun # bun replacement for npm.
-    (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
-    uv # PIP replacement. python package /dependency manager.
+    # G: Android Relates |>
+    android-tools # adb
+
+    # B: Fonts.
+
+    noto-fonts # 800+ fonts all (hindi/marathi)
+    noto-fonts-color-emoji
+    font-awesome # way-bar and all
+    corefonts # MS-office fonts
+
+    # fonts with LIGATURE (=== !+ => -> |- =| |> )
+    nerd-fonts.jetbrains-mono
+    # nerd-fonts.cascadia-code MISSING
+    nerd-fonts.iosevka
+    nerd-fonts.victor-mono
+    nerd-fonts.monaspace
+
+    # dejavu_fonts
+    # powerline-fonts
+    # powerline-symbols
+    # pkgs.nerd-fonts.symbols-only
 
     # ID: Terminal |>
     ghostty
@@ -62,23 +59,17 @@
     zellij
     # tmux
 
-    # ID: Editors.
-    # vscode
-    # code-cursor
-
-    # B: CLI Essentilas |>
-    nginx # Reverse Proxy Server
-    bat # modern cat
+    # R: NETWORKING |>
     rustscan # rust port scanner
     dig # network tool
     mtr # my trace route
-    # bottom # TUI task manager BTOP is best
-    lazysql # db TUI
-    tig # GIT Digger
-    lnav # Log File NAVigator
+
+    # B: CLI Essentilas |>
+    bat # modern cat
     termshark #Wireshark cli
     fx # json viewer.
     sniffnet # cross platform monitor for Trafic 
+    # nginx # Reverse Proxy Server
 
     # G: NIX-Related |>
     zsh-nix-shell # enable zsh in nixshell.
@@ -89,6 +80,11 @@
     # R: TUI |>
     dua # rust disk utility use " dua i " intereative.
     dust # Disk space shower.
+    glow # TUI for markdown files 
+    lazysql # db TUI
+    tig # GIT Digger
+    lnav # Log File NAVigator
+    # bottom # TUI task manager BTOP is best
     # adbfs-rootless # adm-mount
 
     # B: Media & essentials |>
@@ -98,10 +94,11 @@
     easyeffects # Poweramp EQ enspired Equaliser.
     sxiv # image previewer basic
     pinta # D.Photo editor
-    shotcut
-
-    # G: Android Relates |>
-    android-tools # adb
+    shotcut # Video Editor
+    nautilus # File manager
+    adwaita-icon-theme # GNOME default icons
+    lxappearance
+    # gnome-control-center # FullSettingPannel -> need to much changes in config.
 
     # B: Desktop GUI apps:
     inputs.zen-browser.packages.${pkgs.system}.default
@@ -112,6 +109,9 @@
     # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
 
+    # ID: Editors.
+    # vscode
+    # code-cursor
 
     # TAG: REFERENCES |>
     # anydesk # desktop Connection Creater
@@ -156,7 +156,6 @@
       obs-backgroundremoval
     ];
   };
-
 
   # DB perms for root sharing (optional, runs on switch)
   home.activation.setupCliphistDB = config.lib.dag.entryAfter [ "writeBoundary" ] ''
