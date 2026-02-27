@@ -14,7 +14,8 @@
 
     # Y: Files
     ./apps.nix
-    ./costomeScript.nix
+    ./themes.nix
+    # ./costomeScript.nix
     ./sessionPath_n_Variables.nix
     ./git.nix
     ./fzf.nix
