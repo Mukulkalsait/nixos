@@ -49,7 +49,7 @@
 
         "cpu" = {
           interval = 2;
-          format = "{usage}%  |";
+          format = "{usage}%   |";
           min-length = 6;
         };
 
@@ -112,10 +112,13 @@
 
 
         "pulseaudio" = {
-          format = "{icon} {volume} {format_source}";
-          format-bluetooth = "🎧 {volume} {format_source}";
-          format-muted = "🔇 {format_source}";
-          format-source = "🎤 {volume}";
+          format = "{icon} {volume}";
+          format-bluetooth = "🎧 {volume}";
+          format-muted = "🔇";
+          # format = "{icon} {volume} {format_source}";
+          # format-bluetooth = "🎧 {volume} {format_source}";
+          # format-muted = "🔇 {format_source}";
+          # format-source = "🎤 {volume}";
           format-icons = {
             "headphones" = "🔈";
             "handsfree" = "🎧";
@@ -131,12 +134,13 @@
 
         "network" = {
           # interface = "wlp0s20f3"; # (Optional) To force the use of this interface
-          format-wifi = "|{essid}|{signalStrength}";
-          format-ethernet = "🖧 {ipaddr}/{cidr}";
-          format-linked = "󰩠 {ifname} (No-IP)";
-          format-disconnected = "  Disconnected";
+          format-wifi = "{icon} |{essid}|{signalStrength}";
+          format-icons = [ "󰤟 " "󰤥 " "󰸋 " "󱛇 " ];
+          format-ethernet = "🖧 |{ipaddr}/{cidr}";
+          format-linked = "󰩠 |{ifname} (No-IP)";
+          format-disconnected = " |Disconnected";
           # Y: |  󱛁 󱚾 󱛇 󰸋  󰤟 󰤥 󰤨 󰤪 |
-          tooltip-format = "{ifname}\nIP: {ipaddr}/{cidr}\nGW: {gwaddr}\nSignal: {signalStrength}%";
+          tooltip-format = "🔧|Interface: {ifname}\n🧲|IP       : {ipaddr}/{cidr}\n🃏|GW       : {gwaddr}\n🚦|Signal   : {signalStrength}%";
           # on-click = "sh -c 'hyprctl clients | grep iwd-impala && hyprctl dispatch closewindow class:iwd-impala || kitty --class=\"iwd-impala\" --title=\"IWD-Impala 󱛆 \" -e impala'";
           on-click = "~/.config/hypr/scripts/floating_network1.sh";
         };
@@ -150,12 +154,11 @@
           tooltip = true;
         };
 
-
         "backlight" = {
           device = "nvidia_wmi_ec_backlight";
-          format = "{icon} {percent}%";
-          format-icons = [ "󰁨" ];
-          min-length = 7;
+          format = "{icon}{percent}";
+          format-icons = [ "󰁨 " ];
+          min-length = 5;
         };
 
         "battery" = {
@@ -163,7 +166,7 @@
             warning = 30;
             critical = 10;
           };
-          format = "{icon} {capacity}";
+          format = "{icon}  {capacity}";
           format-charging = "⚡ {capacity}";
           format-alt = "{icon} {time}";
           format-icons = [ "" "" "" "" "" ];
