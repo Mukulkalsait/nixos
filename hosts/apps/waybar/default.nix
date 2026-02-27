@@ -25,17 +25,20 @@
           format = "{:%I:%M %p}";
           rotate = 0;
           format-alt = "{:%H:%M  %d-%m-%Y}";
-          tooltip-format = "<span>{calendar}</span>";
+          tooltip-format = "<tt>{calendar}</tt>";
           calendar = {
-            mode = "month";
+            mode = "year";
             mode-mon-col = 3;
+            weeks-pos = "";
             on-scroll = 1;
             on-click-right = "mode";
             format = {
               months = "<span color='#ffead3'><b>{}</b></span>";
               weekdays = "<span color='#ffbc77'><b>{}</b></span>";
-              today = "<span color='#ff6699'><b>{}</b></span>";
+              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+              days = "<span font_features='tnum=1'>{}</span>";
             };
+
           };
           "actions" = {
             on-click-right = "mode";
@@ -46,17 +49,19 @@
           };
         };
 
-
         "cpu" = {
           interval = 2;
           format = "{usage}%   |";
           min-length = 6;
+          tooltip = true;
+          tooltip-format = "🖥️ CPU Usage  : {usage}%\n 🔝 Max Core   : {max_frequency} GHz\n 🔽 Min Core   : {min_frequency} GHz\n ⚖️ Load Avg   : {load_avg}";
         };
 
         "memory" = {
           interval = 3;
           format = " {used} / {total} ";
           tooltip = true;
+          tooltip-format = "🧠 RAM Used   : {used} GiB\n 💾 RAM Total  : {total} GiB\n 🆓 Available  : {avail} GiB\n 📦 Swap Used  : {swapUsed} GiB\n 🔄 Swap Total : {swapTotal} GiB";
         };
 
 
@@ -67,7 +72,6 @@
           min-length = 5;
           tooltip = false;
         };
-
 
         "hyprland/workspaces" = {
           class = "no-margin-padding";
@@ -101,12 +105,13 @@
           separate-outputs = true;
 
           rewrite = {
-            "(.*)nvim*" = " Nvim"; # Neovim
-            "(.*)Kitty*" = " Kitty"; # Neovim
-            "(.*)WhatsApp Business - Zen Twilight" = "  Whatsapp"; # Zen Browser (Firefox-based)
-            "(.*)Yazi*" = " Yazi:*"; # Yazi file manager
-            "(.*)OBS Studio" = "󰻑 OBS"; # OBS
-            "(.*)Mission Center" = "󰨇 SysMon";
+            "(.*)nvim(.*)" = " Nvim"; # Neovim
+            "(.*)Kitty(.*)" = " Kitty"; # Neovim
+            "(.*)WhatsApp(.*)" = "📱 Whatsapp"; # Zen Browser (Firefox-based)
+            "(.*)Yazi(.*)" = "📂 Yazi:$2"; # Yazi file manager
+            "(.*)OBS Studio(.*) " = "📹 OBS"; # OBS
+            "(.*)Zen Twilight(.*) " = "🚀 ZEN:$1"; # OBS
+            "(.*)Mission Center" = "🎢 SysMon";
           };
         };
 
@@ -140,19 +145,20 @@
           format-linked = "󰩠 |{ifname} (No-IP)";
           format-disconnected = " |Disconnected";
           # Y: |  󱛁 󱚾 󱛇 󰸋  󰤟 󰤥 󰤨 󰤪 |
-          tooltip-format = "🔧|Interface: {ifname}\n🧲|IP       : {ipaddr}/{cidr}\n🃏|GW       : {gwaddr}\n🚦|Signal   : {signalStrength}%";
+          # tooltip-format = " 🚦 | Signal : {signalStrength}%\n 🧲 | IP : {ipaddr}/{cidr}\n 🔧 | Interface : {ifname}\n 🃏 | GW : {gwaddr}";
+          tooltip-format = "<tt> 🌐 SSID      : {essid}\n 📶 Signal    : {signalStrength}%\n 🏠 IP        : {ipaddr}/{cidr}\n 🔧 Interface : {ifname}\n 🚪 Gateway   : {gwaddr}\n 📡 Frequency : {frequency} GHz\n 🔑 NetMask   : {netmask}</tt>";
           # on-click = "sh -c 'hyprctl clients | grep iwd-impala && hyprctl dispatch closewindow class:iwd-impala || kitty --class=\"iwd-impala\" --title=\"IWD-Impala 󱛆 \" -e impala'";
           on-click = "~/.config/hypr/scripts/floating_network1.sh";
         };
-
 
         "temperature" = {
           thermal-zone = 8;
           critical-threshold = 85;
           format = "{icon} {temperatureC}°C";
-          format-icons = [ "" "" "" "" "" ];
           tooltip = true;
+          format-icons = [ "" "" "" "" "" ];
         };
+
 
         "backlight" = {
           device = "nvidia_wmi_ec_backlight";
@@ -162,15 +168,25 @@
         };
 
         "battery" = {
-          states = {
-            warning = 30;
-            critical = 10;
-          };
+          states = { warning = 30; critical = 10; };
           format = "{icon}  {capacity}";
           format-charging = "⚡ {capacity}";
           format-alt = "{icon} {time}";
           format-icons = [ "" "" "" "" "" ];
+          tooltip = true;
+          tooltip-format = "<tt>🔋 {capacity}%\n⏱️ {time}\n🔌 {status}</tt>";
         };
+
+
+        # "battery" = {
+        #   states = { warning = 30; critical = 10; };
+        #   format = "{icon}  {capacity}";
+        #   format-icons = [ "" "" "" "" "" ];
+        #   format-charging = "⚡ {capacity}";
+        #   format-alt = "{icon} {time}";
+        #   tooltip = true;
+        #   tooltip-format = "<tt> 🔋 Capacity : {capacity}%\n ⏱️ Time Left : {time}\n ⚡ Power    : {power} W\n 🔌 Status   : {status}</tt>";
+        # };
 
         # Y: need hyde command
         # "custom/keybindhint" = {
