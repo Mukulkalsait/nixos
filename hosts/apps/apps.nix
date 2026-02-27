@@ -34,25 +34,6 @@
     # G: Android Relates |>
     android-tools # adb
 
-    # B: Fonts.
-
-    noto-fonts # 800+ fonts all (hindi/marathi)
-    noto-fonts-color-emoji
-    font-awesome # way-bar and all
-    corefonts # MS-office fonts
-
-    # fonts with LIGATURE (=== !+ => -> |- =| |> )
-    nerd-fonts.jetbrains-mono
-    # nerd-fonts.cascadia-code MISSING
-    nerd-fonts.iosevka
-    nerd-fonts.victor-mono
-    nerd-fonts.monaspace
-
-    # dejavu_fonts
-    # powerline-fonts
-    # powerline-symbols
-    # pkgs.nerd-fonts.symbols-only
-
     # ID: Terminal |>
     ghostty
     kitty
@@ -96,9 +77,7 @@
     pinta # D.Photo editor
     shotcut # Video Editor
     nautilus # File manager
-    adwaita-icon-theme # GNOME default icons
-    lxappearance
-    # gnome-control-center # FullSettingPannel -> need to much changes in config.
+
 
     # B: Desktop GUI apps:
     inputs.zen-browser.packages.${pkgs.system}.default
