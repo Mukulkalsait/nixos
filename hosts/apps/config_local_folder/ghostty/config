@@ -47,7 +47,7 @@ foreground = #c8d3f5
 
 
 font-family = "JetBrains Mono" 
-# => -> |> === |- -|  ( working on JetBrains Mono )
+# => -> |> === |- -| !=   ( working on JetBrains Mono )
 font-family-bold= "Go Mono for Powerline"
 
 # font-family = "DejaVu Sans Mono"
