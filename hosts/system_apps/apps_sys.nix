@@ -13,6 +13,7 @@
     file # shows file tipe
     wl-clipboard # System wide clipboard
     cliphist # clipboard history manager
+    brightnessctl # brightness controller
     # copyq # Clipboard manager
 
     # G: CLI Utils |>
