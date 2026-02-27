@@ -15,7 +15,7 @@
     # ----------------------------------------------------------------
     # Apps From stylix page.
     dejavu_fonts
-    jetbrains-mono
+    nerd-fonts.jetbrains-mono
     noto-fonts
     noto-fonts-color-emoji
     font-awesome
