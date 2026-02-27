@@ -40,21 +40,17 @@
 
   # Install LSP servers and formatters
   home.packages = with pkgs; [
-    glow # TUI for markdown files 
-    nixd # NIX lsp
-    nil # nix-LSP
-    nixpkgs-fmt # FORMATTER
 
+
+    # Rust and C dependencies:
     rustup # toolchain management (clippy) Y: This fucker have RUSTc, Cargo, rustFmt-rustup and even rust-analyzer
     # G: for rust linkekrs
     pkg-config
     openssl
-
     clang
     llvm
     lld
     gnumake
-    perl
 
     # DX: none of this work: rust-src # starndard source {NOT AVIALABLE NO NEED} cargo # cargo setups rustc # rust compiller rustfmt # FORMATTER rust-analyzer # LSP
     # Y: usage of rust 
@@ -67,7 +63,20 @@
     # components = ["rust-src", "clippy", "rustfmt", more we needed]
     #===============
 
+    # Y: Lang (Programing) |>
+    nodejs # node js
+    go # go-lang
+    php # php
+    bun # bun replacement for npm.
+    (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
+    uv # PIP replacement. python package /dependency manager.
+    perl
+
+    # G: LSPs
     lua-language-server # LSP
+    nixd # NIX lsp
+    nil # nix-LSP
+    nixpkgs-fmt # FORMATTER
 
     stylua # FORMATTER
     emmet-ls # LSP
