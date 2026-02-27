@@ -8,9 +8,6 @@
     # /etc/nixos/hosts/system_apps/virtualisation.nix => Docker and MiniKube
     # /etc/nixos/hosts/apps/stylix.nix =>
     # /etc/nixos/hosts/apps/neovim.nix => LSP's, Langs, npm packages.
-    #
-    #
-    #
 
     # ----------------------------------------------------------------
     # Apps From stylix page.

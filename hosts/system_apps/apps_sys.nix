@@ -1,15 +1,18 @@
 # Y:  Define the SYSTEM WIDE APPS
 { config, pkgs, lib, inputs, ... }: {
 
-  # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
 
-    # DX: OS-GUI Utils |>
+    # IMP: System Drivers |>
+    bluetuith # tui Bluetooth
+    wiremix # another tui for audio:=
+    inputs.wifitui.packages.${pkgs.system}.default # Y :WIFITUI
+    pipewire # Controller for pipewire.
+    pulseaudio # Controller for pulseaudio.
+    lm_sensors # for sensors cmd or sensorD
     file # shows file tipe
     wl-clipboard # System wide clipboard
     cliphist # clipboard history manager
-    wiremix # another tui for audio:=
-    inputs.wifitui.packages.${pkgs.system}.default # Y :WIFITUI
     # copyq # Clipboard manager
 
     # G: CLI Utils |>
@@ -26,26 +29,15 @@
     tree-sitter # treesitter for neovim
     fastfetch # SYSTEM INFO
     p7zip # archiv/ unarchiv
-    openssh # ssh client.
     eza # Modern ls
 
-
-    # IMP: Daily Drivers |>
+    # B: TUI Utils |>
     yazi # D.FileManager
     neovim # D.Editor.
     starship # D.Prompt UI zsh prompt costumise.
-    bluetuith # tui Bluetooth
-    pipewire # Controller for pipewire.
-    pulseaudio # Controller for pulseaudio.
-
-    # G: Tradin Apps |>
-    # tradingview
-
-    # B: TUI Utils |>
     btop # Task manager.
     htop # Most imp.
-    nvtopPackages.nvidia # G: GPU monitoring TUI Specific for Nvidia GPUs SMALLER
-    # nvtopPackages.full # GPU monitoring TUI for NVIDIA/AMD/Intel GPUs LAEGER
+    nvtopPackages.nvidia # GPU monitoring TUI
 
     # FUN_2: APPS |>
     mangohud # fps overlay
@@ -58,10 +50,12 @@
       __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
     '')
 
+    # G: Tradin Apps |>
+    # tradingview
+
   ];
 
   programs.zsh.enable = true;
-
 
   # Y: HYPRLAND:
   programs.hyprland = {
@@ -71,9 +65,9 @@
 
   # Y: SSH
   programs.ssh = {
-    startAgent = true; # local background process (ssh-agent) => store ssh keys + Help you connect to Outer server
-    # services.openssh.enable = true; # DX: starts => sshd.service + Open port 22 + Let others connect to your pc.
-    # services.openssh.wantedBy = lib.mkForce []; Y: thsi will add the service but "WILL NOT START AT BOOT".
+    startAgent = true; # (ssh-agent) => store ssh keys + Help you connect to Outer server
+    # services.openssh.enable = true;  sshd.service
+    # services.openssh.wantedBy = lib.mkForce []; shhd.service=> systemd
   };
 
 }
