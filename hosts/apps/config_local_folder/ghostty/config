@@ -44,32 +44,36 @@ foreground = #c8d3f5
 
 
 # Y: ===== CLEAN & SIMPLE (fonts)=====
+# ---------------------------------------------
+  font-family = JetBrainsMono Nerd Font
+  font-family-italic = MonaspiceRn Nerd Font 
+  font-family-bold = MonaspiceKr Nerd Font 
+  font-family-bold-italic = MonaspiceKr Nerd Font
+
+# ---------------------------------------------
+
+# CTRL + SHIFT + , => to apply config ghostty
 
 
-font-family = "JetBrains Mono" 
-# => -> |> === |- -| !=   ( working on JetBrains Mono )
-font-family-bold= "Go Mono for Powerline"
+# INFO: Ligatures working fonts:
+# ----------------------------------------------------------
+# | => -> |> === |- -| != :- := =: :: :> <: -: <- <= >- >= |  
+# ----------------------------------------------------------
+# font-family = "JetBrainsMono Nerd Font" 
+# font-family = "Iosevka Nerd Font" 
+# font-family = "VictorMono Nerd Font" 
+# ----------------------------------------------------------
 
+
+# font-family = "MonaspiceAr Nerd Font" 
+# font-family = "MonaspiceXe Nerd Font" 
+# font-family = "MonaspiceNe Nerd Font" # Tecnhincal
+# font-family = "MonaspiceKr Nerd Font" # Mechinical
+# font-family = "MonaspiceRn Nerd Font" # FUNKY FONT using for italic
+#
 # font-family = "DejaVu Sans Mono"
 # font-family = "Liberation Mono"
 # font-family = "Hack"
 # font-family = "Cousine for Powerline"
 # font-family = "Meslo LG M for Powerline"
 # font-family = "Go Mono for Powerline"
-#
-#-R: NON GOOD
-# font-family = "Source Code Pro for Powerline"
-# font-family = "Inconsolata for Powerline"
-# font-family = "Space Mono"
-# font-family = "Ubuntu Mono derivative Powerline"
-# ===== UNIQUE / RETRO =====
-# font-family = "IBM 3270"
-# font-family = "IBM 3270 Narrow"
-# font-family = "ProFont for Powerline"
-# font-family = "monofur for Powerline"
-# font-family = "NovaMono for Powerline"
-# ===== LAST RESORT =====
-# font-family = "FreeMono"
-# font-family = "Courier New"
-# font-family = "Andale Mono"
-
