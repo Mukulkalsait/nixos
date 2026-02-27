@@ -1,9 +1,10 @@
 * {
   margin: 0;
   border: none;
-  font-family: "JetBrains Mono";
-  font-weight: 700;
-  font-size: 13px;
+  /* font-family: "MonaspiceNe Nerd Font"; */
+  font-family: "VictorMono Nerd Font";
+  font-weight: 600;
+  font-size: 12px;
   min-height: 0;
 }
 window#waybar {
@@ -11,9 +12,7 @@ window#waybar {
 }
 
 #clock,
-#pulseaudio,
-#window,
-#network {
+#window {
   padding: 0px 12px;
   margin: 3px 3px;
   background: rgba(0, 0, 0, 0.85);
@@ -101,6 +100,17 @@ window#waybar {
 #network.disconnected { color: #ff0022; }
 
 
+#pulseaudio,
+#network {
+  padding: 0px 12px;
+  margin: 3px 2px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 12pt 12pt 12pt 12pt;
+  /* border-bottom: 1px solid; */
+  /* border-top: 1px solid; */
+}
+
+
 #network {
   color: #fc8a3f;
   border-color: #fc8a3f;
@@ -123,15 +133,16 @@ window#waybar {
 #backlight,
 #battery {
   background: rgba(0, 0, 0, 0.85);
-  margin: 3px 0;
   padding: 0 2px;
+  margin: 3px 0 ;
 }
 
 #temperature {
   color: #698bff;
   border-color: #698bff;
   border-radius: 12pt 0 0 12pt;
-  padding: 0 2px 0 8px;
+  padding: 0 0 0 8px;
+  margin: 3px 0 3px 2px;
 }
 
 #backlight {
@@ -144,7 +155,7 @@ window#waybar {
   color: #84eef5;
   border-color: #84eef5;
   border-radius: 0 12pt 12pt 0;
-  padding: 0 8px 0 2px ;
+  padding: 0 8px 0 0 ;
   margin: 3px 3px 3px 0;
 }
 
