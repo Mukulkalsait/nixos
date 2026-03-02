@@ -15,7 +15,6 @@
     wev # input event check + debug, <keyboard, mouse>
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
-    papirus-icon-theme # Themes pack for menu
     swww # Walpaper
     hyprshot # Screenshot
     hyprpicker # color picker tool
