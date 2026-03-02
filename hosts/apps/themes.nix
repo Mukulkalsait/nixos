@@ -4,8 +4,8 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders;
+      name = "Papirus-Dark"; # it still uses Papirus-Dark as the theme name
       # name = "Papirus"; # light
       # name = "Papirus-Light"; # lighter variant
     };
@@ -65,7 +65,6 @@
 
     # B: Icon Themes
     adwaita-icon-theme # GNOME default icons
-    papirus-icon-theme # Themes pack for menu
     fluent-icon-theme
     numix-icon-theme-circle
     whitesur-icon-theme # macos style
