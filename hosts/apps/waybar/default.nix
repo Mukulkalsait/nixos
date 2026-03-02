@@ -126,6 +126,7 @@
           # format-source = "🎤 {volume}";
           format-icons = {
             "headphones" = "🔈";
+            "Fiio KA3 Analog Stereo" = "🚀";
             "handsfree" = "🎧";
             "headset" = "󰋍";
             "phone" = "📱";
@@ -139,7 +140,7 @@
 
         "network" = {
           # interface = "wlp0s20f3"; # (Optional) To force the use of this interface
-          format-wifi = "{icon} |{essid}|{signalStrength}";
+          format-wifi = "{icon} |{essid}| {signalStrength}";
           format-icons = [ "󰤟 " "󰤥 " "󰸋 " "󱛇 " ];
           format-ethernet = "🖧 |{ipaddr}/{cidr}";
           format-linked = "󰩠 |{ifname} (No-IP)";
