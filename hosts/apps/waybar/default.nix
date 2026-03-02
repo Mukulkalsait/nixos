@@ -61,7 +61,7 @@
           interval = 3;
           format = " {used} / {total} ";
           tooltip = true;
-          tooltip-format = "🧠 RAM Used   : {used} GiB\n 💾 RAM Total  : {total} GiB\n 🆓 Available  : {avail} GiB\n 📦 Swap Used  : {swapUsed} GiB\n 🔄 Swap Total : {swapTotal} GiB";
+          tooltip-format = " 🧠 RAM Used   : {used} GiB\n 💾 RAM Total  : {total} GiB\n 🆓 Available  : {avail} GiB\n 📦 Swap Used  : {swapUsed} GiB\n 🔄 Swap Total : {swapTotal} GiB";
         };
 
 
@@ -168,13 +168,15 @@
         };
 
         "battery" = {
-          states = { warning = 30; critical = 10; };
+          states = {
+            warning = 30;
+            critical = 10;
+          };
           format = "{icon}  {capacity}";
           format-charging = "⚡ {capacity}";
           format-alt = "{icon} {time}";
           format-icons = [ "" "" "" "" "" ];
           tooltip = true;
-          tooltip-format = "<tt>🔋 {capacity}%\n⏱️ {time}\n🔌 {status}</tt>";
         };
 
 
