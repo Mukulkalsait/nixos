@@ -173,10 +173,11 @@
             warning = 30;
             critical = 10;
           };
-          format = "{icon}  {capacity}";
+          format = "{icon} {capacity}";
           format-charging = "⚡ {capacity}";
           format-alt = "{icon} {time}";
           format-icons = [ "" "" "" "" "" ];
+          format-full = "⚡ 💯";
           tooltip = true;
         };
 
