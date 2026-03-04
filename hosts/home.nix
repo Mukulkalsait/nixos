@@ -22,6 +22,7 @@
       name = "mukul";
       isDefault = true;
     };
+    suppressXdgMigrationWarning = true; # Temperory
   };
 
 
