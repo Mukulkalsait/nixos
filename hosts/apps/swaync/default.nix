@@ -32,7 +32,7 @@
       timeout = 10;
       timeout-low = 5;
       timeout-critical = 0;
-      notification-window-width = 300;
+      notification-window-width = 400;
 
       # Widgets to display in control center (add/remove as needed)
       widgets = [
