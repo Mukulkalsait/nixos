@@ -74,6 +74,8 @@
         ttConfig = "sudo nvim /etc/nixos/hosts/apps/.config_local/zellij/";
         # IMP: config in local but imported in nix.
         nvimConfig = "nvim /home/mukuldk/1_file/2_git_repos/nvim/";
+        nvim-clean = "rm -rf ~/.local/share/nvim";
+
         # IMP: config non NIX nor imported because they download there own files.
         yaziConfig = "nvim /home/mukuldk/.config/yazi/";
         sshConfig = "nvim /home/mukuldk/.ssh/config";
