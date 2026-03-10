@@ -27,7 +27,7 @@
     fd # Fast alternative for find
     fzf # fuzzy finder.
     ripgrep # Fast Test Search Tool | grep alternative?
-    tree-sitter # treesitter for neovim
+    tree-sitter # INSTALL WITH bun add -g tree-sitter-cli
     fastfetch # SYSTEM INFO
     p7zip # archiv/ unarchiv
     eza # Modern ls

@@ -42,15 +42,21 @@
   home.packages = with pkgs; [
 
 
-    # Rust and C dependencies:
-    rustup # toolchain management (clippy) Y: This fucker have RUSTc, Cargo, rustFmt-rustup and even rust-analyzer
+    # Rust Toolchain:
+    rustup # toolchain management Y: This fucker have (cmd rustup) and RUSTc, Cargo ,and can install clippy,rustfmt,rust-analyzer,cargo-watch,cargo-nextest,cargo-audit and everyting.
     # G: for rust linkekrs
-    pkg-config
-    openssl
-    clang
-    llvm
-    lld
-    gnumake
+    gcc # linker
+    glibc.dev # C headers
+    pkg-config # build helpers
+    openssl # common rust deps
+    llvmPackages.libclang # bindgen / clang interface
+    # gnumake # B: only needed very few times
+
+    # clang # colverd in llvmPackages.libclang
+    # llvm # unnecessary
+    # lld # gcc->ld
+
+
 
     # DX: none of this work: rust-src # starndard source {NOT AVIALABLE NO NEED} cargo # cargo setups rustc # rust compiller rustfmt # FORMATTER rust-analyzer # LSP
     # Y: usage of rust 
