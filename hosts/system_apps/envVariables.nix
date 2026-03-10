@@ -4,11 +4,11 @@
     # Y: USE THIS TEMPERORYLY
     # export LIBCLANG_PATH=$(nix eval --raw nixpkgs#llvmPackages.libclang.lib)/lib
     # export C_INCLUDE_PATH=$(nix eval --raw nixpkgs#glibc.dev)/include
-    # Languages
-    # CC = "${pkgs.gcc}/bin/gcc";
     # # LD = "${pkgs.lld}/bin/ld.lld";
     # RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}/library";
 
+    # Languages
+    CC = "${pkgs.gcc}/bin/gcc";
     # others
     EDITOR = "nvim";
 
