@@ -56,7 +56,7 @@
     # llvm # unnecessary
     # lld # gcc->ld
 
-
+    pkgs.lldb_22 # provides codelldb for crate.nvim
 
     # DX: none of this work: rust-src # starndard source {NOT AVIALABLE NO NEED} cargo # cargo setups rustc # rust compiller rustfmt # FORMATTER rust-analyzer # LSP
     # Y: usage of rust 
