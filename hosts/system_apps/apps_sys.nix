@@ -4,9 +4,9 @@
   environment.systemPackages = with pkgs; [
 
     # IMP: System Drivers |>
+    inputs.wifitui.packages.${pkgs.system}.default # FLAKE:
     bluetuith # tui Bluetooth
     wiremix # another tui for audio:=
-    inputs.wifitui.packages.${pkgs.system}.default # Y :WIFITUI
     pipewire # Controller for pipewire.
     pulseaudio # Controller for pulseaudio.
     lm_sensors # for sensors cmd or sensorD
@@ -31,6 +31,8 @@
     fastfetch # SYSTEM INFO
     p7zip # archiv/ unarchiv
     eza # Modern ls
+    trash-cli # Recycle bean
+    pkgs.sqlite # sqlite binary 
 
     # B: TUI Utils |>
     yazi # D.FileManager
@@ -49,7 +51,7 @@
     (pkgs.writeShellScriptBin "prime-run" ''
       #!/bin/sh
       __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
-    '')
+    '') # FLAKE:
 
     # G: Tradin Apps |>
     # tradingview
