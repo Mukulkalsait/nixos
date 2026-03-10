@@ -34,8 +34,7 @@
     LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
     C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
 
-    # CC = "${pkgs.gcc}/bin/gcc"; # R: C path if needed => bydefault its avialable so we did not define it.
-
+    CC = "${pkgs.gcc}/bin/gcc";
     PATH = "${config.home.homeDirectory}/.cargo/bin:${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH"; # G: Prioritize rustup
 
 
@@ -62,9 +61,13 @@
 
   # Y: Home Paths
   home.sessionPath = [
-    "$HOME/.cargo/bin"
-    "$HOME/go/bin"
-    "$HOME/.cache/.bun/bin"
+    "${config.home.homeDirectory}/.cargo/bin" # Prepends to $PATH
+    "${config.home.homeDirectory}/go/bin"
+    "${config.home.homeDirectory}/.cache/.bun/bin"
+
+    # "$HOME/.cargo/bin" # Prepends to $PATH
+    # "$HOME/go/bin"
+    # "$HOME/.cache/.bun/bin"
   ];
 
 }
