@@ -1,15 +1,20 @@
 # Y: envornment varialbes fro all session.
 { pkgs, ... }: {
   environment.variables = {
+    # Y: USE THIS TEMPERORYLY
+    # export LIBCLANG_PATH=$(nix eval --raw nixpkgs#llvmPackages.libclang.lib)/lib
+    # export C_INCLUDE_PATH=$(nix eval --raw nixpkgs#glibc.dev)/include
+    # Languages
+    # CC = "${pkgs.gcc}/bin/gcc";
+    # # LD = "${pkgs.lld}/bin/ld.lld";
+    # RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}/library";
+
+    # others
     EDITOR = "nvim";
 
-    CC = "${pkgs.gcc}/bin/gcc";
-    # LD = "${pkgs.lld}/bin/ld.lld"; # needed LLD in neovim.nix
-    LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
-
-    # RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
-    RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}/library"; # <-- UNCOMMENT/USE THIS (correct for std sources)
   };
 }
+
+# ❯ ls $(nix eval --raw nixpkgs#glibc.dev)/include/stdio.h
 
 

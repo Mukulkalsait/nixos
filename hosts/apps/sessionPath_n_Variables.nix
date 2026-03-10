@@ -30,7 +30,14 @@
     # B: Isolate rustup to avoid PATH pollution
     RUSTUP_HOME = "${config.home.homeDirectory}/.rustup";
     CARGO_HOME = "${config.home.homeDirectory}/.cargo";
+
+    LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
+    C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
+
+    # CC = "${pkgs.gcc}/bin/gcc"; # R: C path if needed => bydefault its avialable so we did not define it.
+
     PATH = "${config.home.homeDirectory}/.cargo/bin:${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH"; # G: Prioritize rustup
+
 
     # Y: -------------------------------
     # in case of conflicts 
