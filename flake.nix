@@ -29,6 +29,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # ghostty
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
 
     # ZEN Browser: 
     zen-browser = {
@@ -48,7 +52,6 @@
       url = "github:shazow/wifitui";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
 
   };
 
@@ -80,14 +83,13 @@
           };
           modules = [
             ./hosts/configuration.nix
-            { nixpkgs.overlays = [ nur.overlays.default ]; } # Y: NUR overlay
+            { nixpkgs.overlays = [ nur.overlays.default ]; } # FLAKE: NUR overlay
 
+            # FLAKE: 
             {
               programs.hyprland.enable = true;
-              programs.hyprland.package =
-                hyprland.packages.${system}.hyprland;
-              programs.hyprland.portalPackage =
-                hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+              programs.hyprland.package = hyprland.packages.${system}.hyprland;
+              programs.hyprland.portalPackage = hyprland.packages.${system}.xdg-desktop-portal-hyprland;
             }
 
             home-manager.nixosModules.home-manager
@@ -110,6 +112,7 @@
           ];
         };
 
+        # FLAKE:
         dark-net = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
