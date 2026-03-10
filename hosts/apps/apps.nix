@@ -34,7 +34,7 @@
     android-tools # adb
 
     # ID: Terminal |>
-    ghostty
+    inputs.ghostty.packages.${pkgs.system}.default # FLAKE:
     kitty
     zellij
     # tmux
@@ -79,7 +79,7 @@
 
 
     # B: Desktop GUI apps:
-    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${pkgs.system}.default # FLAKE:
     mission-center # Task Manager
     libreoffice-fresh # community driven latest version fo libreoffice.
     scrcpy # Same for above
@@ -90,6 +90,8 @@
     # ID: Editors.
     # vscode
     # code-cursor
+
+
 
     # TAG: REFERENCES |>
     # anydesk # desktop Connection Creater
