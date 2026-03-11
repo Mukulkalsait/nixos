@@ -3,7 +3,7 @@
 
   virtualisation.podman = {
     enable = true;
-    dockerCompat = false; # true will alias docker utility route to podman.
+    dockerCompat = true; # true will alias docker utility route to podman.
     dockerSocket.enable = false; # avoide conflicts
     defaultNetwork.settings.dns_enabled = true; # dns fix rootless
     # ⏫ fixes DNS resolution in rootless containers.
@@ -43,6 +43,12 @@
 
     # B: Cloud |>
     awscli2
+
+
+
+    # B: WINDOWS |> 
+    winboat # The main application
+    freerdp # Required for rendering windows
 
     # B: GPU SUPPORT |>
     # minikube # kuberneties creater
