@@ -103,6 +103,7 @@
         mChose =
           "nix run nixpkgs#ungoogled-chromium -- --enable-experimental-web-platform-features  --enable-easy-off-store-extension-install %U ";
         mycli = "nix shell nixpkgs#mycli -c mycli";
+        winOn = "nix run nixpkgs#ungoogled-chromium -- --app=http://$(podman port WinBoat | grep '8006' | awk \"{print \$3}\")";
 
         whichProfiles = "cat /sys/firmware/acpi/platform_profile";
         allProfiles = "cat /sys/firmware/acpi/platform_profile_choices";
