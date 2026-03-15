@@ -103,7 +103,11 @@
         mChose =
           "nix run nixpkgs#ungoogled-chromium -- --enable-experimental-web-platform-features  --enable-easy-off-store-extension-install %U ";
         mycli = "nix shell nixpkgs#mycli -c mycli";
-        winOn = "nix run nixpkgs#ungoogled-chromium -- --app=http://$(podman port WinBoat | grep '8006' | awk \"{print \$3}\")";
+
+
+        wMstart = "cd /home/mukuldk/.winboat && podman-compose up -d";
+        wMkill = "cd /home/mukuldk/.winboat &&  podman-compose down";
+        winOn = "xfreerdp /v:127.0.0.1 /port:$(podman port WinBoat | grep \"3389/tcp\" | awk '{print $3}' | cut -d: -f2) /u:mukuldk /p:asdf /dynamic-resolution /clipboard /cert:ignore";
 
         whichProfiles = "cat /sys/firmware/acpi/platform_profile";
         allProfiles = "cat /sys/firmware/acpi/platform_profile_choices";
