@@ -43,6 +43,7 @@
     rustscan # rust port scanner
     dig # network tool
     mtr # my trace route
+    net-tools # Basic network tools.
 
     # B: CLI Essentilas |>
     bat # modern cat
