@@ -11,6 +11,8 @@
 
   # IMP: Flakes + Kernal
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Flake:
+  nix.settings.auto-optimise-store = true; # G: identical files across the store that are exactly the same will delete one and replaces it with a hard link to the other. 
+
 
   nixpkgs.config.allowUnfree = true; # Use latest kernel.
 
