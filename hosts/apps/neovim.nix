@@ -71,7 +71,10 @@
 
     # Y: Lang (Programing) |>
     nodejs # node js
-    go # go-lang
+    # Y: GO dependencies error prevent R: PINNING at Go-1.25
+    go # Original go
+    # (winboat.override { go = pkgsCross.mingwW64.go_1_25; }) # or go_1_24 if needed
+
     php # php
     bun # bun replacement for npm.
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
