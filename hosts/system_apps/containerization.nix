@@ -47,7 +47,7 @@
 
 
     # B: WINDOWS |> 
-    winboat # The main application
+    # winboat # The main application
     freerdp # Required for rendering windows
 
     # B: GPU SUPPORT |>
