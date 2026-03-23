@@ -27,6 +27,7 @@
     fd # Fast alternative for find
     fzf # fuzzy finder.
     ripgrep # Fast Test Search Tool | grep alternative?
+    nvme-cli # check nvme health
     # tree-sitter # INSTALL WITH bun add -g tree-sitter-cli
     fastfetch # SYSTEM INFO
     p7zip # archiv/ unarchiv
