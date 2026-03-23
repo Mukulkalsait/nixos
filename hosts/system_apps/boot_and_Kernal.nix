@@ -17,6 +17,7 @@
     "usb_storage" # usb
     "uas" # dont know
     "ec_sys" # EC fan controls.
+    "ntsync" # ntsync Better for Windows Games on linux 6.14+
     # "acer_wmi_battery" DX: Kernal has DEFAULT "acer_wmi" =>  fan profile so this will now load no matter what.
   ];
   boot.kernelParams = [
