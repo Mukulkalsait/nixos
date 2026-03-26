@@ -45,7 +45,7 @@
 
     # FUN_2: APPS |>
     mangohud # fps overlay
-    linuxPackages.nvidia_x11
+    # linuxPackages.nvidia_x11 # already present in nvidia drivers, dont overwrite
     steam # steam app itself
     protonup-ng # Steam Compatiblelity tool
     gamescope # full screen Window manager STEAM
