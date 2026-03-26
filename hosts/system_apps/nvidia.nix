@@ -27,14 +27,16 @@
 
   # Y: NVIDIA: 
   hardware.nvidia = {
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;   # stable / production / beta;
+    package = config.boot.kernelPackages.nvidiaPackages.production; # production branch
+
     modesetting.enable = true;
-    powerManagement.enable = true;
-    powerManagement.finegrained = true;
-    open = false; # Use proprietary for CUDA
-    nvidiaPersistenced = false; #  DX: Turned off because breaking GPU.= {basically keep nvidia running} / we are fine without it.
+    powerManagement.enable = true; # laptop battery.
+    powerManagement.finegrained = false; # laptop better false. (true before changing to production.)
+    open = false; # Use proprietary for CUDA ()
+    nvidiaPersistenced = true; #  DX: Turned off because breaking GPU.= {basically keep nvidia running} / we are fine without it.
 
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
     forceFullCompositionPipeline = false;
     prime = {
       offload = {
