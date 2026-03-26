@@ -17,12 +17,21 @@
       "$TASKMANAGER" = "missioncenter";
 
       env = [
-        # Hint Electron apps to use Wayland
+        # general Wayland / Electron / Qt
         "NIXOS_OZONE_WL,1"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_QPA_PLATFORM,wayland"
+
+        # NVIDIA-specific (Important for stability & performance)
+        "GBM_BACKEND,nvidia-drm" # Force NVIDIA GBM backend
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia" # Force NVIDIA GLX
+        "LIBVA_DRIVER_NAME,nvidia" # Hardware video decoding (VA-API) on NVIDIA
+
+        # Optional but often helpful
+        # "NVD_BACKEND,direct"                # Uncomment if you have video decoding issues with nvidia-vaapi-driver
+
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];
 
