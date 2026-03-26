@@ -30,7 +30,8 @@
         "LIBVA_DRIVER_NAME,nvidia" # Hardware video decoding (VA-API) on NVIDIA
 
         # Optional but often helpful
-        # "NVD_BACKEND,direct"                # Uncomment if you have video decoding issues with nvidia-vaapi-driver
+        # "NVD_BACKEND,direct"             # Uncomment if you have video decoding issues with nvidia-vaapi-driver
+        # "WLR_NO_HARDWARE_CURSORS,1"      # sometimes needed
 
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];

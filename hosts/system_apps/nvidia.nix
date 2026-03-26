@@ -27,8 +27,9 @@
 
   # Y: NVIDIA: 
   hardware.nvidia = {
-    # package = config.boot.kernelPackages.nvidiaPackages.stable;   # stable / production / beta;
-    package = config.boot.kernelPackages.nvidiaPackages.production; # production branch
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;   # stable version (stable ⭐)
+    # package = config.boot.kernelPackages.nvidiaPackages.production; # production branch (latest 🚀)
+    package = config.boot.kernelPackages.nvidiaPackages.beta; # production beta (most cutting edge ⚡)
 
     modesetting.enable = true;
     powerManagement.enable = true; # laptop battery.

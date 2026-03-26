@@ -8,7 +8,7 @@
     defaultNetwork.settings.dns_enabled = true; # dns fix rootless
     # ⏫ fixes DNS resolution in rootless containers.
   };
-  hardware.nvidia-container-toolkit = { enable = true; };
+  hardware.nvidia-container-toolkit = { enable = false; };
 
   # FIX: Set environment variable to point tools to rootless socket
   environment.sessionVariables = {
