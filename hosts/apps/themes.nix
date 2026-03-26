@@ -18,19 +18,19 @@
       # name = "adw-gtk3-dark";
 
       # === Catppuccin (Highly Recommended) ===
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" ]; # try: blue, mauve, pink, teal, green, red, yellow
-        variant = "mocha"; # mocha (darkest) > macchiato > frappe > latte (light)
-      };
-      name = "catppuccin-mocha-blue-standard";
+      # package = pkgs.catppuccin-gtk.override {
+      #   accents = [ "blue" ]; # try: blue, mauve, pink, teal, green, red, yellow
+      #   variant = "mocha"; # mocha (darkest) > macchiato > frappe > latte (light)
+      # };
+      # name = "catppuccin-mocha-blue-standard";
 
       # === Graphite (Clean & Modern) ===
       # package = pkgs.graphite-gtk-theme;
       # name = "Graphite-Dark";
 
       # === Orchis (Elegant rounded) === 🦀
-      # package = pkgs.orchis-theme;
-      # name = "Orchis-Dark";
+      package = pkgs.orchis-theme;
+      name = "Orchis-Dark";
 
       # === Tokyonight (Vibrant) ===
       # package = pkgs.tokyonight-gtk-theme;
