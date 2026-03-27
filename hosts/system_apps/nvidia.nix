@@ -32,13 +32,15 @@
     package = config.boot.kernelPackages.nvidiaPackages.beta; # production beta (most cutting edge ⚡)
 
     modesetting.enable = true;
-    powerManagement.enable = true; # laptop battery.
-    powerManagement.finegrained = false; # laptop better false. (true before changing to production.)
+    powerManagement.enable = true; # NvidiaPowered + Dynamic Boost Engin
+    dynamicBoost.enable = true; # NEW: Explicitly enable Dynamic Boost (this starts nvidia-powerd properly)
+    powerManagement.finegrained = false; # Sometime issues in gaming laptops. => false (but latest might be fixed.)
     open = false; # Use proprietary for CUDA ()
-    nvidiaPersistenced = true; #  DX: Turned off because breaking GPU.= {basically keep nvidia running} / we are fine without it.
-
     nvidiaSettings = true;
+    nvidiaPersistenced = true; #  DX: Turned off because breaking GPU.= {basically keep nvidia running} / we are fine without it.
     forceFullCompositionPipeline = false;
+
+
     prime = {
       offload = {
         enable = true;
