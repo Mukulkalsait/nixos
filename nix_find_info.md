@@ -39,3 +39,12 @@ This is exactly how you discovered that `beta` had 595 while others were still o
 Would you like me to also give you a small **alias** you can add to your shell so you can quickly check NVIDIA driver versions with one command?
 
 Also, after you switch to beta and reboot, let me know what `nvidia-smi` shows. If everything goes well, we can clean up a few more things in your NVIDIA + Hyprland setup.
+
+```bash  
+nix profile list # list added profile into config
+export LIBCLANG_PATH=$(nix eval -raw nixpkgs#llvmPackages.libclang)/lib # use lnix pkgs path.
+sudo nix-channel list
+sudo nix-channel --help
+sudo nix-search-tv --help
+```
+
