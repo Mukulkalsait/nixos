@@ -101,17 +101,18 @@
     dockerfile-language-server # NixRepo
     dockfmt
 
-    nodePackages.typescript-language-server # LSP
-    nodePackages.vscode-langservers-extracted # LSP (includes html, css, json)
-    nodePackages.eslint # LINTER
-    nodePackages.stylelint # LINTER (for CSS)
-    nodePackages.bash-language-server # LSP (for Bash/ZSH)
-    nodePackages.mermaid-cli # For Mermaid diagrams (mmdc) snack.nvim
-    nodePackages.sql-formatter # FORMATTER (for SQL)
+    # B: just commented to try if its already on the Mason
+    # typescript-language-server # LSP
+    # vscode-langservers-extracted # LSP (includes html, css, json)
+    # eslint # LINTER
+    # stylelint # LINTER (for CSS)
+    # bash-language-server # LSP (for Bash/ZSH)
+    # mermaid-cli # For Mermaid diagrams (mmdc) snack.nvim
+    # sql-formatter # FORMATTER (for SQL)
 
     # Y:  addsometinfg for terraform
-    # nodePackages.yaml-language-server # DX: broken so added with |> bun i -g yaml-language-server 
-    # nodePackages."@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
+    # yaml-language-server # DX: broken so added with |> bun i -g yaml-language-server 
+    # "@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
 
     # php84Packages.php-codesniffer # LINTER (for PHP)
     shfmt # FORMATTER (for Bash/ZSH)
