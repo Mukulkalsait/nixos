@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Neovim Nightly
+    neovim-nightly = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
+
     # HOME-MANAGER: (*)
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -66,7 +71,7 @@
     ];
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, zen-browser, nur, nixpkgs-terraform, microvm, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, neovim-nightly, zen-browser, nur, nixpkgs-terraform, microvm, ... }@inputs:
     let
       # Y: VARIALBES =>
       system = "x86_64-linux";
@@ -83,7 +88,13 @@
           };
           modules = [
             ./hosts/configuration.nix
-            { nixpkgs.overlays = [ nur.overlays.default ]; } # FLAKE: NUR overlay
+            {
+              nixpkgs.overlays = [
+                nur.overlays.default
+                neovim-nightly.overlays.default
+              ];
+            } # FLAKE: NUR overlay
+
 
             # FLAKE: 
             {
