@@ -9,32 +9,7 @@
     # Install TreeSitter grammars via Nix
     plugins = with pkgs.vimPlugins;
       [
-        # TreeSitter with all grammars
-        (nvim-treesitter.withPlugins (p: [
-          p.html
-          p.css
-          p.javascript
-          p.typescript
-          p.tsx
-          p.php
-          p.json
-          p.yaml
-          p.markdown
-          p.markdown_inline
-          p.sql
-          p.lua
-          p.vim
-          p.vimdoc
-          p.rust
-          p.nix
-          p.bash
-          p.kdl
-          # Added for snacks.nvim => all are TreeSitter Parser.
-          p.latex # Markdown with diagrams or LaTeX Math sxpression 
-          p.svelte
-          p.vue
-          p.typst
-        ]))
+        nvim-treesitter.withAllGrammars
       ];
   };
 
@@ -42,7 +17,11 @@
   home.packages = with pkgs; [
 
 
-    # Rust Toolchain:
+    # B:  APPLICATION FOR NVIM |> 
+    ghostscript # For PDF rendering (gs) snack.nvim
+    tectonic # For LaTeX rendering snack.nvim  🈸 Application added.
+
+    # B: Rust Toolchain |> 
     rustup # toolchain management Y: This fucker have (cmd rustup) and RUSTc, Cargo ,and can install clippy,rustfmt,rust-analyzer,cargo-watch,cargo-nextest,cargo-audit and everyting.
     # G: for rust linkekrs
     gcc # linker
@@ -71,35 +50,37 @@
 
     # Y: Lang (Programing) |>
     nodejs # node js
-    # Y: GO dependencies error prevent R: PINNING at Go-1.25
     go # Original go
-    # (winboat.override { go = pkgsCross.mingwW64.go_1_25; }) # or go_1_24 if needed
-
     php # php
+    perl
+
     bun # bun replacement for npm.
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
     uv # PIP replacement. python package /dependency manager.
-    perl
 
     # G: LSPs
-    lua-language-server # LSP
-    nixd # NIX lsp
-    nil # nix-LSP
-    nixpkgs-fmt # FORMATTER
+    biome # Y: Replacement for => Prettier/ESLint for JS/TS/JSON (FORMATER + LINTER)
+    lua-language-server # LSP --WORKING
+    nixd # NIX lsp --WORKING
+    shellcheck # BASH LINTER --WORKING
+    vtsls
 
-    stylua # FORMATTER
     emmet-ls # LSP
     tailwindcss-language-server # LSP
-    phpactor # LSP
-    biome # Y: Replacement for => Prettier/ESLint for JS/TS/JSON (FORMATER + LINTER)
-    shellcheck # BASH LINTER
+    phpactor # LSP 
+    # nil # nix-LSP
 
-    ghostscript # For PDF rendering (gs) snack.nvim
-    tectonic # For LaTeX rendering snack.nvim  🈸 Application added.
 
-    # Formatters & Linters
+    # G:  Formatters & Linters
     dockerfile-language-server # NixRepo
-    dockfmt
+
+    nixpkgs-fmt # FORMATTER -- WORKING
+    shfmt # FORMATTER (for Bash/ZSH) --WORKING 
+
+    dockfmt # FORMSTTER -- NOT WORKING 
+    stylua # FORMATTER -- NOT WORKING 
+
+    sqls # LSP (for SQL)
 
     # B: just commented to try if its already on the Mason
     # typescript-language-server # LSP
@@ -113,10 +94,7 @@
     # Y:  addsometinfg for terraform
     # yaml-language-server # DX: broken so added with |> bun i -g yaml-language-server 
     # "@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
-
     # php84Packages.php-codesniffer # LINTER (for PHP)
-    shfmt # FORMATTER (for Bash/ZSH)
-    sqls # LSP (for SQL)
 
   ];
 
