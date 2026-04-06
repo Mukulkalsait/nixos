@@ -15,7 +15,7 @@
     wev # input event check + debug, <keyboard, mouse>
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
-    swww # Walpaper
+    awww # Walpaper
     hyprshot # Screenshot
     hyprpicker # color picker tool
     libnotify # notification
