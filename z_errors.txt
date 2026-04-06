@@ -1,0 +1,71 @@
+Formatter failed. See :ConformInfo for details
+
+
+
+Log file: /root/.local/state/nvim/conform.log
+            
+          
+          
+          2026-04-03 15:49:10[ERROR] Formatter 'biome' error: The content was not formatted because the formatter is currently disabled.
+          stdin ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          
+            × The contents aren't fixed. Use the `--write` flag to fix them.
+            
+          
+          
+          2026-04-03 15:49:13[ERROR] Formatter 'biome' error: The content was not formatted because the formatter is currently disabled.
+          stdin ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          
+            × The contents aren't fixed. Use the `--write` flag to fix them.
+            
+
+Formatters for this buffer:
+biome ready (typescript, yaml, javascript, html, json) /etc/profiles/per-user/mukuldk/bin/biome
+
+Other formatters:
+blade-formatter ready (php) /home/mukuldk/.cache/.bun/bin/blade-formatter
+dockfmt error: Unknown formatter. Formatter config missing or incomplete
+fish_indent unavailable: Command 'fish_indent' not found
+nixpkgs_fmt ready (nix) /etc/profiles/per-user/mukuldk/bin/nixpkgs-fmt
+rustfmt ready (rust) /home/mukuldk/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustfmt
+shfmt ready (zsh, sh, bash) /root/.local/share/nvim/mason/bin/shfmt
+sql-formatter unavailable: Command 'sql-formatter' not found
+stylelint unavailable: Command 'stylelint' not found
+stylua ready (lua) /root/.local/share/nvim/mason/bin/stylua
+
+
+
+...ed-dbc4800/share/nvim/runtime/lua/vim/lsp/_transport.lua:68: Spawning language server with cmd: `{ "vscode-json-language-server", "--stdio" }` failed. The language server is either not installed, missing from PATH, or not executable.
+
+
+[lspconfig] config "yaml_ls" not found. Ensure it is listed in `configs.md` or added as a custom server.
+
+
+
+and the first one 
+
+Failed to run `config` for nvim-treesitter
+
+/root/.config/nvim/lua/plugins/lsp/treesitter_Nix.lua:37: module 'nvim-treesitter.configs' not found:
+	no field package.preload['nvim-treesitter.configs']
+	cache_loader: module 'nvim-treesitter.configs' not found
+	cache_loader_lib: module 'nvim-treesitter.configs' not found
+	no file './nvim-treesitter/configs.lua'
+	no file '/nix/store/zrmg8bj9lxkl7bi19k19jydk73xxk3rs-luajit-2.1.1741730670/share/luajit-2.1/nvim-treesitter/configs.lua'
+	no file '/usr/local/share/lua/5.1/nvim-treesitter/configs.lua'
+	no file '/usr/local/share/lua/5.1/nvim-treesitter/configs/init.lua'
+	no file '/nix/store/zrmg8bj9lxkl7bi19k19jydk73xxk3rs-luajit-2.1.1741730670/share/lua/5.1/nvim-treesitter/configs.lua'
+	no file '/nix/store/zrmg8bj9lxkl7bi19k19jydk73xxk3rs-luajit-2.1.1741730670/share/lua/5.1/nvim-treesitter/configs/init.lua'
+	no file './nvim-treesitter/configs.so'
+	no file '/usr/local/lib/lua/5.1/nvim-treesitter/configs.so'
+	no file '/nix/store/zrmg8bj9lxkl7bi19k19jydk73xxk3rs-luajit-2.1.1741730670/lib/lua/5.1/nvim-treesitter/configs.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+	no file './nvim-treesitter.so'
+	no file '/usr/local/lib/lua/5.1/nvim-treesitter.so'
+	no file '/nix/store/zrmg8bj9lxkl7bi19k19jydk73xxk3rs-luajit-2.1.1741730670/lib/lua/5.1/nvim-treesitter.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+
+# stacktrace:
+  - ~/.config/nvim/lua/plugins/lsp/treesitter_Nix.lua:37 _in_ **config**
+  - ~/.config/nvim/lua/config/lazy.lua:17
+  - 1_file/2_git_repos/nvim/init.lua:2
