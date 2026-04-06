@@ -1,0 +1,139 @@
+# Y: Neovim with home config.
+{ config, pkgs, ... }: {
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    defaultEditor = true;
+
+    # Install TreeSitter grammars via Nix
+    plugins = with pkgs.vimPlugins;
+      [
+        nvim-treesitter.withAllGrammars
+        # TreeSitter with all grammars
+        # (nvim-treesitter.withPlugins (p: [
+        #   p.html
+        #   p.css
+        #   p.javascript
+        #   p.typescript
+        #   p.tsx
+        #   p.php
+        #   p.json
+        #   p.yaml
+        #   p.markdown
+        #   p.markdown_inline
+        #   p.sql
+        #   p.lua
+        #   p.vim
+        #   p.vimdoc
+        #   p.rust
+        #   p.nix
+        #   p.bash
+        #   p.kdl
+        #   # Added for snacks.nvim => all are TreeSitter Parser.
+        #   p.latex # Markdown with diagrams or LaTeX Math sxpression 
+        #   p.svelte
+        #   p.vue
+        #   p.typst
+        # ]))
+      ];
+  };
+
+  # Install LSP servers and formatters
+  home.packages = with pkgs; [
+
+    # Rust Toolchain:
+    rustup # toolchain management Y: This fucker have (cmd rustup) and RUSTc, Cargo ,and can install clippy,rustfmt,rust-analyzer,cargo-watch,cargo-nextest,cargo-audit and everyting.
+    # G: for rust linkekrs
+    gcc # linker
+    glibc.dev # C headers
+    pkg-config # build helpers
+    openssl # common rust deps
+    llvmPackages.libclang # bindgen / clang interface
+    # gnumake # B: only needed very few times
+
+    # clang # colverd in llvmPackages.libclang
+    # llvm # unnecessary
+    # lld # gcc->ld
+
+    pkgs.lldb_22 # provides codelldb for crate.nvim
+
+    # DX: none of this work: rust-src # starndard source {NOT AVIALABLE NO NEED} cargo # cargo setups rustc # rust compiller rustfmt # FORMATTER rust-analyzer # LSP
+    # Y: usage of rust 
+    # 1. create file in root or project
+    # --------------
+    # rust-toolchain.toml
+    # --------------
+    # [toolchain]
+    # channel = "nightly" # or "stable"
+    # components = ["rust-src", "clippy", "rustfmt", more we needed]
+    #===============
+
+    # Y: Lang (Programing) |>
+    nodejs # node js
+    # Y: GO dependencies error prevent R: PINNING at Go-1.25
+    go # Original go
+    # (winboat.override { go = pkgsCross.mingwW64.go_1_25; }) # or go_1_24 if needed
+
+    php # php
+    bun # bun replacement for npm.
+    (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
+    uv # PIP replacement. python package /dependency manager.
+    perl
+
+    # G: LSPs
+    lua-language-server # LSP
+    nixd # NIX lsp
+    # nil # nix-LSP
+    nixpkgs-fmt # FORMATTER
+
+    stylua # FORMATTER
+    emmet-ls # LSP
+    tailwindcss-language-server # LSP
+    phpactor # LSP
+    biome # Y: Replacement for => Prettier/ESLint for JS/TS/JSON (FORMATER + LINTER)
+    shellcheck # BASH LINTER
+
+    ghostscript # For PDF rendering (gs) snack.nvim
+    tectonic # For LaTeX rendering snack.nvim  🈸 Application added.
+
+    # Formatters & Linters
+    dockerfile-language-server # NixRepo
+    dockfmt
+
+
+    # B: just commented to try if its already on the Mason
+    # typescript-language-server # LSP
+    # vscode-langservers-extracted # LSP (includes html, css, json)
+    # eslint # LINTER
+    # stylelint # LINTER (for CSS)
+    # bash-language-server # LSP (for Bash/ZSH)
+    # mermaid-cli # For Mermaid diagrams (mmdc) snack.nvim
+    # sql-formatter # FORMATTER (for SQL)
+
+    # Y:  addsometinfg for terraform
+    # yaml-language-server # DX: broken so added with |> bun i -g yaml-language-server 
+    # "@shufo/blade-formatter" # Y: FORMATTER (for PHP/Blade; add if packaged, else bun i -g @shufo/blade-formatter)
+
+    # php84Packages.php-codesniffer # LINTER (for PHP)
+    shfmt # FORMATTER (for Bash/ZSH)
+    sqls # LSP (for SQL)
+
+  ];
+
+  # DX: This is here to keep the file in home for changing configs.
+  home.file.".config/nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "/home/mukuldk/1_file/2_git_repos/nvim";
+
+  #================================================================================================================================================
+  #  Pull your config directly from GIT into ~/.config/nvim
+  #
+  # home.file.".config/nvim".source = pkgs.fetchFromGitHub {
+  #   owner = "Mukulkalsait";
+  #   repo = "nvim";
+  #   rev = "main";  
+  #   sha256 = "sha256-2V0ZJKEZBZ9Wg3ZMklxwUk3KBiRkJ7paR3QQyXZXlRs=";  # Updated with correct hash
+  #   sha256 = "c9709fb51e20cadb46d0b6ca567bb34e19118dd4";  # This will fail but show you the correct hash
+  # };
+  #================================================================================================================================================
+}
