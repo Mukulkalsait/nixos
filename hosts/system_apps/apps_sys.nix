@@ -36,8 +36,9 @@
     pkgs.sqlite # sqlite binary 
 
     # B: TUI Utils |>
+    neovim # D.Editor. # FLAKE: becomes nightly with flakes
+    # pkgs.neovim-nightly
     yazi # D.FileManager
-    neovim # D.Editor.
     starship # D.Prompt UI zsh prompt costumise.
     btop # Task manager.
     htop # Most imp.

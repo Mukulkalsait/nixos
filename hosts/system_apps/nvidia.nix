@@ -15,6 +15,7 @@
 
       # INTEL DRIVERS
       intel-media-driver
+      intel-gpu-tools
       libva
       mesa
     ];
