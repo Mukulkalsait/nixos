@@ -111,7 +111,7 @@
       "type": "command",
       "key": "  ├─┐",
       "keyColor": "#00C853",
-      "text": "os=$((command -v lsb_release >/dev/null 2>&1 && lsb_release -ds) || (awk -F= '/PRETTY_NAME/{print $2}' /etc/os-release | tr -d '\"') || echo 'Unknown OS'); kernel=$(uname -sr); echo \"  OS: $os                Kernel: $kernel\"",
+      "text": "os=$((command -v lsb_release >/dev/null 2>&1 && lsb_release -ds) || (awk -F= '/PRETTY_NAME/{print $2}' /etc/os-release | tr -d '\"') || echo 'Unknown OS'); kernel=$(uname -sr); echo \" OS: $os                 Kernel: $kernel\"",
       "outputColor": "#B9F6CA",
     },
     {
@@ -130,7 +130,7 @@
       "type": "command",
       "key": "  │   └─",
       "keyColor": "#FF6EC7",
-      "text": "term=${TERM:-Unknown}; shell=$(basename ${SHELL:-/bin/sh}); echo \"   Terminal => $term             Shell => $shell\"",
+      "text": "term=${TERM:-Unknown}; shell=$(basename ${SHELL:-/bin/sh}); echo \" Terminal => $term              Shell => $shell\"",
       "outputColor": "#F8BBD0",
     },
     {
