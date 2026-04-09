@@ -83,18 +83,18 @@
       "outputColor": "#E9A5F1",
     },
 
-    {
-      "type": "custom",
-      "format": "  │ └─┐  ",
-      "keyColor": "#D3869B",
-      "outputColor": "#FFFFFF",
-    },
-    {
-      "type": "keyboard",
-      "key": "  │   ├─  KB",
-      "keyColor": "#F8F7BA",
-      "outputColor": "#ED3500",
-    },
+    // {
+    //   "type": "custom",
+    //   "format": "  │ └─┐  ",
+    //   "keyColor": "#D3869B",
+    //   "outputColor": "#FFFFFF",
+    // },
+    // {
+    //   "type": "keyboard",
+    //   "key": "  │   ├─  KB",
+    //   "keyColor": "#F8F7BA",
+    //   "outputColor": "#ED3500",
+    // },
     {
       "type": "sound",
       "key": "  │   └─🎧 Sound",
