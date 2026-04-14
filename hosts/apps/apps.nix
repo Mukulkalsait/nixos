@@ -37,6 +37,7 @@
     inputs.ghostty.packages.${pkgs.system}.default # FLAKE:
     kitty
     zellij
+    nushell # best for http APIs checking.
     # tmux
 
     # R: NETWORKING |>
@@ -57,6 +58,7 @@
     nix-inspect # tell about packages in nix
     nix-search # nix Online Pkg Searcher
     nix-search-tv # another package search may be offline.
+    nix-tree # tui for everyting 
 
     # R: TUI |>
     dua # rust disk utility use " dua i " intereative.
@@ -91,8 +93,6 @@
     # ID: Editors.
     # vscode
     # code-cursor
-
-
 
     # TAG: REFERENCES |>
     # anydesk # desktop Connection Creater
