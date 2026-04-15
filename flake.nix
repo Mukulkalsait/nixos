@@ -11,9 +11,9 @@
     };
 
     # Neovim Nightly
-    neovim-nightly = {
-      url = "github:nix-community/neovim-nightly-overlay";
-    };
+    # neovim-nightly = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    # };
 
     # HOME-MANAGER: (*)
     home-manager = {
@@ -26,6 +26,12 @@
     hyprland-plugins = {
       url = "github:hyprwm/Hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
+    };
+
+    # Fenix Rust NixOS style
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # microvm
@@ -71,7 +77,7 @@
     ];
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, neovim-nightly, zen-browser, nur, nixpkgs-terraform, microvm, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, fenix, zen-browser, nur, nixpkgs-terraform, microvm, ... }@inputs:
     let
       # Y: VARIALBES =>
       system = "x86_64-linux";
@@ -91,17 +97,20 @@
             {
               nixpkgs.overlays = [
                 nur.overlays.default
-                neovim-nightly.overlays.default
+                fenix.overlays.default
+                # neovim-nightly.overlays.default
 
                 # Overdrive of the broken link in neovim-nightly
-                (final: prev: {
-                  neovim = prev.neovim.overrideAttrs (old: {
-                    postInstall = ''
-                      ${old.postInstall or ""}
-                      rm -f $out/share/applications/nvim.desktop || true
-                    '';
-                  });
-                })
+                # (final: prev: {
+                #   neovim = prev.neovim.overrideAttrs (old: {
+                #     postInstall = ''
+                #       ${old.postInstall or ""}
+                #       rm -f $out/share/applications/nvim.desktop || true
+                #       mkdir -p $out/share/nvim
+                #       touch $out/share/nvim/rplugin.vim || true
+                #     '';
+                #   });
+                # })
               ];
             } # FLAKE: NUR overlay
 

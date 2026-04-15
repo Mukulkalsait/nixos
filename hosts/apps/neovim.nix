@@ -1,16 +1,13 @@
 # Y: Neovim with home config.
 { config, pkgs, ... }: {
   programs.neovim = {
-    enable = true;
+    enable = false;
     viAlias = true;
     vimAlias = true;
     defaultEditor = true;
 
-    # Install TreeSitter grammars via Nix
-    plugins = with pkgs.vimPlugins;
-      [
-        nvim-treesitter.withAllGrammars
-      ];
+    # Install TreeSitter grammars via Nix R: WORKS SUPPER BUT PROBLEMATIC....
+    # plugins = with pkgs.vimPlugins; [ nvim-treesitter.withAllGrammars ];
   };
 
   # Install LSP servers and formatters
@@ -22,7 +19,13 @@
     tectonic # For LaTeX rendering snack.nvim  🈸 Application added.
 
     # B: Rust Toolchain |> 
-    rustup # toolchain management Y: This fucker have (cmd rustup) and RUSTc, Cargo ,and can install clippy,rustfmt,rust-analyzer,cargo-watch,cargo-nextest,cargo-audit and everyting.
+    fenix.stable.toolchain # NixOS style Rust Toolchain. 
+    cargo-binstall # Faster Binery installation
+    cargo-watch # like Tainwind watch
+    cargo-edit # cargo add / remove/ tree like commands
+    sqlx-cli # sqli cli
+    just # makefile
+    # rustup # BEST FOR OTHER but not FOR NIX
     # G: for rust linkekrs
     gcc # linker
     glibc.dev # C headers
@@ -37,24 +40,12 @@
 
     pkgs.lldb_22 # provides codelldb for crate.nvim
 
-    # DX: none of this work: rust-src # starndard source {NOT AVIALABLE NO NEED} cargo # cargo setups rustc # rust compiller rustfmt # FORMATTER rust-analyzer # LSP
-    # Y: usage of rust 
-    # 1. create file in root or project
-    # --------------
-    # rust-toolchain.toml
-    # --------------
-    # [toolchain]
-    # channel = "nightly" # or "stable"
-    # components = ["rust-src", "clippy", "rustfmt", more we needed]
-    #===============
-
     # Y: Lang (Programing) |>
-    nodejs # node js
+    fnm # 🚀 DROP IN REPLACEMENT FOR NodeJs & BUN IMP: BEST for neovim mason and all.
     go # Original go
-    php # php
-    perl
+    perl # perl dont know why do i need this?
 
-    bun # bun replacement for npm.
+    # bun # bun replacement for npm.
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
     uv # PIP replacement. python package /dependency manager.
 
