@@ -92,6 +92,16 @@
               nixpkgs.overlays = [
                 nur.overlays.default
                 neovim-nightly.overlays.default
+
+                # Overdrive of the broken link in neovim-nightly
+                (final: prev: {
+                  neovim = prev.neovim.overrideAttrs (old: {
+                    postInstall = ''
+                      ${old.postInstall or ""}
+                      rm -f $out/share/applications/nvim.desktop || true
+                    '';
+                  });
+                })
               ];
             } # FLAKE: NUR overlay
 
