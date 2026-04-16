@@ -16,8 +16,8 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     # Y: Commands to run as soon as zsh loaded 🔻
+    initExtra = '' eval "$(fnm env --use-on-cd)" ''; # IMP: Run FNM env when sees .node-version in directorry.
     # initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: does same but we slightly extra works. so we dont need it..
-    initExtra = '' eval "$(fnm env)" ''; # puts fnm inits path.
     initContent =
       "source ~/.config/zsh/scripts/y.sh "; # B: we are sourcing file we defined at the top of this config.
 
