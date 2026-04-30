@@ -23,7 +23,7 @@
     # lazydocker # TUI lazy Docker.
     dive # TUI Docker Images Layers.
     podman-tui # TUI Tool for Podman Specific.
-    podman-desktop # temp
+    # podman-desktop # temp
     podman-compose # podman compose to compose file.
     skopeo # image inspection tool ( skopeo  inspect ) local + online everyting.
     ctop # Top utility for Containerisation.

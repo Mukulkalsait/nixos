@@ -16,7 +16,7 @@
 
     # B:  APPLICATION FOR NVIM |> 
     ghostscript # For PDF rendering (gs) snack.nvim
-    tectonic # For LaTeX rendering snack.nvim  🈸 Application added.
+    # tectonic # For LaTeX rendering snack.nvim  🈸 Application added.
 
     # B: Rust Toolchain |> 
     fenix.stable.toolchain # NixOS style Rust Toolchain. 
