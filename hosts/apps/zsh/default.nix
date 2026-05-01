@@ -17,6 +17,7 @@
 
     # Y: Commands to run as soon as zsh loaded 🔻
     initExtra = '' eval "$(fnm env --use-on-cd)" ''; # IMP: Run FNM env when sees .node-version in directorry.
+
     # initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: does same but we slightly extra works. so we dont need it..
     initContent =
       "source ~/.config/zsh/scripts/y.sh "; # B: we are sourcing file we defined at the top of this config.
@@ -55,6 +56,8 @@
         resourcett = "tmux source ~/.config/tmux/tmux.conf";
 
 
+
+
         # Y:  NIX os 
         snrsf = "sudo nixos-rebuild switch --flake /etc/nixos#PredatorNix";
         deadNix = "nix-store --ge --print-dead";
@@ -77,13 +80,14 @@
 
         # DX: CONFIGS
         # IMP: config in nix.
-        nixConfig = "sudo nvim /etc/nixos";
-        zshConfig = "sudo nvim /etc/nixos/hosts/apps/zsh/default.nix";
-        wbrConfig = "sudo nvim /etc/nixos/hosts/apps/waybar/default.nix";
-        hyprConfig = "sudo nvim /etc/nixos/hosts/apps/hyprland/main.nix";
-        kittyConfig = "sudo nvim /etc/nixos/hosts/apps/kitty.nix";
+        svi = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim";
+        nixConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos";
+        zshConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/zsh/default.nix";
+        wbrConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/waybar/default.nix";
+        hyprConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/hyprland/main.nix";
+        kittyConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/kitty.nix";
         # IMP: config inside nix repo and imported but non nix.
-        ttConfig = "sudo nvim /etc/nixos/hosts/apps/.config_local/zellij/";
+        ttConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/.config_local/tmux/";
         # IMP: config in local but imported in nix.
         nvimConfig = "nvim /home/mukuldk/1_file/2_git_repos/nvim/";
         nvim-clean = "rm -rf ~/.local/share/nvim";
