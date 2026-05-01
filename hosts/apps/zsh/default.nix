@@ -16,11 +16,12 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     # Y: Commands to run as soon as zsh loaded 🔻
-    initExtra = '' eval "$(fnm env --use-on-cd)" ''; # IMP: Run FNM env when sees .node-version in directorry.
-
-    # initExtra = '' source ~/.config/zsh/scripts/y.sh '';# B: does same but we slightly extra works. so we dont need it..
-    initContent =
-      "source ~/.config/zsh/scripts/y.sh "; # B: we are sourcing file we defined at the top of this config.
+    initContent = ''
+      eval "$(fnm env --use-on-cd)"  
+      source ~/.config/zsh/scripts/y.sh 
+    '';
+    # IMP: Run FNM env when sees .node-version in directorry.
+    # B: we are sourcing file we defined at the top of this config.
 
     shellAliases =
       let flakeDir = "~/flake";
@@ -81,13 +82,13 @@
         # DX: CONFIGS
         # IMP: config in nix.
         svi = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim";
-        nixConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos";
-        zshConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/zsh/default.nix";
-        wbrConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/waybar/default.nix";
-        hyprConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/hyprland/main.nix";
-        kittyConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/kitty.nix";
+        nixConfig = "nvim /home/mukuldk/.predator_nix/";
+        zshConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/zsh/default.nix";
+        wbrConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/waybar/default.nix";
+        hyprConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/hyprland/main.nix";
+        kittyConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/kitty.nix";
         # IMP: config inside nix repo and imported but non nix.
-        ttConfig = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim /etc/nixos/hosts/apps/.config_local/tmux/";
+        ttConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/.config_local/tmux/";
         # IMP: config in local but imported in nix.
         nvimConfig = "nvim /home/mukuldk/1_file/2_git_repos/nvim/";
         nvim-clean = "rm -rf ~/.local/share/nvim";
@@ -100,9 +101,10 @@
         DarkNet = "cd /home/mukuldk/MicroVM/ && nix run /etc/nixos#nixosConfigurations.dark-net.config.microvm.declaredRunner";
 
         # Y: Movements
-        cdN = "cd /etc/nixos/";
+        cdX = "cd /etc/nixos/";
+        cdN = "cd /home/mukuldk/.predator_nix/";
         cdF = "cd /home/mukuldk/1_file/";
-        cdG = "cd /home/mukuldk/1_file/2_git_repos/";
+        cdG = "cd /home/mukuldk/1_file/3_Repos_All/";
         cdD = "cd /home/mukuldk/1_file/5_ZenDownloads/";
 
         # Y: resource:
