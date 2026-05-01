@@ -80,7 +80,7 @@
   outputs = { self, nixpkgs, home-manager, hyprland, fenix, zen-browser, nur, nixpkgs-terraform, microvm, ... }@inputs:
     let
       # Y: VARIALBES =>
-      system = "x86_64-linux";
+      stdenv.hostPlatform.system = "x86_64-linux";
 
     in
     {
@@ -130,6 +130,12 @@
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.users.mukuldk =
                 import ./hosts/home.nix;
+              home-manager.users.root = { pkgs, inputs, ... }: {
+                imports = [ ./hosts/apps/neovim.nix ]; # adjust this path to your actual nvim module
+                home.username = "root";
+                home.homeDirectory = "/root";
+                home.stateVersion = "25.05"; # match whatever is in your home.nix
+              };
             }
 
             # terraform
