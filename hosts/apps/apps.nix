@@ -38,7 +38,7 @@
     kitty
     zellij
     nushell # best for http APIs checking.
-    # tmux
+    tmux
 
     # R: NETWORKING |>
     rustscan # rust port scanner

@@ -40,9 +40,20 @@
         dive = "dive --source podman";
         rustMaintain = "rustup update && rustup component add rust-analyzer rust-src clippy rustfmt && rustup component add clippy --toolchain nightly ";
 
-        tt = "zellij";
-        tth = "zellij -l welcome";
-        tta = "zellij a";
+        # ZELLIJ
+        # tt = "zellij";
+        # tth = "zellij -l welcome";
+        # tta = "zellij a";
+
+        # 🚀 TMUX
+        tt = "tmux ";
+        ttm = "tmux new-session -s main"; # main names session
+        ttl = "tmux ls";
+        tta = "tmux attach -t";
+        ttks = "tmux kill-server";
+        tth = "echo 'tt ttm ttl tta ttks tth resourcett'";
+        resourcett = "tmux source ~/.config/tmux/tmux.conf";
+
 
         # Y:  NIX os 
         snrsf = "sudo nixos-rebuild switch --flake /etc/nixos#PredatorNix";
