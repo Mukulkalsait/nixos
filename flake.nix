@@ -80,7 +80,7 @@
   outputs = { self, nixpkgs, home-manager, hyprland, fenix, zen-browser, nur, nixpkgs-terraform, microvm, ... }@inputs:
     let
       # Y: VARIALBES =>
-      stdenv.hostPlatform.system = "x86_64-linux";
+      system = "x86_64-linux";
 
     in
     {
@@ -161,5 +161,6 @@
     };
 
 }
+
 
 
