@@ -46,7 +46,9 @@
       "$mainMod, W, exec, ~/.config/hypr/scripts/floating_network1.sh"
       "$mainMod SHIFT, N, exec, ~/.config/hypr/scripts/floating_network.sh"
       "$mainMod, A, exec, ~/.config/hypr/scripts/floating_audio.sh"
-      "$mainMod, P, exec, ~/.config/hypr/scripts/floating_term.sh"
+      "$mainMod, P, exec, ~/.config/hypr/scripts/floating_term.sh toggle"
+      "$mainMod, R, exec, ~/.config/hypr/scripts/floating_term.sh resize"
+
       # "$mainMod, W, exec, hyprctl clients | grep iwd-impala && hyprctl dispatch closewindow class:iwd-impala || $KTERM --class=\"iwd-impala\" --title=\"IWD-Impala 󱛆 \" -e impala"
 
       "CTRL SHIFT, Escape,  exec, $TASKMANAGER" # Mission Center.
@@ -166,12 +168,12 @@
 
     # Laptop multimedia keys for volume and LCD brightness
     bindel = [
-      ",XF86AudioRaiseVolume,  exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-      ",XF86AudioLowerVolume,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      ",XF86AudioMute,         exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ",XF86AudioMicMute,      exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ",XF86AudioRaiseVolume,  exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ && ~/.config/swaync/scripts/volume_bar.sh"
+      ",XF86AudioLowerVolume,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-  && ~/.config/swaync/scripts/volume_bar.sh"
+      ",XF86AudioMute,         exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && ~/.config/swaync/scripts/volume_bar.sh"
+      ",XF86AudioMicMute,      exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle "
 
-      "$mainMod, bracketright, exec, brightnessctl s 10%+"
+      "$mainMod, bracketright, exec, brightnessctl s 10%+ && ~/.config/swaync/scripts/brightness_bar.sh"
       "$mainMod, bracketleft,  exec, brightnessctl s 10%-"
 
       # just for examples
