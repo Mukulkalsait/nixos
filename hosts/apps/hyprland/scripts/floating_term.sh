@@ -1,27 +1,60 @@
 #!/usr/bin/env bash
 
 CLASS="floating_window"
+ACTION="$1"
 
-# If exists → kill it
-if hyprctl clients | grep -q "class:$CLASS"; then
-  hyprctl dispatch closewindow class:$CLASS ||
-    pkill -f "ghostty --class=$CLASS"
-else
-  ghostty \
-    --class="$CLASS" \
-    --title="Floating Window ☠️" \
-    -o background_opacity=1.0 \
-    -o background=#1e1e2e \
-    -e zsh -c "tmux attach -t float || tmux new -s float" &
+exists() {
+  hyprctl clients | grep -q "class: $CLASS"
+}
 
-  # Wait until window appears
-  until hyprctl clients | grep -q "class: $CLASS"; do
-    sleep 0.05
-  done
+focus() {
+  hyprctl dispatch focuswindow class:$CLASS
+}
 
-  # Size: 45% width, 40% height
-  hyprctl dispatch resizeactive exact 45% 40%
+small() {
+  hyprctl dispatch resizeactive exact 50% 45%
+  hyprctl dispatch moveactive exact 50% 55%
+}
 
-  # Position: bottom-right
-  hyprctl dispatch moveactive exact 55% 60%
-fi
+large() {
+  hyprctl dispatch resizeactive exact 84% 80%
+  hyprctl dispatch moveactive exact 8% 16%
+}
+
+is_large() {
+  hyprctl clients -j | jq -e \
+    ".[] | select(.class==\"$CLASS\" and .size[0] > 1000)" >/dev/null
+}
+
+case "$ACTION" in
+toggle)
+  if exists; then
+    hyprctl dispatch closewindow class:$CLASS ||
+      pkill -f "kitty --class=$CLASS"
+  else
+    kitty \
+      --class="$CLASS" \
+      --title="Floating Window ☠️" \
+      -e bash -c "tmux attach -t float || tmux new -s float" &
+
+    until exists; do sleep 0.05; done
+    focus
+    small
+  fi
+  ;;
+
+resize)
+  if exists; then
+    focus
+    if is_large; then
+      small
+    else
+      large
+    fi
+  fi
+  ;;
+
+*)
+  echo "Usage: $0 {toggle|resize}"
+  ;;
+esac
