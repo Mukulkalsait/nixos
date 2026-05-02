@@ -46,7 +46,7 @@
     mtr # my trace route
     net-tools # Basic network tools.
     netcat # nc
-    wireshark # network monitoring tool
+    # wireshark # network monitoring tool
     tcpdump # dumping netowrk data
     python313Packages.onvif-zeep # Onvif protocall (security  cameras) tool
 
