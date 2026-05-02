@@ -38,6 +38,8 @@
     # B: TUI Utils |>
     neovim # D.Editor. # FLAKE: becomes nightly with flakes
     # pkgs.neovim-nightly
+    imagemagick # neovim dependency for image conversitions
+    mermaid-cli # ndovim dependency for markdown Diagrams
     yazi # D.FileManager
     starship # D.Prompt UI zsh prompt costumise.
     btop # Task manager.
