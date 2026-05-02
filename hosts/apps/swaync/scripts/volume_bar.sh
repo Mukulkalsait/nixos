@@ -19,8 +19,13 @@ else
   value=$vol
 fi
 
+# notify-send \
+#   -h int:value:"$value" \
+#   -h string:x-canonical-private-synchronous:volume \
+#   -h string:x-canonical-private-icon:$icon \
+#   "$text" "$value%"
+
 notify-send \
-  -h int:value:$value \
+  -h int:value:"$value" \
   -h string:x-canonical-private-synchronous:volume \
-  -h string:x-canonical-private-icon:$icon \
-  "$text" "$value%"
+  "volume" "$value%"

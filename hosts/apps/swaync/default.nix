@@ -16,7 +16,9 @@
       positionX = "right";
       positionY = "top";
       layer = "overlay";
-      control-center-margin-top = 10;
+
+      # control-center-margin-top = 10;
+      control-center-margin-top = 50;
       control-center-margin-bottom = 10;
       control-center-margin-right = 10;
       control-center-margin-left = 0;
@@ -32,7 +34,7 @@
       timeout = 10;
       timeout-low = 5;
       timeout-critical = 0;
-      notification-window-width = 400;
+      notification-window-width = 350;
 
       # Widgets to display in control center (add/remove as needed)
       widgets = [
@@ -164,16 +166,67 @@
       }
 
       .notification {
-        background: rgba(30, 30, 46, 0.9);
+        background: rgba(20, 20, 30, 0.85);
         border-radius: 12px;
-        margin: 8px;
-        padding: 0;
-        border: 2px solid rgba(137, 180, 250, 0.5);
+        margin: 6px 10px;
+        padding: 10px;
+        border: 1px solid rgba(137, 180, 250, 0.2);
       }
 
+      # /* Remove heavy borders */
       .notification.critical {
-        border: 2px solid rgba(243, 139, 168, 1);
+        border: 1px solid rgba(243, 139, 168, 0.6);
       }
+
+      #  =============================================================
+      .notification {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .notification::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background: #89b4fa;
+        animation: timeout linear forwards;
+      }
+
+      @keyframes timeout {
+        from { width: 100%; }
+        to { width: 0%; }
+      }
+      #  =============================================================
+      
+      .notification:has(.summary:contains("volume")) progress {
+        background: #89b4fa;
+      }
+
+      .notification:has(.summary:contains("brightness")) progress {
+        background: #f9e2af;
+      }
+
+      .notification {
+        min-width: 250px;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .notification progressbar {
+        min-height: 6px;
+        border-radius: 4px;
+      }
+
+      .notification progressbar progress {
+        border-radius: 4px;
+      }
+
+      # .notification.critical {
+      #   border: 2px solid rgba(243, 139, 168, 1);
+      # }
 
       .notification-content {
         background: transparent;
