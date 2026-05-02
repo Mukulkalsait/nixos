@@ -29,10 +29,10 @@
       hide-on-action = true;
 
       # Notification settings (defaults)
-      notification-icon-size = 64;
-      notification-body-image-height = 100;
-      timeout = 10;
-      timeout-low = 5;
+      notification-icon-size = 46;
+      notification-body-image-height = 70;
+      timeout = 40;
+      timeout-low = 20;
       timeout-critical = 0;
       notification-window-width = 350;
 

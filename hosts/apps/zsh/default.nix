@@ -51,7 +51,7 @@
         tt = "tmux ";
         ttm = "tmux new-session -s main"; # main names session
         ttl = "tmux ls";
-        ttks = "tmux kill-server";
+        ttka = "tmux kill-server";
         tta = "tmux attach -t";
         tth = "echo 'tt ttm ttl tta ttks tth resourcett'";
         resourcett = "tmux source ~/.config/tmux/tmux.conf";

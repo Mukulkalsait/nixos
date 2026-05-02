@@ -35,7 +35,7 @@ toggle)
     kitty \
       --class="$CLASS" \
       --title="Floating Window ☠️" \
-      -e bash -c "tmux attach -t float || tmux new -s float" &
+      -e bash -c "tmux attach -t Float || tmux new -s Float" &
 
     until exists; do sleep 0.05; done
     focus
