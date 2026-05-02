@@ -39,7 +39,11 @@ toggle)
 
     until exists; do sleep 0.05; done
     focus
-    small
+    if is_large; then
+      large
+    else
+      small
+    fi
   fi
   ;;
 
