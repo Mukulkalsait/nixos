@@ -174,7 +174,7 @@
       ",XF86AudioMicMute,      exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle "
 
       "$mainMod, bracketright, exec, brightnessctl s 10%+ && ~/.config/swaync/scripts/brightness_bar.sh"
-      "$mainMod, bracketleft,  exec, brightnessctl s 10%-"
+      "$mainMod, bracketleft,  exec, brightnessctl s 10%- && ~/.config/swaync/scripts/brightness_bar.sh"
 
       # just for examples
       # ", F11,  exec, $scrPath/volumecontrol.sh -o d # decrease volume"
