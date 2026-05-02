@@ -165,15 +165,39 @@
         padding: 0px;
       }
 
+      # .notification {
+      #   background: rgba(20, 20, 30, 0.85);
+      #   border-radius: 12px;
+      #   margin: 6px 10px;
+      #   padding: 10px;
+      #   border: 1px solid rgba(137, 180, 250, 0.2);
+      # }
+
       .notification {
+        min-width: 200px;
+        max-width: 260px;
         background: rgba(20, 20, 30, 0.85);
-        border-radius: 12px;
-        margin: 6px 10px;
-        padding: 10px;
+        border-radius: 10px;
+        margin: 4px 8px;
+        padding: 6px 10px;
         border: 1px solid rgba(137, 180, 250, 0.2);
       }
 
-      # /* Remove heavy borders */
+      .summary {
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .notification progressbar {
+        min-height: 3px;
+        margin-top: 4px;
+      }
+
+      .notification progressbar progress {
+        background: #89b4fa;
+        border-radius: 2px;
+      }
+
       .notification.critical {
         border: 1px solid rgba(243, 139, 168, 0.6);
       }
@@ -215,22 +239,9 @@
         padding: 10px;
       }
 
-      .notification progressbar {
-        min-height: 6px;
-        border-radius: 4px;
-      }
-
-      .notification progressbar progress {
-        border-radius: 4px;
-      }
-
-      # .notification.critical {
-      #   border: 2px solid rgba(243, 139, 168, 1);
-      # }
-
       .notification-content {
         background: transparent;
-        padding: 8px;
+        padding: 0px;
         border-radius: 12px;
       }
 
