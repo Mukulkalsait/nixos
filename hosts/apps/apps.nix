@@ -47,12 +47,12 @@
     net-tools # Basic network tools.
     netcat # nc
     # wireshark # network monitoring tool
+    # termshark # Wireshark cli
     tcpdump # dumping netowrk data
     python313Packages.onvif-zeep # Onvif protocall (security  cameras) tool
 
     # B: CLI Essentilas |>
     bat # modern cat
-    termshark #Wireshark cli
     fx # json viewer.
     sniffnet # cross platform monitor for Trafic 
     # nginx # Reverse Proxy Server
