@@ -88,7 +88,7 @@
         active_opacity = 1.0;
         inactive_opacity = 1.0;
         shadow = { enabled = false; };
-        blur = { enabled = false; };
+        blur = { enabled = false; size = 6; passes = 2; };
       };
 
       animations = {
@@ -134,10 +134,14 @@
 
       windowrule = [
         # "float on, size 537 780, move 1248 36, match:class ^iwd-impala$"
-        "float on,  match:class ^nmtui$"
-        "float on,  match:class ^wiremix$"
-        "float on,  match:class ^wifitui$"
-        "float on,  match:class ^floating_window$"
+        "float on, match:class ^nmtui$"
+        "float on, match:class ^wiremix$"
+        "float on, match:class ^wifitui$"
+        "float on, match:class ^floating_window$"
+        "float on, match:class ^(Rofi)$"
+        # "no border, match:class ^(Rofi)$"
+        "rounding 20, match:class ^(Rofi)$"
+
 
         # IMP:STEAM FULL SCREEN:
         "fullscreen on, match:class ^(steam_app_[0-9]+)$"
