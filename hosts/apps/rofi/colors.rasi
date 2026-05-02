@@ -3,7 +3,8 @@
 /* Colors */
 
 * {
-  background:    #1a1b26;
+  // background:    #1a1b26;
+  background: rgba(26, 27, 38, 0.6);
   background-alt: #16161e;
   //border:        #89ddff;
   border:        #7aa2f7;
@@ -11,4 +12,5 @@
   selected:      #7aa2f7;
   active:        #7aa2f7;
   urgent:        #f7768e;
+
 }
