@@ -137,6 +137,7 @@
         "float on,  match:class ^nmtui$"
         "float on,  match:class ^wiremix$"
         "float on,  match:class ^wifitui$"
+        "float on,  match:class ^floating_window$"
 
         # IMP:STEAM FULL SCREEN:
         "fullscreen on, match:class ^(steam_app_[0-9]+)$"
