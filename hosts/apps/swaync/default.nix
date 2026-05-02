@@ -13,15 +13,15 @@
     enable = true;
     settings = {
       # General control center settings (defaults, adjust as needed)
-      positionX = "right";
-      positionY = "top";
+      positionX = "left";
+      positionY = "bottom";
       layer = "overlay";
 
       # control-center-margin-top = 10;
-      control-center-margin-top = 50;
+      control-center-margin-top = 30;
       control-center-margin-bottom = 10;
       control-center-margin-right = 10;
-      control-center-margin-left = 0;
+      control-center-margin-left = 10;
       control-center-width = 400;
       control-center-height = 600;
       fit-to-screen = true;
