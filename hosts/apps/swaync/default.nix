@@ -194,7 +194,6 @@
       }
 
       .notification progressbar progress {
-        background: #89b4fa;
         border-radius: 2px;
       }
 
@@ -225,12 +224,12 @@
       }
       #  =============================================================
       
-      .notification:has(.summary:contains("volume")) progress {
-        background: #89b4fa;
+      .notification[app-name="brightness"] progressbar progress {
+        background: #f9e2af;
       }
 
-      .notification:has(.summary:contains("brightness")) progress {
-        background: #f9e2af;
+      .notification[app-name="volume"] progressbar progress {
+        background: #89b4fa;
       }
 
       .notification {
@@ -250,15 +249,17 @@
       }
 
       .close-button {
-        background: rgba(243, 139, 168, 0.5);
-        color: #1e1e2e;
-        border-radius: 8px;
-        margin: 8px;
-        padding: 4px;
+        background: #1e1e2e;
+        color: rgb(255 0 0 / 50%);
+        border-radius: 2px;
+        margin: 18px;
+        padding: 0;
       }
 
       .close-button:hover {
-        background: rgba(243, 139, 168, 1);
+        background: #1e1e2e;
+        color: rgb(255 0 0 / 50%);
+
       }
 
       .control-center {
