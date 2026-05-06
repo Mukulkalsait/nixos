@@ -36,6 +36,8 @@
     pkgs.sqlite # sqlite binary 
 
     # B: TUI Utils |>
+
+    tree-sitter # system wide tree-sitter-cli
     neovim # D.Editor. # FLAKE: becomes nightly with flakes
     # pkgs.neovim-nightly
     imagemagick # neovim dependency for image conversitions
