@@ -5,6 +5,7 @@ max=$(brightnessctl max)
 percent=$((brightness * 100 / max))
 
 notify-send \
+  -a "brightness" \
   -h int:value:"$percent" \
   -h string:x-canonical-private-synchronous:brightness \
-  "🔆 Brightness  ${percent}%"
+  "🔆 Brightness ${percent}%"
