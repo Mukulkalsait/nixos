@@ -46,16 +46,16 @@
     mtr # my trace route
     net-tools # Basic network tools.
     netcat # nc
+    sniffnet # cross platform monitor for Trafic 
     # wireshark # network monitoring tool
-    # termshark # Wireshark cli
+    termshark # Wireshark cli
     tcpdump # dumping netowrk data
     python313Packages.onvif-zeep # Onvif protocall (security  cameras) tool
 
     # B: CLI Essentilas |>
     bat # modern cat
     fx # json viewer.
-    sniffnet # cross platform monitor for Trafic 
-    # nginx # Reverse Proxy Server
+    calcurse # Calender + take Manager Application.
 
     # G: NIX-Related |>
     zsh-nix-shell # enable zsh in nixshell.
