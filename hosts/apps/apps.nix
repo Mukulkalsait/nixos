@@ -57,7 +57,6 @@
     fx # json viewer.
     calcurse # Calender + take Manager Application.
 
-
     # G: NIX-Related |>
     zsh-nix-shell # enable zsh in nixshell.
     nix-inspect # tell about packages in nix
