@@ -22,52 +22,35 @@
 
     # Y: RUST part----------------------
     CARGO_TARGET_DIR = "${config.home.homeDirectory}/.cargo/target";
+    # RUST_SRC_PATH = "${pkgs.fenix.stable.rust-src}/lib/rustlib/src/rust/library";
+    RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+
+
+
     # B: Updated RUST_SRC_PATH: Use rustup's if available, fallback to Nix
-    RUST_SRC_PATH =
-      if builtins.pathExists "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
-      then "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
-      else "${pkgs.rustPlatform.rustLibSrc}/lib/rustlib/src/rust/library"; # Use rustPlatform for Nix fallback
+    #
+    # RUST_SRC_PATH =
+    #   if builtins.pathExists "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
+    #   then "${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
+    #   else "${pkgs.rustPlatform.rustLibSrc}/lib/rustlib/src/rust/library"; # Use rustPlatform for Nix fallback
     # B: Isolate rustup to avoid PATH pollution
-    RUSTUP_HOME = "${config.home.homeDirectory}/.rustup";
-    CARGO_HOME = "${config.home.homeDirectory}/.cargo";
+    #
+    # RUSTUP_HOME = "${config.home.homeDirectory}/.rustup";
+    # CARGO_HOME = "${config.home.homeDirectory}/.cargo";
+    # PATH = "${config.home.homeDirectory}/.cargo/bin:${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH"; # G: Prioritize rustup
 
     LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
     C_INCLUDE_PATH = "${pkgs.glibc.dev}/include";
-
     CC = "${pkgs.gcc}/bin/gcc";
-    PATH = "${config.home.homeDirectory}/.cargo/bin:${config.home.homeDirectory}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH"; # G: Prioritize rustup
 
-
-    # Y: -------------------------------
-    # in case of conflicts 
-    # cretate "rust-toolchain.toml" in project root
-    # ----
-    #  add thsi 
-    # ----
-    #  [toolchain]
-    #     channel = "stable"
-    #     components = ["rust-src", "clippy", "rustfmt"]
-    #
   };
 
-  home.activation = {
-    initRustup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      if [ ! -d $HOME/.rustup ]; then
-        ${pkgs.rustup}/bin/rustup toolchain install stable
-        ${pkgs.rustup}/bin/rustup component add rust-src clippy rustfmt
-      fi
-    '';
-  };
 
   # Y: Home Paths
   home.sessionPath = [
-    "${config.home.homeDirectory}/.cargo/bin" # Prepends to $PATH
+    "${config.home.homeDirectory}/.cargo/bin"
     "${config.home.homeDirectory}/go/bin"
     "${config.home.homeDirectory}/.cache/.bun/bin"
-
-    # "$HOME/.cargo/bin" # Prepends to $PATH
-    # "$HOME/go/bin"
-    # "$HOME/.cache/.bun/bin"
   ];
 
 }
