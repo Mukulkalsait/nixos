@@ -20,7 +20,7 @@
 
     # B: Rust Toolchain |> 
     # fenix.stable.toolchain # NixOS style Rust Toolchain. 
-    fenix.complete.toolchain # NixOS style Rust Toolchain Complete Version. 
+    fenix.complete.toolchain # NixOS style Rust Toolchain Complete. 
     cargo-binstall # Faster Binery installation
     cargo-watch # like Tainwind watch
     cargo-edit # cargo add / remove/ tree like commands
