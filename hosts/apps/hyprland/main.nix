@@ -1,6 +1,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang"; # R: really imp falg, allow to use older hyprland.conf instead of lua. |  configType = "conf";
     systemd.enable = true;
     settings = {
 
