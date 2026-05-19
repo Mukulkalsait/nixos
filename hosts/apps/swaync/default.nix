@@ -131,12 +131,12 @@
       };
 
       # Scripts for battery warnings
-      scripts = {
-        battery-warning = {
-          exec = "~/.config/swaync/scripts/battery-warning.sh";
-          urgency = "Critical";
-        };
-      };
+      # scripts = {
+      #   battery-warning = {
+      #     exec = "~/.config/swaync/scripts/battery-warning.sh";
+      #     urgency = "Critical";
+      #   };
+      # };
 
       # Notification visibility rules
       notification-visibility = {
@@ -147,7 +147,8 @@
         };
         upower = {
           state = "enabled";
-          urgency = "Critical";
+          # urgency = "Critical";
+          urgency = "Low";
         };
       };
     };
