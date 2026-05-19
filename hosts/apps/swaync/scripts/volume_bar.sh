@@ -19,6 +19,7 @@ fi
 
 notify-send \
   -a "volume" \
+  -t 2200 \
   -h int:value:"$value" \
   -h string:x-canonical-private-synchronous:volume \
   "$icon Volume ${value}%"
