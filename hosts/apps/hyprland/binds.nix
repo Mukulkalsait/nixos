@@ -48,6 +48,7 @@
       "$mainMod, A, exec, ~/.config/hypr/scripts/floating_audio.sh"
       "$mainMod, P, exec, ~/.config/hypr/scripts/floating_term.sh toggle"
       "$mainMod, R, exec, ~/.config/hypr/scripts/floating_term.sh resize"
+      "$mainMod, 8, exec, ~/.config/hypr/scripts/floating_bluetooth.sh"
 
       # "$mainMod, W, exec, hyprctl clients | grep iwd-impala && hyprctl dispatch closewindow class:iwd-impala || $KTERM --class=\"iwd-impala\" --title=\"IWD-Impala 󱛆 \" -e impala"
 

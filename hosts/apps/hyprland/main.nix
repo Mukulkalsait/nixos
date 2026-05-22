@@ -138,6 +138,7 @@
         "float on, match:class ^nmtui$"
         "float on, match:class ^wiremix$"
         "float on, match:class ^wifitui$"
+        "float on, match:class ^bluetooth$"
         "float on, match:class ^floating_window$"
         "float on, match:class ^(Rofi)$"
         # "no border, match:class ^(Rofi)$"
