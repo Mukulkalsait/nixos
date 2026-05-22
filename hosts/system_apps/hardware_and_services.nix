@@ -51,7 +51,7 @@
 
   # G: Bluetooth. ==================================================================================================
   hardware.bluetooth.enable = true;
-  services.blueman.enable = true; # gtx tray app.
+  services.blueman.enable = false; # gtx tray app buggy, instead we use wofi bluetooth + bluetoothctl.
 
   # G: Sensors. ====================================================================================================
   hardware.i2c.enable = true; # enable sensors.
