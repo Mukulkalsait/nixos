@@ -88,7 +88,7 @@
     # B: Desktop GUI apps:
     inputs.zen-browser.packages.${pkgs.system}.default # FLAKE:
     mission-center # Task Manager
-    libreoffice-fresh # community driven latest version fo libreoffice.
+    # libreoffice-fresh # community driven latest version fo libreoffice.
     onlyoffice-desktopeditors # alternate office tool
     scrcpy # Same for above
     vlc # Video Lan Converter

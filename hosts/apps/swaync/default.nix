@@ -34,7 +34,7 @@
       timeout = 40;
       timeout-low = 20;
       timeout-critical = 0;
-      notification-window-width = 350;
+      notification-window-width = 420;
 
       # Widgets to display in control center (add/remove as needed)
       widgets = [
@@ -177,6 +177,8 @@
       .notification {
         min-width: 200px;
         max-width: 260px;
+        max-height: 120px;   /* prevents giant popup */
+
         background: rgba(20, 20, 30, 0.85);
         border-radius: 10px;
         margin: 4px 8px;
@@ -184,9 +186,18 @@
         border: 1px solid rgba(137, 180, 250, 0.2);
       }
 
+      .notification .body {
+        min-height: 0;
+        max-height: 62px;   /* ~3 lines */
+        overflow: hidden;
+
+        font-size: 12px;
+        line-height: 1.2;
+      }
+
       .summary {
         font-size: 13px;
-        font-weight: 500;
+        font-weight: bold;
       }
 
       .notification progressbar {
