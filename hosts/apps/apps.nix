@@ -94,6 +94,7 @@
     vlc # Video Lan Converter
     # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
+    teamviewer
 
     # ID: Editors.
     # vscode

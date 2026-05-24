@@ -12,13 +12,13 @@ focus() {
 }
 
 small() {
-  hyprctl dispatch resizeactive exact 50% 45%
   hyprctl dispatch moveactive exact 50% 55%
+  hyprctl dispatch resizeactive exact 49% 44%
 }
 
 large() {
-  hyprctl dispatch resizeactive exact 84% 80%
   hyprctl dispatch moveactive exact 8% 16%
+  hyprctl dispatch resizeactive exact 84% 80%
 }
 
 is_large() {
