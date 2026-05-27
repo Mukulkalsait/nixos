@@ -6,6 +6,6 @@ if hyprctl clients | grep -q "class: wiremix"; then
 else
   kitty --class="wiremix" --title="WireMix-Audio 📢 " -o background_opacity=1.0 -o background=#1e1e2e -e wiremix -v output &
   sleep 0.1
-  hyprctl dispatch moveactive exact 2% 3%
   hyprctl dispatch resizeactive exact 58% 50%
+  hyprctl dispatch moveactive exact 2% 3%
 fi

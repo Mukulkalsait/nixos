@@ -6,6 +6,6 @@ if hyprctl clients | grep -q "class: wifitui"; then
 else
   kitty --class="wifitui" --title="WifiTUI 󱛆 " -e wifitui &
   sleep 0.1
-  hyprctl dispatch moveactive exact 61% 3%
   hyprctl dispatch resizeactive exact 28% 55%
+  hyprctl dispatch moveactive exact 61% 3%
 fi
