@@ -38,6 +38,7 @@
         lsli = "eza -laihgH --icons --group-directories-first --git --sort name";
         # lsd = "lazydocker";
         pti = "podman-tui";
+        pc = "podman-compose";
         gmd = "gomanagedocker p";
         dive = "dive --source podman";
         rustMaintain = "rustup update && rustup component add rust-analyzer rust-src clippy rustfmt && rustup component add clippy --toolchain nightly ";
