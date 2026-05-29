@@ -13,16 +13,11 @@
       "8.8.4.4"
     ];
 
+    # IMP: NMCLI : Network Manager Disabled => still keep it supports DHCP. 
     # THIS FORCES TO USE THE BILLOW CONFIG.
     networkmanager = {
       enable = true;
       dns = "systemd-resolved";
-      insertNameservers = [
-        "1.1.1.1"
-        "1.0.0.1"
-        "8.8.8.8"
-        "8.8.4.4"
-      ];
     };
 
     # IWD --------------------------------
@@ -39,9 +34,6 @@
     # };
     # IWD --------------------------------
 
-    # IMP: NMCLI : Network Manager Disabled => still keep it supports DHCP. 
-    networkmanager.enable = true;
-    networkmanager.dns = "systemd-resolved"; # CostumeDNS => systemd.resolver
 
   };
 
