@@ -42,7 +42,7 @@
 
       exec-once = [
         # "waybar"  # COMMENT THIS - DMS replaces it
-        "swww-daemon &" # KEEP THIS
+        # "swww-daemon &" # KEEP THIS
         "wl-paste --type text --watch cliphist store" # KEEP
         "wl-paste --type image --watch cliphist store" # KEEP
         # "while true; do ~/.config/swaync/scripts/battery-warning.sh; sleep 60; done &" # KEEP (unless DMS has battery alerts)
@@ -214,5 +214,5 @@
     #   source = ~/.config/hypr/swww.conf
     # '';
   };
-  imports = [ ./swww.nix ];
+  # imports = [ ./awww.nix ];
 }
