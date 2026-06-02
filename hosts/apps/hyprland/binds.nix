@@ -60,6 +60,9 @@
       "$mainMod SHIFT, F, togglefloating," # TAG: Borderles Window
 
       # B: Menu: 
+      "$mainMod, SPACE, exec, dms ipc call spotlight toggle" # NEW - DMS launcher
+      "$mainMod, PERIOD , exec, dms ipc call emoji picker" # NEW - DMS emoji picker (check exact command)
+      "$mainMod, 9, exec, dms ipc call notifications toggle" # NEW - DMS notifications
       # "$mainMod, SPACE, exec, pgrep -x rofi > /dev/null && pkill rofi || $menu -show drun" # Menu
       # "$mainMod ALT, SPACE, exec, pgrep -x rofi > /dev/null && pkill rofi || $menu -show run" # All Cmds
       # "$mainMod , slash, exec, pgrep -x rofi > /dev/null && pkill rofi || $menu -show keys" # Keybings
