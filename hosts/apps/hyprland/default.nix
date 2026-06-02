@@ -3,7 +3,7 @@
     ./binds.nix
     ./hypridle.nix
     ./hyprlock.nix
-    ./awww.nix
+    # ./awww.nix
     ./main.nix
   ];
 
