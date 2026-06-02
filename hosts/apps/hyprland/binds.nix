@@ -77,7 +77,7 @@
       "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
       # G: Mislenious: 
-      "$mainMod,       9, exec, swaync-client -t" # TAG: NOTIFICATIONS:
+      # "$mainMod,       9, exec, swaync-client -t" # TAG: NOTIFICATIONS:
       "$mainMod Shift, P, exec, hyprpicker -an" # TAG: Pick color (Hex) >> clipboard#
 
       # Y: Movements
@@ -123,7 +123,8 @@
       "$mainMod ALT, J, resizeactive,  0  30"
 
       # FUN_1: costume script:
-      "$mainMod SHIFT, W, exec, ${config.home.homeDirectory}/.config/swww/change.sh"
+      "$mainMod SHIFT, W, exec, dms ipc call wallpaper next"
+      # "$mainMod SHIFT, W, exec, ${config.home.homeDirectory}/.config/swww/change.sh"
 
       # B: ready to replace
       # "$mainMod,       P, pin," # TAG: no idea

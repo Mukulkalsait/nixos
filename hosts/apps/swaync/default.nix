@@ -10,7 +10,7 @@
   # /home/mukuldk/.config/swaync/scripts/battery-warning.sh
 
   services.swaync = {
-    enable = true;
+    enable = false;
     settings = {
       # General control center settings (defaults, adjust as needed)
       positionX = "left";

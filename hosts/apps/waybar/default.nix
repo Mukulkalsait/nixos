@@ -1,7 +1,7 @@
 # Y: Waybar = Notification Bar.
 {
   programs.waybar = {
-    enable = true;
+    enable = false;
     style = ./style.css;
     settings = {
       mainBar = {

@@ -6,7 +6,7 @@
     settings = {
 
       "$mainMod" = "SUPER";
-      "$menu" = "rofi";
+      # "$menu" = "rofi";
       # "$TERMINAL" = "kitty";
       "$TERMINAL" = "ghostty";
       "$KTERM" = "kitty";
@@ -49,6 +49,8 @@
 
         # ADD DMS
         "dms run"
+        "sleep 2"
+        "dms ipc call wallpaper set --random"
       ];
 
       # exec-once = [
