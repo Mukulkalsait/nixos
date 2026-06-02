@@ -49,8 +49,8 @@
 
         # ADD DMS
         "dms run"
-        "sleep 2"
-        "dms ipc call wallpaper set --random"
+        "sh -c 'sleep 3 && dms ipc call wallpaper random'" # Wait for DMS to start
+        # "dms ipc call wallpaper set --random"
       ];
 
       # exec-once = [

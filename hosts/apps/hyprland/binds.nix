@@ -70,7 +70,8 @@
 
       # DX: LOCKING + EXIT
       "$mainMod SHIFT, 0, exit,"
-      "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
+      # "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
+      "$mainMod, 0, exec, dms ipc call lock lock" # new lock screen
 
       # Y: Special Space
       "$mainMod,       S, togglespecialworkspace, magic"
