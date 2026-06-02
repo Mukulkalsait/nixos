@@ -13,7 +13,6 @@
   # Install LSP servers and formatters
   home.packages = with pkgs; [
 
-
     # B:  APPLICATION FOR NVIM |> 
     ghostscript # For PDF rendering (gs) snack.nvim
     # tectonic # For LaTeX rendering snack.nvim  🈸 Application added.
@@ -27,6 +26,7 @@
     sqlx-cli # sqli cli
     just # makefile
     # rustup # BEST FOR OTHER but not FOR NIX
+
     # G: for rust linkekrs
     gcc # linker
     glibc.dev # C headers
@@ -38,41 +38,52 @@
     # clang # colverd in llvmPackages.libclang
     # llvm # unnecessary
     # lld # gcc->ld
-
     pkgs.lldb_22 # provides codelldb for crate.nvim
 
     # Y: Lang (Programing) |>
     fnm # 🚀 DROP IN REPLACEMENT FOR NodeJs & BUN IMP: BEST for neovim mason and all.
     go # Original go
     perl # perl dont know why do i need this?
-
-    # bun # bun replacement for npm.
     (python3.withPackages (ps: with ps; [ pynvim ])) # python + its packages.
     uv # PIP replacement. python package /dependency manager.
+    # bun # bun replacement for npm.
 
-    # G: LSPs
+    # G: LSPs 
     biome # Y: Replacement for => Prettier/ESLint for JS/TS/JSON (FORMATER + LINTER)
     lua-language-server # LSP --WORKING
     nixd # NIX lsp --WORKING
     shellcheck # BASH LINTER --WORKING
-    vtsls
+    vtsls # This is the TypeScript LSP (replaces typescript-language-server)
 
     emmet-ls # LSP
     tailwindcss-language-server # LSP
     phpactor # LSP 
     # nil # nix-LSP
 
+    bash-language-server
+    nodejs_22
+    vscode-langservers-extracted
+    yaml-language-server
+
+    terraform-ls # Terraform
+    marksman # Markdown LSP
+    docker-compose-language-service # Docker Compose
+    dockerfile-language-server-nodejs # ✅ Correct name for your nixpkgs version
+    sqls # LSP (for SQL)
+
+    # dockerfile-language-server # NixRepo
 
     # G:  Formatters & Linters
-    dockerfile-language-server # NixRepo
-
+    stylua # Already in your list but commented
     nixpkgs-fmt # FORMATTER -- WORKING
     shfmt # FORMATTER (for Bash/ZSH) --WORKING 
-
     dockfmt # FORMSTTER -- NOT WORKING 
     stylua # FORMATTER -- NOT WORKING 
 
-    sqls # LSP (for SQL)
+    # Optional but helpful
+    # nodePackages.sql-formatter # SQL formatting (instead of Mason's)
+    # nodePackages.prettier # Universal formatter fallback
+    # eslint # JS/TS linting
 
     # B: just commented to try if its already on the Mason
     # typescript-language-server # LSP

@@ -1,6 +1,6 @@
 # Y: Home Packages
 
-{ config, pkgs, inputs, zen-browser, ... }: {
+{ config, pkgs, inputs, ... }: {
 
   home.packages = with pkgs; [
     # OTHER app installation LOCATIONS |>
@@ -25,6 +25,10 @@
     cliphist # clipboard history manager
     wtype # FUN_3: wayland keyboard input= i am using "fcitx5" in /configuration.nix USE ONLY 1.
     # w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
+
+    # quickshell installation
+    inputs.quickshell.packages.${pkgs.system}.default
+    inputs.dms.packages.${pkgs.system}.default
 
     # Y: Hardware Control |>
     pavucontrol # All audio IO gui tool very usefull.⭐

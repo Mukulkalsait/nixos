@@ -28,6 +28,19 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+
+    # Unifide UI fro Hyprland systems
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Add DMS as well (since you liked it)
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Fenix Rust NixOS style
     fenix = {
       url = "github:nix-community/fenix";

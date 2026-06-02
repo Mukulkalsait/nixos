@@ -1,4 +1,30 @@
 
+## so commands 
+```bash
+resolvectl status
+resolvectl dns  < wifiname> 1.1.1.1 8.8.8.8 
+nmcli dev show | grep DNS 
+
+
+// this is necessary to update the dns servers per network we connect.
+
+nmcli devices 
+
+nmcli connection modify "<tab>" IPv4.ignore-<tab>...auto no
+nmcli connection modify "<tab>" IPv6.ignore-<tab>...auto no
+nmcli conenction modify "<tab>" Ipv4.dns "1.1.1.1 1.0.0.1 8.8.8.8 8.0.0.8"
+
+nmcli connection up "<tab "
+nmcli connection down "<tab"
+
+//// then check resolvctl status
+
+nmcli dev show 
+
+```
+
+- are used here
+
 
 
 --------------------------------------------------------------------------------------------------------------
@@ -98,11 +124,3 @@ IP4.GATEWAY:                            --
 IP6.GATEWAY:                            --
 
 --------------------------------------------------------------------------------------------------------------
-## so commands 
-```bash
-resolvectl status
-resolvectl dns  < wifiname> 1.1.1.1 8.8.8.8 
-nmcli dev show | grep DNS 
-```
-
-- are used here
