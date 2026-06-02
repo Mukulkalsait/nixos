@@ -15,7 +15,7 @@
     wev # input event check + debug, <keyboard, mouse>
     xdg-desktop-portal-gtk # desktop intigration (file manager, ss ,etc)
     xdg-desktop-portal-hyprland # same as above + hyprland
-    awww # Walpaper
+    # awww # Walpaper
     hyprshot # Screenshot
     hyprpicker # color picker tool
     # libnotify # notification swaync
@@ -93,7 +93,7 @@
 
 
     # B: Desktop GUI apps:
-    inputs.zen-browser.packages.${pkgs.system}.default # FLAKE:
+    # inputs.zen-browser.packages.${pkgs.system}.default # FLAKE: this one is already in home.nix with profile settings.
     mission-center # Task Manager
     # libreoffice-fresh # community driven latest version fo libreoffice.
     onlyoffice-desktopeditors # alternate office tool
@@ -101,7 +101,7 @@
     vlc # Video Lan Converter
     # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
-    teamviewer
+    # teamviewer
 
     # ID: Editors.
     # vscode

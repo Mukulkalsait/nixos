@@ -42,15 +42,13 @@
 
       exec-once = [
         # "waybar"  # COMMENT THIS - DMS replaces it
-        # "swww-daemon &" # KEEP THIS
+        "swww-daemon &" # KEEP THIS
         "wl-paste --type text --watch cliphist store" # KEEP
         "wl-paste --type image --watch cliphist store" # KEEP
         # "while true; do ~/.config/swaync/scripts/battery-warning.sh; sleep 60; done &" # KEEP (unless DMS has battery alerts)
 
         # ADD DMS
         "dms run"
-        "sh -c 'sleep 3 && dms ipc call wallpaper random'" # Wait for DMS to start
-        # "dms ipc call wallpaper set --random"
       ];
 
       # exec-once = [
@@ -214,5 +212,5 @@
     #   source = ~/.config/hypr/swww.conf
     # '';
   };
-  # imports = [ ./awww.nix ];
+  # imports = [ ./swww.nix ];
 }
