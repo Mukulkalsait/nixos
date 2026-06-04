@@ -47,7 +47,7 @@
         # "waybar"  # COMMENT THIS - DMS replaces it
         "wl-paste --type text --watch cliphist store" # KEEP
         "wl-paste --type image --watch cliphist store" # KEEP
-        # "while true; do ~/.config/swaync/scripts/battery-warning.sh; sleep 60; done &" # KEEP (unless DMS has battery alerts)
+        "while true; do ~/.config/swaync/scripts/battery-warning.sh; sleep 60; done &" # KEEP (unless DMS has battery alerts)
       ];
 
       # exec-once = [
