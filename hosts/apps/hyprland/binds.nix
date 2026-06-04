@@ -63,6 +63,7 @@
       "$mainMod, SPACE, exec, dms ipc call spotlight toggle" # NEW - DMS launcher
       "$mainMod, PERIOD, exec, dms ipc call settings toggle" # settings
       "$mainMod, 9, exec, dms ipc call notifications toggle" # NEW - DMS notifications
+
       # "$mainMod, SPACE, exec, pgrep -x rofi > /dev/null && pkill rofi || $menu -show drun" # Menu
       # "$mainMod ALT, SPACE, exec, pgrep -x rofi > /dev/null && pkill rofi || $menu -show run" # All Cmds
       # "$mainMod , slash, exec, pgrep -x rofi > /dev/null && pkill rofi || $menu -show keys" # Keybings
@@ -70,15 +71,15 @@
 
       # DX: LOCKING + EXIT
       "$mainMod SHIFT, 0, exit,"
-      # "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
+
       "$mainMod, 0, exec, dms ipc call lock lock" # new lock screen
       "$mainMod, D, exec, dms ipc call widget toggle clock" # control center
-      "$mainMod SHIFT, question, exec, dms ipc call keybinds toggle hyprland" # control center
-      # "$mainMod SHIFT, code:61, exec, dms ipc call keybinds toggle hyprland" # control center Y: found with "wev" command and then ? 
+      "$mainMod SHIFT, code:61, exec, dms ipc call keybinds toggle hyprland" # control center Y: found with "wev" command and then ? 
       # "$mainMod , ?, exec, dms ipc call keybinds toggle hyprland" # control center
-
       "$mainMod, TAB, exec,dms ipc call hypr toggleOverview"
-      # "$mainMod, U, exec, dms ipc call toggle dashboard "
+      "$mainMod, U, exec,dms ipc call control-center toggle "
+
+      # "$mainMod, 0, exec, loginctl lock-session" # G: Old Lock Screen ////////
 
       # Y: Special Space
       "$mainMod,       S, togglespecialworkspace, magic"
