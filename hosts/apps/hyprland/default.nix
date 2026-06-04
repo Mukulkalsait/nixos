@@ -2,7 +2,7 @@
   imports = [
     ./binds.nix
     ./hypridle.nix
-    ./hyprlock.nix
+    # ./hyprlock.nix
     # ./awww.nix
     ./main.nix
   ];
