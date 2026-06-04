@@ -69,3 +69,14 @@ Failed to run `config` for nvim-treesitter
   - ~/.config/nvim/lua/plugins/lsp/treesitter_Nix.lua:37 _in_ **config**
   - ~/.config/nvim/lua/config/lazy.lua:17
   - 1_file/2_git_repos/nvim/init.lua:2
+
+
+
+
+
+
+
+
+
+    testfile
+    :was
