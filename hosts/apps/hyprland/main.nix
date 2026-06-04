@@ -48,8 +48,6 @@
         "wl-paste --type text --watch cliphist store" # KEEP
         "wl-paste --type image --watch cliphist store" # KEEP
         # "while true; do ~/.config/swaync/scripts/battery-warning.sh; sleep 60; done &" # KEEP (unless DMS has battery alerts)
-        # ADD DMS
-        "sleep 3 ~/.config/hypr/scripts/avatarchange.sh"
       ];
 
       # exec-once = [

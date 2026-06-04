@@ -18,7 +18,7 @@
     # awww # Walpaper
     hyprshot # Screenshot
     hyprpicker # color picker tool
-    # libnotify # notification swaync
+    libnotify # notification sender to everyone
     # rofimoji # rofi Emojy picker
     # rofi # MenuBar For Hyprland [ ROFI is the main now rofi-wayland is merged ]
     wl-clipboard # clipboard service
