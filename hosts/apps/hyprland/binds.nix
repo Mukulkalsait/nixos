@@ -72,9 +72,13 @@
       "$mainMod SHIFT, 0, exit,"
       # "$mainMod, 0, exec, loginctl lock-session" # Y: lockscreen
       "$mainMod, 0, exec, dms ipc call lock lock" # new lock screen
-      "$mainMod, D, exec, dms ipc call control_center toggle " # control center
-      "$mainMod, TAB, exec, dms ipc call overview toggle"
-      "$mainMod, U, exec, dms ipc call dashboard toggle"
+      "$mainMod, D, exec, dms ipc call widget toggle clock" # control center
+      "$mainMod SHIFT, question, exec, dms ipc call keybinds toggle hyprland" # control center
+      # "$mainMod SHIFT, code:61, exec, dms ipc call keybinds toggle hyprland" # control center Y: found with "wev" command and then ? 
+      # "$mainMod , ?, exec, dms ipc call keybinds toggle hyprland" # control center
+
+      "$mainMod, TAB, exec,dms ipc call hypr toggleOverview"
+      # "$mainMod, U, exec, dms ipc call toggle dashboard "
 
       # Y: Special Space
       "$mainMod,       S, togglespecialworkspace, magic"
