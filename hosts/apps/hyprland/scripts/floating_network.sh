@@ -7,5 +7,5 @@ else
   kitty --class="nmtui" --title="NMTUI 󱛆 " -e nmtui &
   sleep 0.1
   hyprctl dispatch resizeactive exact 33% 35%
-  hyprctl dispatch moveactive exact 61% 60%
+  hyprctl dispatch moveactive exact 64% 60%
 fi

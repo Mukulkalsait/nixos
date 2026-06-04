@@ -39,16 +39,17 @@
 
       # DX: monitor = name, resolution, position, scale
       monitor = [ ",1920x1200@165,auto,1" ",3840x2160@120,auto,1" ];
+      exec = [
+        "dms run"
+      ];
 
       exec-once = [
         # "waybar"  # COMMENT THIS - DMS replaces it
-        "swww-daemon &" # KEEP THIS
         "wl-paste --type text --watch cliphist store" # KEEP
         "wl-paste --type image --watch cliphist store" # KEEP
         # "while true; do ~/.config/swaync/scripts/battery-warning.sh; sleep 60; done &" # KEEP (unless DMS has battery alerts)
-
         # ADD DMS
-        "dms run"
+        "sleep 3 ~/.config/hypr/scripts/avatarchange.sh"
       ];
 
       # exec-once = [
@@ -212,5 +213,4 @@
     #   source = ~/.config/hypr/swww.conf
     # '';
   };
-  # imports = [ ./swww.nix ];
 }
