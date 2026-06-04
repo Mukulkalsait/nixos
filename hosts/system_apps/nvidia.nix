@@ -8,7 +8,7 @@
     enable32Bit = true;
     extraPackages = with pkgs; [
       # NVIDIA DRIVERS
-      cudatoolkit
+      # cudatoolkit
       nvidia-vaapi-driver
       ocl-icd
       opencl-headers
