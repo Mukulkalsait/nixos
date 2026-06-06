@@ -39,11 +39,10 @@
 
       # DX: monitor = name, resolution, position, scale
       monitor = [ ",1920x1200@165,auto,1" ",3840x2160@120,auto,1" ];
-      exec = [
-        "dms run"
-      ];
+      # exec = [ "dms run" ];
 
       exec-once = [
+        "dms run"
         # "waybar"  # COMMENT THIS - DMS replaces it
         "wl-paste --type text --watch cliphist store" # KEEP
         "wl-paste --type image --watch cliphist store" # KEEP
