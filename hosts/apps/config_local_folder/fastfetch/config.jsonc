@@ -2,93 +2,93 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "./logo.txt",
+    "source": "/home/mukuldk/.config/fastfetch/images/logo.txt",
     "type": "data-raw",
     "height": 18,
     "width": 28,
-    "padding": { "top": 5, "left": 6 },
+    "padding": { "top": 5, "left": 6 }
   },
 
   "modules": [
     {
       "type": "custom",
-      "format": "\u001b[90m┌──────────────────────────────────Hardware──────────────────────────────────┐",
+      "format": "\u001b[90m┌──────────────────────────────────Hardware──────────────────────────────────┐"
     },
     { "type": "title", "key": "    System Tree", "keyColor": "#FF4D4D" },
     {
       "type": "users",
       "key": "  ├─ Users",
       "keyColor": "#FF6B6B",
-      "outputColor": "#FFF176",
+      "outputColor": "#FFF176"
     },
     {
       "type": "host",
       "key": "  │ ├─󱄕 Host",
       "keyColor": "#EBEBEB",
-      "outputColor": "#80D8FF",
+      "outputColor": "#80D8FF"
     },
 
     {
       "type": "loadavg",
       "key": "  │ ├─󰄉 Load",
       "keyColor": "#5D688A",
-      "outputColor": "#F8FAB4",
+      "outputColor": "#F8FAB4"
     },
     {
       "type": "uptime",
       "key": "  │ └─ Uptime ",
       "keyColor": "#8E44AD",
-      "outputColor": "#FF6B6B",
+      "outputColor": "#FF6B6B"
     },
 
     {
       "type": "board",
       "key": "  ├─󰚗 Board",
       "keyColor": "#D3869B",
-      "outputColor": "#FFFFFF",
+      "outputColor": "#FFFFFF"
     },
     {
       "type": "cpu",
       "key": "  │ ├─ CPU",
       "keyColor": "#FF5252",
-      "outputColor": "#FFF176",
+      "outputColor": "#FFF176"
     },
     {
       "type": "gpu",
       "key": "  │ ├─ GPU",
       "keyColor": "#00FF7F",
-      "outputColor": "#b572c6",
+      "outputColor": "#b572c6"
     },
     {
       "type": "memory",
       "key": "  │ ├─ RAM",
       "keyColor": "#06AED5",
-      "outputColor": "#F6FF99",
+      "outputColor": "#F6FF99"
     },
     {
       "type": "swap",
       "key": "  │ ├─ Swap",
       "keyColor": "#7ADAA5",
-      "outputColor": "#F5C542",
+      "outputColor": "#F5C542"
     },
     {
       "type": "disk",
       "key": "  │ ├─🖴 Disk",
       "keyColor": "#8E44AD",
-      "outputColor": "#FFFFFF",
+      "outputColor": "#FFFFFF"
     },
     {
       "type": "display",
       "key": "  │ ├─󰍺 Monitor",
       "keyColor": "#FFD54F",
-      "outputColor": "#E9A5F1",
+      "outputColor": "#E9A5F1"
     },
 
     // {
     //   "type": "custom",
     //   "format": "  │ └─┐  ",
     //   "keyColor": "#D3869B",
-    //   "outputColor": "#FFFFFF",
+    //   "outputColor": "#FFFFFF"
     // },
     // {
     //   "type": "keyboard",
@@ -106,33 +106,33 @@
       "type": "sound",
       "key": "  │ └─🎧 Sound",
       "keyColor": "#D2C1B6",
-      "outputColor": "#954C2E",
+      "outputColor": "#954C2E"
     },
     {
       "type": "command",
       "key": "  ├─┐",
       "keyColor": "#00C853",
       "text": "os=$((command -v lsb_release >/dev/null 2>&1 && lsb_release -ds) || (awk -F= '/PRETTY_NAME/{print $2}' /etc/os-release | tr -d '\"') || echo 'Unknown OS'); kernel=$(uname -sr); echo \" OS: $os                 Kernel: $kernel\"",
-      "outputColor": "#B9F6CA",
+      "outputColor": "#B9F6CA"
     },
     {
       "type": "wm",
       "key": "  │ └─ DE",
       "keyColor": "#00B0FF",
-      "outputColor": "#80D8FF",
+      "outputColor": "#80D8FF"
     },
     {
       "type": "theme",
       "key": "  │   ├─󰉼 Theme",
       "keyColor": "#FEFBC7",
-      "outputColor": "#00C853",
+      "outputColor": "#00C853"
     },
     {
       "type": "command",
       "key": "  │   └─",
       "keyColor": "#FF6EC7",
       "text": "term=${TERM:-Unknown}; shell=$(basename ${SHELL:-/bin/sh}); echo \" Terminal => $term              Shell => $shell\"",
-      "outputColor": "#F8BBD0",
+      "outputColor": "#F8BBD0"
     },
     {
       "type": "command",
@@ -140,54 +140,54 @@
       "keyColor": "#E62727",
  
       "text": "echo '🚀 dig +short myip.opendns.com @resolver1.opendns.com'",
-      "outputColor": "#B9F6CA",
+      "outputColor": "#B9F6CA"
     },
     {
       "type": "localip",
       "key": "  │ ├─󰌗 Local IP",
       "keyColor": "#00E676",
-      "outputColor": "#B9F6CA",
+      "outputColor": "#B9F6CA"
     },
 
     {
       "type": "bluetooth",
       "key": "  │ ├─󰂳 BT",
       "keyColor": "#40C4FF",
-      "outputColor": "#E1F5FE",
+      "outputColor": "#E1F5FE"
     },
 
     {
       "type": "dns",
       "key": "  │ └─󰖟 DNS",
       "keyColor": "#40C4FF",
-      "outputColor": "#E1F5FE",
+      "outputColor": "#E1F5FE"
     },
     {
       "type": "processes",
       "key": "  ├─ Processes",
       "keyColor": "#EBFFD8",
-      "outputColor": "#E9A5F1",
+      "outputColor": "#E9A5F1"
     },
     {
       "type": "packages",
       "key": "  ├─󰀻 Pkgs",
       "keyColor": "#FDB7EA",
-      "outputColor": "#EDE7F6",
+      "outputColor": "#EDE7F6"
     },
     {
       "type": "battery",
       "key": "  └─🔋 Battery",
       "keyColor": "#FFD54F",
-      "outputColor": "#FFF8E1",
+      "outputColor": "#FFF8E1"
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────────────────────────────────────┘",
+      "format": "\u001b[90m└────────────────────────────────────────────────────────────────────────────┘"
     },
     {
       "type": "colors",
       "paddingLeft": 32,
-      "symbol": "circle",
-    },
-  ],
+      "symbol": "circle"
+    }
+  ]
 }
