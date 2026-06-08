@@ -76,6 +76,10 @@
     nerd-fonts.iosevka
     nerd-fonts.victor-mono
     nerd-fonts.monaspace
+    nerd-fonts.comic-shanns-mono
+    nerd-fonts.geist-mono
+    nerd-fonts.d2coding
+    nerd-fonts.fantasque-sans-mono
 
     # dejavu_fonts
     # powerline-fonts

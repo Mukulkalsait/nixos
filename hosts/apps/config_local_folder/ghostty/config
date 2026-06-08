@@ -45,8 +45,13 @@ foreground = #c8d3f5
 
 # Y: ===== CLEAN & SIMPLE (fonts)=====
 # ---------------------------------------------
-  font-family = JetBrainsMono Nerd Font
-  font-family-italic = MonaspiceRn Nerd Font 
+  # font-family = JetBrainsMono Nerd Font
+  font-family = Comic Sans MS
+  # font-family = D2CodingLigature Nerd Font
+  # font-family = GeistMono Nerd Font
+  # font-family = FantasqueSansM Nerd Font
+
+  font-family-italic = MonaspiceRn Nerd Font  
   font-family-bold = MonaspiceKr Nerd Font 
   font-family-bold-italic = MonaspiceKr Nerd Font
 
