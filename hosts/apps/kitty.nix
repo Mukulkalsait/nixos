@@ -1,11 +1,11 @@
 # Y: kitty.nix
 
-{ lib, config, pkgs, ... }: {
+{ ... }: {
 
   # Kitty
   programs.kitty = {
     enable = true;
-    themeFile = "Catppuccin-Mocha";
+    themeFile = "Bright_Lights";
     font = {
       size = 9;
       # ======= FONT==============

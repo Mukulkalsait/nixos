@@ -2,6 +2,8 @@ font-size = 9
 background-opacity = 0.75
 font-synthetic-style = true
 bold-is-bright = true
+font-feature = +dlig 
+font-feature = +liga
 
  command = zsh -ic "fastfetch; exec zsh"
 # ghostty is default fallback if fastfetch kitty did not work so we well not put fastfetch in it
@@ -45,8 +47,8 @@ foreground = #c8d3f5
 
 # Y: ===== CLEAN & SIMPLE (fonts)=====
 # ---------------------------------------------
-  # font-family = JetBrainsMono Nerd Font
-  font-family = Comic Sans MS
+   font-family = JetBrainsMono Nerd Font
+  # font-family = Comic Sans MS
   # font-family = D2CodingLigature Nerd Font
   # font-family = GeistMono Nerd Font
   # font-family = FantasqueSansM Nerd Font

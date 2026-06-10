@@ -42,7 +42,7 @@
 
     # ID: Terminal |>
     inputs.ghostty.packages.${pkgs.system}.default # FLAKE:
-    kitty
+    # kitty
     # zellij
     nushell # best for http APIs checking.
     tmux

@@ -1,5 +1,5 @@
 # Y: Themes Settings
-{ config, pkgs, inputs, zen-browser, ... }:
+{ config, pkgs, ... }:
 {
   gtk = {
     enable = true;
