@@ -8,7 +8,7 @@
     enable32Bit = true;
     extraPackages = with pkgs; [
       # NVIDIA DRIVERS
-      # cudatoolkit
+      cudatoolkit
       nvidia-vaapi-driver
       ocl-icd
       opencl-headers
@@ -30,7 +30,8 @@
   hardware.nvidia = {
     # package = config.boot.kernelPackages.nvidiaPackages.stable;   # stable version (stable ⭐)
     # package = config.boot.kernelPackages.nvidiaPackages.production; # production branch (latest 🚀)
-    package = config.boot.kernelPackages.nvidiaPackages.beta; # production beta (most cutting edge ⚡)
+    # package = config.boot.kernelPackages.nvidiaPackages.beta; # production beta (most cutting edge ⚡)
+    package = config.boot.kernelPackages.nvidiaPackages.latest; # production beta (most cutting edge ⚡)
 
     modesetting.enable = true;
     powerManagement.enable = true; # NvidiaPowered + Dynamic Boost Engin
