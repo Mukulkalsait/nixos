@@ -145,13 +145,17 @@
         # fan6 = "echo '80,80' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
         # fanFull = "echo '100,100' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed";
         # Y: Battery 
-        # bat80 = "echo '1' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter";
-        # batFull = "echo '0' | sudo ${pkgs.coreutils}/bin/tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter";
-        # batLimit = "cat /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_limiter";
+        batShow = "cat /sys/bus/wmi/drivers/acer-wmi-battery/health_mode";
+        bat80 = "echo 1 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/health_mode";
+        batFull = "echo 0 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/health_mode";
+        battery-temp = "cat /sys/bus/wmi/drivers/acer-wmi-battery/temperature";
+        batLoad = "~/1_file/2_git_repos/acer-wmi-battery/loadBattery.sh";
+        batUnload = "sudo rmmod acer_wmi_battery";
+
+        batCalOn = "echo 1 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/calibration_mode";
+        batCalOff = "echo 0 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/calibration_mode ";
 
         # batCal = "cat /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_calibration";
-        # batCalOn = "echo 1 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_calibration";
-        # batCalOff = "echo 0 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/battery_calibration";
         # usbCharge0 = "echo 0 | sudo tee /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/usb_charging"; # Y:  other values are 10 | 20 | 30. on respective %.
         # Y: Screen
         # lcdCheck = "cat /sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/lcd_override";
