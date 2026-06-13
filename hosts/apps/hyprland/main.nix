@@ -47,7 +47,7 @@
         "wl-paste --type text --watch cliphist store" # KEEP
         "wl-paste --type image --watch cliphist store" # KEEP
         "while true; do ~/.config/hypr/scripts/battery-warning-dms.sh; sleep 60; done &" # libnotify to dms
-        "sleep 10; ~/.config/hypr/scripts/avatarchange.sh"
+        "sh -c 'sleep 10; ~/.config/hypr/scripts/avatarchange.sh'"
       ];
 
       # exec-once = [
@@ -82,7 +82,7 @@
 
       dwindle = {
         # pseudotile = true;
-        pseudotile = false;
+        # pseudotile = false;
         # preserve_split = true;
         preserve_split = false;
       };
@@ -138,8 +138,10 @@
       misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = false;
-        vfr = true; # Y: variable refresh rate.
         # force_default_amdgpu_renderer = false; # Y:NVIDIA compatibility
+      };
+      debug = {
+        vfr = true; # Y: variable refresh rate.
       };
 
 
