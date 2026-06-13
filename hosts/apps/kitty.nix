@@ -5,7 +5,10 @@
   # Kitty
   programs.kitty = {
     enable = true;
-    themeFile = "Bright_Lights";
+    # themeFile = "Bright_Lights";
+    # themeFile = "Encom";
+    # themeFile = "Lavandula";
+    themeFile = "Argonaut";
     font = {
       size = 9;
       # ======= FONT==============
@@ -19,8 +22,8 @@
       # name-bold = "DejaVu Sans Mono";
     };
     settings = {
-      background = "#000000";
-      background_opacity = "0.80";
+      # background = "#000000";
+      background_opacity = "0.70";
       confirm_os_window_close = 0;
       # cursor_shape = "beam";
       cursor_trail = "5";
