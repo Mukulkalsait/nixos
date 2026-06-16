@@ -39,6 +39,8 @@
 
     # G: Android Relates |>
     android-tools # adb
+    jmtpfs # Fuse filesystem for devices like Android
+    libmtp # (Microsofts=MediatTrnasferProtocol) library
 
     # ID: Terminal |>
     inputs.ghostty.packages.${pkgs.system}.default # FLAKE:
@@ -90,6 +92,7 @@
     pinta # D.Photo editor
     shotcut # Video Editor
     nautilus # File manager
+
 
 
     # B: Desktop GUI apps:
