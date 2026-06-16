@@ -68,7 +68,7 @@
     terraform-ls # Terraform
     marksman # Markdown LSP
     docker-compose-language-service # Docker Compose
-    dockerfile-language-server-nodejs # ✅ Correct name for your nixpkgs version
+    dockerfile-language-server # ✅ Correct name for your nixpkgs version
     sqls # LSP (for SQL)
 
     # dockerfile-language-server # NixRepo
