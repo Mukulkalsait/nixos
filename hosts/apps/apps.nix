@@ -93,6 +93,11 @@
     shotcut # Video Editor
     nautilus # File manager
 
+    # Ty: |> MUSIC PRODUCTION:
+    # ardour
+    ardour_8
+    jack2
+    alsa-utils
 
 
     # B: Desktop GUI apps:
