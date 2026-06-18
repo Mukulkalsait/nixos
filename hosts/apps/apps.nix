@@ -94,7 +94,7 @@
     nautilus # File manager
 
     # Ty: |> MUSIC PRODUCTION:
-    # ardour
+    ardour
     ardour_8
     jack2
     alsa-utils
