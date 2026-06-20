@@ -95,7 +95,7 @@
 
     # Ty: |> MUSIC PRODUCTION:
     ardour
-    ardour_8
+    # ardour_8
     jack2
     alsa-utils
 
