@@ -51,7 +51,7 @@
   };
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk3";
     # style.name = "adwaita-dark";
     style.name = "gtk2";
     # platformTheme.name = "qtct"; # or "qt5ct" / "kvantum"

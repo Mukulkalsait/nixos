@@ -25,6 +25,12 @@
     # RUST_SRC_PATH = "${pkgs.fenix.stable.rust-src}/lib/rustlib/src/rust/library";
     RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
 
+    # CUDA - These are now confirmed working
+    CUDA_HOME = "${pkgs.cudaPackages.cudatoolkit}";
+    CUDA_PATH = "${pkgs.cudaPackages.cudatoolkit}";
+    CUDACXX = "${pkgs.cudaPackages.cudatoolkit}/bin/nvcc";
+
+    LD_LIBRARY_PATH = "/run/opengl-driver/lib:" + "/run/opengl-driver-32/lib:" + "${pkgs.cudaPackages.cudatoolkit}/lib:" + "$LD_LIBRARY_PATH";
 
 
     # B: Updated RUST_SRC_PATH: Use rustup's if available, fallback to Nix
@@ -51,6 +57,7 @@
     "${config.home.homeDirectory}/.cargo/bin"
     "${config.home.homeDirectory}/go/bin"
     "${config.home.homeDirectory}/.cache/.bun/bin"
+    "${pkgs.cudaPackages.cudatoolkit}/bin" # For nvcc
   ];
 
 }
