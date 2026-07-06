@@ -1,0 +1,12 @@
+# Ultra-wide Rust formatting
+
+edition = "2024"   
+max_width = 150
+chain_width = 130
+use_small_heuristics = "Max"
+fn_single_line = true      # Single line functions if possible
+
+single_line_if_else_max_width = 100   # if you also want compact if-else
+chain_one_line_max = 20
+
+imports_layout = "HorizontalVertical"  # Mixed layout
