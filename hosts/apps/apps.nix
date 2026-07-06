@@ -95,7 +95,14 @@
 
     # Ty: |> MUSIC PRODUCTION:
     ardour
-    # ardour_8
+    # Plugins for ardours
+    # calf
+    lsp-plugins
+    x42-plugins
+    zam-plugins
+    sfizz
+    # fluid-soundfont # not fou9nd
+    # Linux Plogins for Ardour
     jack2
     alsa-utils
 
