@@ -1,4 +1,5 @@
 # Ultra-wide Rust formatting
+#
 
 edition = "2024"   
 max_width = 150
