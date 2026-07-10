@@ -2,12 +2,12 @@
 #
 
 edition = "2024"   
-max_width = 150
-chain_width = 130
+max_width = 160
+chain_width = 140
 use_small_heuristics = "Max"
 fn_single_line = true      # Single line functions if possible
 
-single_line_if_else_max_width = 100   # if you also want compact if-else
-chain_one_line_max = 20
+single_line_if_else_max_width = 120   # if you also want compact if-else
+chain_one_line_max = 100
 
 imports_layout = "HorizontalVertical"  # Mixed layout
