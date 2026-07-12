@@ -99,7 +99,11 @@
     criticalPowerAction = "PowerOff"; # Changed to PowerOff for reliability
   };
 
-
+  # TailScale for ssh to home.
+  services.tailscale = {
+    enable = true;
+    openFirewall = false; # only use when you want other to connect to this device
+  };
 
   # Logind settings
   services.logind.settings.Login = {
