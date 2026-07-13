@@ -1,5 +1,5 @@
 # Y: Hardware Services
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   # G:  Networking and DNS resolver. =============================================================================
   # systemd.network.enable = true; # systemd-networkd. only on if IWD is enable not needed for NMCLI.
 
@@ -99,11 +99,26 @@
     criticalPowerAction = "PowerOff"; # Changed to PowerOff for reliability
   };
 
-  # TailScale for ssh to home.
+  # TailScale for ssh to home. ========================================
   services.tailscale = {
     enable = true;
     openFirewall = false; # only use when you want other to connect to this device
   };
+
+  # Y: => wanted by = 0, Hence: 
+  #   - will not start on boot.
+  #   - be present but disabled in systemc
+  #   - need to be start with systemd on every boot, 
+  systemd.services.tailscaled = {
+    enable = true; # Keep it available
+    wantedBy = lib.mkForce [ ];
+    # R: lib.mkForce says: "Ignore the default value completely. Use ONLY what I specify." 
+    # lib.mkForce is NixOs specific which replace the default value with our provided value.
+    after = [ ]; # No dependencies
+    requires = [ ];
+
+  };
+  # TailScale =========================================================
 
   # Logind settings
   services.logind.settings.Login = {
