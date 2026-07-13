@@ -74,6 +74,11 @@
     xwayland.enable = true;
   };
 
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.valent;
+  };
+
   # Y: SSH
   programs.ssh = {
     startAgent = true; # (ssh-agent) => store ssh keys + Help you connect to Outer server
