@@ -158,6 +158,12 @@
     };
   };
 
+  programs.kdeconnect =
+    {
+      enable = true;
+      package = pkgs.valent;
+    };
+
 
   programs.obs-studio = {
     enable = true;
