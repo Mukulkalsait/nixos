@@ -41,6 +41,7 @@
     android-tools # adb
     jmtpfs # Fuse filesystem for devices like Android
     libmtp # (Microsofts=MediatTrnasferProtocol) library
+    # kdePackages.kdeconnect-kde # For KDE Plasma 6 (recommended)
 
     # ID: Terminal |>
     inputs.ghostty.packages.${pkgs.system}.default # FLAKE:
