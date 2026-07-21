@@ -96,6 +96,7 @@
 
     # Ty: |> MUSIC PRODUCTION:
     ardour
+    # lmms # does not work
     # Plugins for ardours
     # calf
     lsp-plugins
@@ -115,7 +116,6 @@
     onlyoffice-desktopeditors # alternate office tool
     scrcpy # Same for above
     vlc # Video Lan Converter
-    # ardour # Music Produciton DAW
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
     # teamviewer
 

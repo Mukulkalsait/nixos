@@ -49,9 +49,7 @@
       "$mainMod, P, exec, ~/.config/hypr/scripts/floating_term.sh toggle"
       "$mainMod, R, exec, ~/.config/hypr/scripts/floating_term.sh resize"
       "$mainMod, 8, exec, ~/.config/hypr/scripts/floating_bluetooth.sh"
-
       # "$mainMod, W, exec, hyprctl clients | grep iwd-impala && hyprctl dispatch closewindow class:iwd-impala || $KTERM --class=\"iwd-impala\" --title=\"IWD-Impala 󱛆 \" -e impala"
-
       "CTRL SHIFT, Escape,  exec, $TASKMANAGER" # Mission Center.
       # "CTRL SHIFT, Escape,  exec, kitty -e btop" # Y: btop
 
@@ -71,15 +69,15 @@
 
       # DX: LOCKING + EXIT
       "$mainMod SHIFT, 0, exit,"
+      "$mainMod, 0, exec, dms ipc call lock lock" # DX: BY DMS
 
-      "$mainMod, 0, exec, dms ipc call lock lock" # new lock screen
-      "$mainMod, D, exec, dms ipc call widget toggle clock" # control center
-      "$mainMod SHIFT, code:61, exec, dms ipc call keybinds toggle hyprland" # control center Y: found with "wev" command and then ? 
-      # "$mainMod , ?, exec, dms ipc call keybinds toggle hyprland" # control center
-      # "$mainMod, TAB, exec,dms ipc call hypr toggleOverview"
-      "$mainMod, U, exec,dms ipc call control-center toggle "
-
-      # "$mainMod, 0, exec, loginctl lock-session" # G: Old Lock Screen ////////
+      # Struct: DMS shell shortcuts
+      "$mainMod, D, exec, dms ipc call widget toggle clock" # Clock
+      "$mainMod, U, exec,dms ipc call control-center toggle " # control center
+      # =====================|   Impl:  found with "wev" command and then press the key eg ? , = , \ 
+      "$mainMod SHIFT, code:61, exec, dms ipc call keybinds toggle hyprland" # Keyboards Shortcuts Y: shift + (?) => key code 61
+      "$mainMod, code:51, exec, dms ipc call widget toggle dankKDEConnect" # Phone Connect Y: "web" (/) => key code: 51
+      "$mainMod, code:21, exec, dms ipc call widget toggle battery" # Battery Health Y: "wev"  (=)  => key code:21 
 
       # Y: Special Space
       "$mainMod,       S, togglespecialworkspace, magic"
