@@ -39,7 +39,7 @@
 
     # G: Android Relates |>
     android-tools # adb
-    jmtpfs # Fuse filesystem for devices like Android
+    # jmtpfs # Fuse filesystem for devices like Android R: removed from nix
     libmtp # (Microsofts=MediatTrnasferProtocol) library
     # kdePackages.kdeconnect-kde # For KDE Plasma 6 (recommended)
 
