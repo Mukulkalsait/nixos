@@ -1,3 +1,5 @@
+# main.nix
+
 {
   wayland.windowManager.hyprland = {
     enable = true;

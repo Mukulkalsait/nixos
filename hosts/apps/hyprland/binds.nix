@@ -1,3 +1,5 @@
+# bind.nix
+
 { pkgs, config, ... }:
 # let
 # Y: EXAPMPE OF WRITING SCRIPTS.

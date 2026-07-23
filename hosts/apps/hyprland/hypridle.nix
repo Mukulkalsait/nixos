@@ -1,3 +1,5 @@
+# hyrpidle.nix
+
 # {
 #   services.hypridle = {
 #     enable = true;
