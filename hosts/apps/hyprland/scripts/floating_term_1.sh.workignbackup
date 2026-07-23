@@ -4,11 +4,11 @@ CLASS="floating_window"
 ACTION="$1"
 
 exists() {
-  hyprctl clients -j | jq -e ".[] | select(.class==\"$CLASS\")" >/dev/null 2>&1
+  hyprctl clients | grep -q "class: $CLASS"
 }
 
 focus() {
-  hyprctl dispatch focuswindow "class:^${CLASS}$"
+  hyprctl dispatch focuswindow class:$CLASS
 }
 
 small() {
@@ -22,15 +22,15 @@ large() {
 }
 
 is_large() {
-  # Changed threshold from 1000 to 800 (since your window width is ~932)
   hyprctl clients -j | jq -e \
-    ".[] | select(.class==\"$CLASS\" and .size[0] > 800)" >/dev/null 2>&1
+    ".[] | select(.class==\"$CLASS\" and .size[0] > 1000)" >/dev/null
 }
 
 case "$ACTION" in
 toggle)
   if exists; then
-    hyprctl dispatch closewindow "class:^${CLASS}$" || pkill -f "kitty --class=$CLASS"
+    hyprctl dispatch closewindow class:$CLASS ||
+      pkill -f "kitty --class=$CLASS"
   else
     kitty \
       --class="$CLASS" \

@@ -69,6 +69,7 @@
   programs.zsh.enable = true;
 
   # Y: HYPRLAND:
+  # Y: HYPRLAND:
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
