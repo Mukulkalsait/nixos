@@ -7,7 +7,7 @@
     ./starship
     ./hyprland
     ./swaync
-    ./waybar
+    # ./waybar # commented out but kept because its efficient
     ./rofi
     # ./tmux
     # ./ghostty

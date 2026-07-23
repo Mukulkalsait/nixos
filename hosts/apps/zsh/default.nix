@@ -87,7 +87,7 @@
         nixConfig = "nvim /home/mukuldk/.predator_nix/";
         zshConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/zsh/default.nix";
         wbrConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/waybar/default.nix";
-        hyprConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/hyprland/main.nix";
+        hyprConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/hyprland/hyprland.lua";
         kittyConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/kitty.nix";
         # IMP: config inside nix repo and imported but non nix.
         ttConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/.config_local/tmux/";
