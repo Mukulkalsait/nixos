@@ -1,10 +1,13 @@
 {
   imports = [
-    ./binds.nix
-    ./hypridle.nix
-    # ./hyprlock.nix
-    # ./awww.nix
-    ./main.nix
+    # Y: hyprlang config.
+    # ./binds.nix
+    # ./hypridle.nix
+    # ./main.nix
+    ##|  ./hyprlock.nix
+    ##|  ./awww.nix
+
+    # G: New Lua Config will be here.
   ];
 
   # Hyprland-Internal_configs.
