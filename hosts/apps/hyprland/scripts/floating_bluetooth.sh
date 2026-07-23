@@ -1,11 +1,10 @@
-#!/usr/bin/env bash
+source ~/.config/hypr/sc/lib/window.sh
 
-# If impala exists → kill it
-if hyprctl clients | grep -q "class: bluetooth"; then
-  hyprctl dispatch closewindow class:bluetooth || pkill -f "kitty --class=bluetooth"
-else
-  kitty --class="bluetooth" --title="BlueTuiTh 🎧" -e bluetuith &
-  sleep 0.1
-  hyprctl dispatch resizeactive exact 58% 40%
-  # hyprctl dispatch moveactive exact 5% 55%
-fi
+CLASS=bluetooth
+
+toggle_window "$CLASS" \
+  "BlueTuiTh 🎧" \
+  "bluetuith"
+
+window_resize_percent "$CLASS" 58 40
+window_move_percent "$CLASS" 5 55

@@ -1,11 +1,10 @@
-#!/usr/bin/env bash
+source ~/.config/hypr/sc/lib/window.sh
 
-# If impala exists → kill it
-if hyprctl clients | grep -q "class: wiremix"; then
-  hyprctl dispatch closewindow class:wiremix || pkill -f "kitty --class=wiremix"
-else
-  kitty --class="wiremix" --title="WireMix-Audio 📢 " -o background_opacity=1.0 -o background=#1e1e2e -e wiremix -v output &
-  sleep 0.1
-  hyprctl dispatch resizeactive exact 58% 50%
-  # hyprctl dispatch moveactive exact 5% 3%
-fi
+CLASS=wiremix
+
+toggle_window "$CLASS" \
+  "WireMix-Audio 📢" \
+  "wiremix -v output"
+
+window_resize_percent "$CLASS" 58 50
+window_move_percent "$CLASS" 5 3

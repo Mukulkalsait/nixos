@@ -36,22 +36,29 @@ local function setupKeybindings()
 
 	local home = os.getenv("HOME")
 
-	-- Floating scripts with parameters
-	hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_network1.sh"))
-	hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_network.sh"))
-	hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_audio.sh"))
-	hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_bluetooth.sh"))
+	-- ======================================================================================================
+	-- Floating scripts with parameters                                                                             G: Real files
+	-- ======================================================================================================
+	-- hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_network1.sh"))
+	-- hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_network.sh"))
+	-- hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_audio.sh"))
+	-- hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_bluetooth.sh"))
+	-- hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_bluetooth.sh"))
+	-- -- Passed arguments (toggle / resize)
+	-- hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/scripts/floating_term.sh toggle'"))
+	-- hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/scripts/floating_term.sh resize'"))
 
-	-- Passed arguments (toggle / resize)
-	hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/sc/a.sh toggle'"))
-	hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/sc/a.sh resize'"))
-
-	-- hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("~/.config/hypr/scripts/floating_network1.sh"))
-	-- hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "N", hl.dsp.exec_cmd("~/.config/hypr/scripts/floating_network.sh"))
-	-- hl.bind(mainMod .. " + " .. "A", hl.dsp.exec_cmd("~/.config/hypr/scripts/floating_audio.sh"))
-	-- hl.bind(mainMod .. " + " .. "P", hl.dsp.exec_cmd("~/.config/hypr/scripts/floating_term.sh toggle"))
-	-- hl.bind(mainMod .. " + " .. "R", hl.dsp.exec_cmd("~/.config/hypr/scripts/floating_term.sh resize"))
-	-- hl.bind(mainMod .. " + " .. "8", hl.dsp.exec_cmd("~/.config/hypr/scripts/floating_bluetooth.sh"))
+	-- ======================================================================================================
+	-- Floating scripts with parameters                                                                             Y: TESTING
+	-- ======================================================================================================
+	hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_network1.sh"))
+	hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_network.sh"))
+	hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_audio.sh"))
+	hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_bluetooth.sh"))
+	hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_bluetooth.sh"))
+	hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/sc/floating_term.sh toggle'"))
+	hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/sc/floating_term.sh resize'"))
+	-- ======================================================================================================
 
 	-- Screen
 	hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen())
