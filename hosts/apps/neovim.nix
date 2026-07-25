@@ -21,6 +21,7 @@
     # fenix.stable.toolchain # NixOS style Rust Toolchain. 
     fenix.complete.toolchain # NixOS style Rust Toolchain Complete. 
     cargo-binstall # Faster Binery installation
+    cargo-nextest # 3x Faster testing + good printing of test
     cargo-watch # like Tainwind watch
     cargo-edit # cargo add / remove/ tree like commands
     sqlx-cli # sqli cli
