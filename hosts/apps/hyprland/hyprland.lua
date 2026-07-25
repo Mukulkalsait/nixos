@@ -127,7 +127,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	-- hl.exec_cmd("while true; do ~/.config/hypr/scripts/battery-warning-dms.sh; sleep 60; done &")
-	-- hl.exec_cmd("sh -c 'sleep 10; ~/.config/hypr/scripts/avatarchange.sh'")
+	hl.exec_cmd("sh -c 'sleep 10; ~/.config/hypr/scripts/avatarchange.sh'")
 end)
 
 -- 9. Keybindings
