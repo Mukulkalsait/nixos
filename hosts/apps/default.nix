@@ -6,11 +6,9 @@
     ./zsh
     ./starship
     ./hyprland
-    ./swaync
+    # ./swaync # Notification
     # ./waybar # commented out but kept because its efficient
-    ./rofi
-    # ./tmux
-    # ./ghostty
+    # ./rofi # apps drawer
 
     # Y: Files
     ./apps.nix
