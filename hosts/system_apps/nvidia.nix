@@ -1,3 +1,5 @@
+# nvidia.nix 
+
 # Y: Nvidia + Gaming Setup.
 { config, pkgs, ... }: {
   # Y: x.server = OpenGL :
