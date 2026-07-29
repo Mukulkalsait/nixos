@@ -24,7 +24,7 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("GBM_BACKEND", "nvidia-drm")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
+-- hl.env("LIBVA_DRIVER_NAME", "nvidia") # broke VLC for long time.
 hl.env("XDG_SCREENSHOTS_DIR", os.getenv("HOME") .. "/screens")
 
 -- ==========================================
