@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-HYPR_WINDOW_CLASS="${HYPR_WINDOW_CLASS:-}"
-
-window_log() {
-  echo "[WINDOWS] $*"
-}
-
 window_exists() {
   local class="$1"
 
@@ -26,7 +20,7 @@ window_close() {
   local class="$1"
 
   hyprctl dispatch \
-    "hl.dsp.window.close({ window = \"class:^${class}$\" })"
+    "hl.dsp.window\.close({ window = \"class:^${class}$\" })"
 }
 
 window_info() {
@@ -38,17 +32,11 @@ window_info() {
 }
 
 window_width() {
-  local class="$1"
-
-  window_info "$class" |
-    jq -r '.size[0]'
+  window_info "$1" | jq -r '.size[0]'
 }
 
 window_height() {
-  local class="$1"
-
-  window_info "$class" |
-    jq -r '.size[1]'
+  window_info "$1" | jq -r '.size[1]'
 }
 
 window_resize() {
@@ -57,7 +45,7 @@ window_resize() {
   local height="$3"
 
   hyprctl dispatch \
-    "hl.dsp.window.resize({
+    "hl.dsp.window\.resize({
             window = \"class:^${class}$\",
             x = ${width},
             y = ${height}
@@ -70,7 +58,7 @@ window_move() {
   local y="$3"
 
   hyprctl dispatch \
-    "hl.dsp.window.move({
+    "hl.dsp.window\.move({
             window = \"class:^${class}$\",
             x = ${x},
             y = ${y}
@@ -78,13 +66,11 @@ window_move() {
 }
 
 monitor_width() {
-  hyprctl monitors -j |
-    jq -r '.[0].width'
+  hyprctl monitors -j | jq -r '.[0].width'
 }
 
 monitor_height() {
-  hyprctl monitors -j |
-    jq -r '.[0].height'
+  hyprctl monitors -j | jq -r '.[0].height'
 }
 
 monitor_percent_width() {
@@ -92,7 +78,6 @@ monitor_percent_width() {
   local width
 
   width="$(monitor_width)"
-
   echo $((width * percent / 100))
 }
 
@@ -101,7 +86,6 @@ monitor_percent_height() {
   local height
 
   height="$(monitor_height)"
-
   echo $((height * percent / 100))
 }
 
@@ -136,24 +120,16 @@ window_move_percent() {
 window_debug() {
   local class="$1"
 
-  echo "=========================================="
-  echo " Window: $class"
-  echo "=========================================="
+  echo "Window: $class"
 
   if ! window_exists "$class"; then
-    echo "Status : NOT FOUND"
+    echo "Status: NOT FOUND"
     return 1
   fi
 
-  echo "Status : EXISTS"
-  echo
-  echo "Monitor:"
-  echo "  Width  : $(monitor_width)"
-  echo "  Height : $(monitor_height)"
-  echo
-  echo "Window:"
-  window_info "$class"
+  echo "Status: EXISTS"
+  echo "Monitor: $(monitor_width)x$(monitor_height)"
+  echo "Window: $(window_width "$class")x$(window_height "$class")"
 
-  echo
-  echo "=========================================="
+  window_info "$class"
 }
