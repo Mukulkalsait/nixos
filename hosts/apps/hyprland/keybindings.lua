@@ -1,25 +1,12 @@
 -- ~/.config/hypr/keybindings.lua
--- All keybindings in official Lua syntax
-
--- Variables (make sure these match your main config)
 
 local mainMod = "SUPER"
 local terminal = "ghostty" -- or "kitty"
--- local terminal = "kitty" -- Replace with your terminal (e.g., "ghostty")
 local kterm = "kitty"
 local browser = "zen-twilight" -- Replace with your browser
 local editor = "nvim"
 local filemanager = "yazi"
 local taskmanager = "missioncenter"
-
--- -- ~/.config/hypr/keybindings.lua
--- local mainMod = "SUPER"
--- local terminal = "ghostty"
--- local kterm = "kitty"
--- local browser = "zen-twilight"
--- local editor = "nvim"
--- local filemanager = "yazi"
--- local taskmanager = "missioncenter"
 
 local function setupKeybindings()
 	-- Application Shortcuts
@@ -31,33 +18,19 @@ local function setupKeybindings()
 	hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd(kterm .. " -e " .. filemanager))
 	hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskmanager))
 
-	-- Scripts
-	--
-
 	local home = os.getenv("HOME")
 
 	-- ======================================================================================================
 	-- Floating scripts with parameters                                                                             G: Real files
 	-- ======================================================================================================
-	-- hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_network1.sh"))
-	-- hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_network.sh"))
-	-- hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_audio.sh"))
-	-- hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_bluetooth.sh"))
-	-- hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/floating_bluetooth.sh"))
-	-- -- Passed arguments (toggle / resize)
-	-- hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/scripts/floating_term.sh toggle'"))
-	-- hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/scripts/floating_term.sh resize'"))
+	local dir = home .. "/.config/hypr/scripts/" -- Y: variable for location os scripts
 
-	-- ======================================================================================================
-	-- Floating scripts with parameters                                                                             Y: TESTING
-	-- ======================================================================================================
-	hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_network1.sh"))
-	hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_network.sh"))
-	hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_audio.sh"))
-	hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_bluetooth.sh"))
-	hl.bind(mainMod .. " + 8", hl.dsp.exec_cmd(home .. "/.config/hypr/sc/floating_bluetooth.sh"))
-	hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/sc/floating_term.sh toggle'"))
-	hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("sh -c '" .. home .. "/.config/hypr/sc/floating_term.sh resize'"))
+	hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(dir .. "floating_network.sh"))
+	hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd(dir .. "floating_network1.sh"))
+	hl.bind(mainMod .. " + " .. "A", hl.dsp.exec_cmd(dir .. "floating_audio.sh"))
+	hl.bind(mainMod .. " + " .. "8", hl.dsp.exec_cmd(dir .. "floating_bluetooth.sh"))
+	hl.bind(mainMod .. " + " .. "P", hl.dsp.exec_cmd("sh -c '" .. dir .. "floating_term.sh toggle'"))
+	hl.bind(mainMod .. " + " .. "R", hl.dsp.exec_cmd("sh -c '" .. dir .. "floating_term.sh resize'"))
 	-- ======================================================================================================
 
 	-- Screen
