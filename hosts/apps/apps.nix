@@ -29,7 +29,6 @@
     # quickshell installation
     inputs.quickshell.packages.${pkgs.system}.default
     inputs.dms.packages.${pkgs.system}.default
-    gtk-engine-murrine # Fix GTK theme warnings
     dgop # Optional: system monitoring for DMS
 
 
