@@ -4,8 +4,10 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.catppuccin-papirus-folders;
-      name = "Papirus-Dark"; # it still uses Papirus-Dark as the theme name
+      package = pkgs.whitesur-icon-theme;
+      name = "WhiteSur-dark";
+      # package = pkgs.catppuccin-papirus-folders;
+      # name = "Papirus-Dark"; # it still uses Papirus-Dark as the theme name
       # name = "Papirus"; # light
       # name = "Papirus-Light"; # lighter variant
     };
@@ -23,14 +25,6 @@
         accents = [ "blue" ]; # try: blue, mauve, pink, teal, green, red, yellow
       };
       name = "catppuccin-mocha-blue-standard";
-
-      # === Graphite (Clean & Modern) ===
-      # package = pkgs.graphite-gtk-theme;
-      # name = "Graphite-Dark";
-
-      # === Orchis (Elegant rounded) === 🦀
-      # package = pkgs.orchis-theme;
-      # name = "Orchis-Dark";
 
       # === Tokyonight (Vibrant) ===
       # package = pkgs.tokyonight-gtk-theme;
@@ -52,8 +46,8 @@
   qt = {
     enable = true;
     platformTheme.name = "gtk3";
-    # style.name = "adwaita-dark";
-    style.name = "gtk2";
+    style.name = "adwaita-dark";
+    # style.name = "gtk2";
     # platformTheme.name = "qtct"; # or "qt5ct" / "kvantum"
     # style.name = "kvantum";
   };
@@ -89,8 +83,6 @@
     # B: GTK THEMES:
     adw-gtk3 # material/gnome style
     catppuccin-gtk # very popular, multiple flavors
-    graphite-gtk-theme # clean minimal dark
-    orchis-theme # macos-ish
     # tokyonight-gtk-theme # based on the famous neovim colorscheme
     whitesur-icon-theme # macOS-like light
 
