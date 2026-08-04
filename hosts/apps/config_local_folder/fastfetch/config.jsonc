@@ -2,15 +2,16 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "/home/mukuldk/.config/fastfetch/images/saitama/swag.png",
-    // "source": "/home/mukuldk/.config/fastfetch/images/loli.icon",
+    // "source": "/home/mukuldk/.config/fastfetch/images/saitama/baffalled.png",
+    // "source": "/home/mukuldk/.config/fastfetch/images/saitama/swag.png",
+    "source": "/home/mukuldk/.config/fastfetch/images/loli.icon",
     "type": "kitty-icat", // or "iterm"
-    // "type": "kitty", // or "iterm"
-    // "type": "file",
-    // "type": "data-raw",
     "height": 26,
     "width": 42,
+    // "type": "kitty", // or "iterm"
     "padding": { "top": 2, "left": 2 },
+    // "type": "file",
+    // "type": "data-raw",
     "preserveAspectRatio": false
   },
 
