@@ -5,6 +5,7 @@
 * tta  => tmux attach <session no>
 * ttks => tmux kill sesson
 * tth  => Print this file
+* pcl  => {CLOCK => peaclock }
 
 * resourcett => Reload config
 
