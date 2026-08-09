@@ -58,6 +58,8 @@
         resourcett = "tmux source ~/.config/tmux/tmux.conf";
         cl = "clear";
         planX = "nvim /home/mukuldk/1_file/0_Indivitual_importance_files/3_skedule.md";
+        pcl = "peaclock";
+
 
 
         # Y:  NIX os 

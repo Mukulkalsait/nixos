@@ -82,6 +82,7 @@
     lnav # Log File NAVigator
     # bottom # TUI task manager BTOP is best
     # adbfs-rootless # adm-mount
+    peaclock # terminal based clock- timer
 
     # B: Media & essentials |>
     ffmpeg-full # ffmpeg
