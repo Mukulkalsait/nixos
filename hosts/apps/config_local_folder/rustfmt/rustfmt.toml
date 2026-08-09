@@ -1,13 +1,54 @@
-# Ultra-wide Rust formatting
+# Ultra-wide + dense formatting (Neovim + small font)   those with Y: marked are the once we have initially 
+
+
+edition = "2024" # Language edition used for parsing the code                       Y: 
+style_edition = "2024" # Style edition (controls the actual formatting rules)
+
+max_width = 180 # Maximum line length. Everything tries to stay under this width                    Y: 
+use_small_heuristics = "Max" # "Max" = make almost everything try to fit on one line when possible  Y: 
+
+fn_single_line = true # Put single-expression functions on one line: fn foo() { 42 }     Y: 
+struct_lit_single_line = true # Put small struct literals on one line: Foo { x: 1, y: 2 }
+single_line_if_else_max_width = 160 # Maximum width for single-line if-else expressions Y: 
+single_line_let_else_max_width = 160 # Maximum width for single-line let-else expressions
+where_single_line = true # Force `where` clauses onto a single line when possible
+
+chain_one_line_max = 160 # chain width
+
+chain_width = 160 # Maximum width of method chains before breaking to multiple lines Y: 
+fn_call_width = 160 # Maximum width of function call arguments before breaking
+array_width = 160 # Maximum width of array literals before breaking
+attr_fn_like_width = 160 # Maximum width of function-like attributes before breaking
+struct_lit_width = 160 # Maximum width of struct literal bodies before breaking
+struct_variant_width = 160 # Maximum width of struct-like enum variant bodies before breaking
+
+# How to layout imports inside a use statement
+
+imports_layout = "HorizontalVertical" # HorizontalVertical = keep short ones on one line, long ones vertical Y: 
+imports_granularity = "Module" # How finely to group imports (Module is a good balance)
+group_imports = "StdExternalCrate" # Group imports as: std → external crates → local
+
+reorder_imports = true # Alphabetically reorder imports
+use_field_init_shorthand = true # Prefer `Foo { x, y }` instead of `Foo { x: x, y: y }`
+use_try_shorthand = true # Prefer `?` instead of `try!()`
+trailing_comma = "Vertical" # Put trailing commas on multi-line lists (Vertical style)
+match_block_trailing_comma = true # Add trailing commas in match blocks
+empty_item_single_line = true # Put empty functions/impls on one line: fn foo() {}
+
+
+
+#  G: Older
 #
+# Ultra-wide Rust formatting
 
-edition = "2024"   
-max_width = 160
-chain_width = 140
-use_small_heuristics = "Max"
-fn_single_line = true      # Single line functions if possible
+# edition = "2024"   
+# max_width = 160
+# chain_width = 140
+# use_small_heuristics = "Max"
+# fn_single_line = true      # Single line functions if possible
+#
+# single_line_if_else_max_width = 120   # if you also want compact if-else
+# chain_one_line_max = 100
+#
+# imports_layout = "HorizontalVertical"  # Mixed layout
 
-single_line_if_else_max_width = 120   # if you also want compact if-else
-chain_one_line_max = 100
-
-imports_layout = "HorizontalVertical"  # Mixed layout
