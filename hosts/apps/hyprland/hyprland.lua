@@ -125,6 +125,7 @@ hl.workspace_rule({ workspace = "f[1]", gaps_in = 0, gaps_out = 0 }) -- Remove m
 -- ==========================================
 --
 hl.on("hyprland.start", function()
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP") -- B: NEW ADDED>
 	hl.exec_cmd("dms run")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
