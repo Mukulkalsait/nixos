@@ -74,6 +74,7 @@
     nerd-fonts.geist-mono
     nerd-fonts.d2coding
     nerd-fonts.fantasque-sans-mono
+    inter-nerdfont # B: NEW ADDED>
 
     # dejavu_fonts
     # powerline-fonts
