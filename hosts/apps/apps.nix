@@ -27,10 +27,12 @@
     # w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
 
     # quickshell installation
-    inputs.quickshell.packages.${pkgs.system}.default
-    inputs.dms.packages.${pkgs.system}.default
-    dgop # Optional: system monitoring for DMS
+    # inputs.quickshell.packages.${pkgs.system}.default
+    # inputs.dms.packages.${pkgs.system}.default
+    # dgop # Optional: system monitoring for DMS
 
+    # noctalia 
+    inputs.noctalia.packages.${pkgs.system}.default
 
     # Y: Hardware Control |>
     pavucontrol # All audio IO gui tool very usefull.⭐
