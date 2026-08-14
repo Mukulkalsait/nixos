@@ -62,12 +62,14 @@ local function setupKeybindings()
 	hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd(pt .. " launcher"))
 	hl.bind(mainMod .. " + " .. "PERIOD", hl.dsp.exec_cmd(n_msg .. " settings-toggle"))
 	hl.bind(mainMod .. " + " .. "9", hl.dsp.exec_cmd(pt .. " control-center notifications"))
+	hl.bind(mainMod .. " + " .. "1", hl.dsp.exec_cmd(pt .. " wallpaper"))
 	hl.bind(mainMod .. " + " .. "U", hl.dsp.exec_cmd(pt .. " control-center"))
 	hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd(pt .. " control-center calendar"))
+
 	hl.bind(mainMod .. " + " .. "code:51", hl.dsp.exec_cmd(pt .. " icefish/phone-connect:details")) -- # Phone Connect : "web" (/) => key code: 51
 	hl.bind(mainMod .. " + " .. "code:21", hl.dsp.exec_cmd(pt .. " control-center power")) -- # Battery Health : "wev"  (=)  => key code:21
+	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "code:61", hl.dsp.exec_cmd(pt .. cheat_sheet)) -- # Keyboards Shortcuts : shift + (?) => key code 61
 
-	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "code:61", hl.dsp.exec_cmd(pt .. cheat_sheet))
 	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "W", hl.dsp.exec_cmd(n_msg .. " wallpaper-next"))
 	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "C", hl.dsp.exec_cmd(pt .. " clipboard"))
 
