@@ -39,20 +39,37 @@ local function setupKeybindings()
 
 	-- Locking + Exit
 	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "0", hl.dsp.exit())
-	hl.bind(mainMod .. " + " .. "0", hl.dsp.exec_cmd("dms ipc call lock lock"))
+	-- hl.bind(mainMod .. " + " .. "0", hl.dsp.exec_cmd("dms ipc call lock lock"))
+	hl.bind(mainMod .. " + " .. "0", hl.dsp.exec_cmd("noctalia msg session lock"))
+	--
 
-	-- DMS shortcuts
-	hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd("dms ipc call spotlight toggle"))
-	hl.bind(mainMod .. " + " .. "PERIOD", hl.dsp.exec_cmd("dms ipc call settings toggle"))
-	hl.bind(mainMod .. " + " .. "9", hl.dsp.exec_cmd("dms ipc call notifications toggle"))
-	hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd("dms ipc call widget toggle clock"))
-	hl.bind(mainMod .. " + " .. "U", hl.dsp.exec_cmd("dms ipc call control-center toggle"))
-	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "code:61", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprland")) -- # Keyboards Shortcuts : shift + (?) => key code 61
-	hl.bind(mainMod .. " + " .. "code:51", hl.dsp.exec_cmd("dms ipc call widget toggle dankKDEConnect")) -- # Phone Connect : "web" (/) => key code: 51
-	hl.bind(mainMod .. " + " .. "code:21", hl.dsp.exec_cmd("dms ipc call widget toggle battery")) -- # Battery Health : "wev"  (=)  => key code:21
+	-- B: DMS shortcuts
+	-- hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd("dms ipc call spotlight toggle"))
+	-- hl.bind(mainMod .. " + " .. "PERIOD", hl.dsp.exec_cmd("dms ipc call settings toggle"))
+	-- hl.bind(mainMod .. " + " .. "9", hl.dsp.exec_cmd("dms ipc call notifications toggle"))
+	-- hl.bind(mainMod .. " + " .. "U", hl.dsp.exec_cmd("dms ipc call control-center toggle"))
+	-- hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd("dms ipc call widget toggle clock"))
+	-- hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "code:61", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprland")) -- # Keyboards Shortcuts : shift + (?) => key code 61
+	-- hl.bind(mainMod .. " + " .. "code:51", hl.dsp.exec_cmd("dms ipc call widget toggle dankKDEConnect")) -- # Phone Connect : "web" (/) => key code: 51
+	-- hl.bind(mainMod .. " + " .. "code:21", hl.dsp.exec_cmd("dms ipc call widget toggle battery")) -- # Battery Health : "wev"  (=)  => key code:21
+	-- hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd("dms ipc call widget toggle clock"))
+	-- hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "W", hl.dsp.exec_cmd("dms ipc call wallpaper next"))
 
-	-- Wallpaper
-	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "W", hl.dsp.exec_cmd("dms ipc call wallpaper next"))
+	-- B: noctalia shortcuts
+	local n_msg = "noctalia msg"
+	local pt = n_msg .. " panel-toggle"
+	local cheat_sheet = " kenn/keybind-cheatsheet:cheatsheet"
+	hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd(pt .. " launcher"))
+	hl.bind(mainMod .. " + " .. "PERIOD", hl.dsp.exec_cmd(n_msg .. " settings-toggle"))
+	hl.bind(mainMod .. " + " .. "9", hl.dsp.exec_cmd(pt .. " control-center notifications"))
+	hl.bind(mainMod .. " + " .. "U", hl.dsp.exec_cmd(pt .. " control-center"))
+	hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd(pt .. " control-center calendar"))
+	hl.bind(mainMod .. " + " .. "code:51", hl.dsp.exec_cmd(pt .. " icefish/phone-connect:details")) -- # Phone Connect : "web" (/) => key code: 51
+	hl.bind(mainMod .. " + " .. "code:21", hl.dsp.exec_cmd(pt .. " control-center power")) -- # Battery Health : "wev"  (=)  => key code:21
+
+	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "code:61", hl.dsp.exec_cmd(pt .. cheat_sheet))
+	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "W", hl.dsp.exec_cmd(n_msg .. " wallpaper-next"))
+	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "C", hl.dsp.exec_cmd(pt .. " clipboard"))
 
 	-- Special Workspace
 	hl.bind(mainMod .. " + " .. "S", hl.dsp.workspace.toggle_special("magic"))
