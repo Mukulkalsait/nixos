@@ -64,7 +64,9 @@ local function setupKeybindings()
 	hl.bind(mainMod .. " + " .. "9", hl.dsp.exec_cmd(pt .. " control-center notifications"))
 	hl.bind(mainMod .. " + " .. "1", hl.dsp.exec_cmd(pt .. " wallpaper"))
 	hl.bind(mainMod .. " + " .. "U", hl.dsp.exec_cmd(pt .. " control-center"))
-	hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd(pt .. " control-center calendar"))
+	hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd(pt .. " control-center avivbintangaringga/nix-monitor:panel"))
+	hl.bind(mainMod .. " + " .. "T", hl.dsp.exec_cmd(pt .. " control-center davemhammer/tailscale:manager"))
+	-- hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd(pt .. " control-center calendar"))
 
 	hl.bind(mainMod .. " + " .. "code:51", hl.dsp.exec_cmd(pt .. " icefish/phone-connect:details")) -- # Phone Connect : "web" (/) => key code: 51
 	hl.bind(mainMod .. " + " .. "code:21", hl.dsp.exec_cmd(pt .. " control-center power")) -- # Battery Health : "wev"  (=)  => key code:21
