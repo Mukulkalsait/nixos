@@ -53,7 +53,7 @@ hl.config({
 		preserve_split = false,
 	},
 	decoration = {
-		rounding = 3,
+		rounding = 4,
 		active_opacity = 1.0,
 		inactive_opacity = 1.0,
 		shadow = { enabled = false },
@@ -95,10 +95,10 @@ hl.curve("myBezier", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.0 } }
 hl.curve("reBezier", { type = "bezier", points = { { 1, 0.99 }, { 0.48, 1.12 } } })
 
 hl.animation({ leaf = "windows", enabled = true, speed = 4, bezier = "myBezier" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 6, bezier = "default" })
-hl.animation({ leaf = "fade", enabled = true, speed = 7, bezier = "default" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "default" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "reBezier" })
+hl.animation({ leaf = "border", enabled = true, speed = 6, bezier = "reBezier" })
+hl.animation({ leaf = "fade", enabled = true, speed = 7, bezier = "reBezier" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "myBezier" })
 
 -- Fix for vertical bottom slide:
 hl.animation({ leaf = "specialWorkspaceIn", enabled = true, speed = 3, bezier = "myBezier", style = "slidefadevert" })
