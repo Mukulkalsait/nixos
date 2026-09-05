@@ -1,0 +1,62 @@
+# ~/.config/clippy/clippy.toml
+
+# ============================================================
+# PERSONAL RUST STYLE
+# Dense / wide terminal-oriented codebase
+# ============================================================
+
+# Be very conscious of stack usage.
+# Default is much higher; this makes Clippy flag relatively
+# small stack-heavy values.
+stack-size-threshold = 1024
+
+
+# ============================================================
+# PERFORMANCE / MEMORY
+# ============================================================
+
+# Keep async futures from becoming unexpectedly large.
+future-size-threshold = 16384
+
+# Warn when enum variants become disproportionately large.
+enum-variant-size-threshold = 200
+
+# Warn about large values passed by value.
+pass-by-value-size-limit = 256
+
+
+# ============================================================
+# COMPLEXITY
+# ============================================================
+
+# Your wide formatting style means long functions aren't
+# automatically bad. Keep this reasonably high.
+cognitive-complexity-threshold = 30
+
+# You have wide screens/terminal space, so don't artificially
+# force tiny argument lists.
+too-many-arguments-threshold = 8
+
+# Don't complain too early about large type definitions.
+type-complexity-threshold = 300
+
+
+# ============================================================
+# NAMING
+# ============================================================
+
+# Allow short identifiers that are common in systems code.
+allowed-idents-below-min-chars = [
+    "i",
+    "j",
+    "k",
+    "x",
+    "y",
+    "z",
+    "n",
+    "v",
+    "tx",
+    "rx",
+    "db",
+    "id",
+]
