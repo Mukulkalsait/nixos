@@ -6,5 +6,6 @@
   home.file.".config/MangoHud".source = ./config_local_folder/MangoHud;
   home.file.".config/tmux".source = ./config_local_folder/tmux;
   home.file.".config/zellij".source = ./config_local_folder/zellij;
+  home.file.".config/clippy".source = ./config_local_folder/clippy;
 }
 
