@@ -50,6 +50,7 @@
     # zellij
     nushell # best for http APIs checking.
     tmux
+    edl
 
     # R: NETWORKING |>
     rustscan # rust port scanner
