@@ -24,6 +24,7 @@
     CARGO_TARGET_DIR = "${config.home.homeDirectory}/.cargo/target";
     # RUST_SRC_PATH = "${pkgs.fenix.stable.rust-src}/lib/rustlib/src/rust/library";
     RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+    CLIPPY_CONF_DIR = "${config.home.homeDirectory}/.config/clippy"; # G: allow the clippy to apply systemwide config. 
 
     # CUDA - These are now confirmed working
     CUDA_HOME = "${pkgs.cudaPackages.cudatoolkit}";
