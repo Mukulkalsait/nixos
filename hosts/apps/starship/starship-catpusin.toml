@@ -172,7 +172,8 @@ ignore_base = false
 
 [time]
 disabled = false
-time_format = "%R"
+time_format = "%I:%M %p"
+# time_format = "%R"
 style = "bg:lavender"
 format = '[[  $time ](fg:crust bg:lavender)]($style)'
 

@@ -202,6 +202,7 @@ format = '[ $symbol ($version) ]($style)'
 
 [time]
 disabled = false
-time_format = "%R"             # Hour:Minute Format
+# time_format = "%R"       
+time_format = "%I:%M %p" # Hour:Minute Format
 style = "bg:#7287fd fg:#010101"
 format = '[ ♥ $time ]($style)'
