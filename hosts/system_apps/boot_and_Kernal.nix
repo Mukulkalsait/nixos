@@ -11,6 +11,9 @@
 
   boot.extraModulePackages = [ ];
 
+  # Temperory for RealmiX3 Superzoom
+  # boot.blacklistedKernelModules = [ "qcserial" ];
+
   boot.kernelModules = [
     # Y:  Enable Kernal MODULES
     "intel_rapl_common" # intel information of watteg and all

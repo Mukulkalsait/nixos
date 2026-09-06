@@ -50,8 +50,8 @@
     # zellij
     nushell # best for http APIs checking.
     tmux
-    # edl # Realmi X3 Superzoom recovery tool
-    # qdl # Realmi X3 Superzoom recovery tool
+    edl # Realmi X3 Superzoom recovery tool
+    qdl # Realmi X3 Superzoom recovery tool
 
     # R: NETWORKING |>
     rustscan # rust port scanner
@@ -60,7 +60,7 @@
     net-tools # Basic network tools.
     netcat # nc
     sniffnet # cross platform monitor for Trafic 
-    # wireshark # network monitoring tool
+    wireshark # network monitoring tool
     termshark # Wireshark cli
     tcpdump # dumping netowrk data
     python313Packages.onvif-zeep # Onvif protocall (security  cameras) tool
