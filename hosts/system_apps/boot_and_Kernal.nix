@@ -1,3 +1,4 @@
+# boot_and_Kernal.nix
 # Y:  define the users
 { config, pkgs, ... }: {
 
@@ -10,6 +11,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest; # latest Kernal Pkg. # DX: kernal selector but its inside Linuvu-sense*.nix
 
   boot.extraModulePackages = [ ];
+
 
   # Temperory for RealmiX3 Superzoom
   # boot.blacklistedKernelModules = [ "qcserial" ];
@@ -27,8 +29,8 @@
 
   ];
   boot.kernelParams = [
-    "acpi_ec.gpe_debug=1" # Enable Kernal parameters
-    "preempt=full" # Enamble PREE_MTP=LOW LETENCY FOR MUSIC PRODUCITON => PREMTP_RT (too poweroful for us.)
+    # "acpi_ec.gpe_debug=1" # Enable Kernal parameters
+    "preempt=full" # Enamble PREE_MTP=LOW LETENCY FOR MUSIC PRODUCITON => PREMTP_RT 
 
     # Y: we dont need zswap because we hve zram which is better for persnol systems. so NO ZSWAP
     # "zswap.enabled=1" # z-swap on

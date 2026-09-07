@@ -120,6 +120,9 @@
   };
   # TailScale =========================================================
 
+  # BIOS_UPDATER:  Linux Vendor Firmware Service (LVFS), where many manufacturers provide firmware updates directly
+  services.fwupd.enable = true;
+
   # Logind settings
   services.logind.settings.Login = {
 

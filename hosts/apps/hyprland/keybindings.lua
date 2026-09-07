@@ -68,6 +68,9 @@ local function setupKeybindings()
 	hl.bind(mainMod .. " + " .. "T", hl.dsp.exec_cmd(pt .. " davemhammer/tailscale:manager"))
 	-- hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd(pt .. " control-center calendar"))
 
+	-- noctalia msg panel-toggle
+
+	hl.bind(mainMod .. " + " .. "code:47", hl.dsp.exec_cmd(pt .. " liamwh/emoji-picker:wide")) -- # new key for emojies
 	hl.bind(mainMod .. " + " .. "code:51", hl.dsp.exec_cmd(pt .. " icefish/phone-connect:details")) -- # Phone Connect : "web" (/) => key code: 51
 	hl.bind(mainMod .. " + " .. "code:21", hl.dsp.exec_cmd(pt .. " control-center power")) -- # Battery Health : "wev"  (=)  => key code:21
 	hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "code:61", hl.dsp.exec_cmd(pt .. cheat_sheet)) -- # Keyboards Shortcuts : shift + (?) => key code 61

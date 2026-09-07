@@ -11,7 +11,6 @@
       "video"
       "podman"
       "docker"
-      "wireshark"
       # "incus"
       # "incus-admin"
     ]; # Enable ‘sudo’ for the user.
