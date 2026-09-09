@@ -89,5 +89,9 @@
     # services.openssh.wantedBy = lib.mkForce []; shhd.service=> systemd
   };
 
+  programs.wireshark = {
+    enable = true;
+  };
+
 }
 

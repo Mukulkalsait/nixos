@@ -73,25 +73,25 @@
       enable = true;
       # Y: forces the raw gamescope session onto the RTX 4050 via PRIME — without this it can silently fall back to the Intel iGPU when
       #    launched directly from greetd (no Hyprland/nvidia-offload wrapper around it to set these normally).
-      env = {
-        __NV_PRIME_RENDER_OFFLOAD = "1";
-        __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
-        __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-        __VK_LAYER_NV_optimus = "NVIDIA_only";
-      };
+      # env = {
+      #   __NV_PRIME_RENDER_OFFLOAD = "1";
+      #   __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
+      #   __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      #   __VK_LAYER_NV_optimus = "NVIDIA_only";
+      # };
     };
   };
 
   # Desktop entry for STEAM BigPicture 
-  environment.systemPackages = [
-    (pkgs.writeTextDir "share/wayland-sessions/steam.desktop" ''
-      [Desktop Entry]
-      Name=Steam
-      Comment=Steam Big Picture (gamescope session)
-      Exec=steam-gamescope
-      Type=Application
-    '')
-  ];
+  # environment.systemPackages = [
+  #   (pkgs.writeTextDir "share/wayland-sessions/steam.desktop" ''
+  #     [Desktop Entry]
+  #     Name=Steam
+  #     Comment=Steam Big Picture (gamescope session)
+  #     Exec=steam-gamescope
+  #     Type=Application
+  #   '')
+  # ];
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
