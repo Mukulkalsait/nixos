@@ -85,7 +85,7 @@
         # DX: CONFIGS
         # IMP: config in nix.
         svi = "sudo -E TMUX=$TMUX TMUX_PANE=$TMUX_PANE nvim";
-        nixConfig = "nvim /home/mukuldk/.predator_nix/";
+        nixConfig = "nvim /home/mukuldk/.predator_nix/ -c 'colorscheme oxocarbon'";
         zshConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/zsh/default.nix";
         wbrConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/waybar/default.nix";
         hyprConfig = "nvim /home/mukuldk/.predator_nix/hosts/apps/hyprland/hyprland.lua";
