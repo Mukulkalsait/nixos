@@ -10,10 +10,12 @@
     enable32Bit = true;
     extraPackages = with pkgs; [
       # NVIDIA DRIVERS
-      cudatoolkit
       nvidia-vaapi-driver
       ocl-icd
-      opencl-headers
+
+      # IMP: CUDA SEPERATED -> host/apps/cuda_dev.nix
+      # cudatoolkit
+      # opencl-headers
 
       # INTEL DRIVERS
       intel-media-driver
