@@ -220,6 +220,10 @@
 
         '"; # HELP
 
+
+        # tshark
+        tw = "tshark -i wlp0s20f3";
+
         # kubeOn = "minikube start --driver=podman "; # Y: provide =>  --cpus= --memory= 
         # kubeOnX = "minikube start --driver=podman --cpus=4 --memory=8g && echo 'minikube start --driver=podman --cpus=4 --memory=8g'"; # Start Minikube
         # kubeOnY = "minikube start --driver=podman --container-runtime=crun --cpus=2 --memory=8192 && echo '--driver=podman --container-runtime=crun --cpus=2 --memory=8192' ";
