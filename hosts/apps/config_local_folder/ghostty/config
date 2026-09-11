@@ -17,8 +17,8 @@ font-feature = +liga
 # custom-shader = shaders/ripple_rectangle_cursor.glsl
 #B: best
 custom-shader-animation = always
-# custom-shader = shaders/cursor_tail.glsl
-custom-shader = shaders/cursor_warp.glsl
+custom-shader = shaders/cursor_tail.glsl
+# custom-shader = shaders/cursor_warp.glsl
 custom-shader = shaders/sonic_boom_cursor.glsl
 
 # TAG:  Tweak shader params (edit in shaders/cursor_warp.glsl; top constants)
