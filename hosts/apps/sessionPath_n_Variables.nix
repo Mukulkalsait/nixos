@@ -26,12 +26,12 @@
     RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
     CLIPPY_CONF_DIR = "${config.home.homeDirectory}/.config/clippy"; # G: allow the clippy to apply systemwide config. 
 
-    # CUDA - These are now confirmed working
-    CUDA_HOME = "${pkgs.cudaPackages.cudatoolkit}";
-    CUDA_PATH = "${pkgs.cudaPackages.cudatoolkit}";
-    CUDACXX = "${pkgs.cudaPackages.cudatoolkit}/bin/nvcc";
+    # R: CUDA - These are now confirmed working # when cuda was in nvidia.nix
+    # CUDA_HOME = "${pkgs.cudaPackages.cudatoolkit}";
+    # CUDA_PATH = "${pkgs.cudaPackages.cudatoolkit}";
+    # CUDACXX = "${pkgs.cudaPackages.cudatoolkit}/bin/nvcc";
 
-    LD_LIBRARY_PATH = "/run/opengl-driver/lib:" + "/run/opengl-driver-32/lib:" + "${pkgs.cudaPackages.cudatoolkit}/lib:" + "$LD_LIBRARY_PATH";
+    # LD_LIBRARY_PATH = "/run/opengl-driver/lib:" + "/run/opengl-driver-32/lib:" + "${pkgs.cudaPackages.cudatoolkit}/lib:" + "$LD_LIBRARY_PATH";
 
 
     # B: Updated RUST_SRC_PATH: Use rustup's if available, fallback to Nix

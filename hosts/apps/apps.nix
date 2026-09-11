@@ -50,8 +50,8 @@
     # zellij
     nushell # best for http APIs checking.
     tmux
-    edl # Realmi X3 Superzoom recovery tool
-    qdl # Realmi X3 Superzoom recovery tool
+    # edl # Realmi X3 Superzoom recovery tool
+    # qdl # Realmi X3 Superzoom recovery tool
 
     # R: NETWORKING |>
     rustscan # rust port scanner
