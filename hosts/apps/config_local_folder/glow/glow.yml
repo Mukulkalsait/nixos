@@ -1,0 +1,11 @@
+# style name or JSON path (default "auto")
+#
+style: "/home/mukuldk/.config/glow/style.json" # - can be one of: "dark", "light", "dracula", "github", "monokai", etc.
+# style: "dracula" # - can be one of: "dark", "light", "dracula", "github", "monokai", etc.
+# theme-dir: "~/.config/glow/themes/style.json"
+detect: true # Automatically detect theme from terminal background
+mouse: false
+pager: true # use pager to display markdown
+width: 0 # word-wrap at width
+all: true # show all files, including hidden and ignored.
+
