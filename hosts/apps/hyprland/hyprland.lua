@@ -68,6 +68,7 @@ hl.config({
 		repeat_delay = 250,
 		repeat_rate = 60, --  repeats per second
 		force_no_accel = 1,
+		follow_mouse = 0,
 		-- # kb_variant = "marathi";
 		-- # kb_options = "ctrl:nocaps";
 	},
