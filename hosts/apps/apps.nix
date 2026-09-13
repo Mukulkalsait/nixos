@@ -43,6 +43,7 @@
     # jmtpfs # Fuse filesystem for devices like Android R: removed from nix
     libmtp # (Microsofts=MediatTrnasferProtocol) library
     # kdePackages.kdeconnect-kde # For KDE Plasma 6 (recommended)
+    scrcpy # Display and control Android devices over USB or TCP/IP
 
     # ID: Terminal |>
     inputs.ghostty.packages.${pkgs.system}.default # FLAKE:
@@ -54,21 +55,17 @@
     # qdl # Realmi X3 Superzoom recovery tool
 
     # R: NETWORKING |>
+    nmap # no escape
     rustscan # rust port scanner
     dig # network tool
     mtr # my trace route
     net-tools # Basic network tools.
     netcat # nc
-    sniffnet # cross platform monitor for Trafic 
+    # sniffnet # cross platform monitor for Trafic 
     # wireshark # network monitoring tool
     termshark # Wireshark cli
     tcpdump # dumping netowrk data
     python313Packages.onvif-zeep # Onvif protocall (security  cameras) tool
-
-    # B: CLI Essentilas |>
-    bat # modern cat
-    fx # json viewer.
-    calcurse # Calender + take Manager Application.
 
     # G: NIX-Related |>
     zsh-nix-shell # enable zsh in nixshell.
@@ -77,7 +74,10 @@
     nix-search-tv # another package search may be offline.
     nix-tree # tui for everyting 
 
-    # R: TUI |>
+    # Y: TUI's & CLI's|>
+    bat # modern cat
+    fx # json viewer.
+    # calcurse # Calender + take Manager Application.
     dua # rust disk utility use " dua i " intereative.
     dust # Disk space shower.
     glow # TUI for markdown files 
@@ -118,7 +118,6 @@
     mission-center # Task Manager
     # libreoffice-fresh # community driven latest version fo libreoffice.
     onlyoffice-desktopeditors # alternate office tool
-    scrcpy # Same for above
     vlc # Video Lan Converter
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
     # teamviewer
