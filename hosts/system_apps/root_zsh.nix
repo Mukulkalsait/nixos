@@ -3,7 +3,9 @@
 
   users.users.root = {
     shell = pkgs.zsh;
+    home.file.".config/lazygit".source = ../apps/config_local_folder/lazygit;
   };
+
   # Root-only minimal zsh config
   environment.etc."zshrc-root".text = ''
     # ---- ROOT ZSH MINIMAL ----
