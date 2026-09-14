@@ -30,7 +30,8 @@ os:
 
 customCommands:
   - key: "X"
-    command: "git commit -m '{{.Form.Type}}{{.Form.Scope}}: {{.Form.Subject}}'"
+    command: "git commit -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}: {{.Form.Subject}}'"
+    # command: "git commit -m '{{.Form.Type}}{{.Form.Scope}}: {{.Form.Subject}}'"
     context: "files"
     description: "Conventional commit"
     prompts:
