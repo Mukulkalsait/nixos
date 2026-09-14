@@ -83,6 +83,7 @@
     glow # TUI for markdown files 
     lazysql # db TUI
     tig # GIT Digger
+    git-cliff # git chanlog generator
     lnav # Log File NAVigator
     # bottom # TUI task manager BTOP is best
     # adbfs-rootless # adm-mount
