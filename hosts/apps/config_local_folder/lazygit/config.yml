@@ -29,7 +29,7 @@ os:
   editInTerminal: true
 
 customCommands:
-  - key: "X"
+  - key: "x"
     command: "git commit -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}: {{.Form.Subject}}'"
     context: "files"
     description: "Conventional commit"
