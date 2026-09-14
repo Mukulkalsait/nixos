@@ -66,6 +66,8 @@ customCommands:
         title: "Description"
         key: "Subject"
 
+        # added
+
   - key: "T"
     command: "git tag {{.Form.Tag}} && git cliff -o CHANGELOG.md"
     context: "commits"
