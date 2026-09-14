@@ -21,16 +21,28 @@
     enable = true;
     settings = {
       gui.showIcons = true;
+      gui.border = "rounded";
       gui.theme = {
         lightTheme = false;
-        activeBorderColor = [ "green" "bold" ];
-        inactiveBorderColor = [ "grey" ];
-        selectedLineBgColor = [ "blue" ];
+        activeBorderColor = [ "#78A9FF" "bold" ];
+        inactiveBorderColor = [ "#525252" ];
+        optionsTextColor = [ "#bebebe" ];
+        selectedLineBgColor = [ "#2a2a2a" "bold" ];
+        selectedRangeBgColor = [ "#2a2a2a" ];
+        cherryPickedCommitBgColor = [ "#2a2a2a" ];
+        cherryPickedCommitFgColor = [ "#78A9FF" ];
+        unstagedChangesColor = [ "#ff7eb6" ];
+        stagedChangesColor = [ "#42be65" ];
+      };
+
+      os = {
+        edit = "nvim {{filename}}";
+        editInTerminal = true;
       };
 
       customCommands = [
         {
-          key = "C";
+          key = "X";
           command = "git commit -m '{{.Form.Type}}{{.Form.Scope}}: {{.Form.Subject}}'";
           context = "files";
           description = "Conventional commit";
@@ -46,7 +58,7 @@
                 { name = "chore"; value = "chore"; description = "Maintenance, dependencies, config"; }
                 { name = "refactor"; value = "refactor"; description = "Code change that neither fixes a bug nor adds a feature"; }
                 { name = "test"; value = "test"; description = "Adding missing tests or correcting existing tests"; }
-                { name = "style"; value = "style"; description = "Changes that do not affect the meaning of the code (white-space, formatting, etc)"; }
+                { name = "style"; value = "style"; description = "Changes that do not affect the meaning of the code"; }
               ];
             }
             {
