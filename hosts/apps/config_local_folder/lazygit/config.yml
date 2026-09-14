@@ -65,3 +65,14 @@ customCommands:
       - type: "input"
         title: "Description"
         key: "Subject"
+
+  - key: "T"
+    command: "git tag {{.Form.Tag}} && git cliff -o CHANGELOG.md"
+    context: "commits"
+    description: "Tag latest commit and regenerate changelog"
+    prompts:
+      - type: "input"
+        title: "Version tag (e.g. v0.1.0)"
+        key: "Tag"
+    loadingText: "Tagging and generating changelog..."
+
