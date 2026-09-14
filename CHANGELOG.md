@@ -1,0 +1,1246 @@
+## [unreleased]
+
+### 🚀 Features
+
+- Lazygit "C" added for type selection
+- Glow config moved into the nix format
+- Moved configs into nix
+- FeatLazygit config added.: type scope and description selection added.
+- Git cliff added
+
+### 🐛 Bug Fixes
+
+- Focus on mouse windows false
+- Paranthesis removal
+- Changed the default key from "X" to "x"
+
+### 📚 Documentation
+
+- Docker startup false || other optimisations
+- Docker added to user group
+
+### 🚜 Refactor
+
+- Alias updates
+- Better code arrangement
+- Refactor:
+
+### 🧪 Testing
+
+- Test
+- Test
+
+### 💼 Other
+
+- Initial commit
+- FULLY WORKING VERSION WITHOUT MUCH CNOFIG BUT EVERYTING WORKS
+- FULLY WORKING VERSION WITHOUT MUCH CNOFIG BUT EVERYTING WORKS
+- Binding Testings
+- Bindings + cursor speed
+- Config test
+- 👇✅ this one is for Starship with toml
+- 👇❌ config change
+- Super + f = fullscreen
+- Full config for bindings
+- Keybinding = 80% +
+- Bindings = 85%+
+- Configuration.nix splited into parts in sistem_apps/
+- Greetd
+- Tui greet
+- Greetd
+- Working may be
+- Console font added
+- Yazi cnfig added official yazi
+- Yazi config
+- Unkonwn
+- Mission-center added gen-45
+- Nvidia tools added gen 46may be
+- Gen-45_B nvidia-tools added
+- Gen-46 y.sh is added in zsh with different aproch
+- Gen46_B y.sh added
+- Gen46 updates
+- Gen46 zellij config added in nix. + zsh aliass fixed|organised
+- Gen46 zellij config added in nix. + zsh aliass fixed|organised
+- Gen46 zellij config added in nix. + zsh aliass fixed|organised
+- Gen46 zellij config added in nix. + zsh aliass fixed|organised
+- Hyprland window + x and z are now alt and ctrl
+- Hyprland window + x and z are now alt and ctrl
+- Reset --hard back to windows+z/r commit + all .nix foramted
+- 100% workign version
+- Ver61
+- Updated a lot of thigns like waybar and kitty cursor animatins and 100% wprkign
+- Tty colors changed + greetd colors updated
+- Fully working version. + optimised
+- Console seperated from user
+- Fully working wiht diskonaut + cago
+- Fully working version
+- Fully working + themes inkitty yazi nvim fixed
+- Added swww
+- Swww unknow working
+- Fully working with good waybar and walpapers and everythings
+- O
+- Fully working nicely configed
+- Fully working
+- Keybindings changed
+- Thunderbolt port config added
+- Thunderboalt 4 adding
+- Thunderbolt and usb added
+- Mchose_ace_68.nix added
+- Mchose_ace_68.nix added
+-   + K ==> kitty
+- Buggy NBFC in on the way
+- Buggy NBSP in on the way
+- Still stucked on nbfs ⚠ Buggy
+- Still working on it
+- Again same
+- A
+- Back to the orignal config nouthign workied
+- A
+- A
+- First time fans are working with costome commands.
+- Yess fully working fans with zsh alias
+- Stress tests goning on
+- Lot of things added and working
+- Steam installation ongoing but still FULLY WORKING: steam installed but updates not downloaded
+- Fully Working
+- Linuwu sense alias added.
+- Almost eveerythig is working including linsus predator fancontrol
+- Configuration spliting
+- All files changed i dont know if it evern is going to work but i have gut feeling its gona work
+- Try 2
+- Try 3
+- Try 3
+- Updated
+- Updated
+- BatCal added
+- Binds changed
+- Rgbset
+- Hyprshoot added
+- Clipboard changed
+- Permenent sd mounting
+- Updated nix
+- Warbar stying update
+- Ssh keygen added.
+- Update in waybar.
+- Update apps removed ssh
+- Updates apps add OBS Studio
+- Rustup repaire
+- Rustup repaire
+- Binds repaired
+- Added batLimit
+- Updated the config
+- FanSpeeds Added.
+- $Menu changed from worf => rofi
+- Wori => rofi convertsiton.
+- Wofi config
+- Fan speeds changed.
+- Wofi to rofi
+- Rofi binds added
+- Colors added
+- Config added
+- Default nix updated
+- Ronts added
+- Remove old styles
+- Remove old styles
+- Remove old styles
+- Remove old styles
+- Added screenshot
+- Ss (from 🪟 + P to Printscan {Fn + P})
+- Location of SS changed
+- Location of walls changed.
+- Lsp and packages decreases as mosta are avialable.
+- Lsp and packages decreases as mosta are avialable.
+- Lsp and packages decreases as mosta are avialable.
+- Updated fonts -> corefont (micorsoft fonts)
+- Disabeled snippet modified
+- Added to console disabeled information.
+- Waybar UPDATED
+- Updated nmtui
+- Added colors to calender
+- Font increase in waybar
+- Added automation in linwu_sense commands for battery limiter and keyboard rgb settings.
+- Added automation in linwu_sense commands for battery limiter and keyboard rgb settings.
+- Lcd check
+- Fully Working Version with almost everythigns. => this works nicely. 🌹
+- Fully Working Version with almost everythigns. => this works nicely. 🌹
+- Updated removed bat80 and rgbset from hyprland exec
+- LcdCheck is commented out for now.
+- Systemc service is added and now tis working but bacCal is still shows 0 even after running properly , ⚠ DO NOT USE THE BILLOW FULLY WORKING USE THIS ONE => hope its fuly wokring now.l
+- Cursor animation for ghostty
+- Cursor animation for ghostty
+- Cursor animation for ghostty
+- Cursor animation for ghostty
+- Cursor animation for ghostty
+- Ghostty enabeled
+- Ghostty added
+- Ghostty added
+- Ghostty added
+- Ghostty added
+- Ghostty added
+- Ghostty added
+- Done
+- Done
+- Done
+- Done
+- Done
+- Done
+- Done
+- Updates with libra office and others, working nicely.
+- Added tmux
+- Changed from libra office to libra office fresh
+- Added tmux
+- Added tmux
+- Added tmux
+- Restore zellij its soo much better for fingures
+- Waybar
+- Session var
+- Styel
+- Usser config
+- Configu
+- Tray = english
+- InputMulty
+- Session var chaged
+- Session var chaged
+- Updated
+- Git added on both users
+- Git added on both users
+- Updated
+- Updates in nix
+- 🙅
+- 🙅
+- Easyeffects equaliser added
+- Da-vinchi-reslove added
+- Zellij quit => detach.
+- I dont know
+- Ok default nix changed slightly , but why?
+- Waybar experiments
+- Pinta added davinci removed
+- Zellij seperate file
+- Session vars
+- Zellije file
+- System leverl opdates
+- Config changed for warning to chages.
+- Config changed for warning to chages.
+- Config changed for warning to chages.
+- Update on mangohud + nvidia
+- Updatged for nvidia and mangohud
+- Updatged for nvidia and mangohud
+- Kitty upgraded + zellij Ctrl+Shift+q
+- Kitty
+- Update on ffmpeg-full
+- Enable fcitx5 so MultyLang and lang0 works now.
+- Re-Arrangement
+- Updated new
+- Rearangements
+- Rearangements
+- Rearangements
+- Updates on waybar for better rediablity.
+- No redablity improvements.
+- No redablity improvements.
+- Update for steam full screen apps.
+- Updates nixos
+- Update
+- Updates New Special windows in hyrpland
+- Updated Flake.lock for special spoaces
+- Updated border for every windows
+- Added local configs
+- Zellij changed
+- Config nix added fror multyple confis
+- Fastfetch added
+- Updates in fastfetch + zellij
+- Updates in fastfetch + zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in zellij
+- Updates in config
+- Updates in config
+- Updates in config
+- Updates in config
+- Updates in config
+- Updates in config
+- Updates in config
+- Updates in config
+- Updates in config
+- Updates
+- Updates
+- Updates
+- Updates NEOVIM built in plugins in NIX
+- Updates in apps and neovimn
+- Update neovim
+- Flake updated
+- Updated linuwu-sense
+- Update
+- UPdated linuwu sense
+- Davinci added
+- Nvidia opencv added
+- Neovim jdocker file updated
+- Added kmod and flex for linuwu sense
+- Greeted updated but working model kept juist in case
+- Linuwu sense not compaling the kernal so debuging is going on
+- Updated to davinci-working
+- Updates
+- Update in Nvidia is its updated + turned off some features which was brking gpu.
+- Updates in same
+- Updates in neovim
+- Updated added golang
+- Updated added home.sessionPath.nix file
+- Updated added home.sessionPath.nix file
+- Updated added home.sessionPath.nix file
+- Updated session paths
+- Updates nixprefetchgithub
+- UpdatesUpdated anew dowckerfeil
+- Added new-dockerfeil CLI  tool
+- Updated
+- Updated in virtulisation nix
+- Update in alias of zsh
+- Davinci removed
+- Flakes updated just now.
+- Updatd
+- Updaged the apps locations.
+- Updaged the apps locations.
+- Virtulisatoin upgraded from docker to podman + minikube.
+- Restoring to the older virtulisation upgraded from docker to podman +minikube. commit
+- Updated
+- UPdated to better conf
+- Updated via flake update
+- A fully working podman is added. with lsd and dive
+- A fully working podman is added. with lsd and dive
+- Working Update
+- Updated minikube
+- Updated
+- Update zellij alt + [/] debuging.
+- Update zellij alt + [/] debuging.
+- Update zellij alt + [/] debuging.
+- Zellij set to normal
+- Update fastfetch changed from tt to win+I falback win+c
+- Updated to miniSet
+- Nvidia container toolkit added
+- Mini added but will remove in next gens
+- Minikube replaced with kind
+- Minikube replaced with kind
+- Minikube replaced with kind
+- Rustup removed cargo kept
+- Rustup removed cargo kept
+- Rustup removed cargo kept
+- Updates rust standard lib
+- Yaml moved to bun
+- Rust lib added and its working now.
+- Rust c path added
+- Bun path added
+- Update
+- Updated fkales
+- Updated with DAW Aurdor.
+- Sudo Nix Flake Update
+- Updates
+- Updates
+- Updates
+- Flakes updated
+- Updates in apps moved remning Virtulisation components into its seperate fil.
+- Virtulisation tools added.
+- Updates
+- Updates
+- Update added nettools
+- Updates
+- Updates
+- Update added  MyTraceRoute
+- Updates
+- Updates x
+- Updates
+- Updates on lagest linnvu-sense
+- Updates
+- Updated
+- Updates
+- Update flake nix
+- Updates
+- Updates
+- Updates new flake data
+- Updates
+- Some chages in linuwu and config for inpure build
+- Updates
+- Fail config
+- Update
+- Updates
+- This is where i ditched Linuwu-Sense for trial, i hope things work.
+- Updates
+- Update
+- Updates
+- Kernal set to 6.17.x stable latest and predator non sense added upgraded
+- Linuwu sense compailed added. 😁
+- Update Linuwu sense locked in flake
+- Update Linuwu sense locked in flake
+- Updates
+- Updates
+- Upgrade removed all predator sense and linuwu sense and focused on acer-WMI latest from 6.17.5
+- Upgrade removed all predator sense and linuwu sense and focused on acer-WMI latest from 6.17.5
+- Updates
+- Updates Working Fully with Acer WMI 5 profiles support => no fan control no battery control and no rbg lighting
+- Added CRUSH
+- Updateszx
+- Added CRUSH
+- Added CRUSH
+- Added CRUSH
+- Added CRUSH
+- Added CRUSH offical documentations with crusht and NUR
+- Added CRUSH offical documentations with crusht and NUR
+- Removed nur extras but nur is present in flake
+- Alias addded for kubectl kl
+- Config updated
+- Git updated
+- Tuigreet solved
+- Nvidia-continer added
+- Virtulisation updatged
+- Config changed
+- Flake up dated
+- Flake up dated
+- Config change
+- UPdates added BOttom
+- Updates flake updates
+- Updates noto font color emoji
+- Updates noto font
+- Updates protonup-ng
+- Warning removal stage 1
+- Updates Working final
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Ssh + nginx configured
+- Ssh + nginx configured
+- Addes costome scripts
+- Updates
+- Updates
+- Costome scripts upgraded
+- Upadte
+- Valnet added.
+- Alias commented out => linuwu sense
+- Added kedconnect, kdeconnect other + kdeconnect.package.kpgs.valenet
+- Flakes upadteqwq
+- Updagtes
+- Updates script mylty cmd
+- Updated the costome scritp to awesoem single script with different paramater lever
+- Updated
+- Updated nginx config
+- Dev env added in default list
+- Dev env created
+- Removed dev config from apps moved to serperate devenv file
+- Updated removed valent
+- Updated hide ghosty config
+- Updated grok
+- Updates
+- Apps re-arranged here.
+- Update new with Clipboard ?
+- Update zellij
+- Update zellij
+- Tt config updated
+- Clip added
+- Rofi cnaged
+- Copyq remove
+- Updates
+- Added back php
+- Crtyro
+- Amd
+- Intel
+- Evernt
+- Cpu mec
+- Kernal
+- Kvm
+- Punit
+- Bfq
+- Deleted
+- Deleted
+- Deleted
+- Deleted
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Delete
+- Added lazysql and nix-search
+- Added nixd lsp for nix
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update added bluetuith # tui Bluetooth manager . as the oringali was not working
+- Updates
+- Updates
+- Teraform not installed properly
+- Tradingview added
+- Sd card requirement added
+- Tearform removed for now
+- Ardour removed
+- Updates added vscode and cursor ai
+- Updated added firewall nix config with ports opening for project broadc asting
+- Update flakes nix
+- Updates
+- Updated changed
+- Flakes updated
+- Updates
+- Update added awscli2
+- Battery controller added.
+- Firewall ports closed.
+- Updates
+- Updates
+- Updated flake
+- Updated flakes
+- Added intel graphics driver libva mesa and all.
+- Updates
+- Updates
+- Updates
+- Updatges
+- Updates
+- Updates
+- Zsh update
+- Path and variable file combined
+- Cargo rust added
+- Path and variable file combined
+- Path and variable file combined
+- Path and variable file combined
+- Rust path repaired
+- Rust path repaired
+- Updates rust
+- Updates added marathi hindi back
+- Updated Flakes
+- Updates
+- Updates
+- Updates
+- Updated addded droidcam obs
+- Updates
+- Updates OBS seperated
+- Updates Flake Updated
+- Podantui = lsd
+- POdman tui added
+- Updates
+- Updaets
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Config
+- Binds and main
+- Y
+- Default
+- Apps
+- Updates
+- Updates
+- Updates added kdenlive
+- Updates added kdenlive
+- Flake Updated
+- Updates
+- Mangohud added fully
+- Ghostty shreaders added.
+- Default.nix updated
+- Config ghostty added
+- Another config for ghostty added
+- Shreader changed
+- Updates
+- Updates
+- Kitty default again
+- Updates
+- Updates
+- Update3s
+- Update3s
+- Fastfetch
+- Ghostty
+- Layouts
+- Themes
+- Config zellij
+- Mangodhow
+- Local nix
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updatees flake
+- Updated contianer Utilities
+- Flake updtaed
+- Updated
+- Updates chromium
+- Updates
+- Updates
+- Updated nvim.nix for rust
+- Session path updated
+- Update rustup for everyting
+- Updated rust infmromation.
+- Updates flakes
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Podman Tui = pti
+- Devops Tools moved
+- Kitty changed bg-Opacity
+- Firewalld added.
+- Flakes Updated
+- Ghostty configed with padding 0
+- Floating terminal closed totally
+- Nitui floating terminal closed with windowrulev2
+- Lot of thigns chagned complete waybar rebuild
+- Lot of thigns chagned complete waybar rebuild
+- Lot of thigns chagned complete waybar rebuild
+- Firewall remove
+- Nix-Firewall Special Declerative
+- Updates
+- Updates
+- Updates
+- Updates added zsh for root
+- Updates added zsh for root
+- Updates added zsh for root
+- Updates added zsh for root
+- Updates added zsh for root
+- Updates added zsh for root
+- Updates added zsh for root
+- Updates added zsh for root
+- Boot kernal zswqp removed as we are already on zram which is better for our system
+- Flakes Updated
+- SD card added with safety now.
+- Hyperlock updated
+- Kitty changed
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Battery indicator updated but did not owrke at all.
+- Updates
+- Battery script updated
+- Colors changed
+- ColorCodeChanged
+- ColorCodeChanged
+- ColorCodeChanged
+- Config Updated
+- Updated
+- Sc-card new addtions flags
+- Sc-card new addtions flags
+- Sc-card new addtions flags
+- Sc-card new addtions flags
+- Sc-card new addtions flags
+- Sc-card new addtions flags
+- Updates
+- Updates Hardware_and_services.nix
+- Updates Flakes
+- Updates Flakes
+- Flake Updates
+- Added Audio Configuraitons and tools Pipewire and pulse audio controller.
+- Updates
+- Updates
+- Updates
+- Updates rust alias rustMaintain
+- Added openssl_legacy and pkgconf
+- Added openssl_legacy and pkgconf
+- Added openssl_legacy and pkgconf
+- Kdenlive removed
+- Zsh cmd
+- Extras removed from shell.
+- Containerisation added virtulisation.lxd.enable
+- Updates
+- Zen browser extensions added
+- Mchose-ace-68Default
+- Mchose-ace-68Nixos
+- Readme added.
+- Incus Closed.
+- Starship added.
+- Root zsh changed.
+- Incus Removed.
+- Flake Udated
+- Removed vs code and cursor
+- Reconfigured the root zsh config
+- Containerization restructered
+- Updates Mchose Config files
+- Updates Mchose Config files
+- Default changed starship
+- Theme added...
+- Theme added...
+- Theme added...
+- Theme added...
+- Theme added...
+- Theme added...
+- Theme added...
+- Theme added...
+- Theme added...
+- Default nix added starship
+- Starship seperate for root
+- Starship seperate for root
+- Starship seperate for root
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates starship
+- Costumized.
+- Updates
+- Updates
+- Updates
+- Nix-rust-librarys added
+- Nix-rust-librarys added
+- TUI bottom  deleted
+- Tectonic info updated
+- Treadingview deleted
+- Updates
+- Battery script added
+- New default nix added for swaync
+- New default nix added for swaync
+- Boot kernal removed acer-wmi-battery
+- Changed some battery problemetic things
+- Changed some battery problemetic things
+- Lidswitch updated
+- Updates
+- Updates
+- Update Battery working.
+- Updated Notification.
+- Updated Notification.
+- Default added
+- Updates flakes
+- Home kitty changed
+- I18n changed
+- Deleted
+- Backuped the hardware
+- Updated with iwd iwctl iw and imphala
+- Updated with iwd iwctl iw and imphala
+- Deleted
+- Backuped the hardware
+- Updates
+- Updated
+- Updated
+- Updated
+- Updated
+- Updated
+- Updated
+- Binds
+- Main
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Defualt
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updated
+- Updated
+- Updated
+- Updated
+- Updated
+- Updated
+- Updated
+- AUpdaet config
+- Updates
+- Updates
+- Updates
+- Updated
+- Updated
+- Updated
+- Updated
+- Updated
+- Updated
+- Updated
+- Updatres
+- Updated the microvm file
+- Main updated
+- App updated
+- Updated
+- Updated
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- Update
+- ZSH moved from .zshrc to /home/mukuldk/.config/zsh/.zshrc
+- Updated zsh
+- Browser-vm movde to dark-net
+- Browser-vm movde to dark-net
+- Browser-vm movde to dark-net with graphics
+- Browser-vm movde to dark-net with graphics
+- Browser-vm movde to dark-net with graphics
+- Browser-vm movde to dark-net with graphics
+- Browser-vm movde to dark-net with graphics
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Remoived
+- Updates Flakes
+- Updated Flakes
+- Updates In Flake
+- Updated changed jetbrains-mono from python to nerd-fonts.jetbrains-mono
+- Updates addes small new things
+- Updated Font Config To Super Awsome levle => -> Ligatures and fonts styles added
+- Updated waybar
+- Css Corrected
+- Apps sorted
+- Apps sorted
+- Apps sorted
+- Apps sorted
+- Apps sorted
+- Apps sorted
+- Apps sorted
+- Apps sorted
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updated Flakes
+- Updated Flakes
+- Updated Flakes
+- Updated Flakes
+- Updates flake
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updtes
+- Updated Paths FIxed
+- Updated Paths FIxed
+- Updated Paths FIxed
+- Updated Paths FIxed
+- Updated Paths FIxed
+- Updated Paths FIxed
+- Updates
+- Updates
+- Updates zsh
+- Updates
+- Updates
+- Updates
+- Updates Added Net-tools
+- Flake updates
+- Updates
+- Flakes Updated
+- Go lang pinning block added but not used
+- Winboat Removed As We dont have to use it at all.
+- Updated added nvme-cli
+- Ntsync added
+- Store optimisation is on
+- Updates
+- Updated nvidia hyprland setting env
+- Themes updateed
+- Nvidia brnach changed from stable to rproduction
+- Home state version updated
+- Flakes updated
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates neovim
+- Mangohood updated
+- Swww changed
+- Swww -awww
+- Neovim completely changed
+- Neovim Updating and others
+- Flake
+- Flakes Updated
+- Errors written
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates Flake
+- Updates
+- Updates added nix-tree + flakes updates
+- Updates
+- Updates
+- Updates
+- Updated NEOVIM SEPERATION OF BREAKING THING FROM NIX
+
+Hybrid setup
+ 1. mason and lazy added back
+ 2. neovim installation and languages installation in NIX
+ 3. rust now uses fenix.
+ 4. node and bun replaced with FNM (proper intigration with nvim)
+ 5. auto env swithcing in FNM added
+- Updates
+- Updates Flakes...
+- Updates Flakes
+- Updates
+- Updates flakes
+- Updates removed podman desktop, tectonics added some networki8ig  tools nc , wireshark and all
+- Updates changes in terminal multi plexer tmux
+- Updated the tmux config files location
+- Core config
+- Keybindigns
+- Modle pain resize
+- Plugins
+- Thems
+- Bkp
+- Tmux main
+- Ui
+- Updated Plugins
+- Updated docs
+- Updated configs files
+- Updated configs files
+- Updated configs files
+- Updated configs files
+- Updated configs files
+- Updated configs files
+- Updated configs files
+- Updated configs files
+- Updated configs files
+- Updates
+- Updates
+- Updates
+- Tmux conf
+- Tmux conf
+- Tmux conf
+- Tmux conf
+- Updated Floating Term addd in Hyperland
+- Updated Floating Term addd in Hyperland
+- Updated Floating Term addd in Hyperland
+- Updated Floating Term addd in Hyperland
+- Updates
+- Updated brightness bar
+- Updated volume bar
+- Updated volume bar
+- Updated volume bar
+- Updated volume bar
+- Updated volume bar
+- Updatess
+- Updatess swaync modification is going on
+- Brightness bar updates
+- Volume bar updated
+- Updated flakes
+- Binds updated
+- Colros and rofi changed fundamentally
+- Swaychanged
+- Updated wireshark stoped
+- Updateed flakes added mermedcli and imagemagic
+- Updates
+- Updates the flakes from ERROR
+- Downgrade the file maybe...
+- Updates
+- Tmux final version1
+- Updated applications added wireshark
+- Swqync updated
+- Brightness bar
+- Volume bar
+- ❄️ NEOVIM STABLE + TREESITTER WORKING ✨
+- Updated
+- Updated
+- Updated
+- Update safe nix update guide
+- Updates
+- Env Cleaned rustpu to fenix
+- Flakes updates only what is needed ✨ Working
+- UPdates flakes
+- Updates hyprlnd to use hyprland.conf file
+- Continues battery low notification fix
+- Updated costume notifican time small
+- Updated costume notifican time small
+- Updated costume notifican time small
+- Flakes workign
+- Open Ofifice
+- Updates swqync changed
+- Updates
+- Updates added bluetooth tui on keybindings windows + 8
+- Updates
+- Updates
+- Updates
+- Updates
+- Updated the real DNS injection which was overwritten by the NMCLI
+- Updates Ctrl-g 0 to ditach tmux
+- Hardware service faild to create DNS injection permenant, needs nmtui to do it everytime
+- Some docs
+- QUICKSHELL STARTING: this is where all the previous UI is geting cleaned up. after this commit i will be removing bunch of tings listed billow.
+
+1. waybar
+2. rofi
+3. swaync
+4. dunset(rofi)
+5. and most hyprland helpers.
+- Updated Quichshell
+- Updates all tings
+- Updates
+- Updates
+- Updates
+- Updates working Quickshell and all.
+- Updates
+- Updates Keybindings for DMS
+- Updated added automatic avatar seting
+- Updates
+- Updates
+- Updates
+- Updates
+- Updates
+- Updats
+- Updates
+- Hyprlock removd
+- Updates
+- WORKING VERSION BEFORE TESTING NVIDIA + LINUX 7.xxx
+- Updatd
+- Updatd
+- Removed teh newerflake and updatd
+- Updates changes in fastfetch logo
+- Updated
+- Updates added some fonts
+- Updates Trying Nvidia UPDATES after this one.
+- Updates Trying Nvidia UPDATES after this one. 2
+- Flakes Updates Working Everyting
+- Hyrpland debuging
+- Kitty font and BG change
+- Battery aliasas enw added
+- Usbutils added
+- Nvidia changed the repo
+- Updates
+- Updates
+- Updates
+- Updated the u nlimited value of audio buffer or whatever it is.
+- Updates added both ardour
+- Updates working ardour latest version.
+- Flakes
+- Updated Working CUDA is here now.
+- Flakes Updated
+- Rustfmt added into config for all the time...
+- Some application for audio midi and all connection
+- Flakes updates
+- Updates
+- Rustfmt added
+- Updtges
+- Updated rustfmt rules
+- Sheaders changed
+- Config sharedr configured
+- Tailscale client added.
+- Tailscale added ot the hardware services part, without turning systemctl start tailscale it will not start on boot.
+- Kde connect added.
+- Kde connect added.
+- Updates a lot
+- Updates nix flakes
+- Flake Updates
+- Other updates
+- Flakes update with this step
+- Updated errors solved
+- Updates
+- Backup creted of hyprlang
+- Update Older fix was this
+- Hyprlang config disabled with default this time trying the orignal lua format first
+- UPdates Hyprland moved to lua almost
+- Updates added lua directly into the nix config
+- Updates hyprland old
+- Updates
+- Dam shell avtarchange
+- Cargonext added
+- Udpate
+- Hypr display TV set
+- Greeted set proper hyprland command
+- Nvidia
+- Apps
+- FULLY WOKING VERSION FOR NOW...
+
+1. Hyprland works with version 56 =>
+   a. eDP-1 165 HZs
+   b. LGTV (not the name in config) 4K at 120hx vvr workign
+2. everyting else working Cuda13 Nvidia smi 6xx version Linux Kernel
+7.1.4 working
+3. Potential brakages aheade in DMS shell and Quickshell.
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Removed unnecessary files
+- Updated some env
+- Chagned a lot of keybindings rulse
+- Fundamnental change in scripts
+- Lib tried
+- Rewritten scripts acording to size and area needed
+- Added planX
+- Updates flakes + changed theme as theme engine removed unmaintained themes
+- Added icons for fastfetch
+- Themes problems removed
+- Updated fastfetch icon
+- Gtk engine removed as depreciated
+- Updates avatar change script
+- Updated logos SAITAMA
+- Updates
+- Updates flakes
+- Updates
+- Updates zsh config
+- Rustfmt
+- Keybinding
+- Pcl added
+- Updates
+- Font added
+- Removed dms # commented
+- Updated
+- Removed dms
+- Hyprland noctalia keybindings updated to all.
+- Updates
+- Updatedd soem new plugisn and keybindings.
+- FLakes updated
+- Updates keybindings in hyprland
+- Flakes Updated
+- Updates nix flakes
+- Updates
+- Flakes Updated
+- Updated flakes
+- Config local added clippy
+- Clippy file
+- Session path added clippy variable
+- Updates
+- Updated added edl for RealmiX3 superzoom recovery
+- Updates removed edl and qdl for now
+- Udpates
+- Updated lot fo tigns, Greeted , nvidia, user, boot_kernal
+- Wireshark added as user mukuldk
+- Updates the shreaders of ghostty.
+- NixConfig color change
+- Udpates cuda seperation started.
+- Udpates cuda seperation main code changed.
+- Updates
+- Nvidia - CUDA seperated ✓
+- Noctelia loading issue solving...
+- Updates
+- Updates
+- Updated
+- Updated
+- Updated
