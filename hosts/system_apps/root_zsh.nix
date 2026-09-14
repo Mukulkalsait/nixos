@@ -3,6 +3,8 @@
 
   users.users.root = {
     shell = pkgs.zsh;
+  };
+  home-manager.users.root = {
     home.file.".config/lazygit".source = ../apps/config_local_folder/lazygit;
   };
 
