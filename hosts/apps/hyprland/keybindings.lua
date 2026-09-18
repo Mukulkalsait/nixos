@@ -1,8 +1,20 @@
 -- ~/.config/hypr/keybindings.lua
 
 local mainMod = "SUPER"
-local terminal = "ghostty" -- or "kitty"
-local kterm = "kitty"
+
+-- NOTE: ========================================================
+-- change into /hosts/apps/sessionPath_n_Variables.nix
+-- ==============================================================
+--
+-- Y: Main => Ghostty
+-- local terminal = "ghostty"
+-- local kterm = "kitty"
+
+-- Y: Main => Kitty
+local terminal = "kitty"
+local kterm = "ghostty"
+-- ==============================================================
+
 local browser = "zen-twilight" -- Replace with your browser
 local editor = "nvim"
 local filemanager = "yazi"
@@ -67,7 +79,9 @@ local function setupKeybindings()
 	-- B: noctalia shortcuts
 	local n_msg = "noctalia msg"
 	local pt = n_msg .. " panel-toggle"
-	local cheat_sheet = " kenn/keybind-cheatsheet:cheatsheet"
+	-- local cheat_sheet = " kenn/keybind-cheatsheet:cheatsheet"
+	local cheat_sheet = " blackbartblues/keymap:panel"
+
 	hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd(pt .. " launcher"), "App Launcher")
 	hl.bind(mainMod .. " + " .. "PERIOD", hl.dsp.exec_cmd(n_msg .. " settings-toggle"), "Settings")
 	hl.bind(mainMod .. " + " .. "9", hl.dsp.exec_cmd(pt .. " control-center notifications"), "Notifications")
@@ -128,10 +142,6 @@ local function setupKeybindings()
 
 	-- Cycle Windows
 	hl.bind("ALT" .. " + " .. "Tab", hl.dsp.window.cycle_next(), "Window Focus Cycle")
-	hl.bind(mainMod .. "+" .. "TAB", hl.plugin.hymission.toggle, "")
-	hl.bind(mainMod .. "+" .. "ALT" .. "+" .. "TAB", function()
-		hl.plugin.hymission.toggle("forceall")
-	end) -- forceall = across every workspace, flattened
 
 	-- Workspace Navigation
 	hl.bind(mainMod .. " + CONTROL + 0", hl.dsp.focus({ workspace = "empty" }), "Open Closest Clean Worsspace") -- navigtate to EMPTY SPACE NEARIST
