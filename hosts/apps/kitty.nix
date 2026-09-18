@@ -1,7 +1,6 @@
 { ... }:
 
 {
-
   programs.kitty = {
     enable = true;
 
@@ -10,7 +9,12 @@
     # themeFile = "Encom";
     # themeFile = "Lavandula";
     # themeFile = "Argonaut";
-    themeFile = "tokyo_night_night";
+    themeFile = "3024 Night";
+    # themeFile = "1984 Dark";
+    # themeFile = "Adwaita darker";
+    # themeFile = "ANSI 1987";
+    # themeFile = "Yorumi Shade";
+    # themeFile = "tokyo_night_night";
 
     # R: use "kitty +kitten themes"
 
