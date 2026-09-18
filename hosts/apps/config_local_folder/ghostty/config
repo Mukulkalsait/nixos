@@ -17,8 +17,9 @@ command = zsh -ic "fastfetch; exec zsh"
 #B: best
 custom-shader-animation = always
 # custom-shader = shaders/cursor_tail.glsl
-custom-shader = shaders/rectangle_boom_cursor.glsl
 # custom-shader = shaders/cursor_warp.glsl
+
+custom-shader = shaders/rectangle_boom_cursor.glsl
 custom-shader = shaders/sonic_boom_cursor.glsl
 
 # TAG:  Tweak shader params (edit in shaders/cursor_warp.glsl; top constants)
