@@ -25,7 +25,7 @@
     cliphist # clipboard history manager
     wtype # FUN_3: wayland keyboard input= i am using "fcitx5" in /configuration.nix USE ONLY 1.
     # w3m # TUI browser : but Usefull For TUI IMAGE Rendering.
-    hymission # hyprland APPLE STYLE WINDO VIEW
+    # hymission # hyprland APPLE STYLE WINDO VIEW
 
     # quickshell installation
     # inputs.quickshell.packages.${pkgs.system}.default
