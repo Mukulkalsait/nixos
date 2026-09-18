@@ -5,7 +5,7 @@ bold-is-bright = true
 font-feature = +dlig 
 font-feature = +liga
 
- command = zsh -ic "fastfetch; exec zsh"
+# command = zsh -ic "fastfetch; exec zsh"
 # ghostty is default fallback if fastfetch kitty did not work so we well not put fastfetch in it
 
 
