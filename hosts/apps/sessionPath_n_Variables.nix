@@ -3,6 +3,7 @@
 
   home.sessionVariables = {
     TERMINAL = "kitty";
+    # TERMINAL = "ghostty";
     FILEMANAGER = "yazi";
     EDITOR = "nvim";
 
