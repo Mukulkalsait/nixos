@@ -85,6 +85,12 @@ hl.config({
 	debug = {
 		vfr = true,
 	},
+	plugin = {
+		hymission = {
+			layout_engine = "apple", -- aliases: natural / apple / expose / mission-control
+			multi_workspace_sort_recent_first = 1,
+		},
+	},
 })
 
 -- 1.
