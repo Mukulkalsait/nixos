@@ -12,12 +12,12 @@ command = zsh -ic "fastfetch; exec zsh"
 
 # Cursor Trail via Shader (Neovide/Kitty-like: fade trail on movement)
 # custom-shader = shaders/cursor_sweep.glsl
-# custom-shader = shaders/rectangle_boom_cursor.glsl
 # custom-shader = shaders/ripple_cursor.glsl
 # custom-shader = shaders/ripple_rectangle_cursor.glsl
 #B: best
 custom-shader-animation = always
-custom-shader = shaders/cursor_tail.glsl
+# custom-shader = shaders/cursor_tail.glsl
+custom-shader = shaders/rectangle_boom_cursor.glsl
 # custom-shader = shaders/cursor_warp.glsl
 custom-shader = shaders/sonic_boom_cursor.glsl
 
