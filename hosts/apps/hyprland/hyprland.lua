@@ -32,8 +32,8 @@ hl.env("XDG_SCREENSHOTS_DIR", os.getenv("HOME") .. "/screens")
 -- ==========================================
 hl.config({
 	general = {
-		gaps_in = 1,
-		gaps_out = 1,
+		gaps_in = 0,
+		gaps_out = 0,
 		border_size = 2,
 		col = {
 			-- Current active layout

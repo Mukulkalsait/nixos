@@ -16,20 +16,57 @@
 
     font = {
       size = 9; # ghostty: font-size = 9
-      name = "JetBrainsMono Nerd Font"; # ghostty: font-family (primary)
+      # name = "VictorMono Nerd Font"; # ghostty: font-family (primary)
+      # name = "Iosevka Nerd Font"; # ghostty: font-family (primary)
+      name = "JetBrainsMono Nerd Font ExtraLight"; # Y: Options=> thin extra-light light normal medium semi-bold bold extra-bold black
+
+
     };
 
     settings = {
 
-      # bold_font = "MonaspiceKr Nerd Font"; # ghostty: font-family-bold - this line was missing in your last version, which is why bold text wasn't rendering distinctly
-      # italic_font = "MonaspiceRn Nerd Font"; # ghostty: font-family-italic
-      # bold_italic_font = "MonaspiceKr Nerd Font"; # ghostty: font-family-bold-italic
+      adjust_line_height = 0;
+      adjust_column_width = 0;
+      disable_ligatures = "never";
 
+      # Y: ===== CLEAN & SIMPLE (fonts)=====
+      # ---------------------------------------------
+      # font-family = JetBrainsMono Nerd Font
+      # font-family = Comic Sans MS
+      # font-family = D2CodingLigature Nerd Font
+      # font-family = GeistMono Nerd Font
+      # font-family = FantasqueSansM Nerd Font
+
+
+      # INFO: Ligatures working fonts:
+      # ----------------------------------------------------------
+      # | => -> |> === |- -| != :- := =: :: :> <: -: <- <= >- >= |  
+      # ----------------------------------------------------------
+      # font-family = "JetBrainsMono Nerd Font" 
+      # font-family = "Iosevka Nerd Font" 
+      # font-family = "VictorMono Nerd Font" 
+      # ----------------------------------------------------------
+
+
+      # font-family = "MonaspiceAr Nerd Font" 
+      # font-family = "MonaspiceXe Nerd Font" 
+      # font-family = "MonaspiceNe Nerd Font" # Tecnhincal
+      # font-family = "MonaspiceKr Nerd Font" # Mechinical
+      # font-family = "MonaspiceRn Nerd Font" # FUNKY FONT using for italic
+      # font-family = "Liberation Mono"
+      # font-family = "Courier New"
+      # font-family = "Cousine for Powerline"
+      # font-family = "Meslo LG M for Powerline"
+      # font-family = "Go Mono for Powerline"
+
+
+      # font-family = "DejaVu Sans Mono"
+      # font-family = "Andale Mono"
       bold_font = "VictorMono Nerd Font";
       italic_font = "VictorMono Nerd Font"; # ghostty: font-family-italic
       bold_italic_font = "VictorMono Nerd Font"; # ghostty: font-family-bold-italic
 
-      font_features = "JetBrainsMono-Regular +liga +dlig";
+      # font_features = "JetBrainsMono-Regular +liga +dlig";
 
       # ---- Window / chrome ----
       background_opacity = "0.75"; # ghostty: background-opacity = 0.75
@@ -86,3 +123,6 @@
     };
   };
 }
+
+
+
