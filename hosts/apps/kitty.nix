@@ -10,7 +10,8 @@
     # themeFile = "Encom";
     # themeFile = "Lavandula";
     # themeFile = "Argonaut";
-    themeFile = "TokyoNight";
+    themeFile = "tokyo_night_night";
+
     # R: use "kitty +kitten themes"
 
     font = {
