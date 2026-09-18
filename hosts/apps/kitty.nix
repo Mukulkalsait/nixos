@@ -56,7 +56,7 @@
       # cursor_shape = "block"; # trail reads cleanest on a block cursor
       cursor_shape = "beam";
       cursor_beam_thickness = "1.5";
-      cursor_underline_thickness = "2.0";
+      # cursor_underline_thickness = "2.0";
 
       cursor_blink_interval = "0";
       cursor_stop_blinking_after = "0";
@@ -69,7 +69,7 @@
       # cursor_trail_thickness = "1.2 1.2";
 
       cursor_trail = "1";
-      cursor_trail_decay = "0.01 0.5"; # X and Y decay
+      cursor_trail_decay = "0.05 0.5"; # X and Y decay
       cursor_trail_thickness = "1.2 1.2"; # X and Y thickness
 
       # Y: faster
