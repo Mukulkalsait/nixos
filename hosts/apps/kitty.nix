@@ -62,9 +62,10 @@
 
       # font-family = "DejaVu Sans Mono"
       # font-family = "Andale Mono"
-      bold_font = "VictorMono Nerd Font";
-      italic_font = "VictorMono Nerd Font"; # ghostty: font-family-italic
-      bold_italic_font = "VictorMono Nerd Font"; # ghostty: font-family-bold-italic
+      # bold_font = "VictorMono Nerd Font Bold";
+      bold_font = "D2CodingLigature Nerd Font Bold"; # ghostty: font-family-italic
+      italic_font = "VictorMono Nerd Font Italic"; # ghostty: font-family-italic
+      bold_italic_font = "MonaspiceRn Nerd Font Bold Italic"; # ghostty: font-family-bold-italic
 
       # font_features = "JetBrainsMono-Regular +liga +dlig";
 
