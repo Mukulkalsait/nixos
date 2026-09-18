@@ -8,8 +8,8 @@
     # themeFile = "Bright_Lights";
     # themeFile = "Encom";
     # themeFile = "Lavandula";
-    # themeFile = "Argonaut";
-    themeFile = "3024 Night";
+    themeFile = "Argonaut";
+    # themeFile = "3024_Night";
     # themeFile = "1984 Dark";
     # themeFile = "Adwaita darker";
     # themeFile = "ANSI 1987";
@@ -74,7 +74,7 @@
       # font_features = "JetBrainsMono-Regular +liga +dlig";
 
       # ---- Window / chrome ----
-      background_opacity = "0.75"; # ghostty: background-opacity = 0.75
+      background_opacity = "0.85"; # ghostty: background-opacity = 0.75
       confirm_os_window_close = "0"; # ghostty: confirm-close-surface = false
       window_padding_width = "0"; # ghostty: window-padding-y/x = 0
       hide_window_decorations = "yes"; # keep the chrome-less look you already run
@@ -82,13 +82,14 @@
       # ---- Colors ----
       # theme provides colors 0-15, these override background/foreground/
       # cursor on top of it - same pattern as ghostty's theme + overrides.
-      background = "#000000"; # ghostty: background = #000000
+      # #120328
+      background = "#010101"; # ghostty: background = #000000
       foreground = "#c8d3f5"; # ghostty: foreground = #c8d3f5
       # cursor = "#c8d3f5";
 
       # ---- Shell startup ----
       # ghostty: command = zsh -ic "fastfetch; exec zsh"
-      shell = "zsh -ic \"fastfetch; exec zsh\"";
+      # shell = "zsh -ic \"fastfetch; exec zsh\"";
 
       # ---- Clipboard ----
       # kitty disables clipboard *read* by default for security. This

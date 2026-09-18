@@ -7,12 +7,12 @@ local mainMod = "SUPER"
 -- ==============================================================
 --
 -- Y: Main => Ghostty
--- local terminal = "ghostty"
--- local kterm = "kitty"
+local terminal = "ghostty"
+local kterm = "kitty"
 
 -- Y: Main => Kitty
-local terminal = "kitty"
-local kterm = "ghostty"
+-- local terminal = "kitty"
+-- local kterm = "ghostty"
 -- ==============================================================
 
 local browser = "zen-twilight" -- Replace with your browser
