@@ -1,0 +1,15 @@
+[main]
+altview2horizontal = ''
+altview2vertical = '[{"col1":0,"col2":2,"adjust":-24}]'
+color-tsharks = ['/nix/store/fzld5c1mp9552y8q7n74yjm5vjg5j6qy-wireshark-cli-4.6.4/bin/tshark', '/nix/store/x5g1lbcchhlx353v7z325id2gppir4fh-wireshark-cli-4.6.6/bin/tshark', '/nix/store/fy4pvbxfj8nj9f9pfq31i67vdp7n9csd-wireshark-cli-4.6.8/bin/tshark', '/etc/profiles/per-user/mukuldk/bin/tshark', '/run/current-system/sw/bin/tshark']
+column-format = ['%Cus:frame.encoding:0:R', 'Character encoding', 'true', '%Cus:frame.section_number:0:R', 'Section number', 'true', '%Cus:frame.encap_type:0:R', 'Encapsulation type', 'true', '%Cus:frame.time_relative:0:R', 'Time since reference or first frame', 'true', '%Cus:frame.marked:0:R', 'Frame is marked', 'true', '%Cus:frame.coloring_rule.name:0:R', 'Coloring Rule Name', 'true', '%Cus:frame.section_number:0:R', 'Section number', 'true', '%Cus:frame.section_number:0:R', 'Section number', 'true', '%Cus:frame.encap_type:0:R', 'Encapsulation type', 'true', '%Cus:arp.hw.type:0:R', 'Hardware type', 'true', '%Cus:frame.time:0:R', 'Arrival Time', 'true', '%Cus:frame.encoding:0:R', 'Character encoding', 'true']
+column-format-bak = ['%Cus:frame.encoding:0:R', 'Character encoding', 'true', '%Cus:frame.section_number:0:R', 'Section number', 'true', '%Cus:frame.encap_type:0:R', 'Encapsulation type', 'true', '%Cus:frame.time_relative:0:R', 'Time since reference or first frame', 'true', '%Cus:frame.marked:0:R', 'Frame is marked', 'true', '%Cus:frame.coloring_rule.name:0:R', 'Coloring Rule Name', 'true', '%Cus:frame.section_number:0:R', 'Section number', 'true', '%Cus:frame.section_number:0:R', 'Section number', 'true', '%Cus:frame.encap_type:0:R', 'Encapsulation type', 'true', '%Cus:arp.hw.type:0:R', 'Hardware type', 'true', '%Cus:frame.time:0:R', 'Arrival Time', 'true']
+dark-mode = true
+last-used-tshark = '/run/current-system/sw/bin/tshark'
+lastupdate = '2026-09-12 04:50:38.091884156 +0530 IST m=+0.191647389'
+layout = 'altview2'
+mainview = '[{"col1":2,"col2":6,"adjust":4},{"col1":4,"col2":6,"adjust":-2}]'
+packet-colors = true
+recent-filters = ['arp', 'quic', 'TLSv1.2', 'ip.addr == 1.0.0.1', 'usb.device_address == 48', 'usb.device_address == 46', 'adb']
+validated-tsharks = ['/nix/store/fzld5c1mp9552y8q7n74yjm5vjg5j6qy-wireshark-cli-4.6.4/bin/tshark', '/nix/store/x5g1lbcchhlx353v7z325id2gppir4fh-wireshark-cli-4.6.6/bin/tshark', '/nix/store/fy4pvbxfj8nj9f9pfq31i67vdp7n9csd-wireshark-cli-4.6.8/bin/tshark', '/etc/profiles/per-user/mukuldk/bin/tshark', '/run/current-system/sw/bin/tshark']
+

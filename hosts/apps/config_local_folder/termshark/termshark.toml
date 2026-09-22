@@ -1,0 +1,18 @@
+[main]
+# universal config config 
+copy-command = "wl-copy"
+
+# costume cofnig for other thigns,
+color-tsharks = ['/run/current-system/sw/bin/tshark']
+column-format = ['%m', 'No.', 'true', '%t', 'Time', 'true', '%s', 'Source', 'true', '%d', 'Dest', 'true', '%p', 'Proto', 'true', '%L', 'Length', 'true', '%i', 'Info', 'true']
+column-format-bak = []
+last-used-tshark = '/run/current-system/sw/bin/tshark'
+layout = 'altview2'
+recent-files = ['/home/mukuldk/3_termshark/mchose/usbmon0_mchose_1.pcapng', '/home/mukuldk/1_file/3_Repos_All/A_gitHub/011_Penetration_testing/002_log4j/log4j_solr_observer2.pcapng', '/home/mukuldk/1_file/3_Repos_All/A_gitHub/011_Penetration_testing/1_openssh/cve_test.pcapng']
+recent-filters = ['usb.bus_id == 1 && usb.device_address == 7 && usb.endpoint_address == 0x04', 'ssh', 'ssh.auth_failure_cont_list', 'ip.addr == 192.168.31.170', 'tcp.stream eq 0', 'udp.stream eq 0', 'tcp.stream eq 11']
+search-case-sensitive = false
+search-target = 'list'
+search-type = 'filter'
+stream-view = 'hex'
+validated-tsharks = ['/run/current-system/sw/bin/tshark']
+
