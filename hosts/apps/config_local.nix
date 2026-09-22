@@ -7,6 +7,7 @@
   home.file.".config/lazygit".source = ./config_local_folder/lazygit;
   home.file.".config/MangoHud".source = ./config_local_folder/MangoHud;
   home.file.".config/rustfmt".source = ./config_local_folder/rustfmt;
+  home.file.".config/termshark".source = ./config_local_folder/termshark;
   home.file.".config/tmux".source = ./config_local_folder/tmux;
   home.file.".config/zellij".source = ./config_local_folder/zellij;
 }
