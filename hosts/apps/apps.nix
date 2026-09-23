@@ -63,7 +63,6 @@
     net-tools # Basic network tools.
     netcat # nc
     # sniffnet # cross platform monitor for Trafic 
-    # wireshark # network monitoring tool
     termshark # Wireshark cli
     tcpdump # dumping netowrk data
     python313Packages.onvif-zeep # Onvif protocall (security  cameras) tool
