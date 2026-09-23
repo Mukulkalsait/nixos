@@ -51,7 +51,7 @@
     # kitty
     # zellij
     nushell # best for http APIs checking.
-    tmux
+    # tmux
     # edl # Realmi X3 Superzoom recovery tool
     # qdl # Realmi X3 Superzoom recovery tool
 
@@ -163,6 +163,23 @@
     };
   };
 
+
+
+  # DX : remove when use complete it locks the version of tmux
+  programs.tmux = {
+    enable = true;
+    # Override the tmux package to use the 3.8-rc source
+    package = pkgs.tmux.overrideAttrs (old: rec {
+      version = "3.8-rc";
+      src = pkgs.fetchFromGitHub {
+        owner = "tmux";
+        repo = "tmux";
+        rev = "3.8-rc"; # This tag exists based on your release list
+        hash = "sha256:decb97e52e91a459f9b9d5726d64cd7cb87506eca1090817da6cc84a9a71eb51"; # Replace with real hash
+      };
+    });
+  };
+  # DX : remove when use complete it locks the version of tmux
 
   programs.obs-studio = {
     enable = true;
