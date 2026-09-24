@@ -38,9 +38,18 @@
   # };
 
   # default apps: 
-  xdg.mimeApps.defaultApplications = {
-    "x-scheme-handler/terminal" = [ "kitty.desktop" ];
-    "text/plain" = [ "nvim.desktop" ];
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "x-scheme-handler/terminal" = [ "kitty.desktop" ];
+      "text/plain" = [ "nvim.desktop" ];
+
+      "video/mp4" = [ "mpv.desktop" ];
+      "video/x-matroska" = [ "mpv.desktop" ];
+      "video/webm" = [ "mpv.desktop" ];
+      "video/quicktime" = [ "mpv.desktop" ];
+    };
   };
+
 
 }
