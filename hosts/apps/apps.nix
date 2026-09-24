@@ -51,7 +51,7 @@
     # kitty
     # zellij
     nushell # best for http APIs checking.
-    # tmux
+    tmux
     # edl # Realmi X3 Superzoom recovery tool
     # qdl # Realmi X3 Superzoom recovery tool
 
@@ -119,7 +119,8 @@
     mission-center # Task Manager
     # libreoffice-fresh # community driven latest version fo libreoffice.
     onlyoffice-desktopeditors # alternate office tool
-    vlc # Video Lan Converter
+    # vlc # Video Lan Converter
+    mpv # Another player 
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
     # teamviewer
 
@@ -162,20 +163,6 @@
       RestartSec = 5;
     };
   };
-
-
-
-  # DX : remove when use complete it locks the version of tmux
-  package = pkgs.tmux.overrideAttrs (old: rec {
-    version = "3.8-rc";
-    src = pkgs.fetchFromGitHub {
-      owner = "tmux";
-      repo = "tmux";
-      rev = "6f387ee"; # 3.8-rc lockerd.
-      hash = "sha256-HjeITsKl2zySEdr3P9S/Atk6Xg8oDInwnVT7afUB4kk=";
-    };
-  });
-  # DX : remove when use complete it locks the version of tmux
 
   programs.obs-studio = {
     enable = true;
