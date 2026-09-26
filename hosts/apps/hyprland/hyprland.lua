@@ -109,8 +109,17 @@ hl.animation({ leaf = "specialWorkspaceOut", enabled = true, speed = 1.4, bezier
 -- 6. Window rules
 -- ==========================================
 local float_apps = { "nmtui", "wiremix", "wifitui", "bluetooth", "floating_window" }
+-- for _, app in ipairs(float_apps) do
+-- 	hl.window_rule({ match = { class = "^" .. app .. "$" }, float = true })
+-- end
+
 for _, app in ipairs(float_apps) do
-	hl.window_rule({ match = { class = "^" .. app .. "$" }, float = true })
+	hl.window_rule({
+		match = { class = "^" .. app .. "$" },
+		float = true,
+		persistent_size = true, -- keeps size across toggles
+		center = false, -- optional, centers on open
+	})
 end
 
 hl.window_rule({ name = "fullscreen_on", match = { class = "^(steam_app_[0-9]+)$" }, fullscreen = true }) -- B: 🎲 STEAM
