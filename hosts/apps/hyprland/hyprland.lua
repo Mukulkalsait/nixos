@@ -117,8 +117,11 @@ for _, app in ipairs(float_apps) do
 	hl.window_rule({
 		match = { class = "^" .. app .. "$" },
 		float = true,
-		persistent_size = true, -- keeps size across toggles
+		persistent_size = false, -- keeps size across toggles
 		center = false, -- optional, centers on open
+		-- suppress_event = "fullscreen", -- ← this is the correct field
+		-- fullscreen = false,
+		suppress_event = "maximize",
 	})
 end
 
