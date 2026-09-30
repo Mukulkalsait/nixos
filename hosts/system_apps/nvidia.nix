@@ -13,7 +13,7 @@
       nvidia-vaapi-driver
       ocl-icd
 
-      # IMP: CUDA SEPERATED -> host/apps/cuda_dev.nix
+      # IMP: CUDA SEPERATED -> /home/mukuldk/1_file/NIX_DEVELOP/cuda
       # cudatoolkit
       # opencl-headers
 

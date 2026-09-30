@@ -59,7 +59,7 @@
     "${config.home.homeDirectory}/.cargo/bin"
     "${config.home.homeDirectory}/go/bin"
     "${config.home.homeDirectory}/.cache/.bun/bin"
-    "${pkgs.cudaPackages.cudatoolkit}/bin" # For nvcc
+    # "${pkgs.cudaPackages.cudatoolkit}/bin" # For nvcc
   ];
 
 }
