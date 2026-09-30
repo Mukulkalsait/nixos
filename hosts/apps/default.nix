@@ -25,7 +25,7 @@
 
     ./bat.nix
     ./neovim.nix
-    # ./cuda_dev.nix
+    # ./cuda_dev.nix # R: we temperory removed cuda.
     # ./crush.nix
 
     # Y: GitHub repos
