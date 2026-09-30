@@ -25,7 +25,7 @@
 
     ./bat.nix
     ./neovim.nix
-    ./cuda_dev.nix
+    # ./cuda_dev.nix
     # ./crush.nix
 
     # Y: GitHub repos
