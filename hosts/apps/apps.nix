@@ -119,7 +119,7 @@
     mission-center # Task Manager
     # libreoffice-fresh # community driven latest version fo libreoffice.
     onlyoffice-desktopeditors # alternate office tool
-    # vlc # Video Lan Converter
+    # vlc # Video Lan Converter 
     mpv # Another player 
     graphviz # graph vitrulisatoin tool extreamly multypurpose. 
     # teamviewer
