@@ -6,6 +6,7 @@
     TERMINAL = "ghostty";
     FILEMANAGER = "yazi";
     EDITOR = "nvim";
+    MANPAGER = "nvim +Man!";
 
     # # Wayland-specific Y: IMPUT METHODS 
     INPUT_METHOD = "fcitx";
