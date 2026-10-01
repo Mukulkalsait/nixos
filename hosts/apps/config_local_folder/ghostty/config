@@ -42,6 +42,7 @@ window-subtitle = working-directory
 window-theme = dark
 window-padding-y = 0
 window-padding-x = 0
+gtk-tabs-location = hidden
 
 theme = TokyoNight Moon
 background = #000000

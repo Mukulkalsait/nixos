@@ -51,7 +51,9 @@
     # kitty
     # zellij
     nushell # best for http APIs checking.
-    tmux
+    tmux # complet terminal multiplexer.
+    zmx # session management. IMP: planned to be used with GHOSTTY>
+
     # edl # Realmi X3 Superzoom recovery tool
     # qdl # Realmi X3 Superzoom recovery tool
 
@@ -75,6 +77,8 @@
     nix-tree # tui for everyting 
 
     # Y: TUI's & CLI's|>
+    man-pages # man pages
+    man-pages-posix # man for posix
     bat # modern cat
     fx # json viewer.
     # calcurse # Calender + take Manager Application.
