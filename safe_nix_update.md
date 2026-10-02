@@ -2,98 +2,30 @@
 
 ## Safe-ish Updates
 
-```bash id="syf1u2"
-nix flake lock --update-input home-manager
-```
-
-Usually safe.
-
----
-
-```bash id="t0yq6j"
-nix flake lock --update-input fenix
-```
-
-Rust toolchains only.
-
----
-
 ```bash id="6d9l0o"
-nix flake lock --update-input wifitui
+sudo nix flake update  home-manager
+sudo nix flake update  fenix
+sudo nix flake update  wifitui
+sudo nix flake update  ghostty
+sudo nix flake update  zen-browser
+sudo nix flake update  nixpkgs-terraform
+sudo nix flake update  nur
 ```
-
-Tiny app.
-
----
-
-```bash id="e5n3lq"
-nix flake lock --update-input ghostty
-```
-
-Terminal only.
-
----
-
-```bash id="wopw7r"
-nix flake lock --update-input zen-browser
-```
-
-Usually safe.
-
----
-
-```bash id="fmyu2g"
-nix flake lock --update-input nixpkgs-terraform
-```
-
-Terraform overlay.
-
----
-
-```bash id="xx0l9v"
-nix flake lock --update-input nur
-```
-
-Usually okay.
 
 ---
 
 # CAUTION INPUTS
 
-These can break graphical stack/session compatibility.
-
----
-
 ## Hyprland
 
 ```bash id="e6ok6v"
 nix flake lock --update-input hyprland
+nix flake lock --update-input hyprland-plugins
 ```
-
-Potential issues:
 
 * wlroots mismatch
 * plugin mismatch
 * portal mismatch
-
-Still usually recoverable.
-
----
-
-## Hyprland Plugins
-
-```bash id="nv4r4q"
-nix flake lock --update-input hyprland-plugins
-```
-
-Can break instantly if Hyprland API changed.
-
-Usually update BOTH together:
-
-```bash id="4dbtja"
-nix flake lock --update-input hyprland
-nix flake lock --update-input hyprland-plugins
-```
 
 ---
 
@@ -123,7 +55,6 @@ This is what broke your system.
 # VERY IMPORTANT DETAIL
 
 Because you use:
-
 ```nix
 inputs.nixpkgs.follows = "nixpkgs";
 ```
@@ -251,3 +182,5 @@ You already discovered one of the most important NixOS skills:
 > NEVER fear updates if flake.lock is committed.
 
 That is the entire power of flakes 😄
+
+ home-manager       fenix              wifitui            ghostty            zen-browser        nixpkgs-terraform  nur                
