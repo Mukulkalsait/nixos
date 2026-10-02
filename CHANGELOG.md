@@ -7,28 +7,80 @@
 - Moved configs into nix
 - FeatLazygit config added.: type scope and description selection added.
 - Git cliff added
+- Added net keybinding T for tagging
+- Feat(1317):
+- Ghostty -> kitty switching....
+- Flake update
 
 ### 🐛 Bug Fixes
 
 - Focus on mouse windows false
 - Paranthesis removal
 - Changed the default key from "X" to "x"
+- Tmux flags added.
+- Added Description in every keybinding, fixing the keybinding applications information.
+- Plugin hymission added
+- Plugin added hymission
+- Fix(hypremission):
+- Hymission removed
+- Fix(ghostty config for better ui.):
+- Hyrpland flaoting loop expanded
+- Audio.sh
 
 ### 📚 Documentation
 
 - Docker startup false || other optimisations
 - Docker added to user group
+- Gitignore
+- Changelog addition
+- Tmux doc fix
+- Ghostty cachix aded
+- Flake update
+- Man pages for nix  added
+- Manpages updated with nvim as opener
 
 ### 🚜 Refactor
 
 - Alias updates
 - Better code arrangement
 - Refactor:
+- Refactor:
+- Kitty + movement
+- Kitty + movement
+- Kitty + movement
+- Kitty + movement
+- Kitty + movement
+- Kitty + movement
+- Kitty + movement
+- Kitty + movement
+- Kitty + movement
+- *(back to ghostty, we will live with it for some more time.)* GHOSTTY Is BACK...
+- *(back to ghostty, we will live with it for some more time.)* GHOSTTY Is BACK...
+- *(back to ghostty, we will live with it for some more time.)* GHOSTTY Is BACK...
+- *(back to ghostty, we will live with it for some more time.)* GHOSTTY Is BACK...
+- *(termshark)* Termahsakr config added.
+- Refactor:
+- Refactor:
+- New Nix Develop folder added...
+- New Nix Develop folder added...
+- New Nix Develop folder added...
 
 ### 🧪 Testing
 
 - Test
 - Test
+
+### ⚙️ Miscellaneous Tasks
+
+- Old Hyprland config style completely removed as the lua is now final
+- Termshark config addition
+- Ghostty shreaders modification.
+- Default application seting
+- Changed vlc with mpv
+- REMOVAL OF CUDA FILE FROM DEFAULT
+- REMOVAL OF CUDA FILE FROM DEFAULT
+- REMOVAL OF CUDA FILE FROM DEFAULT
+- REMOVAL OF CUDA FILE FROM DEFAULT
 
 ### 💼 Other
 
@@ -1244,3 +1296,8 @@ Hybrid setup
 - Updated
 - Updated
 - Updated
+- Termux core changed added more details,
+- Wiereshark enabled as systeem
+- Flakes updated
+- Hyprland floating problem sloved
+- Hyprland floating problem sloved
