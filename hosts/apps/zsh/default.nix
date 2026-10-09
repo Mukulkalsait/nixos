@@ -19,6 +19,11 @@
     initContent = ''
       eval "$(fnm env --use-on-cd)"  
       source ~/.config/zsh/scripts/y.sh 
+
+      # colors: yellow,cyan, green, magenta, blue, etc.
+      precmd() {
+        print -P "%F{magenta}🎯 TARGET: VIRTUALISATION end before 20 OCTOMBER.%f"
+      }
     '';
     # IMP: Run FNM env when sees .node-version in directorry.
     # B: we are sourcing file we defined at the top of this config.
