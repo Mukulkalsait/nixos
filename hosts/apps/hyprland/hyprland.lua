@@ -113,20 +113,18 @@ local float_apps = { "nmtui", "wiremix", "wifitui", "bluetooth", "floating_windo
 -- 	hl.window_rule({ match = { class = "^" .. app .. "$" }, float = true })
 -- end
 
+hl.window_rule({ match = { class = "^kitty$" }, suppress_event = "maximize" }) -- B: kitty automatic geting full screen. so stoping it.
+hl.window_rule({ name = "fullscreen_on", match = { class = "^(steam_app_[0-9]+)$" }, fullscreen = true }) -- B: 🎲 STEAM
+
 for _, app in ipairs(float_apps) do
 	hl.window_rule({
 		match = { class = "^" .. app .. "$" },
 		float = true,
 		persistent_size = false, -- keeps size across toggles
 		center = false, -- optional, centers on open
-		-- suppress_event = "fullscreen", -- ← this is the correct field
-		-- fullscreen = false,
-		suppress_event = "maximize",
+		suppress_event = "maximize", -- Y: use this if the floaitng still fullscreen
 	})
 end
-
-hl.window_rule({ match = { class = "^kitty$" }, suppress_event = "maximize" }) -- B: kitty automatic geting full screen. so stoping it.
-hl.window_rule({ name = "fullscreen_on", match = { class = "^(steam_app_[0-9]+)$" }, fullscreen = true }) -- B: 🎲 STEAM
 
 -- ==========================================
 -- 7. Workspace Rules (Smart Gaps)
