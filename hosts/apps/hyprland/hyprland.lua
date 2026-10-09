@@ -125,6 +125,7 @@ for _, app in ipairs(float_apps) do
 	})
 end
 
+hl.window_rule({ match = { class = "^kitty$" }, suppress_event = "maximize" }) -- B: kitty automatic geting full screen. so stoping it.
 hl.window_rule({ name = "fullscreen_on", match = { class = "^(steam_app_[0-9]+)$" }, fullscreen = true }) -- B: 🎲 STEAM
 
 -- ==========================================
