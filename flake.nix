@@ -46,7 +46,7 @@
     # noctalia shell v5 indipendent of queakshiell
     noctalia = {
       url = "github:noctalia-dev/noctalia";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
 
@@ -128,19 +128,17 @@
               nixpkgs.overlays = [
                 nur.overlays.default
                 fenix.overlays.default
-                # neovim-nightly.overlays.default
 
-                # Overdrive of the broken link in neovim-nightly
-                # (final: prev: {
-                #   neovim = prev.neovim.overrideAttrs (old: {
-                #     postInstall = ''
-                #       ${old.postInstall or ""}
-                #       rm -f $out/share/applications/nvim.desktop || true
-                #       mkdir -p $out/share/nvim
-                #       touch $out/share/nvim/rplugin.vim || true
-                #     '';
-                #   });
-                # })
+                # R:  TEMPERORY setting tmux to become versiono 3.8 untill nixpkgs have it.
+                (final: prev: {
+                  tmux = prev.tmux.overrideAttrs (old: {
+                    version = "3.8";
+                    src = prev.fetchurl {
+                      url = "https://github.com/tmux/tmux/releases/download/3.8/tmux-3.8.tar.gz";
+                      sha256 = "e79c699c7e949dccd0a4a125e17b8d1261e311b16979dbc8eb34542f3966d82e";
+                    };
+                  });
+                })
               ];
             } # FLAKE: NUR overlay
 
