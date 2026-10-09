@@ -16,22 +16,12 @@ custom-shader-animation = always
 # Cursor Trail via Shader (Neovide/Kitty-like: fade trail on movement)
 # custom-shader = shaders/rectangle_boom_cursor.glsl
 # custom-shader = shaders/ripple_cursor.glsl
-# custom-shader = shaders/sonic_boom_cursor.glsl
+# custom-shader = shaders/ripple_rectangle_cursor.glsl
+custom-shader = shaders/sonic_boom_cursor.glsl
 
-# custom-shader = shaders/new/cubes.glsl
-# custom-shader = shaders/new/cursor_blaze.glsl
-# custom-shader = shaders/new/inside-the-matrix.glsl
-# custom-shader = shaders/new/smear_cursor_blocks.glsl
-# custom-shader = shaders/new/starfield-colors.glsl
-
-# custom-shader = shaders/cursor_tail.glsl
+custom-shader = shaders/cursor_tail.glsl
 # custom-shader = shaders/cursor_warp.glsl
 # custom-shader = shaders/cursor_sweep.glsl
-
- custom-shader = shaders/ripple_rectangle_cursor.glsl
- custom-shader = shaders/new/cursor_lightning.glsl
- custom-shader = shaders/new/in-game-crt-cursor.glsl
-
 
 
 # TAG:  Tweak shader params (edit in shaders/cursor_warp.glsl; top constants)
