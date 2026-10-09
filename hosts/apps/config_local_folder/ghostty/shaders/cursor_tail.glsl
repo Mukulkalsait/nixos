@@ -12,8 +12,8 @@ vec3 sRGBToLinear(vec3 c) {
 // const float BLUR = 2.0; // blur size in pixels (for antialiasing)
 
 vec4 TRAIL_COLOR = vec4(sRGBToLinear(iCurrentCursorColor.rgb), iCurrentCursorColor.a); // for custom color: vec4(0.2, 0.6, 1.0, 0.5); (wrap in sRGBToLinear for correct brightness)
-const float DURATION = 0.09; // in seconds
-const float MAX_TRAIL_LENGTH = 0.4;
+const float DURATION = 0.12; // in seconds
+const float MAX_TRAIL_LENGTH = 0.7;
 const float THRESHOLD_MIN_DISTANCE = 1.0; // min distance to show trail (units of cursor width)
 const float BLUR = 2.0; // blur size in pixels (for antialiasing)
 

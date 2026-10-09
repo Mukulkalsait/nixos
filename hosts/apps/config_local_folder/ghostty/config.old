@@ -19,7 +19,7 @@ custom-shader-animation = always
 # custom-shader = shaders/ripple_rectangle_cursor.glsl
 custom-shader = shaders/sonic_boom_cursor.glsl
 
- custom-shader = shaders/cursor_tail.glsl
+custom-shader = shaders/cursor_tail.glsl
 # custom-shader = shaders/cursor_warp.glsl
 # custom-shader = shaders/cursor_sweep.glsl
 
