@@ -2,7 +2,7 @@
   home.file.".config/clippy".source = ./config_local_folder/clippy;
   home.file.".config/fastfetch".source = ./config_local_folder/fastfetch;
   home.file.".config/gamemode.ini".source = ./config_local_folder/gamemode.ini;
-  home.file.".config/ghostty-x".source = ./config_local_folder/ghostty;
+  home.file.".config/ghostty".source = ./config_local_folder/ghostty;
   home.file.".config/glow".source = ./config_local_folder/glow;
   home.file.".config/lazygit".source = ./config_local_folder/lazygit;
   home.file.".config/MangoHud".source = ./config_local_folder/MangoHud;
