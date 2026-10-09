@@ -76,6 +76,8 @@
       # ---- Window / chrome ----
       background_opacity = "0.85"; # ghostty: background-opacity = 0.75
       confirm_os_window_close = "0"; # ghostty: confirm-close-surface = false
+
+      # Y: changing this
       window_padding_width = "0"; # ghostty: window-padding-y/x = 0
       hide_window_decorations = "yes"; # keep the chrome-less look you already run
 
@@ -114,7 +116,7 @@
 
       cursor_trail = "1";
       cursor_trail_decay = "0.05 0.5"; # X and Y decay
-      cursor_trail_thickness = "1.2 1.2"; # X and Y thickness
+      # cursor_trail_thickness = "1.2 1.2"; # X and Y thickness
 
       # Y: faster
       # cursor_trail = "6"; # number of ghost cursors
