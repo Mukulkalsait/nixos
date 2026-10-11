@@ -22,7 +22,9 @@
 
       # colors: yellow,cyan, green, magenta, blue, etc.
       precmd() {
-        print -P "%F{magenta}🎯 TARGET: VIRTUALISATION end before 20 OCTOMBER.%f"
+        if [ -f "/home/mukuldk/1_file/3_Repos_All/A_gitHub/1_target.md" ]; then
+          print -P "$(cat "/home/mukuldk/1_file/3_Repos_All/A_gitHub/1_target.md")"
+        fi
       }
     '';
     # IMP: Run FNM env when sees .node-version in directorry.
