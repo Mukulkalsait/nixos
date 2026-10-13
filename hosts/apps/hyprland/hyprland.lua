@@ -114,6 +114,7 @@ local float_apps = { "nmtui", "wiremix", "wifitui", "bluetooth", "floating_windo
 -- end
 
 hl.window_rule({ match = { class = "^kitty$" }, suppress_event = "maximize" }) -- B: kitty automatic geting full screen. so stoping it.
+hl.window_rule({ match = { class = "^com.mitchellh.ghostty$" }, suppress_event = "maximize" }) -- B: Ghostty also automatic geting full screen. so stoping it BUT NOT WORKING
 hl.window_rule({ name = "fullscreen_on", match = { class = "^(steam_app_[0-9]+)$" }, fullscreen = true }) -- B: 🎲 STEAM
 
 for _, app in ipairs(float_apps) do
