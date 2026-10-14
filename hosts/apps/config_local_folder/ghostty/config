@@ -11,7 +11,7 @@ command = zsh -ic "fastfetch; exec zsh"
 
 
 #B: best
-custom-shader-animation = always
+custom-shader-animation = true
 
 # Cursor Trail via Shader (Neovide/Kitty-like: fade trail on movement)
 # custom-shader = shaders/rectangle_boom_cursor.glsl
@@ -53,6 +53,10 @@ window-theme = dark
 window-padding-y = 0
 window-padding-x = 0
 gtk-tabs-location = hidden
+
+# // Multiple windows will use single instance -> Faster + low ram + same ENV: Nvidia 
+# // use true for forced to used: VALUES (true,false,detect) -> defautl:detect ✅ 
+# gtk-single-instance = true 
 
 theme = TokyoNight Moon
 background = #000000
