@@ -39,5 +39,10 @@
     # "zswap.max_pool_percent=20" # Caps => limit 20% VVVIMP
   ];
 
+  # Blacklist Ram Temperatur checking module. 
+  # to remove errors "journalctl -b -k | grep spd5118"
+  # while opening the screen.
+  boot.blacklistedKernelModules = [ "spd5118" ];
+
 }
 
