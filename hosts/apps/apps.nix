@@ -33,7 +33,7 @@
     # dgop # Optional: system monitoring for DMS
 
     # noctalia 
-    inputs.noctalia.packages.${pkgs.system}.default
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # Y: Hardware Control |>
     pavucontrol # All audio IO gui tool very usefull.⭐
@@ -47,7 +47,6 @@
     scrcpy # Display and control Android devices over USB or TCP/IP
 
     # ID: Terminal |>
-    inputs.ghostty.packages.${pkgs.system}.default # FLAKE:
     # zellij
     nushell # best for http APIs checking.
     tmux # complet terminal multiplexer.
