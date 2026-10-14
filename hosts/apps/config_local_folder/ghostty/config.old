@@ -44,6 +44,8 @@ window-padding-y = 0
 window-padding-x = 0
 gtk-tabs-location = hidden
 
+gtk-single-instance = false # make sure the first instance is the one launched with the variables.
+
 theme = TokyoNight Moon
 background = #000000
 foreground = #c8d3f5
