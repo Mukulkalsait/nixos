@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
 
     # IMP: System Drivers |>
-    inputs.wifitui.packages.${pkgs.system}.default # FLAKE:
+    inputs.wifitui.packages.${pkgs.stdenv.hostPlatform.system}.default # FLAKE:
     bluetuith # tui Bluetooth
     wiremix # another tui for audio:=
     pipewire # Controller for pipewire.
