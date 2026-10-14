@@ -1,7 +1,7 @@
 # nvidia.nix 
 
 # Y: Nvidia + Gaming Setup.
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
   # Y: x.server = OpenGL :
   services.xserver.videoDrivers = [ "nvidia" ];
 
@@ -99,6 +99,24 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "/home/mukuldk/.steam/root/compatibilitytools.d";
   };
+
+  # FLAKE: Generated from flakes
+  # IMP: Rerndering Ghostty with nvidia for better optimisation on shreaders.
+  environment.systemPackages = [
+    (pkgs.symlinkJoin {
+      name = "ghostty-nvidia";
+      paths = [ inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/ghostty \
+          --set __NV_PRIME_RENDER_OFFLOAD 1 \
+          --set __NV_PRIME_RENDER_OFFLOAD_PROVIDER NVIDIA-G0 \
+          --set __GLX_VENDOR_LIBRARY_NAME nvidia \
+          --set __VK_LAYER_NV_optimus NVIDIA_only
+      '';
+    })
+  ];
+
 }
 
 /* G: command avialable
