@@ -67,26 +67,38 @@
   # Y: POWER MANAGEMENT - FIXED ====================================================================================
   powerManagement.enable = true;
 
-  # DX: REMOVE this - it conflicts with proper battery management
-  # services.power-profiles-daemon.enable = true;  # REMOVE THIS LINE
 
-  # Use TLP instead for better power management
+  # IMP: TLP instead for better power management
   services.tlp = {
     enable = true;
     settings = {
       # Battery thresholds (won't work on your hardware, but doesn't hurt)
-      START_CHARGE_THRESH_BAT1 = 75;
-      STOP_CHARGE_THRESH_BAT1 = 80;
+      # START_CHARGE_THRESH_BAT1 = 75;
+      # STOP_CHARGE_THRESH_BAT1 = 80;
+
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
 
       # CPU settings
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+      PCIE_ASPM_ON_BAT = "powersupersave";
+      # WIFI_PWR_ON_BAT = "on";
+      USB_AUTOSUSPEND = 1;
 
       # Enable audio power saving
       SOUND_POWER_SAVE_ON_AC = 0;
       SOUND_POWER_SAVE_ON_BAT = 1;
     };
   };
+
+  # Y: THE Power-Pforile-Daemon via TLP 
+  services.tlp.pd.enable = true;
+
+  # services.power-profiles-daemon.enable = true; 
+  # DX: PPD (Power Profile Daemon) conflict with TLP  ⬆️ so use TLP better
 
   services.dbus.enable = true;
 
