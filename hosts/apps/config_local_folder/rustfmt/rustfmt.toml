@@ -1,26 +1,25 @@
 # Ultra-wide + dense formatting (Neovim + small font)   those with Y: marked are the once we have initially 
 
-
 edition = "2024" # Language edition used for parsing the code                       Y: 
 style_edition = "2024" # Style edition (controls the actual formatting rules)
 
-max_width = 180 # Maximum line length. Everything tries to stay under this width                    Y: 
+max_width = 260 # Maximum line length. Everything tries to stay under this width                    Y: 
 use_small_heuristics = "Max" # "Max" = make almost everything try to fit on one line when possible  Y: 
 
 fn_single_line = true # Put single-expression functions on one line: fn foo() { 42 }     Y: 
 struct_lit_single_line = true # Put small struct literals on one line: Foo { x: 1, y: 2 }
-single_line_if_else_max_width = 160 # Maximum width for single-line if-else expressions Y: 
-single_line_let_else_max_width = 160 # Maximum width for single-line let-else expressions
+single_line_if_else_max_width = 200 # Maximum width for single-line if-else expressions Y: 
+single_line_let_else_max_width = 200 # Maximum width for single-line let-else expressions
 where_single_line = true # Force `where` clauses onto a single line when possible
 
-chain_one_line_max = 160 # chain width
+chain_one_line_max = 240 chain width
 
-chain_width = 160 # Maximum width of method chains before breaking to multiple lines Y: 
-fn_call_width = 160 # Maximum width of function call arguments before breaking
-array_width = 160 # Maximum width of array literals before breaking
-attr_fn_like_width = 160 # Maximum width of function-like attributes before breaking
-struct_lit_width = 160 # Maximum width of struct literal bodies before breaking
-struct_variant_width = 160 # Maximum width of struct-like enum variant bodies before breaking
+chain_width = 180 # Maximum width of method chains before breaking to multiple lines Y: 
+fn_call_width = 200 # Maximum width of function call arguments before breaking
+array_width = 240 # Maximum width of array literals before breaking
+attr_fn_like_width = 180 # Maximum width of function-like attributes before breaking
+struct_lit_width = 200 # Maximum width of struct literal bodies before breaking
+struct_variant_width = 180 # Maximum width of struct-like enum variant bodies before breaking
 
 # How to layout imports inside a use statement
 
