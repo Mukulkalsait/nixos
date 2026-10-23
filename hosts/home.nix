@@ -35,7 +35,8 @@
       "text/plain" = [ "nvim.desktop" ];
 
       "video/mp4" = [ "mpv.desktop" ];
-      "video/x-matroska" = [ "mpv.desktop" ];
+      "video/matroska" = [ "mpv.desktop" ]; # for Mkv
+      "video/x-matroska" = [ "mpv.desktop" ]; # extra
       "video/webm" = [ "mpv.desktop" ];
       "video/quicktime" = [ "mpv.desktop" ];
     };
