@@ -1,5 +1,5 @@
 {
-  home.file.".config/biome.json".source = ./config_local_folder/biome.json;
+  home.file.".config/biome".source = ./config_local_folder/biome;
   home.file.".config/clippy".source = ./config_local_folder/clippy;
   home.file.".config/fastfetch".source = ./config_local_folder/fastfetch;
   home.file.".config/gamemode.ini".source = ./config_local_folder/gamemode.ini;
