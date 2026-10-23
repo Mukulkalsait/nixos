@@ -48,7 +48,6 @@
 
     # ID: Terminal |>
     # zellij
-    nushell # best for http APIs checking.
     tmux # complet terminal multiplexer.
     zmx # session management. IMP: planned to be used with GHOSTTY>
 

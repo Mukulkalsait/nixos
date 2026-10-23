@@ -40,7 +40,7 @@ struct_variant_width = 220
 
 # 7. Imports Layout
 imports_layout = "HorizontalVertical"
-imports_granularity = "Module"
+imports_granularity = "Crate" # merge crates + modules 
 group_imports = "StdExternalCrate"
 reorder_imports = true # Alphabetically record inputs Y: 
 
