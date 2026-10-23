@@ -78,8 +78,9 @@
     stylua # Already in your list but commented
     nixpkgs-fmt # FORMATTER -- WORKING
     shfmt # FORMATTER (for Bash/ZSH) --WORKING 
+    stylua # FORMATTER -- WORKING
     dockfmt # FORMSTTER -- NOT WORKING 
-    stylua # FORMATTER -- NOT WORKING 
+    sql-formatter # FORMATTER 
 
     # Optional but helpful
     # nodePackages.sql-formatter # SQL formatting (instead of Mason's)
