@@ -56,9 +56,9 @@
     shellcheck # BASH LINTER --WORKING
     vtsls # This is the TypeScript LSP (replaces typescript-language-server)
 
-    emmet-ls # LSP
+    emmet-ls # LSP for Y: "div.container>ul>li*3" Scratcures.
     tailwindcss-language-server # LSP
-    phpactor # LSP 
+    # phpactor # LSP R: not needed
     # nil # nix-LSP
 
     bash-language-server
@@ -76,10 +76,10 @@
 
     # G:  Formatters & Linters
     stylua # Already in your list but commented
+    stylua # FORMATTER -- WORKING 
     nixpkgs-fmt # FORMATTER -- WORKING
-    shfmt # FORMATTER (for Bash/ZSH) --WORKING 
-    stylua # FORMATTER -- WORKING
-    dockfmt # FORMSTTER -- NOT WORKING 
+    shfmt # FORMATTER (for sh/Bash/ZSH) -- WORKING 
+    dockfmt # FORMSTTER -- WORKING -> lua/formatter
     sql-formatter # FORMATTER 
 
     # Optional but helpful
