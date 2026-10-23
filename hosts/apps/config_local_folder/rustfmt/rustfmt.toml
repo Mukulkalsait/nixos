@@ -8,18 +8,18 @@ edition = "2024" # Language edition used for parsing the code                   
 style_edition = "2024" # Style edition (controls the actual formatting rules)
 
 # 1. Broad layout limits (Ultra-wide screen configuration)
-max_width = 320 # Y: MAX WIDTH
+max_width = 220 # Y: MAX WIDTH
 use_small_heuristics = "Max"
 
 # 2. Squeeze Method Chains onto a single line
 # Prevents long chains like .bind().fetch().map_err() from breaking vertically
-chain_width = 300
-chain_one_line_max = 300
+chain_width = 200
+chain_one_line_max = 200
 
 # 3. Squeeze Block Expressions and Closures
 # This lets the .map_err(|e| { ... }) stay flat if it's under the width limit
-fn_call_width = 320
-attr_fn_like_width = 280
+fn_call_width = 220
+attr_fn_like_width = 180
 
 # 4. Squeeze Match Arms into single lines
 # This strips block brackets from match arm expressions if they can fit horizontally
@@ -28,15 +28,15 @@ match_arm_blocks = false
 # 5. Squeeze single lines, blocks, and definitions
 fn_single_line = true
 struct_lit_single_line = true
-single_line_if_else_max_width = 280
-single_line_let_else_max_width = 280
+single_line_if_else_max_width = 180
+single_line_let_else_max_width = 180
 where_single_line = true
 empty_item_single_line = true
 
 # 6. Squeeze Arrays and Structures
-array_width = 280
-struct_lit_width = 280
-struct_variant_width = 320
+array_width = 180
+struct_lit_width = 180
+struct_variant_width = 220
 
 # 7. Imports Layout
 imports_layout = "HorizontalVertical"
