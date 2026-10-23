@@ -129,6 +129,7 @@
     # ID: Editors.
     # vscode
     # code-cursor
+    obsidian
 
     # TAG: REFERENCES |>
     # anydesk # desktop Connection Creater
