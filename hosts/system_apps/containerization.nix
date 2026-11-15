@@ -33,7 +33,7 @@
 
 
     # G: Kubernetes-Tools |>
-    kind # Kubernetes IN Docker.
+    # kind # Kubernetes IN Docker.
     kubectl # dont know.
     # kdash # TUI kuberneties dashboard.Y: unstable deu to NixUpdates = will be stable soon so uncommit it whenn you see it.
     k9s # TUI fro kube.
@@ -42,30 +42,16 @@
     # terraform-versions."1.9.8" # Terraform with version 
 
     # B: Cloud |>
-    awscli2
-
-
+    # awscli2
 
     # B: WINDOWS |> 
     # winboat # The main application
-    freerdp # Required for rendering windows
+    # freerdp # Required for rendering windows
 
     # B: GPU SUPPORT |>
     # minikube # kuberneties creater
     # nvidia-container-toolkit # For NVIDIA support
     # nvidia-podman-kit # Additional NVIDIA support for Podman Y: not found 
   ];
-
-  #-----------------| INCUS (LSD) |-----------------
-  #
-  # LXD fork
-  # virtualisation.incus = {
-  #   enable = true;
-  # };
-  # networking.nftables.enable = true; 
-  # R: ONLY FOR INCUS/LXD use make srue to delete it. 
-  #
-  # TAG: in ./user.nix make sure add user "incus", "incus-admin"
-  #-------------------------------------------------
 }
 

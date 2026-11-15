@@ -48,11 +48,6 @@
     DNSOverTLS=no
   '';
 
-  # TAG:  Networking and DNS resolver. =============================================================================
-
-
-
-
   # G: Bluetooth. ==================================================================================================
   hardware.bluetooth.enable = true;
   services.blueman.enable = false; # gtx tray app buggy, instead we use wofi bluetooth + bluetoothctl.
@@ -155,6 +150,7 @@
   # Y:  Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true; 
 
+  security.rtkit.enable = true;
   # Y: Sound.
   services.pipewire = {
     enable = true;

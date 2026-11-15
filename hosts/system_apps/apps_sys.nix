@@ -93,5 +93,9 @@
     enable = true;
   };
 
+  # Y: Fuck Nano
+  programs.nano = {
+    enable = false;
+  };
 }
 
