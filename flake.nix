@@ -1,5 +1,10 @@
 {
   description = "Mukul's NixOS with Hyprland and Home Manager";
+  # IMP:FLAKES: nix flake update nixpkgs
+  # - High usage
+  #   home-manager zen-browser ghostty hyprland hyprland-plugins fenix
+  # - low usage
+  #   nur noctalia microvm nixpkgs-terraform wifitui
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # Y:  Use unstable for latest packages
@@ -14,7 +19,6 @@
     # neovim-nightly = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
-
     # HOME-MANAGER: (*)
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -87,6 +91,7 @@
     };
 
   };
+
 
   nixConfig = {
     extra-substituters = [
