@@ -21,11 +21,11 @@
       source ~/.config/zsh/scripts/y.sh 
 
       # colors: yellow,cyan, green, magenta, blue, etc.
-      precmd() {
-        if [ -f "/home/mukuldk/1_file/3_Repos_All/A_gitHub/1_target.md" ]; then
-          print -P "$(cat "/home/mukuldk/1_file/3_Repos_All/A_gitHub/1_target.md")"
-        fi
-      }
+      # precmd() {
+      #   if [ -f "/home/mukuldk/1_file/3_Repos_All/A_gitHub/1_target.md" ]; then
+      #     print -P "$(cat "/home/mukuldk/1_file/3_Repos_All/A_gitHub/1_target.md")"
+      #   fi
+      # }
     '';
     # IMP: Run FNM env when sees .node-version in directorry.
     # B: we are sourcing file we defined at the top of this config.
@@ -39,7 +39,7 @@
         # G: Aliases 
         rm = "rm -iv";
         gpu = "git push";
-        cat = "bat";
+        # cat = "bat";
 
         lsl = "eza -lagh --icons --group-directories-first --git --sort name";
         lsli = "eza -laihgH --icons --group-directories-first --git --sort name";
